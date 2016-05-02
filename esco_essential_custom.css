@@ -1,0 +1,395 @@
+.signupform { display: none; }
+
+html { height: 100%; }
+body { min-height: 100%; }
+
+/* OU Wiki condense headings and change color */
+.ouw_topheading { background: #f2e18b; margin-top: 0; margin-bottom: 0; }
+.ouw_topheading h2 { float: left; }
+#page-mod-ouwiki-view .ouw_recentchanges { clear: both; }
+div#ouwiki_addnew { border-top: 1px solid black; padding-top: .5em; margin-top: 1em; }
+#page-mod-ouwiki-wikiindex .ouw_title { background: #f2e18b; }
+
+/* border and glow for course section titles */
+body .course-content ul.ctopics li.section .content div.toggle { 
+    border-color: #ac151e; border-style: solid; border-top-width: 2px; border-bottom-width: 2px; 
+    border-right-width: 1px; border-left-width: 1px; background-clip: padding-box; }
+body .course-content ul.ctopics li.section .content div.toggle:hover { border-color: #ff1f2c; }
+body.jsenabled .course-content ul.ctopics li.section .content .toggle-point a.toggle_open:hover {
+    background-image: url(/theme/image.php/essential/format_topcoll/1460477584/point_down_glow); }
+body.jsenabled .course-content ul.ctopics li.section .content .toggle-point a.toggle_closed:hover {
+    background-image: url(/theme/image.php/essential/format_topcoll/1460477584/point_right_glow); }
+
+/* Hide 'All Courses' on front page */
+#frontpage-course-list .frontpage-course-list-enrolled .paging-morelink { display: none; }
+
+/* responsive google slideshow */
+.ratiobox { position: relative; overflow: hidden; width: 99%; }
+.ratiobox:before { content: ""; display: block; }
+.ratio16_9:before{ content: ""; display: block; padding-top: 56.25%; }
+.ratiocontent { position: absolute; top: 0; left: 0; bottom: 0; right: 0; }
+iframe.googleSlideshow { width: 100%; height: calc(100% + 28px); border: 0; }
+/* https://productforums.google.com/d/msg/docs/EPfq-MWXGqw/Tcz66FjytekJ */
+/* http://www.mademyday.de/css-height-equals-width-with-pure-css.html */
+
+/* hide unused Jabber messaging option */
+#page-message-edit #messageprocessor_jabber { display: none; }
+
+/* hide manual completion checkboxes */
+img[title^='Students can manually mark this item complete:'] { display: none; }
+
+/* make "Reply" in forums larger */
+#region-main .forumpost .options .commands { font-size: large; margin-right: 1em; }
+
+/* make sure images aren't too big when viewing submissions */
+.submissionstatustable img { max-height: 50vh; }
+
+/* hide unused fields in normal profile editing (visible to admins) */
+#page-user-edit #id_moodle_additional_names, #page-user-edit #fitem_id_icq, #page-user-edit #fitem_id_skype, #page-user-edit #fitem_id_aim, #page-user-edit #fitem_id_yahoo, #page-user-edit #fitem_id_msn, #page-user-edit #fitem_id_idnumber, #page-user-edit #fitem_id_institution, #page-user-edit #fitem_id_department, #page-user-edit #id_category_3 { display: none; }
+
+/* hide auto-filled fields in Report Student Contact Block */
+.block_contact_student #fitem_id_studentfirstname, .block_contact_student #fitem_id_studentlastname, .block_contact_student #fitem_id_studentemail, .block_contact_student #fitem_id_instructorname, .block_contact_student #fitem_id_instructoremail { display: none; }
+
+/* hide message menu -> rebuild it with JS (see "Additional HTML") */
+.messagemenu { display: none; }
+.messagemenu .nav .fa-caret-right { display: none; }
+
+/* hide link to Private Files in user menu */
+.usermenu a[href*='escoffieronline.com/user/files.php'] { display: none; }
+
+/* hide Category and My Home Links in breadcrumb nav */
+ul.breadcrumb a[href*='escoffieronline.com/my/'] { display: none; }
+ul.breadcrumb a[href*='/course/index.php'] { display: none; }
+#page-navbar { display: none; }
+
+/* hide assignment comments box */
+#page-mod-assign-view .commentscontainer { display: none; }
+
+/* Make new language text fit in pop-up (depreciated -- using ATTO not TinyMCE) */
+/*span#mce_inlinepopups_50_content { height: 90px; }
+div#mce_inlinepopups_50 { height: 170px; }*/
+
+.userprofile dl.list dt { white-space: normal; }
+
+/* background image on front page only */
+#page-site-index {
+    background-image: url('//my.escoffieronline.com/escoffierfiles/images/web_background_potsandpans.jpg');
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+/* (depreciated) 
+/* .navbar .navbar-inner .messagemenu .msg-more { font-size: 20px; white-space: normal; } */
+
+.breadcrumb-nav {
+	width: 95%;
+}
+
+/* limit size of activity icons on pages where they are otherwise unconstrained, ie user completion summary */
+img.smallicon, img.activityicon {
+	max-width: 24px;
+}
+
+/* (depreciated) */
+span.date {
+	//display: none;
+}
+
+/* buttons (depreciated) */
+/*.btn {
+	padding:8px 32px;
+	font-size:16px;
+}
+.btn-primary { 
+	background-color:#ac151e; 
+	background-image:linear-gradient(to bottom,#a12,#610);
+}
+.btn-primary:active, .btn-primary:focus, .btn-primary:hover {
+	background-color:#610;
+}
+*/
+
+/* submit buttons at bottom of page (depreciated)  */
+/*#page form #fgroup_id_buttonar, #region-main form #fgroup_id_buttonar { background-color:#ac151e; }
+#region-main form .form-buttons, #region-main form #fitem_id_submitbutton, #region-main form #fgroup_id_buttonar { position: static; }
+body.desktopdevice #region-main form .form-buttons, body.desktopdevice #region-main form #fitem_id_submitbutton, body.desktopdevice #region-main form #fgroup_id_buttonar { position: static; }*/
+
+/* friendly objectives (depreciated?) */
+.path-course-view .section .summary { line-height: 20px; }
+
+.calendar_event_global { background-color:#e6cf85; }
+
+/* larger user pic in Online Users and Classmates blocks */
+.block .content .userpicture {
+	width: 35px;
+	height: 35px;
+}
+
+/* (depreciated) */
+/*img.userpictureBlack, img.userpictureRed, img.userpictureGold, img.userpictureBlue, img.userpictureGreen, img.userpictureOrange { width: 35px; height: 35px; margin-right: 6px; margin-bottom: 2px; margin-top: 1px; box-shadow: 0 0 2px 2px #000; border-bottom-left-radius: 250px; border-bottom-right-radius: 250px; border-top-left-radius: 250px; border-top-right-radius: 250px; vertical-align: bottom; }
+img.userpictureGold { box-shadow: 0 0 2px 2px #bb8c15; }
+img.userpictureBlue { box-shadow: 0 0 2px 2px #074a6e; }
+img.userpictureOrange { box-shadow: 0 0 2px 2px #88411d; }
+img.userpictureGreen { box-shadow: 0 0 2px 2px #547713; } */
+
+/* extra colored border for instructors in Online Users and Classmates blocks */
+img.userpictureRed { box-shadow: 0 0 2px 2px #ac151e; margin-bottom: 2px; margin-top: 1px;}
+
+.gradingform_rubric {
+	max-width: 100%;
+	background-color: #FFF;
+}
+
+.topcoll-display-instructions {
+	font-size: 20px;
+	color: #f00;
+	font-weight: bold;
+}
+
+iframe#resourceobject {
+    width: 100% !important;
+}
+
+.frontpagecontent {
+	border: 0;
+	background-color: ;
+	padding: 0;
+}
+
+.bor {
+	display: none;
+}
+
+/* * * * * * * * * * * * * * * * * * * * * * *
+ * Quiz beautification thanks to Phuong Hoang
+ * https://moodle.org/mod/forum/discuss.php?d=319464#p1282517
+ * * * * * * * * * * * * * * * * * * * * * * */
+
+.que .info > div {
+    margin-left: 1.5em;
+    /* margin-right: 15px; */
+    display: inline;
+    color: #fff;
+}
+
+.que .content {
+    margin: 0 0 0 0;
+    width: auto;
+}
+
+.que .info {
+    float: none;
+    width: auto;
+    background-color: #000;
+    border: 1px solid #000;
+    border-radius: 4px;
+    margin-bottom: -5px;
+    padding: 8px;
+    color: #fff;
+}
+
+.que h3.no {
+    display: inline;
+    font-size: 1.5em;
+    line-height: 1;
+    margin-left: 10px;
+    color: #fff;
+}
+
+.que span.qno {
+    font-size: 1em;
+}
+
+.que .formulation {
+    background-color: #fff;
+    border-color: #000;
+}
+
+/* end of quiz beautification */
+
+table.dataTable {
+    background-color: #fff;
+}
+
+img.smallicon { max-width: 128px; } /* make attendance buttons bigger */
+
+.customlesson {
+    padding: 10px;
+    border-radius: 5px;
+    color: #000;
+    background-color: #39466b;
+    background-image: url("http://my.escoffieronline.com/program_resources/graphics/pattern.svg");
+}
+
+.block_progress .progressBarCell, .block_progress .progressBarProgressTable .progressBarCell {
+	height: 20px;
+	width: 20px;
+	float: left;
+	border-top: solid 1px #e3e3e3;
+	border-right: solid 1px #e3e3e3;
+	border-left: 0px;
+}
+.block_progress .progressBarHeader { display: none; }
+.block_progress .progressEventInfo { line-height: 14px; min-height: 52px; }
+.block_progress .progressUserStatsCell { font-size: 28px; width: 33%; font-weight: bold; }
+.block_progress .progressLabelCell { font-size: 11px; line-height: 12px; font-style: italic; vertical-align: top; padding-top: 4px; font-weight: normal; }
+
+/* Lesson */
+#page-mod-lesson-view #block-region-side-pre { width: inherit; }
+#page-mod-lesson-view .block_fake { background-color: black; /*#ac151e;*/ }
+#page-mod-lesson-view .block_fake .header { display: none; }
+#page-mod-lesson-view .block_fake li { float: left; margin: 10px; background-color: black; padding: 5px; 
+  -webkit-border-radius: 3px; 
+  -moz-border-radius: 3px;
+  border-radius: 3px; }
+#page-mod-lesson-view .block_fake li.selected { background-color: white; }
+#page-mod-lesson-view .block_fake a { color: white; }
+
+#page-mod-lesson-continue #block-region-side-pre { width: inherit; }
+#page-mod-lesson-continue .block_fake { background-color: black; /*#ac151e;*/ }
+#page-mod-lesson-continue .block_fake .header { display: none; }
+#page-mod-lesson-continue .block_fake li { float: left; margin: 10px; background-color: black; padding: 5px; 
+  -webkit-border-radius: 3px; 
+  -moz-border-radius: 3px;
+  border-radius: 3px; }
+#page-mod-lesson-continue .block_fake li.selected { background-color: white; }
+#page-mod-lesson-continue .block_fake a { color: white; }
+
+#page-mod-lesson-view #page #page-content #region-main { /* background-color: #ac151e; */ width: inherit; }
+/*#page-mod-lesson-view #fitem_id_submitbutton input[type=submit],
+#page-mod-lesson-view input[type=submit] { color: white; background-color: #ac151e; background-image:linear-gradient(to bottom,#a12,#610); border: 1px solid black; margin-top: 10px; }
+#page-mod-lesson-view #page form #fitem_id_submitbutton { background-color: transparent; padding: 0px; border-top: 0px; text-align: left; margin-left: 0%; }
+#page-mod-lesson-view #fitem_id_submitbutton input[type=submit]:active,
+#page-mod-lesson-view #fitem_id_submitbutton input[type=submit]:focus,
+#page-mod-lesson-view #fitem_id_submitbutton input[type=submit]:hover, 
+#page-mod-lesson-view input[type=submit]:active,
+#page-mod-lesson-view input[type=submit]:focus,
+#page-mod-lesson-view input[type=submit]:hover { background-color:#610; }*/ //buttons
+#page-mod-lesson-view h1.coursetitle { color: black; /*white; background-color: #ac151e;*/ }
+/*#page-mod-lesson-view div[role=main] { background-image: url("http://my.escoffieronline.com/program_resources/graphics/pattern.svg"); }*/
+/*#page-mod-lesson-view #page #page-content div[role=main] { padding: 10px; }*/
+#page-mod-lesson-view h3 { color: white; background-color: rgba(0,0,0,0.5); 10px; padding-left: 10px; }
+.answeroption {
+margin-top: 2px;
+color: white;
+padding: 5px;
+background-color: rgba(0,0,0,0.75); /*rgba(172,21,30,0.75);*/ }
+#page-mod-lesson-view legend.ftoggler { display: none; }
+#page-mod-lesson-view div.ongoing { margin-bottom: 10px; text-align: right; font-style: italic; }
+/*#page-mod-lesson-view .slideshow { margin-left: 10px; color: black; background-image: url("http://my.escoffieronline.com/program_resources/graphics/pattern.svg"); }*/
+#page-mod-lesson-view #region-main .fitem_fradio .fradio { margin-left: 0px; }
+#page-mod-lesson-view #region-main .fitem_fradio .fitemtitle { width: auto; }
+#page-mod-lesson-view a.lessonbutton, #page-mod-lesson-view .lessonbutton a { padding: 5px; color: white; background-color: black; margin: 5px; }
+#page-mod-lesson-view div.progress_bar_completed { margin-top: 5px; margin-bottom: 10px; padding: 3px;     padding-right: 20px; padding-left: 15px; background-color: black; /*#ac151e;*/ 
+  background: -webkit-linear-gradient(left, rgba(172,21,30,0),rgba(172,21,30,1),rgba(172,21,30,1) ); /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient(right, rgba(172,21,30,0),rgba(172,21,30,1),rgba(172,21,30,1) ); /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(right, rgba(172,21,30,0),rgba(172,21,30,1),rgba(172,21,30,1) ); /* For Firefox 3.6 to 15 */
+  background: linear-gradient(to right, rgba(172,21,30,0),rgba(172,21,30,1),rgba(172,21,30,1) ); /* Standard syntax */ }
+
+#page-mod-lesson-continue #page #page-content #region-main { /* background-color: #ac151e; */ width: inherit; }
+/*#page-mod-lesson-continue input[type=submit] { color: white; background-color: #ac151e; background-image:linear-gradient(to bottom,#a12,#610); border: 1px solid black; margin-top: 10px; }
+#page-mod-lesson-continue input[type=submit]:active,
+#page-mod-lesson-continue input[type=submit]:focus,
+#page-mod-lesson-continue input[type=submit]:hover { background-color:#610; }*/ //buttons
+#page-mod-lesson-continue h1.coursetitle { color: black; /*white;*/ /* background-color: #ac151e; */ }
+/*#page-mod-lesson-continue div[role=main] { background-image: url("http://my.escoffieronline.com/program_resources/graphics/pattern.svg"); }*/
+/*#page-mod-lesson-continue #page #page-content div[role=main] { padding: 10px; }*/
+/* #page-mod-lesson-continue div.correctanswer, 
+#page-mod-lesson-continue div.generalbox { margin-left: 10px; margin-right: 10px; } */
+#page-mod-lesson-continue div.ongoing { margin-bottom: 10px; text-align: right; font-style: italic; }
+#page-mod-lesson-continue div.response { margin-top: 10px; }
+
+.video-container {
+ position: relative;
+ padding-bottom: 56.25%;
+ padding-top: 30px; height: 0; overflow: hidden;
+}
+ 
+.video-container iframe,
+.video-container object,
+.video-container embed,
+.video-container video {
+ position: absolute;
+ top: 0;
+ left: 0;
+ width: 100%;
+ height: 100%;
+}
+/* end of lesson css */
+
+#page-mod-lesson-view .branchbuttoncontainer, #page-mod-lesson-continue .branchbuttoncontainer {
+  /*max-width: 50%;*/
+  /*margin: 0 auto;*/
+  text-align: center;
+}
+
+#page-mod-lesson-view form.mform .contents {
+    font-size: 1.5em;
+    border-top: 2px solid black;
+    padding-top: 10px;
+}
+
+div.lesson-pdf, div.chrome-lesson-pdf {
+  width: 1200px;
+  max-width: 99%;
+  height: 1500px;
+  margin: 0 auto;
+}
+
+iframe.lesson-pdf, iframe.chrome-lesson-pdf {
+  width: 100%;
+  height: 99%;
+  border: 0;
+  pointer-events: none;
+}
+
+.lesson-pdf-outer {
+  width: 100%;
+}
+
+/* make attendance larger: only useful if attendance is for instructors only!! */
+li.modtype_attendance img {  height: 48px; width: 48px; max-width: 48px; }
+li.modtype_attendance .instancename { font-size: 24px; }
+
+/* different colors for different activity links */
+.section li.modtype_page a, .section li.modtype_quiz a, .section li.modtype_lesson a { color: #547713; }
+.section li.modtype_zoom a, .section li.modtype_url a, .section li.modtype_forum a { color: #88411D; }
+.section li.modtype_assign a { color: #074a6e; }
+
+/** Fundamentals 2.0 **/
+
+/* custom esco classes */
+.prac-label h4 , .extra-label h5 { margin-top: 36px; }
+.dndsupported #cooking-instructions { display: none; }
+.dndsupported .asst-back-btn { display: block; }
+#submission-instructions { display: none; }
+.dndsupported #submission-instructions { display: block; }
+#asst-top-nav .submissionaction .submithelp { display: none; }
+#cooking-instructions img { float: left; margin: 10px; width: 45%; min-width: 200px; border: 2px solid black; }
+
+/* chat mod */
+#page-mod-chat-gui_ajax-index ul#users-list a[href='###'] { display: none; }
+#page-mod-chat-view #enterlink { text-align: center; }
+#page-mod-chat-view #enterlink a[href*='/mod/chat/gui_ajax/index.php'] { font-size: x-large; padding: 3px; border: 2px solid #ac151e; }
+#page-mod-chat-view #enterlink a[href*='/mod/chat/gui_basic/index.php'] { font-size: small; }
+
+/* bootstrap elements */
+/*//li.modtype_bootstrapelements .mod-indent-outer { width: 100%; }
+//li.modtype_bootstrapelements .mod-indent-outer { display: inline; } /* */
+li.modtype_bootstrapelements .mod-bootstrapelements-toggle .panel-heading h4.panel-title { font-size: small; font-weight: normal; }
+li.modtype_bootstrapelements .mod-bootstrapelements-toggle .panel-heading i.fa { font-size: 24px; margin-right: 6px; color: black; }
+/*//li.modtype_bootstrapelements .modal.fade { height: 0px; } /* */
+
+/* different assign display in Fundamentals */
+.category-93 li.modtype_assign , .category-93 li.modtype_assign div { display: inline; }
+.category-93 li.modtype_assign .activityinstance { min-width: 1px; }
+
+/* Fundamentals Trial (depreciated) */
+/* .fundamentals-welcome * { font-size: x-large; margin-top: 14px; line-height: 32px; }
+#page-login-signup #id_createuserandpass #fitem_id_username, #page-login-signup #id_createuserandpass .femptylabel { float: left; }
+#page-login-signup #id_supplyinfo div.fitem { display: inline-block; width: 49% }
+.coursebox .content .summary, .coursebox .content .courseimage { width: auto; }
+#page-enrol-index .generalbox p { font-size: large; line-height: 1.25; }
+#page-enrol-index .generalbox .info .coursename, #page-enrol-index #region-main h2 { display: none; }
+#page-login-confirm .singlebutton, #page-login-confirm .breadcrumb-nav { display: none; } */
