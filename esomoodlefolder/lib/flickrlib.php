@@ -1105,13 +1105,15 @@ class phpFlickr {
 
         $args['title']          = isset($meta['title']) ? $meta['title'] : null;
         $args['description']    = isset($meta['description']) ? $meta['description'] : null;
-        $args['tags']           = isset($meta['tags']) ? $meta['tags'] : null;
+        $args['tags']           = isset($meta['tags']) ? $meta['tags'] : '';  //tk change null to ''
         $args['is_public']      = isset($meta['is_public']) ? $meta['is_public'] : 0;
         $args['is_friend']      = isset($meta['is_friend']) ? $meta['is_friend'] : 0;
         $args['is_family']      = isset($meta['is_family']) ? $meta['is_family'] : 0;
         $args['safety_level']   = isset($meta['safety_level']) ? $meta['safety_level'] : 1; // safe by default
         $args['content_type']   = isset($meta['content_type']) ? $meta['content_type'] : 1; // photo by default
         $args['hidden']         = isset($meta['hidden']) ? $meta['hidden'] : 2;             // hide from public searches by default
+		
+		$args['tags'] .= ', "Escoffier Online"'; //tk add "Escoffier Online" tag after user tags
 
         // Do not enable the asynchronous more because then the query does not return a photo ID,
         // and we need a photo ID to add the photo to a set later on.
