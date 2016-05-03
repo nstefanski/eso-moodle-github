@@ -271,6 +271,18 @@ echo '</div>';
 
 // Print all the little details in a list.
 echo html_writer::start_tag('dl', array('class' => 'list'));
+if ($DB->record_exists('portfolio_instance_user', array('userid' => $user->id,'name' => 'nsid'))){
+	$flickrID = $DB->get_record('portfolio_instance_user', array('userid' => $userid,'name' => 'nsid'), 'value', $strictness=IGNORE_MISSING);
+
+	if ($flickrID->value) {
+		$flickrUrl = "https://www.flickr.com/photos/$flickrID->value";
+
+		$iconurl = new moodle_url('/pix/t/portfolioadd.png');
+		$statusicon = html_writer::tag('img', '', array('src'=>$iconurl, 'class'=>'icon icon-post', 'alt'=>'Flickr'));
+		echo html_writer::tag('dt', get_string('portfolio', 'core_portfolio'));
+		echo html_writer::tag('dd', html_writer::link($flickrUrl, s("View ".$user->firstname."'s Portfolio").$statusicon));
+	}
+}
 if (!isset($hiddenfields['country']) && $user->country) {
     echo html_writer::tag('dt', get_string('country'));
     echo html_writer::tag('dd', get_string($user->country, 'countries'));
