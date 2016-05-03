@@ -128,7 +128,7 @@ if ($available) {
         $aurl = new moodle_url('/mod/zoom/loadmeeting.php', array('id' => $cm->id));
     }
     $buttonhtml .= html_writer::input_hidden_params($aurl);
-    $link = html_writer::tag('form', $buttonhtml, array('action' => $aurl->out_omit_querystring()));
+    $link = html_writer::tag('a', $buttonhtml, array('href' => $aurl, 'target' => "_blank"));
 } else {
     $link = html_writer::tag('span', $strunavailable, array('style' => 'font-size:20px'));
 }
@@ -158,7 +158,7 @@ if ($zoomuserid === $zoom->host_id && $haspassword) {
 }
 
 if ($userishost) {
-    $table->data[] = array($strjoinlink, html_writer::link($zoom->join_url, $zoom->join_url));
+    $table->data[] = array($strjoinlink, html_writer::link($zoom->join_url, $zoom->join_url,  array('target' => '_blank')));
 }
 
 $strjbh = ($zoom->option_jbh) ? $stryes : $strno;
