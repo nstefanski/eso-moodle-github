@@ -172,14 +172,30 @@ class block_faculty_tbird extends block_base {
         			$info .= '<br /><img src="' . $faculty->profileimageurl . '" alt="' . $fheader . '" />';
 				// add header
         		$info .= '</br><strong>' . $fheader . '</strong></a></br>';
+				
+				//tk send a message button
+				$messageUrl = new moodle_url('/message/index.php', array('id' => $faculty->id));
+				$info .= '<a target="_blank" href="' . $messageUrl . '"><button class="btn btn-primary" type="button">Send a Message</button></a></br >';
+				$info .= '<span style="font-size: x-small;">Messages will be responded to within 24 hours.</span></br></br>';
         		
         		// these fields may or may not be set!
         		if(isset($faculty->officetbird) && $faculty->officetbird <> '')
-        			$info .= '<strong>' . get_string('officelabel','block_faculty_tbird') . ':</strong> ' . s($faculty->officetbird) . '</br >';
+        			$info .= '<strong>' . get_string('officelabel','block_faculty_tbird') . ':</strong> ' . $faculty->officetbird; //tk replace custom text field with text area
 				if(isset($faculty->officehourstbird) && $faculty->officehourstbird <> '')
         			$info .= '<strong>' . get_string('officehourslabel','block_faculty_tbird') . ':</strong> ' . s($faculty->officehourstbird) . '</br >';
-				if(isset($faculty->phone1) && $faculty->phone1 <> '')
-        			$info .= '<strong>' . get_string('phonelabel','block_faculty_tbird') . ':</strong> ' . s($faculty->phone1) . '</br >';
+				if(isset($faculty->phone1) && $faculty->phone1 <> '') {
+					$phoneInt = str_replace(array('(',')','-',' ','.'), '',$faculty->phone1);
+					$phoneInt = str_replace(array('(',')','-',' ','.'), '',$faculty->phone1);
+					$phoneInt = str_replace(array('a','b','c','A','B','C'), '2',$phoneInt);
+					$phoneInt = str_replace(array('d','e','f','D','E','F'), '3',$phoneInt);
+					$phoneInt = str_replace(array('g','h','i','G','H','I'), '4',$phoneInt);
+					$phoneInt = str_replace(array('j','k','l','J','K','L'), '5',$phoneInt);
+					$phoneInt = str_replace(array('m','n','p','M','N','O'), '6',$phoneInt);
+					$phoneInt = str_replace(array('p','q','r','s','P','Q','R','S'), '7',$phoneInt);
+					$phoneInt = str_replace(array('t','u','v','T','U','V'), '8',$phoneInt);
+					$phoneInt = str_replace(array('w','x','y','z','W','X','Y','Z'), '9',$phoneInt);
+					$info .= '<strong>' . get_string('phonelabel','block_faculty_tbird') . ':</strong> <a href="tel:+1' . $phoneInt .  '">' . s($faculty->phone1) . '</a></br >';
+				}
 
 				// $info .= '<strong>' . get_string('emaillabel','block_faculty_tbird') . ':</strong> <a href="mailto:' . $faculty->email . '">' . $faculty->email . '</a></br >';
 				$info .= '<strong>' . get_string('emaillabel','block_faculty_tbird') . ':</strong>  ' . obfuscate_mailto($faculty->email,'')  . '</br >';
