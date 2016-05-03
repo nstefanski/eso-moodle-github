@@ -25,6 +25,12 @@ $PAGE->set_heading("$site->fullname");
 
 echo $OUTPUT->header();
 
+if (!empty($CFG->registerauth) or is_enabled_auth('none') or !empty($CFG->auth_instructions)) {
+    $show_instructions = true;
+} else {
+    $show_instructions = false;
+}
+
 if (isset($show_instructions)) {
     $columns = 'twocolumns';
 } else {
@@ -67,7 +73,7 @@ echo '</center>';*/
       <div class="subcontent loginsub">
         <div class="desc">
           <?php
-            print_string("loginusing");
+            print_string("loginsite"); //tk loginusing wasn't found
             echo '<br/>';
             echo '('.get_string("cookiesenabled").')';
             echo $OUTPUT->help_icon('cookiesenabled');
