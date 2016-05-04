@@ -1,0 +1,4706 @@
+<mediawiki xmlns="http://www.mediawiki.org/xml/export-0.8/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mediawiki.org/xml/export-0.8/ http://www.mediawiki.org/xml/export-0.8.xsd" version="0.8" xml:lang="en">
+  <siteinfo>
+    <sitename>Escoffier Wiki</sitename>
+    <base>http://wiki.escoffieronline.com/index.php?title=Main_Page</base>
+    <generator>MediaWiki 1.23.0</generator>
+    <case>first-letter</case>
+    <namespaces>
+      <namespace key="-2" case="first-letter">Media</namespace>
+      <namespace key="-1" case="first-letter">Special</namespace>
+      <namespace key="0" case="first-letter" />
+      <namespace key="1" case="first-letter">Talk</namespace>
+      <namespace key="2" case="first-letter">User</namespace>
+      <namespace key="3" case="first-letter">User talk</namespace>
+      <namespace key="4" case="first-letter">Escoffier Wiki</namespace>
+      <namespace key="5" case="first-letter">Escoffier Wiki talk</namespace>
+      <namespace key="6" case="first-letter">File</namespace>
+      <namespace key="7" case="first-letter">File talk</namespace>
+      <namespace key="8" case="first-letter">MediaWiki</namespace>
+      <namespace key="9" case="first-letter">MediaWiki talk</namespace>
+      <namespace key="10" case="first-letter">Template</namespace>
+      <namespace key="11" case="first-letter">Template talk</namespace>
+      <namespace key="12" case="first-letter">Help</namespace>
+      <namespace key="13" case="first-letter">Help talk</namespace>
+      <namespace key="14" case="first-letter">Category</namespace>
+      <namespace key="15" case="first-letter">Category talk</namespace>
+    </namespaces>
+  </siteinfo>
+  <page>
+    <title>Main Page</title>
+    <ns>0</ns>
+    <id>1</id>
+    <revision>
+      <id>271</id>
+      <parentid>176</parentid>
+      <timestamp>2015-02-18T17:47:30Z</timestamp>
+      <contributor>
+        <username>Nick</username>
+        <id>2</id>
+      </contributor>
+      <text xml:space="preserve" bytes="2763">{| id=&quot;mp-upper&quot; style=&quot;width: 100%; margin:4px 0 0 0; background:none; border-spacing: 0px;&quot;
+| class=&quot;MainPageBG&quot; style=&quot;width:75%; border:1px solid #ac151e; background:#ffecbc; vertical-align:top; color:#000;&quot; |
+{| id=&quot;mp-left&quot; style=&quot;width:100%; vertical-align:top; background:#ffecbc;&quot;
+| style=&quot;padding:2px;&quot; | &lt;h2 id=&quot;mp-tfa-h2&quot; style=&quot;margin:3px; background:#ac151e; font-family:inherit; font-size:120%; font-weight:bold; border:1px solid #8c050e; text-align:left; color:#fff; padding:0.2em 0.4em;&quot;&gt;Escoffier Wiki&lt;/h2&gt;
+|-
+| style=&quot;color:#000;&quot; | &lt;div id=&quot;mp-tfa&quot; style=&quot;padding:2px 5px&quot;&gt;Welcome to the company wiki for the Escoffier School of Culinary Arts! This site can be used as a repository for student and employee resources, as well as for recording changes to code across Escoffier's Moodle and WordPress websites.
+
+* [[:Category:Student_Resources]]
+* [[:Category:Employee_Resources]]
+*   [[:Category:HowTo]]
+* [[:Category:Changelogs]]&lt;/div&gt;
+|-
+| style=&quot;padding:2px;&quot; | &lt;h2 id=&quot;mp-dyk-h2&quot; style=&quot;margin:3px; background:#ac151e; font-family:inherit; font-size:120%; font-weight:bold; border:1px solid #8c050e; text-align:left; color:#fff; padding:0.2em 0.4em;&quot;&gt;Getting Started&lt;/h2&gt;
+|-
+| style=&quot;color:#000; padding:2px 5px 5px;&quot; | &lt;div id=&quot;mp-dyk&quot;&gt;* [//meta.wikimedia.org/wiki/Help:Contents User's Guide] if you're new to using a wiki&lt;/div&gt;
+|}
+| style=&quot;border:1px solid transparent;&quot; |
+| class=&quot;MainPageBG&quot; style=&quot;width:25%; border:1px solid #bb8c15; background:#fff; vertical-align:top;&quot;|
+{| id=&quot;mp-right&quot; style=&quot;width:100%; vertical-align:top; background:#fff;&quot;
+| style=&quot;padding:2px;&quot; | [[File:Escologo.png]]
+|}
+|}
+{| id=&quot;mp-lower&quot; style=&quot;margin:4px 0 0 0; width:100%; background:none; border-spacing: 0px;&quot;
+| class=&quot;MainPageBG&quot; style=&quot;width:100%; border:1px solid #bb8c15; background:#fff; vertical-align:top; color:#000;&quot; |
+{| id=&quot;mp-bottom&quot; style=&quot;width:100%; vertical-align:top; background:#fff; color:#000;&quot;
+| style=&quot;padding:2px;&quot; | &lt;h2 id=&quot;mp-dyk-h2&quot; style=&quot;margin:3px; background:#dbac35; font-family:inherit; font-size:120%; font-weight:bold; border:1px solid #8c050e; text-align:left; color:#000; padding:0.2em 0.4em;&quot;&gt;Newest Pages&lt;/h2&gt;
+|-
+|&lt;recent limit=&quot;15&quot; namespace=&quot;content&quot; columns=&quot;3&quot; /&gt;
+|-
+| style=&quot;padding:2px;&quot; | &lt;h2 id=&quot;mp-dyk-h2&quot; style=&quot;margin:3px; background:#dbac35; font-family:inherit; font-size:120%; font-weight:bold; border:1px solid #8c050e; text-align:left; color:#000; padding:0.2em 0.4em;&quot;&gt;Recent Changes&lt;/h2&gt;
+|-
+|{{Special:RecentChanges/5}}
+|-
+| style=&quot;padding:2px;&quot; | &lt;h2 id=&quot;mp-dyk-h2&quot; style=&quot;margin:3px; background:#dbac35; font-family:inherit; font-size:120%; font-weight:bold; border:1px solid #8c050e; text-align:left; color:#000; padding:0.2em 0.4em;&quot;&gt;New Files&lt;/h2&gt;
+|-
+|{{Special:NewFiles/5}}
+|}
+|}
+__NOTOC__</text>
+      <sha1>l5brdsq5d0bg6bzphp5k7i0yvqiliu2</sha1>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+    </revision>
+  </page>
+  <page>
+    <title>Category:Changelogs</title>
+    <ns>14</ns>
+    <id>5</id>
+    <revision>
+      <id>5</id>
+      <timestamp>2014-06-12T20:25:05Z</timestamp>
+      <contributor>
+        <username>Nick</username>
+        <id>2</id>
+      </contributor>
+      <comment>Created page with &quot;This is for changes made across Escoffier's various sites. Some changes may need to be re-implemented in the case of an update.&quot;</comment>
+      <text xml:space="preserve" bytes="127">This is for changes made across Escoffier's various sites. Some changes may need to be re-implemented in the case of an update.</text>
+      <sha1>ltbmf2i01ogdwlqzatz2obh01adxklj</sha1>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+    </revision>
+  </page>
+  <page>
+    <title>Category:HowTo</title>
+    <ns>14</ns>
+    <id>109</id>
+    <revision>
+      <id>272</id>
+      <timestamp>2015-02-18T17:47:50Z</timestamp>
+      <contributor>
+        <username>Nick</username>
+        <id>2</id>
+      </contributor>
+      <comment>Created page with &quot;[[Category:Employee_Resources]]&quot;</comment>
+      <text xml:space="preserve" bytes="31">[[Category:Employee_Resources]]</text>
+      <sha1>h3gyy0awei8esiqwot27e3xkjlipr6l</sha1>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+    </revision>
+  </page>
+  <page>
+    <title>Category:Employee Resources</title>
+    <ns>14</ns>
+    <id>31</id>
+    <revision>
+      <id>38</id>
+      <timestamp>2014-06-16T20:51:17Z</timestamp>
+      <contributor>
+        <username>Nick</username>
+        <id>2</id>
+      </contributor>
+      <comment>Created page with &quot;Employee Resources&quot;</comment>
+      <text xml:space="preserve" bytes="18">Employee Resources</text>
+      <sha1>feoynx4vxz3u46d1ypfqsn0byqswrmq</sha1>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+    </revision>
+  </page>
+  <page>
+    <title>Category:Student Resources</title>
+    <ns>14</ns>
+    <id>38</id>
+    <revision>
+      <id>48</id>
+      <timestamp>2014-06-17T16:18:31Z</timestamp>
+      <contributor>
+        <username>Nick</username>
+        <id>2</id>
+      </contributor>
+      <comment>Created page with &quot;Student Resources&quot;</comment>
+      <text xml:space="preserve" bytes="17">Student Resources</text>
+      <sha1>50jpa5n3736zkbk2g6ctu6s2w0klth8</sha1>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+    </revision>
+  </page>
+  <page>
+    <title>Category:Moodle Changelog</title>
+    <ns>14</ns>
+    <id>4</id>
+    <revision>
+      <id>4</id>
+      <timestamp>2014-06-12T20:24:35Z</timestamp>
+      <contributor>
+        <username>Nick</username>
+        <id>2</id>
+      </contributor>
+      <comment>Created page with &quot;This is for changes made to the Moodle site. Some changes may need to be re-implemented in the case of an update.  [[Category:Changelogs]]&quot;</comment>
+      <text xml:space="preserve" bytes="138">This is for changes made to the Moodle site. Some changes may need to be re-implemented in the case of an update.
+
+[[Category:Changelogs]]</text>
+      <sha1>azob645zp0kzr1dr2ruvl1wjisj3eq6</sha1>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+    </revision>
+  </page>
+  <page>
+    <title>Category:WooCommerce Changelog</title>
+    <ns>14</ns>
+    <id>12</id>
+    <revision>
+      <id>429</id>
+      <parentid>18</parentid>
+      <timestamp>2016-05-03T18:11:51Z</timestamp>
+      <contributor>
+        <username>Nick</username>
+        <id>2</id>
+      </contributor>
+      <text xml:space="preserve" bytes="172">[[Category:Changelogs]]
+[[Category:Moved_to_GitHub]]
+
+This is for changes made to the WooCommerce site. Some changes may need to be re-implemented in the case of an update.</text>
+      <sha1>ct3t1jluc7x2vc54djgtbntjqzx2nxs</sha1>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+    </revision>
+  </page>
+  <page>
+    <title>Category:MediaWiki Changelog</title>
+    <ns>14</ns>
+    <id>119</id>
+    <revision>
+      <id>288</id>
+      <timestamp>2015-02-23T17:35:23Z</timestamp>
+      <contributor>
+        <username>Nick</username>
+        <id>2</id>
+      </contributor>
+      <comment>Created page with &quot;[[Category:Changelogs]]  This is very meta, isn't it?  The only changes that should be made to MediaWiki are within the extensions folder and LocalSettings.php&quot;</comment>
+      <text xml:space="preserve" bytes="159">[[Category:Changelogs]]
+
+This is very meta, isn't it?  The only changes that should be made to MediaWiki are within the extensions folder and LocalSettings.php</text>
+      <sha1>ejppfp6ehhmowt04daed5e0okl0iyo5</sha1>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+    </revision>
+  </page>
+  <page>
+    <title>File:Png-portfolioadd.png</title>
+    <ns>6</ns>
+    <id>20</id>
+    <revision>
+      <id>26</id>
+      <timestamp>2014-06-16T15:22:39Z</timestamp>
+      <contributor>
+        <username>Esoadmin</username>
+        <id>1</id>
+      </contributor>
+      <comment>[[Category:Moodle_Changelog]]</comment>
+      <text xml:space="preserve" bytes="29">[[Category:Moodle_Changelog]]</text>
+      <sha1>49aevfntgqtubhaewqboptrftbmhclu</sha1>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+    </revision>
+  </page>
+  <page>
+    <title>File:Svg-portfolioadd.svg</title>
+    <ns>6</ns>
+    <id>22</id>
+    <revision>
+      <id>28</id>
+      <timestamp>2014-06-16T15:29:52Z</timestamp>
+      <contributor>
+        <username>Esoadmin</username>
+        <id>1</id>
+      </contributor>
+      <comment>[[Category:Moodle_Changelog]]</comment>
+      <text xml:space="preserve" bytes="29">[[Category:Moodle_Changelog]]</text>
+      <sha1>49aevfntgqtubhaewqboptrftbmhclu</sha1>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+    </revision>
+  </page>
+  <page>
+    <title>Create Account Redirect Page</title>
+    <ns>0</ns>
+    <id>28</id>
+    <revision>
+      <id>34</id>
+      <timestamp>2014-06-16T16:51:48Z</timestamp>
+      <contributor>
+        <username>Nick</username>
+        <id>2</id>
+      </contributor>
+      <comment>Created page with &quot;[[Category:Moodle_Changelog]]  Added page &quot;/escoffierfiles/myaccountredirect.php&quot; with following code:  &lt;pre&gt; &lt;?php header(&quot;Location: https://courses.escoffieronline.com/my-ac...&quot;</comment>
+      <text xml:space="preserve" bytes="294">[[Category:Moodle_Changelog]]
+
+Added page &quot;/escoffierfiles/myaccountredirect.php&quot; with following code:
+
+&lt;pre&gt;
+&lt;?php
+header(&quot;Location: https://courses.escoffieronline.com/my-account/&quot;); /* Redirect browser */
+exit;
+&lt;/pre&gt;
+
+You can then create a link to this page in the [[Additional_Menu_Items]]</text>
+      <sha1>j2gxofp4lwzres99m88fi70iispoy6j</sha1>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+    </revision>
+  </page>
+  <page>
+    <title>Category:Moodle Activity Icons</title>
+    <ns>14</ns>
+    <id>40</id>
+    <revision>
+      <id>54</id>
+      <timestamp>2014-06-17T17:41:46Z</timestamp>
+      <contributor>
+        <username>Nick</username>
+        <id>2</id>
+      </contributor>
+      <comment>Created page with &quot;[[Category:Moodle_Changelog]]&quot;</comment>
+      <text xml:space="preserve" bytes="29">[[Category:Moodle_Changelog]]</text>
+      <sha1>49aevfntgqtubhaewqboptrftbmhclu</sha1>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+    </revision>
+  </page>
+  <page>
+    <title>Category:Moodle File Icons</title>
+    <ns>14</ns>
+    <id>55</id>
+    <revision>
+      <id>74</id>
+      <timestamp>2014-06-17T18:34:31Z</timestamp>
+      <contributor>
+        <username>Nick</username>
+        <id>2</id>
+      </contributor>
+      <comment>Created page with &quot;[[Category:Moodle_Changelog]]&quot;</comment>
+      <text xml:space="preserve" bytes="29">[[Category:Moodle_Changelog]]</text>
+      <sha1>49aevfntgqtubhaewqboptrftbmhclu</sha1>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+    </revision>
+  </page>
+  <page>
+    <title>Category:Changes Overridden By Update</title>
+    <ns>14</ns>
+    <id>86</id>
+    <revision>
+      <id>198</id>
+      <parentid>197</parentid>
+      <timestamp>2014-11-24T21:42:39Z</timestamp>
+      <contributor>
+        <username>Nick</username>
+        <id>2</id>
+      </contributor>
+      <text xml:space="preserve" bytes="174">[[Category:Moodle_Changelog]]
+
+These are changes to core code that are known to be overridden by Moodle updates.  When updating, these changes will need to be re-implemented.</text>
+      <sha1>ti9ak4cbk9i3wymf674fyltr4a2kv2f</sha1>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+    </revision>
+  </page>
+  <page>
+    <title>Category:Theme Changes</title>
+    <ns>14</ns>
+    <id>88</id>
+    <revision>
+      <id>384</id>
+      <parentid>202</parentid>
+      <timestamp>2016-02-12T17:13:00Z</timestamp>
+      <contributor>
+        <username>Nick</username>
+        <id>2</id>
+      </contributor>
+      <text xml:space="preserve" bytes="152">[[Category:Moodle_Changelog]]
+
+Balwinder says no more changes to theme code, so any changes listed here should only be swapped images, CSS, JS, or HTML.</text>
+      <sha1>3w5cn4g3k0iyhcxiqniy0r9axdlpib6</sha1>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+    </revision>
+  </page>
+  <page>
+    <title>Custom CSS</title>
+    <ns>0</ns>
+    <id>90</id>
+    <revision>
+      <id>341</id>
+      <parentid>340</parentid>
+      <timestamp>2015-06-23T20:50:40Z</timestamp>
+      <contributor>
+        <username>Nick</username>
+        <id>2</id>
+      </contributor>
+      <comment>/* Snap Theme (Mobile Theme) */</comment>
+      <text xml:space="preserve" bytes="5654">[[Category:Moodle_Changelog]]
+[[Category:Theme_Changes]]
+[[Category:Essential_Theme]]
+[[Category:Snap_Theme]]
+[[Category:Settings_Change]]
+
+== Essential Theme (Desktop Theme)==
+
+Custom CSS can be added by navigating to Site administration -&gt; Appearance -&gt; Theme -&gt; Essential -&gt; General
+
+Here are the custom CSS in use and their funtions:
+
+&lt;pre&gt;
+#region-main form .form-buttons, #region-main form #fitem_id_submitbutton, #region-main form #fgroup_id_buttonar { 
+	position: static; 
+}
+&lt;/pre&gt;
+
+* This stops the submission buttons on admin forms, profile forms, assignment forms, and other from hovering in a fixed position on the screen (very annoying on phone)
+
+&lt;pre&gt;
+body.desktopdevice #region-main form .form-buttons, body.desktopdevice #region-main form #fitem_id_submitbutton, body.desktopdevice #region-main form #fgroup_id_buttonar { 
+	position: static; 
+}
+&lt;/pre&gt;
+
+* Same as above for some desktop browsers
+&lt;pre&gt;
+.calendar_event_global {background-color:#e6cf85;}
+&lt;/pre&gt;
+
+* This changes the background color on our calendar to yellowish on days where events are listed
+
+&lt;pre&gt;
+.block .content .userpicture {
+	width: 35px;
+	height: 35px;
+}
+&lt;/pre&gt;
+
+* This increases the size of the user pictures in the Online Users block
+
+&lt;pre&gt;
+img.userpictureBlack, img.userpictureRed, img.userpictureGold, img.userpictureBlue, img.userpictureGreen, img.userpictureOrange {	
+	width: 35px;
+	height: 35px;
+	margin-right: 6px;
+	margin-bottom: 2px;
+	margin-top: 1px;
+	box-shadow: 0 0 2px 2px #000;
+	border-bottom-left-radius: 250px;
+	border-bottom-right-radius: 250px;
+	border-top-left-radius: 250px;
+	border-top-right-radius: 250px;
+        vertical-align: bottom;
+}
+img.userpictureRed { box-shadow: 0 0 2px 2px #ac151e; }
+img.userpictureGold { box-shadow: 0 0 2px 2px #bb8c15; }
+img.userpictureBlue { box-shadow: 0 0 2px 2px #074a6e; }
+img.userpictureOrange { box-shadow: 0 0 2px 2px #88411d; }
+img.userpictureGreen { box-shadow: 0 0 2px 2px #547713; }
+&lt;/pre&gt;
+
+* This creates copies of the class for the user picture in the Online Users block and applies different colored outlines.  These custom classes can be applied via PHP [[Edit_Online_Users|here]]
+
+&lt;pre&gt;
+.column-one{
+	position: relative;
+	float: left;
+	padding-left: 150px;
+	width: 33%;
+	}
+	
+.column-two{
+	position: relative;
+	float: right;
+	padding-right: 150px;
+	width: 33%;
+	}
+	
+.img-nf{
+	height: 280px;
+	width: 200px;
+	}
+
+&lt;/pre&gt;
+
+*Used on New Website Features page
+
+&lt;pre&gt;
+.gradingform_rubric {
+	max-width: 100%;
+	background-color: #FFF;
+}
+&lt;/pre&gt;
+
+* Avoid cutting off grading rubrics
+
+&lt;pre&gt;
+.topcoll-display-instructions {
+	font-size: 20px;
+	color: #f00;
+	font-weight: bold;
+}
+&lt;/pre&gt;
+
+* Make toggle instructions more noticable
+
+&lt;pre&gt;
+.btn {
+	padding:8px 32px;
+	font-size:16px;
+}
+
+.btn-primary { 
+	background-color:#ac151e; 
+	background-image:linear-gradient(to bottom,#a12,#610);
+}
+
+.btn-primary:active, .btn-primary:focus, .btn-primary:hover {
+	background-color:#610;
+}
+
+#page form #fgroup_id_buttonar, #region-main form #fgroup_id_buttonar { background-color:#ac151e; }
+&lt;/pre&gt;
+
+* Make standard buttons match our theme colors
+
+&lt;pre&gt;
+.path-course-view .section .summary { line-height: 20px; }
+
+.section-title { #c0c0c0 }
+&lt;/pre&gt;
+
+* ???????
+
+&lt;pre&gt;
+.breadcrumb-nav {
+	width: 95%;
+}
+&lt;/pre&gt;
+
+* Make the breadcrumbs larger so we can see longer paths 
+
+&lt;pre&gt;
+img.smallicon, img.activityicon {
+	max-width: 24px;
+}
+&lt;/pre&gt;
+
+* Limit size of activity icons in calendar block
+
+&lt;pre&gt;
+span.date {
+	display: none;
+}
+&lt;/pre&gt;
+
+* Hide dates in calendar block
+
+&lt;pre&gt;
+iframe#resourceobject {
+	width: 100% !important;
+}
+&lt;/pre&gt;
+
+* Make resource iframe expand with page enlargement
+
+== Snap Theme (Mobile Theme)==
+
+&lt;pre&gt;
+#page-site-index #page-mast {  //controls the title on the front page
+  max-width: 75%;
+  margin: 3vh 0; //original 11vh
+  border: 3px solid rgba(172, 21, 30, .75); //added by nick - trying to add more color around the front page image
+}
+
+#page-site-index #page-header { //controls the header on the front page
+  min-height: 8vh; //original 87vh
+  //border: 5vw solid #ac151e; //added by nick - trying to add more color around the front page image
+}
+&lt;/pre&gt;
+
+*Stop the page header from taking up so much space, and add color back in
+
+&lt;pre&gt;
+::selection {
+  background: #ac151e;
+}
+&lt;/pre&gt;
+
+*Change weird highlight color to Escoffier Red
+
+&lt;pre&gt;
+body.jsenabled .toggledsection {
+  display: block;
+}
+&lt;/pre&gt;
+
+*Always display sections in collapsed topics (cannot minimize)
+
+&lt;pre&gt;
+a.tc-small, a#toggles-all-opened, a#toggles-all-closed, p.topcoll-display-instructions, li.tcsection {
+  display: none;
+}
+&lt;/pre&gt;
+
+*Hide instructions to collapse sections (since we disabled that above)
+
+&lt;pre&gt;
+.desktoponly .nomobile {
+    display: none;
+}
+
+.mobileonly {
+    display: block !important;
+}
+&lt;/pre&gt;
+
+*Custom classes to hide unwanted labels on mobile
+
+&lt;pre&gt;
+.fakeActivityWrapper { //mobile - snap theme
+	webkit-box-shadow: 0 2px 5px 0 rgba(0,0,0,0.26);
+	box-shadow: 0 2px 5px 0 rgba(0,0,0,0.26);
+	border-left: 3px solid #ccc;
+	border-radius: 3px 0 0 3px;
+	min-height: 125px;
+	font-size: 23px;
+	display: block;
+	overflow: hidden;
+	font-family: Roboto,&quot;Fira Sans&quot;,&quot;Segoe UI&quot;,&quot;HelveticaNeue-Light&quot;,&quot;Helvetica Neue Light&quot;,&quot;Helvetica Neue&quot;,Helvetica,Arial,sans-serif;
+	color: #666;
+}
+&lt;/pre&gt;
+
+*Class for a label to mimic how Snap Theme displays activities (work on this)
+
+&lt;pre&gt;
+#course-toc.state-visible{
+  background-color: transparent !important;
+  position: relative;
+}
+&lt;/pre&gt;
+
+*Show ToC inline with other items, and don't cover up background stuff -- see [[Show_Contents_by_Default_on_Vertical_Phone]]
+
+&lt;pre&gt;
+ol.tree li label {
+  padding-left: 42px;
+}
+&lt;/pre&gt;
+
+*Make Course Tree List display properly (otherwise text and images overlap)</text>
+      <sha1>hjtkuba59mw1fxgs0mdcl4mkggukmq4</sha1>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+    </revision>
+  </page>
+  <page>
+    <title>Category:Outdated Moodle Changes</title>
+    <ns>14</ns>
+    <id>94</id>
+    <revision>
+      <id>225</id>
+      <timestamp>2014-12-18T15:51:44Z</timestamp>
+      <contributor>
+        <username>Nick</username>
+        <id>2</id>
+      </contributor>
+      <comment>Created page with &quot;[[Category:Moodle_Changelog]]  These are changes made in a previous version of Moodle but which either are no longer necessary or no longer work with the current version.&quot;</comment>
+      <text xml:space="preserve" bytes="170">[[Category:Moodle_Changelog]]
+
+These are changes made in a previous version of Moodle but which either are no longer necessary or no longer work with the current version.</text>
+      <sha1>n18vtfwet449sn0hc03yd8jch68ekwf</sha1>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+    </revision>
+  </page>
+  <page>
+    <title>Category:Moodle 2.7</title>
+    <ns>14</ns>
+    <id>95</id>
+    <revision>
+      <id>226</id>
+      <timestamp>2014-12-18T15:56:50Z</timestamp>
+      <contributor>
+        <username>Nick</username>
+        <id>2</id>
+      </contributor>
+      <comment>Category:Moodle_Changelog</comment>
+      <text xml:space="preserve" bytes="29">[[Category:Moodle_Changelog]]</text>
+      <sha1>49aevfntgqtubhaewqboptrftbmhclu</sha1>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+    </revision>
+  </page>
+  <page>
+    <title>File:Pagebackground.jpg</title>
+    <ns>6</ns>
+    <id>105</id>
+    <revision>
+      <id>259</id>
+      <parentid>258</parentid>
+      <timestamp>2015-01-14T18:12:32Z</timestamp>
+      <contributor>
+        <username>Nick</username>
+        <id>2</id>
+      </contributor>
+      <text xml:space="preserve" bytes="180">[[Category:Moodle_Changelog]]
+[[Category:Moodle_2.7]]
+
+Can be added by navigating to Site administration -&gt; Appearance -&gt; Theme -&gt; Essential -&gt; General
+
+[[File:Pagebackground.jpg]]</text>
+      <sha1>hzea6xr6dqtgs4z28hpjdul1zbk5hro</sha1>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+    </revision>
+  </page>
+  <page>
+    <title>Category:Mobile Changes</title>
+    <ns>14</ns>
+    <id>134</id>
+    <revision>
+      <id>320</id>
+      <timestamp>2015-05-27T17:51:45Z</timestamp>
+      <contributor>
+        <username>Nick</username>
+        <id>2</id>
+      </contributor>
+      <comment>[[Category:Moodle_Changelog]]</comment>
+      <text xml:space="preserve" bytes="29">[[Category:Moodle_Changelog]]</text>
+      <sha1>49aevfntgqtubhaewqboptrftbmhclu</sha1>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+    </revision>
+  </page>
+  <page>
+    <title>Category:Settings Change</title>
+    <ns>14</ns>
+    <id>135</id>
+    <revision>
+      <id>325</id>
+      <timestamp>2015-05-28T17:12:03Z</timestamp>
+      <contributor>
+        <username>Nick</username>
+        <id>2</id>
+      </contributor>
+      <comment>Created page with &quot;[[Category:Moodle_Changelog]]  These are changes to settings within Moodle rather than code changes.  Not all such changes should be recorded on the wiki, only those which are...&quot;</comment>
+      <text xml:space="preserve" bytes="268">[[Category:Moodle_Changelog]]
+
+These are changes to settings within Moodle rather than code changes.  Not all such changes should be recorded on the wiki, only those which are both significant enough to our Moodle instance and which may nbe hard to find a second time.</text>
+      <sha1>60hxwvkpe62gejy4n41y8idw56ukhz4</sha1>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+    </revision>
+  </page>
+  <page>
+    <title>How To Clear Temp Files from the Server</title>
+    <ns>0</ns>
+    <id>148</id>
+    <revision>
+      <id>360</id>
+      <parentid>359</parentid>
+      <timestamp>2015-09-10T21:34:00Z</timestamp>
+      <contributor>
+        <username>Nick</username>
+        <id>2</id>
+      </contributor>
+      <minor/>
+      <comment>intro sentence</comment>
+      <text xml:space="preserve" bytes="645">If the site is going really slow and reports aren't running in full, you might be out of disk space.  Try the following:
+
+* Remote into Server: 184.106.39.62
+ 
+U: Administrator &lt;br/&gt;
+P: $44#Moodle$
+
+* Navigate to C:\Windows\Temp and delete all the files and empty the Recycle Bin.
+ 
+This may cause site slow downs and server errors, in which case:
+
+* Open start menu and click on or search for Internet Information Sevices (IIS) Manager
+
+* On left, expand [+] MOODLE then select Application Pools
+
+* Right click esomoodle_app and select Recycle
+
+* Good job! You fixed it!
+
+[[Category:HowTo]]
+[[Category:Moodle_Changelog]]
+[[Category:Restricted]]</text>
+      <sha1>jlrr4q8k0zz8b5j9ixhb2cv4mv8p5gr</sha1>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+    </revision>
+  </page>
+  <page>
+    <title>Beautify Quizzes</title>
+    <ns>0</ns>
+    <id>152</id>
+    <revision>
+      <id>372</id>
+      <parentid>370</parentid>
+      <timestamp>2015-10-08T18:57:38Z</timestamp>
+      <contributor>
+        <username>Nick</username>
+        <id>2</id>
+      </contributor>
+      <comment>changed CSS to work better with mobile</comment>
+      <text xml:space="preserve" bytes="1300">[[Category:Moodle_Changelog]]
+[[Category:Theme_Changes]]
+[[Category:Dev_Only]]
+
+As per [https://moodle.org/mod/forum/discuss.php?d=319464#p1282517 this thread], the quiz activity on moodle can be made to look much nicer with some simple CSS changes.  The following changes are adapted from those by Phuong Hoang, with additional changes to match the campus theme.  Add this CSS to the main theme CSS.
+
+To do: test how does this look with the mobile theme?
+
+&lt;pre&gt;
+/* * * * * * * * * * * * * * * * * * * * * * *
+ * Quiz beautification thanks to Phuong Hoang
+ * https://moodle.org/mod/forum/discuss.php?d=319464#p1282517
+ * * * * * * * * * * * * * * * * * * * * * * */
+
+.que .info &gt; div {
+    margin-left: 1.5em;
+    /* margin-right: 15px; */
+    display: inline;
+    color: #fff;
+}
+
+.que .content {
+    margin: 0 0 0 0;
+    width: auto;
+}
+
+.que .info {
+    float: none;
+    width: auto;
+    background-color: #000;
+    border: 1px solid #000;
+    border-radius: 4px;
+    margin-bottom: -5px;
+    padding: 8px;
+    color: #fff;
+}
+
+.que h3.no {
+    display: inline;
+    font-size: 1.5em;
+    line-height: 1;
+    margin-left: 10px;
+    color: #fff;
+}
+
+.que span.qno {
+    font-size: 1em;
+}
+
+.que .formulation {
+    background-color: #fff;
+    border-color: #000;
+}
+
+/* end of quiz beautification */
+&lt;/pre&gt;</text>
+      <sha1>1i965lu6p9f20os2yiwshfmyqxjdhcr</sha1>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+    </revision>
+  </page>
+  <page>
+    <title>Category:Core Code Changes</title>
+    <ns>14</ns>
+    <id>158</id>
+    <revision>
+      <id>407</id>
+      <timestamp>2016-02-12T17:28:06Z</timestamp>
+      <contributor>
+        <username>Nick</username>
+        <id>2</id>
+      </contributor>
+      <comment>Created page with &quot;[[Category:Moodle_Changelog]]&quot;</comment>
+      <text xml:space="preserve" bytes="29">[[Category:Moodle_Changelog]]</text>
+      <sha1>49aevfntgqtubhaewqboptrftbmhclu</sha1>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+    </revision>
+  </page>
+  <page>
+    <title>Category:One Line of Code</title>
+    <ns>14</ns>
+    <id>159</id>
+    <revision>
+      <id>416</id>
+      <timestamp>2016-02-12T17:56:17Z</timestamp>
+      <contributor>
+        <username>Nick</username>
+        <id>2</id>
+      </contributor>
+      <comment>Created page with &quot;[[Category:Moodle_Changelog]]&quot;</comment>
+      <text xml:space="preserve" bytes="29">[[Category:Moodle_Changelog]]</text>
+      <sha1>49aevfntgqtubhaewqboptrftbmhclu</sha1>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+    </revision>
+  </page>
+  <page>
+    <title>Category:Moved to GitHub</title>
+    <ns>14</ns>
+    <id>161</id>
+    <revision>
+      <id>419</id>
+      <timestamp>2016-05-02T21:33:57Z</timestamp>
+      <contributor>
+        <username>Nick</username>
+        <id>2</id>
+      </contributor>
+      <comment>Created page with &quot;[[Category:Moodle_Changelog]]&quot;</comment>
+      <text xml:space="preserve" bytes="29">[[Category:Moodle_Changelog]]</text>
+      <sha1>49aevfntgqtubhaewqboptrftbmhclu</sha1>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+    </revision>
+  </page>
+  <page>
+    <title>Change Portfolio Upload Thumbnail</title>
+    <ns>0</ns>
+    <id>23</id>
+    <revision>
+      <id>420</id>
+      <parentid>189</parentid>
+      <timestamp>2016-05-02T22:17:57Z</timestamp>
+      <contributor>
+        <username>Nick</username>
+        <id>2</id>
+      </contributor>
+      <text xml:space="preserve" bytes="351">[[Category:Moved_to_GitHub]]
+[[Category:Changes_Overridden_By_Update]]
+
+We changed the default image to a small flickr logo to make students more aware that their portfolios are on this site.
+
+Using FTP, replace &quot;/pix/t/portfolioadd.png&quot; and &quot;/pix/t/portfolioadd.svg&quot; with these files:
+
+* [[File:Png-portfolioadd.png]]
+
+* [[File:Svg-portfolioadd.svg]]</text>
+      <sha1>4opxqluawxe0tpt7uyouyls2g6lsctk</sha1>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+    </revision>
+  </page>
+  <page>
+    <title>Change Favicon</title>
+    <ns>0</ns>
+    <id>27</id>
+    <revision>
+      <id>421</id>
+      <parentid>383</parentid>
+      <timestamp>2016-05-02T22:18:10Z</timestamp>
+      <contributor>
+        <username>Nick</username>
+        <id>2</id>
+      </contributor>
+      <text xml:space="preserve" bytes="618">[[Category:Moved_to_GitHub]]
+[[Category:Theme_Changes]]
+[[Category:Essential_Theme]]
+[[Category:Snap_Theme]]
+
+Replaced &quot;/theme/essential/pix/favicon.ico&quot; with file below. Since MediaWiki does not allow uploading .ico files, the image is linked from Google drive.
+
+For favicon change to take effect, go to Site Administration &gt; Appearance &gt; Themes &gt; Theme settings &gt; Theme designer mode check box and save, refresh, uncheck box and save again.
+
+[https://drive.google.com/file/d/0B6YZKQB7yIMyWXIxZGJJaEtNd1k/view?usp=sharing Favicon.ico (Google Drive)]
+
+Also replace for the mobile theme in &quot;/theme/snap/pix/favicon.ico&quot;</text>
+      <sha1>il6ap95s7iomoa0zvgvahkj8l1amzex</sha1>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+    </revision>
+  </page>
+  <page>
+    <title>Change Activity and File Icons</title>
+    <ns>0</ns>
+    <id>24</id>
+    <revision>
+      <id>422</id>
+      <parentid>188</parentid>
+      <timestamp>2016-05-02T22:29:26Z</timestamp>
+      <contributor>
+        <username>Nick</username>
+        <id>2</id>
+      </contributor>
+      <text xml:space="preserve" bytes="1223">[[Category:Moved_to_GitHub]]
+[[Category:Changes_Overridden_By_Update]]
+
+== Activity Icons ==
+
+The method for changing the icon image associated with an activity is the same for every activity, only the folder accessed is different.
+
+# Using FTP, you'll want to find the folder &quot;/mod&quot; and, within, the folder of the activity you want to edit, for instance &quot;/choice&quot;. (note that the &quot;Assignment&quot; activity is actually governed by the &quot;/assign&quot; folder.  The &quot;/assignment&quot; folder is included in Moodle for backwards compatibility)
+# Within the activity folder, find the folder &quot;/pix&quot;.
+# You should see three image files titled &quot;icon&quot;, a .gif file, a .png file, and a .svg file. Replace all the images.
+
+For a list of all the images that were changed, see the files in [[:Category:Moodle_Activity_Icons]]
+
+== File Icons ==
+
+In order to change the icons associated with file types:
+
+# Using FTP, you'll want to find the folder &quot;/pix/f&quot;.
+# You should see several images named after the file type.  For instance, you'll see a file &quot;html.gif&quot; and nine &quot;html-##.png&quot; files for various sizes.  You'll need to replace all of these images.
+
+For a list of all the images that were changed, see the files in [[:Category:Moodle_File_Icons]]</text>
+      <sha1>p261hnnbfi8kbka982uar87z42huky2</sha1>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+    </revision>
+  </page>
+  <page>
+    <title>Automatically Tag Portfolio Pictures</title>
+    <ns>0</ns>
+    <id>25</id>
+    <revision>
+      <id>424</id>
+      <parentid>423</parentid>
+      <timestamp>2016-05-02T22:30:49Z</timestamp>
+      <contributor>
+        <username>Nick</username>
+        <id>2</id>
+      </contributor>
+      <text xml:space="preserve" bytes="635">[[Category:Moved_to_GitHub]]
+[[Category:Changes_Overridden_By_Update]]
+[[Category:Core_Code_Changes]]
+[[Category:One_Line_of_Code]]
+
+This change automatically adds the tag of our choosing to pictures that students export from the Moodle site to a linked Flickr portfolio.
+
+Change line 1108 in &quot;/lib/flickrlib.php&quot; from:
+
+&lt;pre&gt;$args['tags'] = isset($meta['tags']) ? $meta['tags'] : null;&lt;/pre&gt;
+
+to:
+
+&lt;pre&gt;$args['tags'] = isset($meta['tags']) ? $meta['tags'] : '';  //change null to ''&lt;/pre&gt;
+
+Add a line after 1114 in &quot;/lib/flickrlib.php&quot;:
+
+&lt;pre&gt;$args['tags'] .= ', &quot;Escoffier Online&quot;'; //add &quot;Escoffier Online&quot; tag after user tags&lt;/pre&gt;</text>
+      <sha1>gy1nog4wa7mbkvmce1dq0vd2gzh3ew4</sha1>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+    </revision>
+  </page>
+  <page>
+    <title>Add Course Link to Thank You Page (WooCommerce)</title>
+    <ns>0</ns>
+    <id>16</id>
+    <revision>
+      <id>425</id>
+      <parentid>22</parentid>
+      <timestamp>2016-05-03T17:53:56Z</timestamp>
+      <contributor>
+        <username>Nick</username>
+        <id>2</id>
+      </contributor>
+      <comment>[[Category:Moved_to_GitHub]]</comment>
+      <text xml:space="preserve" bytes="1244">[[Category:WooCommerce_Changelog]]
+[[Category:Moved_to_GitHub]]
+
+Note: This page may be out of date; Garrett added this link as a button before leaving.
+
+This change requires FTP access to the WordPress site.
+
+# Find and open the file “wp-content/plugins/woocommerce/templates/checkout/thankyou.php”
+# You should see the following two lines of code around line 36''':''' &lt;code&gt;&lt;nowiki&gt;
+&lt;p&gt;&lt;?php _e( 'Thank you. Your order has been received.', 'woocommerce' ); ?&gt;&lt;/p&gt;
+&lt;/nowiki&gt;&lt;/code&gt; '''&amp;''' &lt;code&gt;&lt;nowiki&gt;
+&lt;ul class=&quot;order_details&quot;&gt;
+&lt;/nowiki&gt;&lt;/code&gt;
+# Between these lines, add this code: &lt;code&gt;&lt;nowiki&gt;
+&lt;p&gt;&lt;?php _e( 'To access online course content, please follow the link to &lt;a href=&quot;http://courses.escoffieronline.com/sso&quot;&gt;My Courses&lt;/a&gt;.', 'woocommerce' ); ?&gt;&lt;/p&gt;
+&lt;/nowiki&gt;&lt;/code&gt;
+# Save the file on your computer as “thankyou.php”
+# Add the file to the folder: “wp-content/themes/OURTHEME/woocommerce/checkout/”  If there is already a file in this folder by that name, rename the old file to preserve it before moving the new file in, just in case
+
+This method can be used to add additional links or notices to the thank you page when purchasing products (note that these changes are universal across all WooCommerce products).</text>
+      <sha1>0g2sq7sb3hfu5akjod7ix7uxxnua27l</sha1>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+    </revision>
+  </page>
+  <page>
+    <title>Allow Duplicate SKUs (WooCommerce)</title>
+    <ns>0</ns>
+    <id>84</id>
+    <revision>
+      <id>426</id>
+      <parentid>164</parentid>
+      <timestamp>2016-05-03T17:54:04Z</timestamp>
+      <contributor>
+        <username>Nick</username>
+        <id>2</id>
+      </contributor>
+      <comment>[[Category:Moved_to_GitHub]]</comment>
+      <text xml:space="preserve" bytes="1425">[[Category:WooCommerce_Changelog]]
+[[Category:Moved_to_GitHub]]
+
+We have edited the WooCommerce plugin to allow duplicate SKUs.  Because the SSO works by connecting WooCommerce SKU to Moodle Course ID number, this allows us to sell the same Moodle course as different products (and therefore, on different payment plans) on WooCommerce.
+
+To allow duplicate SKUs, you must edit the file &quot;/wp-content/plugins/woocommerce/includes/post-types/meta-boxes/class-wc-meta-box-product-data.php&quot;
+
+Around line 984, you will see a comment for &lt;code&gt;// Unique SKU&lt;/code&gt;, and shortly after, around line 992, you'll see an if statement:
+
+&lt;pre&gt;
+992	if (
+993		$wpdb-&gt;get_var( $wpdb-&gt;prepare(&quot;
+994			SELECT $wpdb-&gt;posts.ID
+995		    FROM $wpdb-&gt;posts
+996		    LEFT JOIN $wpdb-&gt;postmeta ON ($wpdb-&gt;posts.ID = $wpdb-&gt;postmeta.post_id)
+997		    WHERE $wpdb-&gt;posts.post_type = 'product'
+998		    AND $wpdb-&gt;posts.post_status = 'publish'
+999		    AND $wpdb-&gt;postmeta.meta_key = '_sku' AND $wpdb-&gt;postmeta.meta_value = '%s'
+1000		 &quot;, $new_sku ) )
+1001		) {
+1002
+1003		WC_Admin_Meta_Boxes::add_error( __( 'Product SKU must be unique.', 'woocommerce' ) );
+1004				
+1005	} else {
+1006		update_post_meta( $post_id, '_sku', $new_sku );
+1007	}
+&lt;/pre&gt;
+
+You must comment out this ENTIRE if statement using &lt;code&gt;/*&lt;/code&gt; and &lt;code&gt;*/&lt;/code&gt;. Add the code from line 1010 again after the comment:
+
+&lt;pre&gt;
+update_post_meta( $post_id, '_sku', $new_sku );
+&lt;/pre&gt;</text>
+      <sha1>r9nz46xwbfmva922cckorsy34fv9quh</sha1>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+    </revision>
+  </page>
+  <page>
+    <title>Add Autopay Checkbox (WooCommerce)</title>
+    <ns>0</ns>
+    <id>15</id>
+    <revision>
+      <id>427</id>
+      <parentid>21</parentid>
+      <timestamp>2016-05-03T17:54:59Z</timestamp>
+      <contributor>
+        <username>Nick</username>
+        <id>2</id>
+      </contributor>
+      <comment>[[Category:Moved_to_GitHub]]</comment>
+      <text xml:space="preserve" bytes="685">[[Category:WooCommerce_Changelog]]
+[[Category:Moved_to_GitHub]]
+
+In order to make this change, you will need to have the [http://docs.woothemes.com/document/checkout-field-editor/ Checkout Field Editor] plugin installed.
+
+# Navigate to WooCommerce  Checkout Fields
+# Click “Add Field”
+# Name the field “billing_autopay”
+# Select “Radio” for the Field Type.
+# Leave “Label” blank
+# In “Placeholder / Option Values,” type something like: &quot;I agree, if applicable, that my card will be automatically billed the amount due according to the schedule below.&quot;
+# Select “Full-width” for the Position
+# Add “Required” in Validation Rules
+# Click “Save Changes”</text>
+      <sha1>2aaysetbg45j3ld8tlwhzbmrljp5haw</sha1>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+    </revision>
+  </page>
+  <page>
+    <title>Add Terms and Conditions (WooCommerce)</title>
+    <ns>0</ns>
+    <id>11</id>
+    <revision>
+      <id>428</id>
+      <parentid>16</parentid>
+      <timestamp>2016-05-03T18:11:28Z</timestamp>
+      <contributor>
+        <username>Nick</username>
+        <id>2</id>
+      </contributor>
+      <text xml:space="preserve" bytes="1071">[[Category:WooCommerce_Changelog]]
+[[Category:Moved_to_GitHub]]
+
+To add terms and conditions page:
+# Create a new page titled “Terms and Conditions” (shortlink /terms )
+# Upload pdf file of terms and conditions
+# In the text view of the page, add the following code, adjusting the link to the uploaded file as needed: &lt;code&gt;
+&lt;embed src=&quot;http://courses.escoffieronline.com/wp-content/uploads/2014/02/terms02222014.pdf&quot; type=&quot;application/pdf&quot; width=&quot;875&quot; height=&quot;1100&quot;&gt;
+&lt;a href=&quot;http://courses.escoffieronline.com/wp-content/uploads/2014/02/terms02222014.pdf&quot;&gt;Download Combined Terms and Conditions (pdf)&lt;/a&gt;
+&lt;/code&gt;
+: 4.  DO NOT view the page in visual mode EVER or WooCommerce will overwrite the embed tag for some reason.
+: 5.  Navigate to WooCommerce  Settings  Pages
+: 6.  Under the first heading, “Page Setup”, you should see the option “Terms Page ID”.  Set this to the Terms and Conditions Page which you just set up.
+
+Now you can [[Add_Terms_and_Conditions_to_Emails_(WooCommerce)|add the terms and conditions to WooCommerce's automatic emails]].</text>
+      <sha1>g2y8gnql12l7f078sen27i1t5ojhy4v</sha1>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+    </revision>
+  </page>
+  <page>
+    <title>Add Terms and Conditions to Emails (WooCommerce)</title>
+    <ns>0</ns>
+    <id>14</id>
+    <revision>
+      <id>430</id>
+      <parentid>20</parentid>
+      <timestamp>2016-05-03T18:12:06Z</timestamp>
+      <contributor>
+        <username>Nick</username>
+        <id>2</id>
+      </contributor>
+      <text xml:space="preserve" bytes="1334">[[Category:WooCommerce_Changelog]]
+[[Category:Moved_to_GitHub]]
+
+To add Terms and Conditions to emails:
+: 1.	Navigate to WooCommerce  Settings  Emails
+: 2.	In the list of emails at the top, select: “Processing Order”
+: 3.	At the bottom of the page, if the template is not visible or if it is visible but cannot be edited, you should see this message:
+[[File:WC_email_template_screenshot_01.png]]
+: Click “Copy file to theme”
+: 4.	Click “View template”
+: 5.	At the end of the template, you should see the following code:
+&lt;pre&gt;
+&lt;?php endif; ?&gt;
+
+&lt;?php woocommerce_get_template('emails/email-addresses.php', array( 'order' =&gt; $order )); ?&gt;
+
+&lt;?php do_action('woocommerce_email_footer'); ?&gt;
+&lt;/pre&gt;
+: Between the 'endif' line and before the 'woocommerce_get_template' line, add the following:
+&lt;pre&gt;
+&lt;p&gt;&lt;?php _e( 'To view the terms and conditions of your enrollment, please &lt;a style=&quot;color:blue;&quot; href=&quot;click&quot;http://courses.escoffieronline.com/wp-content/uploads/2014/02/terms02222014.pdf&quot;click here&lt;/a&gt;.', 'woocommerce' ); ?&gt;&lt;/p&gt;
+&lt;/pre&gt;
+: 6.	Click “Save Changes”
+
+This same process can be used to edit other email templates.
+
+Note that the file linked above needs to be [[Add_Terms_and_Conditions_(WooCommerce)|added to the term and conditions page]], and the url in the link should match that of the file you uploaded.</text>
+      <sha1>rz63mbrxwk3436neomwl177pv187ocf</sha1>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+    </revision>
+  </page>
+  <page>
+    <title>Edit Zoom Meeting</title>
+    <ns>0</ns>
+    <id>146</id>
+    <revision>
+      <id>431</id>
+      <parentid>362</parentid>
+      <timestamp>2016-05-03T19:25:31Z</timestamp>
+      <contributor>
+        <username>Nick</username>
+        <id>2</id>
+      </contributor>
+      <comment>[[Category:Moved_to_GitHub]]</comment>
+      <text xml:space="preserve" bytes="1316">[[Category:Moved_to_GitHub]]
+
+The [https://moodle.org/plugins/view/mod_zoom Zoom Meeting plugin] allows a ton of functionality, but we need to make a few changes to the plugin's code to make it work for us.
+
+
+== SSO to Work Email ==
+
+No changes are necessary as of version 1.2 -- make sure &quot;Zoom&quot; is selected in the plugin settings (and might as well also select &quot;Google&quot; for good measure)
+
+== Button to Anchor ==
+
+The links to start and join webinars are via a form button, but we want to change them to anchors so we can the &quot;target&quot; attribute to open them in a new window.
+
+In /mod/zoom/view.php around line 130 you'll see: 
+
+&lt;pre&gt;$link = html_writer::tag('form', $buttonhtml, array('action' =&gt; $aurl-&gt;out_omit_querystring()));&lt;/pre&gt;
+
+You can remove this and use the same basic code to write an anchor tag instead, as follows:
+
+&lt;pre&gt;$link = html_writer::tag('a', $buttonhtml, array('href' =&gt; $aurl, 'target' =&gt; &quot;_blank&quot;));&lt;/pre&gt;
+
+Also, further down around line line 160 you'll see:
+
+&lt;pre&gt;$table-&gt;data[] = array($strjoinlink, html_writer::link($zoom-&gt;join_url, $zoom-&gt;join_url));&lt;/pre&gt;
+
+You'll want to add the &lt;code&gt;target=&quot;_blank&quot;&lt;/code&gt; attribute in the html writer tag, like so:
+
+&lt;pre&gt;$table-&gt;data[] = array($strjoinlink, html_writer::link($zoom-&gt;join_url, $zoom-&gt;join_url,  array('target' =&gt; '_blank')));&lt;/pre&gt;</text>
+      <sha1>ei5jyf7a3o2tbwefco2m1ozf8yw2lvv</sha1>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+    </revision>
+  </page>
+  <page>
+    <title>Edit Faculty Contact Block</title>
+    <ns>0</ns>
+    <id>147</id>
+    <revision>
+      <id>432</id>
+      <parentid>357</parentid>
+      <timestamp>2016-05-03T19:51:00Z</timestamp>
+      <contributor>
+        <username>Nick</username>
+        <id>2</id>
+      </contributor>
+      <comment>[[Category:Moved_to_GitHub]]</comment>
+      <text xml:space="preserve" bytes="3190">[[Category:Moved_to_GitHub]]
+
+== Make Phone Number a Link ==
+
+In /blocks/faculty_tbird/block_faculty_tbird.php around line 181, you'll see:
+
+&lt;pre&gt;
+if(isset($faculty-&gt;phone1) &amp;&amp; $faculty-&gt;phone1 &lt;&gt; '')
+	$info .= '&lt;strong&gt;' . get_string('phonelabel','block_faculty_tbird') . ':&lt;/strong&gt; ' . s($faculty-&gt;phone1) . '&lt;/br &gt;';
+&lt;/pre&gt;
+
+replace it with:
+
+&lt;pre&gt;
+if(isset($faculty-&gt;phone1) &amp;&amp; $faculty-&gt;phone1 &lt;&gt; '') {
+	$phoneInt = str_replace(array('(',')','-',' ','.'), '',$faculty-&gt;phone1);
+	$info .= '&lt;strong&gt;' . get_string('phonelabel','block_faculty_tbird') . ':&lt;/strong&gt; &lt;a href=&quot;tel:+1' . $phoneInt .  '&quot;&gt;' . s($faculty-&gt;phone1) . '&lt;/a&gt;&lt;/br &gt;';
+}
+&lt;/pre&gt;
+
+To make sure all letters are replaced with the corresponding telephone numbers, instead replace it with:
+
+&lt;pre&gt;
+if(isset($faculty-&gt;phone1) &amp;&amp; $faculty-&gt;phone1 &lt;&gt; '') {
+	$phoneInt = str_replace(array('(',')','-',' ','.'), '',$faculty-&gt;phone1);
+	$phoneInt = str_replace(array('(',')','-',' ','.'), '',$faculty-&gt;phone1);
+	$phoneInt = str_replace(array('a','b','c','A','B','C'), '2',$phoneInt);
+	$phoneInt = str_replace(array('d','e','f','D','E','F'), '3',$phoneInt);
+	$phoneInt = str_replace(array('g','h','i','G','H','I'), '4',$phoneInt);
+	$phoneInt = str_replace(array('j','k','l','J','K','L'), '5',$phoneInt);
+	$phoneInt = str_replace(array('m','n','p','M','N','O'), '6',$phoneInt);
+	$phoneInt = str_replace(array('p','q','r','s','P','Q','R','S'), '7',$phoneInt);
+	$phoneInt = str_replace(array('t','u','v','T','U','V'), '8',$phoneInt);
+	$phoneInt = str_replace(array('w','x','y','z','W','X','Y','Z'), '9',$phoneInt);
+	$info .= '&lt;strong&gt;' . get_string('phonelabel','block_faculty_tbird') . ':&lt;/strong&gt; &lt;a href=&quot;tel:+1' . $phoneInt .  '&quot;&gt;' . s($faculty-&gt;phone1) . '&lt;/a&gt;&lt;/br &gt;';
+}
+&lt;/pre&gt;
+
+== Make Office Hours a Text Area ==
+
+First, you must either delete or change the shortname of the &quot;Office Hours&quot; custom profile field.  Then, create a new text area profile field with the original shortname: &lt;code&gt;officehourstbird&lt;/code&gt;
+
+In /blocks/faculty_tbird/block_faculty_tbird.php around line 179, you'll see:
+
+&lt;pre&gt;
+if(isset($faculty-&gt;officehourstbird) &amp;&amp; $faculty-&gt;officehourstbird &lt;&gt; '')
+	$info .= '&lt;strong&gt;' . get_string('officehourslabel','block_faculty_tbird') . ':&lt;/strong&gt; ' . s($faculty-&gt;officehourstbird) . '&lt;/br &gt;';
+&lt;/pre&gt;
+
+replace it with:
+
+&lt;pre&gt;
+if(isset($faculty-&gt;officehourstbird) &amp;&amp; $faculty-&gt;officehourstbird &lt;&gt; '')
+	$info .= '&lt;strong&gt;' . get_string('officehourslabel','block_faculty_tbird') . ':&lt;/strong&gt; ' . $faculty-&gt;officehourstbird;
+&lt;/pre&gt;
+
+== Add Message Button ==
+
+In /blocks/faculty_tbird/block_faculty_tbird.php around line 179, you'll see:
+
+&lt;pre&gt;
+// add header
+$info .= '&lt;/br&gt;&lt;strong&gt;' . $fheader . '&lt;/strong&gt;&lt;/a&gt;&lt;/br&gt;';
+
+// these fields may or may not be set!
+&lt;/pre&gt;
+
+In between the header and the next comment, you'll want to add some new code:
+
+&lt;pre&gt;
+//tk send a message button
+$messageUrl = new moodle_url('/message/index.php', array('id' =&gt; $faculty-&gt;id));
+$info .= '&lt;a target=&quot;_blank&quot; href=&quot;' . $messageUrl . '&quot;&gt;&lt;button class=&quot;btn btn-primary&quot; type=&quot;button&quot;&gt;Send a Message&lt;/button&gt;&lt;/a&gt;&lt;/br &gt;';
+$info .= '&lt;span style=&quot;font-size: x-small;&quot;&gt;Messages will be responded to within 24 hours.&lt;/span&gt;&lt;/br&gt;&lt;/br&gt;';
+&lt;/pre&gt;</text>
+      <sha1>ajm4sdjdpduw0vrbqiiihyj84wwgue1</sha1>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+    </revision>
+  </page>
+  <page>
+    <title>Fix DST Error on Course Restore</title>
+    <ns>0</ns>
+    <id>129</id>
+    <revision>
+      <id>433</id>
+      <parentid>309</parentid>
+      <timestamp>2016-05-03T20:29:13Z</timestamp>
+      <contributor>
+        <username>Nick</username>
+        <id>2</id>
+      </contributor>
+      <text xml:space="preserve" bytes="787">[[Category:Moved_to_GitHub]]
+[[Category:Moodle_2.7]]
+[[Category:Changes_Overridden_By_Update]]
+
+There are various issues associated with Daylight Saving Time.  One that affects us is that, when you restore or reset a course that straddles the DST change, Moodle will overcompensate for DST.  for instance, if you took a course starting 1/14/2015 with assignments due at 10:59 PM, and reset it to begin 2/25/2015, the assignments in week 1 would remain due at the proper time, but those in week 2 (after DST) would get pushed forward an extra hour to 11:59 PM.
+
+This issue may be resolved in Moodle 2.9, but for the time being, it can be fixed by using a new file in /lib/timezone.txt
+
+A current file should be available in this Moodle tracker: https://tracker.moodle.org/browse/MDL-44569</text>
+      <sha1>ru22ubjmheqt1loqosnc94ouoa3q9hl</sha1>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+    </revision>
+  </page>
+  <page>
+    <title>Fix Token Login Page</title>
+    <ns>0</ns>
+    <id>154</id>
+    <revision>
+      <id>434</id>
+      <parentid>373</parentid>
+      <timestamp>2016-05-03T20:37:24Z</timestamp>
+      <contributor>
+        <username>Nick</username>
+        <id>2</id>
+      </contributor>
+      <text xml:space="preserve" bytes="1087">[[Category:Moved_to_GitHub]]
+[[Category:Changes_Overridden_By_Update]]
+
+Some of the changes Paradiso made to the Token Authentication plugin seem to have broken the login page slightly.  Nothing severe, just janky looking.
+
+All changes should be made to /auth/token/login.php
+
+== Enable Instructions ==
+
+Around line 27, you'll see the following code:
+
+&lt;pre&gt;
+echo $OUTPUT-&gt;header();
+
+if (isset($show_instructions)) {
+&lt;/pre&gt;
+
+In between these two lines, add the following code from /login/index.php to initialize the variable $show_instructions :
+
+&lt;pre&gt;
+if (!empty($CFG-&gt;registerauth) or is_enabled_auth('none') or !empty($CFG-&gt;auth_instructions)) {
+    $show_instructions = true;
+} else {
+    $show_instructions = false;
+}
+
+&lt;/pre&gt;
+
+== Fix Broken String ==
+
+Around line 76, you'll see code to print the string &quot;loginusing&quot; :
+
+&lt;pre&gt;
+&lt;?php
+    print_string(&quot;loginusing&quot;);
+&lt;/pre&gt;
+
+For some reason, this string is not being found, although it is set in the core moodle language file.  Replace it with a different string, such as &quot;loginsite&quot; :
+
+&lt;pre&gt;
+&lt;?php
+    print_string(&quot;loginsite&quot;);
+&lt;/pre&gt;</text>
+      <sha1>308v2pbh7vkq4mozpgmtn79t432gy4a</sha1>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+    </revision>
+  </page>
+  <page>
+    <title>Add Portfolio Link in Student Profile</title>
+    <ns>0</ns>
+    <id>3</id>
+    <revision>
+      <id>435</id>
+      <parentid>394</parentid>
+      <timestamp>2016-05-03T20:57:37Z</timestamp>
+      <contributor>
+        <username>Nick</username>
+        <id>2</id>
+      </contributor>
+      <text xml:space="preserve" bytes="3219">[[Category:Moved_to_GitHub]]
+[[Category:Changes_Overridden_By_Update]]
+[[Category:Core_Code_Changes]]
+
+This change was made in order to automatically display a user's portfolio image in their profile on [[Moodle]].
+
+== Simple HTML link ==
+
+In 'user/profile.php', add the following around line 249 (line 275 in 2.7, immediately after &lt;code&gt;echo html_writer::start_tag('dl', array('class' =&gt; 'list'));&lt;/code&gt; )
+
+&lt;pre&gt;
+if ($DB-&gt;record_exists('portfolio_instance_user', array('userid' =&gt; $user-&gt;id,'name' =&gt; 'nsid'))){
+	$flickrID = $DB-&gt;get_record('portfolio_instance_user', array('userid' =&gt; $userid,'name' =&gt; 'nsid'), 'value', $strictness=IGNORE_MISSING);
+
+	if ($flickrID-&gt;value) {
+		$flickrUrl = &quot;https://www.flickr.com/photos/$flickrID-&gt;value&quot;;
+
+		echo html_writer::tag('dt', get_string('portfolio', 'core_portfolio'));
+		echo html_writer::tag('dd', html_writer::link($flickrUrl, s($flickrUrl)));
+	}
+}&lt;/pre&gt;
+
+If the student has linked a portfolio to Moodle, there will be several lines created on the database table &lt;code&gt;portfolio_instance_user&lt;/code&gt;.  This code checks for these lines and, if found, adds them on the profile page.  There is an additional check to make sure that the 'value' variable is not blank (which may happen if a user's profile has been [[Manually_Delete_User_Profiles|manually deleted]]).  It will display something like:
+
+&lt;blockquote&gt;'''Portfolio'''    https://www.flickr.com/photos/123665615@N06&lt;/blockquote&gt;
+
+== Advanced Link with Message ==
+
+If, rather than a link, you want to display a translatable message and icon for the portfolio to appear on the user page, replace the above code with this instead:
+
+&lt;pre&gt;
+if ($DB-&gt;record_exists('portfolio_instance_user', array('userid' =&gt; $user-&gt;id,'name' =&gt; 'nsid'))){
+	$flickrID = $DB-&gt;get_record('portfolio_instance_user', array('userid' =&gt; $userid,'name' =&gt; 'nsid'), 'value', $strictness=IGNORE_MISSING);
+
+	if ($flickrID-&gt;value) {
+		$flickrUrl = &quot;https://www.flickr.com/photos/$flickrID-&gt;value&quot;;
+
+		$iconurl = new moodle_url('/pix/t/portfolioadd.png');
+		$statusicon = html_writer::tag('img', '', array('src'=&gt;$iconurl, 'class'=&gt;'icon icon-post', 'alt'=&gt;'Flickr'));
+		echo html_writer::tag('dt', get_string('portfolio', 'core_portfolio'));
+		echo html_writer::tag('dd', html_writer::link($flickrUrl, s(get_string('viewuserportfolio', 'theme_essential', $user-&gt;firstname)).$statusicon));
+	}
+}
+&lt;/pre&gt;
+
+This code is using the same picture that appears next to images prompting users to upload (we [[Change_Portfolio_Upload_Thumbnail|changed that to a Flickr logo elsewhere]]).  Instead of displaying text, it is actually searching for a custom string in the language file (notice that it also uses the user's first name as a variable when calling this string).  Thus, you will also need to append the following to the end of each of the [[Customize_Language_Files|language files]] in the main Escoffier theme (translated as appropriate):
+
+&lt;code&gt;$string['viewuserportfolio'] = 'View {$a}\'s Portfolio';&lt;/code&gt;
+
+The {$a} in the code will display as the user's first name in their profile.  It will end up looking something like this:
+
+&lt;blockquote&gt;'''Portfolio'''    [https://www.flickr.com/photos/123665615@N06 View Sally's Portfolio]&lt;/blockquote&gt;</text>
+      <sha1>ihl62x7rme6nyzzhy0r77uuty1ji7oh</sha1>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+    </revision>
+  </page>
+  <page>
+    <title>Automatically Redirect After Finishing Choice</title>
+    <ns>0</ns>
+    <id>26</id>
+    <revision>
+      <id>436</id>
+      <parentid>396</parentid>
+      <timestamp>2016-05-04T16:53:42Z</timestamp>
+      <contributor>
+        <username>Nick</username>
+        <id>2</id>
+      </contributor>
+      <text xml:space="preserve" bytes="1758">[[Category:Moved_to_GitHub]]
+[[Category:Changes_Overridden_By_Update]]
+[[Category:Core_Code_Changes]]
+
+We re-purposed the Choice activity in Moodle to act as out &quot;Start Course&quot;; this is where the student reaffirms their enrollment agreement before starting the major course activities. Therefore, students don't need to enter this activity after making a choice, and after the student makes a choice, it is not obvious how to return to their course.  Therefore, we added some code to redirect the user after they make a choice.
+
+In &quot;/mod/choice/view.php&quot;, add the following code (this should be able to go anywhere in the file, as long it is '''ABOVE''' the last line, '''&lt;code&gt;echo $OUTPUT-&gt;footer();&lt;/code&gt;'''; if placed earlier, may need to initialize and check $current):
+
+&lt;pre&gt;
+if ($current) {
+    $back_url = new moodle_url('/course/view.php', array('id'=&gt;$course-&gt;id));
+    redirect($back_url);
+}
+&lt;/pre&gt;
+
+To initialize $current, you'll have to add some code before the if statement:
+
+&lt;pre&gt;
+$current = false;
+$current = $DB-&gt;get_record('choice_answers', array('choiceid' =&gt; $choice-&gt;id, 'userid' =&gt; $USER-&gt;id));
+&lt;/pre&gt;
+
+== Limit Redirect to Single Option Choices ==
+
+To keep the versatility of the Choice activity, you can add some additional code to check that '''a)''' this choice activity cannot be updated and '''b)''' this choice activity has only one option.
+
+&lt;pre&gt;
+$options = choice_prepare_options($choice, $USER, $cm, $allresponses);
+$total_options = count($options['options']);
+if ($current &amp;&amp; !$choice-&gt;allowupdate &amp;&amp; $total_options&lt;2) {
+	$back_url = new moodle_url('/course/view.php', array('id'=&gt;$course-&gt;id));
+	redirect($back_url);
+}
+&lt;/pre&gt;
+
+Note that $current must still be initialized depending on where in the file you place this code.</text>
+      <sha1>rrgbftkkroc7i28wwn4e4gred710yy0</sha1>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+    </revision>
+  </page>
+  <page>
+    <title>Display Photo Submissions</title>
+    <ns>0</ns>
+    <id>120</id>
+    <revision>
+      <id>437</id>
+      <parentid>399</parentid>
+      <timestamp>2016-05-04T17:19:02Z</timestamp>
+      <contributor>
+        <username>Nick</username>
+        <id>2</id>
+      </contributor>
+      <text xml:space="preserve" bytes="2088">[[Category:Moved_to_GitHub]]
+[[Category:Changes_Overridden_By_Update]]
+[[Category:Core_Code_Changes]]
+
+In &lt;code&gt;mod/assign/renderer.php&lt;/code&gt;, around line 1180, you should see the following snippit which renders the file submission links:
+
+&lt;pre&gt;
+        $result .= '&lt;li yuiConfig=\'' . json_encode($yuiconfig) . '\'&gt;' .
+                   '&lt;div&gt;' . $image . ' ' .
+                             $file-&gt;fileurl . ' ' .
+                             $plagiarismlinks .
+                             $file-&gt;portfoliobutton . '&lt;/div&gt;' .
+                       '&lt;/li&gt;';
+&lt;/pre&gt;
+
+Before this snippit, you'll want to add the following code:
+
+&lt;pre&gt;
+			$auguste = substr($file-&gt;fileurl, 9, strpos($file-&gt;fileurl, '?')-9);	//grabs just file address, minus tags
+			$acceptabletypes = array('jpg','jpeg','png','svg','tiff','bmp','gif');
+			$imagetype = strtolower($auguste);		//lowercase so we catch &quot;.JPG&quot; etc.
+			$i = 0;						//counter to avoid infinite loop on error
+			while (strlen($imagetype)&gt;5 &amp;&amp; $i&lt;5) {		//pair down to string after last period, which should be file type
+				$imagetype = substr($imagetype, strpos($imagetype, '.')+1, strlen($imagetype)-strpos($imagetype, '.')-1);
+				$i++;
+			}
+			if (in_array($imagetype, $acceptabletypes)) {		//make sure it's an acceptable image type
+				$auguste = '&lt;br /&gt;&lt;img style=&quot;margin-left: 16px; max-width: 95%;&quot; src=&quot;' . $auguste . '&quot; /&gt;&lt;br /&gt; ';
+			} else {
+				$auguste = '';
+			}
+&lt;/pre&gt;
+
+This will get just the file address and, if it's an image, add proper html tags around it, otherwise returning an empty string.
+
+Between the lines &lt;code&gt;$image . ' ' .&lt;/code&gt; and &lt;code&gt;$file-&gt;fileurl . ' ' .&lt;/code&gt;, you'll want to add our custom variable &lt;code&gt;$auguste&lt;/code&gt;, so we have:
+
+&lt;pre&gt;
+        $result .= '&lt;li yuiConfig=\'' . json_encode($yuiconfig) . '\'&gt;' .
+                   '&lt;div&gt;' . $image . ' ' .
+                             $auguste .
+                             $file-&gt;fileurl . ' ' .
+                             $plagiarismlinks .
+                             $file-&gt;portfoliobutton . '&lt;/div&gt;' .
+                       '&lt;/li&gt;';
+&lt;/pre&gt;</text>
+      <sha1>3kamrpx6x4a8jijtjcue4o8z113fklk</sha1>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+    </revision>
+  </page>
+  <page>
+    <title>Alternate Login URL</title>
+    <ns>0</ns>
+    <id>126</id>
+    <revision>
+      <id>438</id>
+      <parentid>324</parentid>
+      <timestamp>2016-05-04T17:22:18Z</timestamp>
+      <contributor>
+        <username>Nick</username>
+        <id>2</id>
+      </contributor>
+      <text xml:space="preserve" bytes="243">[[Category:Moved_to_GitHub]]
+[[Category:Settings_Change]]
+
+Site administration --&gt; Plugins --&gt; Authentication --&gt; Manage authentication
+
+Scroll down to Alternate login URL and enter the address you want non-logged in users to be redirected to.</text>
+      <sha1>6cy2elufhqq7e7cr3aky27yjpaclh5d</sha1>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+    </revision>
+  </page>
+  <page>
+    <title>Allow Token Authentication in Upload Users</title>
+    <ns>0</ns>
+    <id>127</id>
+    <revision>
+      <id>439</id>
+      <parentid>408</parentid>
+      <timestamp>2016-05-04T18:34:06Z</timestamp>
+      <contributor>
+        <username>Nick</username>
+        <id>2</id>
+      </contributor>
+      <text xml:space="preserve" bytes="1100">[[Category:Moved_to_GitHub]]
+[[Category:Changes_Overridden_By_Update]]
+[[Category:Core_Code_Changes]]
+[[Category:One_Line_of_Code]]
+
+This change allows you to select &quot;Token authentication&quot; as the default authentication method in Admin -&gt; Users -&gt; Upload users.  This should allow bulk CSV changes to users from the WooCommerce SSO without overriding their ability to login.
+
+
+In '/admin/tool/uploaduser/user_form.php', around line 216, you'll see the code: &lt;pre&gt;$choices = uu_supported_auths();&lt;/pre&gt;
+
+Immediately after, add the following as a new line: &lt;pre&gt;$choices[&quot;token&quot;] = &quot;Token authentication&quot;;&lt;/pre&gt;
+
+
+In '/admin/tool/uploaduser/index.php', around line 192, you'll see the code: &lt;pre&gt;$supportedauths = uu_supported_auths(); // officially supported plugins that are enabled&lt;/pre&gt;
+
+Immediately after, add the following as a new line: &lt;pre&gt;$supportedauths[&quot;token&quot;] = &quot;Token authentication&quot;;&lt;/pre&gt;
+
+
+== Possible Other Solution ==
+
+Note that it should technically be possible to achieve the same result by simply changing the uu_supported_auths() function in '/admin/tool/uploaduser/locallib.php'</text>
+      <sha1>rvv3v9eb3twl1c03atwhzshmxpo4h45</sha1>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+    </revision>
+  </page>
+  <page>
+    <title>Automatically Redirect to User's Sitewide Profile</title>
+    <ns>0</ns>
+    <id>137</id>
+    <revision>
+      <id>440</id>
+      <parentid>409</parentid>
+      <timestamp>2016-05-04T18:38:46Z</timestamp>
+      <contributor>
+        <username>Nick</username>
+        <id>2</id>
+      </contributor>
+      <text xml:space="preserve" bytes="1586">[[Category:Moved_to_GitHub]]
+[[Category:Changes_Overridden_By_Update]]
+[[Category:Core_Code_Changes]]
+[[Category:One_Line_of_Code]]
+
+When you look up a user from the Quickfind List (aka All Users List) in a course that the user is not enrolled in, you'll simply get an error message with the option to continue back to the course.  In most cases, what we'd rather do is go to the user's sitewide profile, so let's adda redirect.
+
+In /user/view.php around line 133, you'll see the following code:
+
+&lt;pre&gt;
+    if (!is_enrolled($coursecontext, $user-&gt;id)) {
+        // TODO: the only potential problem is that managers and inspectors might post in forum, but the link
+        //       to profile would not work - maybe a new capability - moodle/user:freely_acessile_profile_for_anybody
+        //       or test for course:inspect capability.
+        if (has_capability('moodle/role:assign', $coursecontext)) {
+            $PAGE-&gt;navbar-&gt;add($fullname);
+            echo $OUTPUT-&gt;header();
+            echo $OUTPUT-&gt;heading(get_string('notenrolled', '', $fullname));
+        } else {
+            echo $OUTPUT-&gt;header();
+            $PAGE-&gt;navbar-&gt;add($struser);
+            echo $OUTPUT-&gt;heading(get_string('notenrolledprofile'));
+        }
+        if (!empty($_SERVER['HTTP_REFERER'])) {
+            echo $OUTPUT-&gt;continue_button($_SERVER['HTTP_REFERER']);
+        }
+        echo $OUTPUT-&gt;footer();
+        exit;
+    }
+&lt;/pre&gt;
+
+Near the end of all this, immediately before the footer is echoed, add this line:
+
+&lt;pre&gt;
+redirect(new moodle_url('/user/view.php', array('id'=&gt;$user-&gt;id)));
+&lt;/pre&gt;</text>
+      <sha1>0jhpgvnuqz14xxi0iv2vg999xf32iuw</sha1>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+    </revision>
+  </page>
+  <page>
+    <title>Show All Badges in User's Course Profile</title>
+    <ns>0</ns>
+    <id>155</id>
+    <revision>
+      <id>441</id>
+      <parentid>414</parentid>
+      <timestamp>2016-05-04T18:41:06Z</timestamp>
+      <contributor>
+        <username>Nick</username>
+        <id>2</id>
+      </contributor>
+      <text xml:space="preserve" bytes="689">[[Category:Moved_to_GitHub]]
+[[Category:Changes_Overridden_By_Update]]
+[[Category:Core_Code_Changes]]
+[[Category:One_Line_of_Code]]
+
+By default, on a user's course profile, only the badges awarded in that course are displayed.  To make all badges display, open /user/view.php and fing the following code around line 366:
+
+&lt;pre&gt;
+if (!empty($CFG-&gt;enablebadges) &amp;&amp; !empty($CFG-&gt;badges_allowcoursebadges)) {
+    profile_display_badges($user-&gt;id, $courseid);
+}
+&lt;/pre&gt;
+
+All you need to do is take out the parameter &lt;code&gt;$courseid&lt;/code&gt; so you have the following:
+
+&lt;pre&gt;
+if (!empty($CFG-&gt;enablebadges) &amp;&amp; !empty($CFG-&gt;badges_allowcoursebadges)) {
+    profile_display_badges($user-&gt;id);
+}
+&lt;/pre&gt;</text>
+      <sha1>sq7jwqlbyd8lz80g7wo70zuq3lvso02</sha1>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+    </revision>
+  </page>
+  <page>
+    <title>Fit HTML Files</title>
+    <ns>0</ns>
+    <id>85</id>
+    <revision>
+      <id>442</id>
+      <parentid>412</parentid>
+      <timestamp>2016-05-04T18:44:25Z</timestamp>
+      <contributor>
+        <username>Nick</username>
+        <id>2</id>
+      </contributor>
+      <text xml:space="preserve" bytes="889">[[Category:Moved_to_GitHub]]
+[[Category:Changes_Overridden_By_Update]]
+[[Category:Core_Code_Changes]]
+[[Category:One_Line_of_Code]]
+
+If embedded HTML files do not fit, you will need to edit &quot;/lib/javascript-static.js&quot;  Underneath the variable &lt;code&gt;M.util.init_maximised_embed&lt;/code&gt;, around line 369, you'll see the following code:
+
+&lt;pre&gt;
+if (newheight &lt; 400) {
+    newheight = 400;
+}
+&lt;/pre&gt;
+
+Change the first instance of &quot;400&quot; to &quot;800&quot;, and change the second instance to a larger integer, such as &quot;1024&quot; or &quot;1280&quot;, whatever the maximum size of embedded HTML files should be.
+
+In order for these changes to take effect, you must not only [https://docs.moodle.org/25/en/admin/purgecaches Purge all caches], but also run a manual [https://docs.moodle.org/25/en/admin/setting/sitepolicies#Cron_execution_via_command_line_only Cron job] through Site Administration &gt; Security &gt; Site policies.</text>
+      <sha1>j739xorw1ax07q360firypt0wpkhqup</sha1>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+    </revision>
+  </page>
+  <page>
+    <title>Fit SCORMs in Chrome</title>
+    <ns>0</ns>
+    <id>96</id>
+    <revision>
+      <id>443</id>
+      <parentid>413</parentid>
+      <timestamp>2016-05-04T18:48:18Z</timestamp>
+      <contributor>
+        <username>Nick</username>
+        <id>2</id>
+      </contributor>
+      <text xml:space="preserve" bytes="715">[[Category:Moved_to_GitHub]]
+[[Category:Moodle_2.7]]
+[[Category:Changes_Overridden_By_Update]]
+[[Category:Core_Code_Changes]]
+[[Category:One_Line_of_Code]]
+
+As of this writing, the latest Chrome update, Chrome 39, is not correctly displaying embedded SCORMs.  The bug has beeen noted in Chrome and should be fixed early 2015, but in the meantime, the following changes seem to solve the issue:
+
+In scorm_resize_layout of /mod/scorm/module.js
+
+After:
+&lt;pre&gt;Y.one('#scorm_layout').setStyle('height', newheight);&lt;/pre&gt;
+
+Add:
+&lt;pre&gt;Y.one('#scorm_object').setStyle('height', &quot;99.9%&quot;);&lt;/pre&gt;
+
+Oddly, setting it to 100% doesn't work.
+
+For more information, see the Moodle tracker: https://tracker.moodle.org/browse/MDL-48375</text>
+      <sha1>71nee5xtr2c2lm8hbkm33gv8ns4alaj</sha1>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+    </revision>
+  </page>
+  <page>
+    <title>Sort Assignments by Lastname by Default</title>
+    <ns>0</ns>
+    <id>156</id>
+    <revision>
+      <id>444</id>
+      <parentid>415</parentid>
+      <timestamp>2016-05-04T18:51:07Z</timestamp>
+      <contributor>
+        <username>Nick</username>
+        <id>2</id>
+      </contributor>
+      <text xml:space="preserve" bytes="429">[[Category:Moved_to_GitHub]]
+[[Category:Changes_Overridden_By_Update]]
+[[Category:Core_Code_Changes]]
+[[Category:One_Line_of_Code]]
+
+In &lt;code&gt;/mod/assign/gradingtable.php&lt;/code&gt;, around line 400, you should see the following code:
+
+&lt;pre&gt;
+	// We require at least one unique column for the sort.
+	$this-&gt;sortable(true, 'userid');
+&lt;/pre&gt;
+
+Immediately after, add the following line:
+
+&lt;pre&gt;
+	$this-&gt;sortable(true, 'lastname'); 
+&lt;/pre&gt;</text>
+      <sha1>qpey7dw5qmfng00qu3pm6xwigjmutjf</sha1>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+    </revision>
+  </page>
+  <page>
+    <title>Excel Compatible Dates in Activity Completion Report</title>
+    <ns>0</ns>
+    <id>140</id>
+    <revision>
+      <id>446</id>
+      <parentid>445</parentid>
+      <timestamp>2016-05-04T19:07:02Z</timestamp>
+      <contributor>
+        <username>Nick</username>
+        <id>2</id>
+      </contributor>
+      <text xml:space="preserve" bytes="1829">[[Category:Moved_to_GitHub]]
+[[Category:Changes_Overridden_By_Update]]
+[[Category:Core_Code_Changes]]
+[[Category:One_Line_of_Code]]
+[[Category:Outdated_Moodle_Changes]]
+
+== Excel Dates ==
+
+By default, the activity completion report gives completion dates in a text format that is not readable by excel, so we'll change the way these dates are passes.
+
+Open /report/progress/index.php, and around line 372 you should see: 
+
+&lt;pre&gt;
+$date=userdate($thisprogress-&gt;timemodified);
+&lt;/pre&gt;
+
+This is fine in the html preview, but bad for our excel file, so we'll surround it with an if statement:
+
+&lt;pre&gt;
+if (!$csv) {
+	$date=userdate($thisprogress-&gt;timemodified);
+}
+&lt;/pre&gt;
+
+The $csv variable tracks whether this is being downloaded or viewed in browser.  We need another statement if $csv is true:
+
+&lt;pre&gt;
+if (!$csv) {
+	$date=userdate($thisprogress-&gt;timemodified);
+} else {
+	$date = (usertime($thisprogress-&gt;timemodified) / 86400) + 25569;
+}
+&lt;/pre&gt;
+
+Because moodle timestamps count seconds and excel timestamps count days, we divide our time by the number of seconds in a day, 86,400.  Moodle timestamps count seconds since the unix epoch (1/1/1970), but excel counts days since 1/1/1900, so we'll also add the number of days between these two epochs, 25,569.
+
+== Full Activity Names ==
+
+This change can be done to match the completion report to the gradebook, which does not truncate names.  In the same file (), around line 320 you should see:
+
+&lt;pre&gt;
+$displayname = shorten_text($activity-&gt;name);
+&lt;/pre&gt;
+
+Replace it with:
+
+&lt;pre&gt;
+if ($activity-&gt;modname == 'label') {
+	$displayname = 'Label: '.shorten_text($activity-&gt;name); 
+} elseif ($activity-&gt;modname == 'assign') {
+	$displayname = 'Assignment: '.format_text($activity-&gt;name);
+} else {
+	$displayname = ucfirst($activity-&gt;modname).': '.format_text($activity-&gt;name);
+}
+&lt;/pre&gt;
+
+Since labels</text>
+      <sha1>95cqypr878760boog2eakva62dlrd94</sha1>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+    </revision>
+  </page>
+  <page>
+    <title>Increase Activity Upload Limit</title>
+    <ns>0</ns>
+    <id>97</id>
+    <revision>
+      <id>447</id>
+      <parentid>323</parentid>
+      <timestamp>2016-05-04T19:22:00Z</timestamp>
+      <contributor>
+        <username>Nick</username>
+        <id>2</id>
+      </contributor>
+      <comment>[[Category:Moved_to_GitHub]]</comment>
+      <text xml:space="preserve" bytes="325">[[Category:Moved_to_GitHub]]
+[[Category:Moodle_2.7]]
+[[Category:Settings_Change]]
+
+This only seems to be an issue in Moodle 2.7
+
+Simply navigate to '''Site administration -&gt; Plugins -&gt; Activity modules -&gt; Assignment -&gt; Submission plugins -&gt; File submissions''' and change the activity upload limit from default to site limit.</text>
+      <sha1>doiuxbkf3gp96wd6xmvfxcblytuj4dz</sha1>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+    </revision>
+  </page>
+  <page>
+    <title>Allow User to See Quickfind List</title>
+    <ns>0</ns>
+    <id>136</id>
+    <revision>
+      <id>448</id>
+      <parentid>328</parentid>
+      <timestamp>2016-05-04T19:23:23Z</timestamp>
+      <contributor>
+        <username>Nick</username>
+        <id>2</id>
+      </contributor>
+      <comment>[[Category:Moved_to_GitHub]]</comment>
+      <text xml:space="preserve" bytes="1221">[[Category:Moved_to_GitHub]]
+[[Category:Settings_Change]]
+
+To allow a non-manager to see the Quickfind List (aka the All Users List), they must have several permissions on a SITE-WIDE level.  Rather than assigning a user their current role on a site-wide basis, which could have many negative consequences, best practice is to create a new role with the necessary permissions.  We'll call our role &quot;Quickfind List User&quot; (shortname: quickfind) and make it available only on a system context.  The three permissions you need to allow for this role are:
+
+* &quot;Use Quickfind List&quot; (block/quickfindlist:use) under &quot;Block: Quickfind List&quot; category
+* &quot;View hidden details of users&quot; (moodle/user:viewhiddendetails) under &quot;Course&quot; category
+** Technically not necessary, but otherwise you won't be able to see which classes a user is enrolled in, making the Quickfind List fairly useless
+* &quot;Manage blocks on a page&quot; (moodle/site:manageblocks) under &quot;Block&quot; category
+** Makes &quot;Turn Editing On&quot; appear on the page, which for some reason is necessary for the block to be seen by non-admins
+
+After making this change, you'll probably also want to make the following change as well: [[Automatically_Redirect_to_User%27s_Sitewide_Profile]]</text>
+      <sha1>sfn9oie7fj2ge11gjhzjqmil1n6q75l</sha1>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+    </revision>
+  </page>
+  <page>
+    <title>Hide Administration Block</title>
+    <ns>0</ns>
+    <id>82</id>
+    <revision>
+      <id>449</id>
+      <parentid>381</parentid>
+      <timestamp>2016-05-04T19:26:58Z</timestamp>
+      <contributor>
+        <username>Nick</username>
+        <id>2</id>
+      </contributor>
+      <comment>[[Category:Moved_to_GitHub]]</comment>
+      <text xml:space="preserve" bytes="963">[[Category:Moved_to_GitHub]]
+[[Category:Settings_Change]]
+
+It is possible to hide the Administration block from regular students on most pages.  This allows us to keep the courses looking clean without making it difficult for admins or teachers to make changes to courses.  To do this:
+
+# Turn editing on
+# Click the key icon under the Administration block title
+# In the menu on the left, under &quot;Block: Administration&quot; click &quot;Permissions&quot;
+# Next to the capability &quot;View Block&quot;, remove any roles that you do not want to see the Administration block by clicking the grey &quot;x&quot; to the right of the role's name.  Generally, you will want to remove &quot;Guest&quot;, &quot;Student&quot;, and &quot;Authenticated User&quot;
+# Add any roles that will need the Administration block with the &quot;+&quot; icon.  For instance, the custom roles [[Chef Mentor]] and [[Supervisor]]
+
+Students will still be able to see the Administration block on their profile page, where they need it to change their user pictures.</text>
+      <sha1>0qqmg6dd8pshnggw618hlze63ki71oc</sha1>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+    </revision>
+  </page>
+  <page>
+    <title>MediaWiki Extensions</title>
+    <ns>0</ns>
+    <id>118</id>
+    <revision>
+      <id>287</id>
+      <timestamp>2015-02-23T17:33:49Z</timestamp>
+      <contributor>
+        <username>Nick</username>
+        <id>2</id>
+      </contributor>
+      <comment>Created page with &quot;[[Category:MediaWiki_Changelog]] [[Category:Restricted]]  * SimpleSecurity ** To use, add a page to [[:Category:Restricted]] * RecentPages ** Used on main page *PDFEmbed ** Ad...&quot;</comment>
+      <text xml:space="preserve" bytes="669">[[Category:MediaWiki_Changelog]]
+[[Category:Restricted]]
+
+* SimpleSecurity
+** To use, add a page to [[:Category:Restricted]]
+* RecentPages
+** Used on main page
+*PDFEmbed
+** Added with: &lt;pre&gt;&lt;pdf&gt;File:Name_of_File.pdf&lt;/pdf&gt;&lt;/pre&gt;
+** Optional width and height values can be added in opening tag
+** Defaults: width=&quot;850&quot; height=&quot;1080&quot;
+*GoogleDocTag
+** Added with: &lt;pre&gt;&lt;gdoc id=&quot;your-google-doc-id&quot; /&gt;&lt;/pre&gt;
+** Optional width and height values can be added in opening tag
+** Defaults: width=&quot;100%&quot; height=&quot;1000px&quot;
+* NativeSvgHandler
+* Colorize
+*YouTube
+** Added with: &lt;pre&gt;&lt;youtube&gt;youtubeID&lt;/youtube&gt;&lt;/pre&gt;
+** Add &lt;code&gt;?rel=0&lt;/code&gt; within tags to disable related videos</text>
+      <sha1>ivl4ox4wr921ehtizvlsesmqgl2lxb2</sha1>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+    </revision>
+  </page>
+  <page>
+    <title>File:Gif-choice-icon.gif</title>
+    <ns>6</ns>
+    <id>19</id>
+    <revision>
+      <id>55</id>
+      <parentid>51</parentid>
+      <timestamp>2014-06-17T17:42:39Z</timestamp>
+      <contributor>
+        <username>Nick</username>
+        <id>2</id>
+      </contributor>
+      <text xml:space="preserve" bytes="34">[[Category:Moodle_Activity_Icons]]</text>
+      <sha1>q4d4iub4khbiwg7e5715hzy3axx5yc8</sha1>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+    </revision>
+  </page>
+  <page>
+    <title>File:Png-choice-icon.png</title>
+    <ns>6</ns>
+    <id>18</id>
+    <revision>
+      <id>56</id>
+      <parentid>52</parentid>
+      <timestamp>2014-06-17T17:42:42Z</timestamp>
+      <contributor>
+        <username>Nick</username>
+        <id>2</id>
+      </contributor>
+      <text xml:space="preserve" bytes="34">[[Category:Moodle_Activity_Icons]]</text>
+      <sha1>q4d4iub4khbiwg7e5715hzy3axx5yc8</sha1>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+    </revision>
+  </page>
+  <page>
+    <title>File:Svg-choice-icon.svg</title>
+    <ns>6</ns>
+    <id>21</id>
+    <revision>
+      <id>57</id>
+      <parentid>53</parentid>
+      <timestamp>2014-06-17T17:42:56Z</timestamp>
+      <contributor>
+        <username>Nick</username>
+        <id>2</id>
+      </contributor>
+      <text xml:space="preserve" bytes="34">[[Category:Moodle_Activity_Icons]]</text>
+      <sha1>q4d4iub4khbiwg7e5715hzy3axx5yc8</sha1>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+    </revision>
+  </page>
+  <page>
+    <title>File:Gif-assign-icon.gif</title>
+    <ns>6</ns>
+    <id>41</id>
+    <revision>
+      <id>234</id>
+      <parentid>59</parentid>
+      <timestamp>2015-01-06T22:00:51Z</timestamp>
+      <contributor>
+        <username>Nick</username>
+        <id>2</id>
+      </contributor>
+      <comment>Nick uploaded a new version of &amp;quot;[[File:Gif-assign-icon.gif]]&amp;quot;</comment>
+      <text xml:space="preserve" bytes="34">[[Category:Moodle_Activity_Icons]]</text>
+      <sha1>q4d4iub4khbiwg7e5715hzy3axx5yc8</sha1>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+    </revision>
+  </page>
+  <page>
+    <title>File:Png-assign-icon.png</title>
+    <ns>6</ns>
+    <id>42</id>
+    <revision>
+      <id>235</id>
+      <parentid>60</parentid>
+      <timestamp>2015-01-06T22:01:04Z</timestamp>
+      <contributor>
+        <username>Nick</username>
+        <id>2</id>
+      </contributor>
+      <comment>Nick uploaded a new version of &amp;quot;[[File:Png-assign-icon.png]]&amp;quot;</comment>
+      <text xml:space="preserve" bytes="34">[[Category:Moodle_Activity_Icons]]</text>
+      <sha1>q4d4iub4khbiwg7e5715hzy3axx5yc8</sha1>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+    </revision>
+  </page>
+  <page>
+    <title>File:Svg-assign-icon.svg</title>
+    <ns>6</ns>
+    <id>43</id>
+    <revision>
+      <id>236</id>
+      <parentid>62</parentid>
+      <timestamp>2015-01-06T22:01:18Z</timestamp>
+      <contributor>
+        <username>Nick</username>
+        <id>2</id>
+      </contributor>
+      <comment>Nick uploaded a new version of &amp;quot;[[File:Svg-assign-icon.svg]]&amp;quot;</comment>
+      <text xml:space="preserve" bytes="34">[[Category:Moodle_Activity_Icons]]</text>
+      <sha1>q4d4iub4khbiwg7e5715hzy3axx5yc8</sha1>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+    </revision>
+  </page>
+  <page>
+    <title>File:Gif-forum-icon.gif</title>
+    <ns>6</ns>
+    <id>44</id>
+    <revision>
+      <id>237</id>
+      <parentid>63</parentid>
+      <timestamp>2015-01-06T22:03:16Z</timestamp>
+      <contributor>
+        <username>Nick</username>
+        <id>2</id>
+      </contributor>
+      <comment>Nick uploaded a new version of &amp;quot;[[File:Gif-forum-icon.gif]]&amp;quot;</comment>
+      <text xml:space="preserve" bytes="34">[[Category:Moodle_Activity_Icons]]</text>
+      <sha1>q4d4iub4khbiwg7e5715hzy3axx5yc8</sha1>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+    </revision>
+  </page>
+  <page>
+    <title>File:Png-forum-icon.png</title>
+    <ns>6</ns>
+    <id>45</id>
+    <revision>
+      <id>238</id>
+      <parentid>64</parentid>
+      <timestamp>2015-01-06T22:03:23Z</timestamp>
+      <contributor>
+        <username>Nick</username>
+        <id>2</id>
+      </contributor>
+      <comment>Nick uploaded a new version of &amp;quot;[[File:Png-forum-icon.png]]&amp;quot;</comment>
+      <text xml:space="preserve" bytes="34">[[Category:Moodle_Activity_Icons]]</text>
+      <sha1>q4d4iub4khbiwg7e5715hzy3axx5yc8</sha1>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+    </revision>
+  </page>
+  <page>
+    <title>File:Svg-forum-icon.svg</title>
+    <ns>6</ns>
+    <id>46</id>
+    <revision>
+      <id>239</id>
+      <parentid>65</parentid>
+      <timestamp>2015-01-06T22:03:30Z</timestamp>
+      <contributor>
+        <username>Nick</username>
+        <id>2</id>
+      </contributor>
+      <comment>Nick uploaded a new version of &amp;quot;[[File:Svg-forum-icon.svg]]&amp;quot;</comment>
+      <text xml:space="preserve" bytes="34">[[Category:Moodle_Activity_Icons]]</text>
+      <sha1>q4d4iub4khbiwg7e5715hzy3axx5yc8</sha1>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+    </revision>
+  </page>
+  <page>
+    <title>File:Gif-quiz-icon.gif</title>
+    <ns>6</ns>
+    <id>47</id>
+    <revision>
+      <id>243</id>
+      <parentid>66</parentid>
+      <timestamp>2015-01-06T22:06:11Z</timestamp>
+      <contributor>
+        <username>Nick</username>
+        <id>2</id>
+      </contributor>
+      <comment>Nick uploaded a new version of &amp;quot;[[File:Gif-quiz-icon.gif]]&amp;quot;</comment>
+      <text xml:space="preserve" bytes="34">[[Category:Moodle_Activity_Icons]]</text>
+      <sha1>q4d4iub4khbiwg7e5715hzy3axx5yc8</sha1>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+    </revision>
+  </page>
+  <page>
+    <title>File:Png-quiz-icon.png</title>
+    <ns>6</ns>
+    <id>48</id>
+    <revision>
+      <id>244</id>
+      <parentid>67</parentid>
+      <timestamp>2015-01-06T22:06:18Z</timestamp>
+      <contributor>
+        <username>Nick</username>
+        <id>2</id>
+      </contributor>
+      <comment>Nick uploaded a new version of &amp;quot;[[File:Png-quiz-icon.png]]&amp;quot;</comment>
+      <text xml:space="preserve" bytes="34">[[Category:Moodle_Activity_Icons]]</text>
+      <sha1>q4d4iub4khbiwg7e5715hzy3axx5yc8</sha1>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+    </revision>
+  </page>
+  <page>
+    <title>File:Svg-quiz-icon.svg</title>
+    <ns>6</ns>
+    <id>49</id>
+    <revision>
+      <id>245</id>
+      <parentid>68</parentid>
+      <timestamp>2015-01-06T22:06:25Z</timestamp>
+      <contributor>
+        <username>Nick</username>
+        <id>2</id>
+      </contributor>
+      <comment>Nick uploaded a new version of &amp;quot;[[File:Svg-quiz-icon.svg]]&amp;quot;</comment>
+      <text xml:space="preserve" bytes="34">[[Category:Moodle_Activity_Icons]]</text>
+      <sha1>q4d4iub4khbiwg7e5715hzy3axx5yc8</sha1>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+    </revision>
+  </page>
+  <page>
+    <title>File:Gif-lesson-icon.gif</title>
+    <ns>6</ns>
+    <id>50</id>
+    <revision>
+      <id>240</id>
+      <parentid>69</parentid>
+      <timestamp>2015-01-06T22:04:41Z</timestamp>
+      <contributor>
+        <username>Nick</username>
+        <id>2</id>
+      </contributor>
+      <comment>Nick uploaded a new version of &amp;quot;[[File:Gif-lesson-icon.gif]]&amp;quot;</comment>
+      <text xml:space="preserve" bytes="154">[[Category:Moodle_Activity_Icons]]
+
+Used for &quot;lesson&quot;, &quot;page&quot;, and &quot;scorm&quot; activities.
+
+Modified version used for &quot;html&quot; file icon: [[Media:Gif-html.gif]]</text>
+      <sha1>1yzboqx3jfk364f91fuzeuq3hnmlmrj</sha1>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+    </revision>
+  </page>
+  <page>
+    <title>File:Png-lesson-icon.png</title>
+    <ns>6</ns>
+    <id>51</id>
+    <revision>
+      <id>241</id>
+      <parentid>70</parentid>
+      <timestamp>2015-01-06T22:04:47Z</timestamp>
+      <contributor>
+        <username>Nick</username>
+        <id>2</id>
+      </contributor>
+      <comment>Nick uploaded a new version of &amp;quot;[[File:Png-lesson-icon.png]]&amp;quot;</comment>
+      <text xml:space="preserve" bytes="158">[[Category:Moodle_Activity_Icons]]
+
+Used for &quot;lesson&quot;, &quot;page&quot;, and &quot;scorm&quot; activities.
+
+Modified version used for &quot;html&quot; file icon: [[Media:Png-html-128.png]]</text>
+      <sha1>p4fjz1ip4sdi4wkmraoxp0c3m1q10x9</sha1>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+    </revision>
+  </page>
+  <page>
+    <title>File:Svg-lesson-icon.svg</title>
+    <ns>6</ns>
+    <id>52</id>
+    <revision>
+      <id>242</id>
+      <parentid>71</parentid>
+      <timestamp>2015-01-06T22:04:54Z</timestamp>
+      <contributor>
+        <username>Nick</username>
+        <id>2</id>
+      </contributor>
+      <comment>Nick uploaded a new version of &amp;quot;[[File:Svg-lesson-icon.svg]]&amp;quot;</comment>
+      <text xml:space="preserve" bytes="86">[[Category:Moodle_Activity_Icons]]
+
+Used for &quot;lesson&quot;, &quot;page&quot;, and &quot;scorm&quot; activities.</text>
+      <sha1>jy02pks0p4je45hm54iq23v3zcw5huq</sha1>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+    </revision>
+  </page>
+  <page>
+    <title>File:Gif url icon.gif</title>
+    <ns>6</ns>
+    <id>91</id>
+    <revision>
+      <id>231</id>
+      <parentid>219</parentid>
+      <timestamp>2015-01-06T21:45:14Z</timestamp>
+      <contributor>
+        <username>Nick</username>
+        <id>2</id>
+      </contributor>
+      <comment>Nick uploaded a new version of &amp;quot;[[File:Gif url icon.gif]]&amp;quot;</comment>
+      <text xml:space="preserve" bytes="34">[[Category:Moodle_Activity_Icons]]</text>
+      <sha1>q4d4iub4khbiwg7e5715hzy3axx5yc8</sha1>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+    </revision>
+  </page>
+  <page>
+    <title>File:Png url icon.png</title>
+    <ns>6</ns>
+    <id>92</id>
+    <revision>
+      <id>232</id>
+      <parentid>220</parentid>
+      <timestamp>2015-01-06T21:45:26Z</timestamp>
+      <contributor>
+        <username>Nick</username>
+        <id>2</id>
+      </contributor>
+      <comment>Nick uploaded a new version of &amp;quot;[[File:Png url icon.png]]&amp;quot;</comment>
+      <text xml:space="preserve" bytes="34">[[Category:Moodle_Activity_Icons]]</text>
+      <sha1>q4d4iub4khbiwg7e5715hzy3axx5yc8</sha1>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+    </revision>
+  </page>
+  <page>
+    <title>File:Svg url icon.svg</title>
+    <ns>6</ns>
+    <id>93</id>
+    <revision>
+      <id>233</id>
+      <parentid>221</parentid>
+      <timestamp>2015-01-06T21:45:40Z</timestamp>
+      <contributor>
+        <username>Nick</username>
+        <id>2</id>
+      </contributor>
+      <comment>Nick uploaded a new version of &amp;quot;[[File:Svg url icon.svg]]&amp;quot;</comment>
+      <text xml:space="preserve" bytes="34">[[Category:Moodle_Activity_Icons]]</text>
+      <sha1>q4d4iub4khbiwg7e5715hzy3axx5yc8</sha1>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+    </revision>
+  </page>
+  <page>
+    <title>File:Png-html-128.png</title>
+    <ns>6</ns>
+    <id>53</id>
+    <revision>
+      <id>72</id>
+      <timestamp>2014-06-17T18:30:39Z</timestamp>
+      <contributor>
+        <username>Nick</username>
+        <id>2</id>
+      </contributor>
+      <comment>[[Category:Moodle_File_Icons]]
+
+Modified from &quot;lesson&quot; activity icon: [[Media:Png-lesson-icon.png]]</comment>
+      <text xml:space="preserve" bytes="99">[[Category:Moodle_File_Icons]]
+
+Modified from &quot;lesson&quot; activity icon: [[Media:Png-lesson-icon.png]]</text>
+      <sha1>f0evsifossi2fvr8ixcn0xbotc6xto9</sha1>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+    </revision>
+  </page>
+  <page>
+    <title>File:Png-html-256.png</title>
+    <ns>6</ns>
+    <id>54</id>
+    <revision>
+      <id>73</id>
+      <timestamp>2014-06-17T18:31:35Z</timestamp>
+      <contributor>
+        <username>Nick</username>
+        <id>2</id>
+      </contributor>
+      <comment>[[Category:Moodle_File_Icons]]
+
+Modified from &quot;lesson&quot; activity icon: [[Media:Png-lesson-icon.png]]</comment>
+      <text xml:space="preserve" bytes="99">[[Category:Moodle_File_Icons]]
+
+Modified from &quot;lesson&quot; activity icon: [[Media:Png-lesson-icon.png]]</text>
+      <sha1>f0evsifossi2fvr8ixcn0xbotc6xto9</sha1>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+    </revision>
+  </page>
+  <page>
+    <title>File:Png-html-24.png</title>
+    <ns>6</ns>
+    <id>57</id>
+    <revision>
+      <id>79</id>
+      <timestamp>2014-06-17T18:43:25Z</timestamp>
+      <contributor>
+        <username>Nick</username>
+        <id>2</id>
+      </contributor>
+      <comment>[[Category:Moodle_File_Icons]]
+
+Modified from &quot;lesson&quot; activity icon: [[Media:Png-lesson-icon.png]]</comment>
+      <text xml:space="preserve" bytes="99">[[Category:Moodle_File_Icons]]
+
+Modified from &quot;lesson&quot; activity icon: [[Media:Png-lesson-icon.png]]</text>
+      <sha1>f0evsifossi2fvr8ixcn0xbotc6xto9</sha1>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+    </revision>
+  </page>
+  <page>
+    <title>File:Png-html-32.png</title>
+    <ns>6</ns>
+    <id>58</id>
+    <revision>
+      <id>80</id>
+      <timestamp>2014-06-17T18:43:55Z</timestamp>
+      <contributor>
+        <username>Nick</username>
+        <id>2</id>
+      </contributor>
+      <comment>[[Category:Moodle_File_Icons]]
+
+Modified from &quot;lesson&quot; activity icon: [[Media:Png-lesson-icon.png]]</comment>
+      <text xml:space="preserve" bytes="99">[[Category:Moodle_File_Icons]]
+
+Modified from &quot;lesson&quot; activity icon: [[Media:Png-lesson-icon.png]]</text>
+      <sha1>f0evsifossi2fvr8ixcn0xbotc6xto9</sha1>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+    </revision>
+  </page>
+  <page>
+    <title>File:Png-html-48.png</title>
+    <ns>6</ns>
+    <id>59</id>
+    <revision>
+      <id>81</id>
+      <timestamp>2014-06-17T18:44:13Z</timestamp>
+      <contributor>
+        <username>Nick</username>
+        <id>2</id>
+      </contributor>
+      <comment>[[Category:Moodle_File_Icons]]
+
+Modified from &quot;lesson&quot; activity icon: [[Media:Png-lesson-icon.png]]</comment>
+      <text xml:space="preserve" bytes="99">[[Category:Moodle_File_Icons]]
+
+Modified from &quot;lesson&quot; activity icon: [[Media:Png-lesson-icon.png]]</text>
+      <sha1>f0evsifossi2fvr8ixcn0xbotc6xto9</sha1>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+    </revision>
+  </page>
+  <page>
+    <title>File:Png-html-64.png</title>
+    <ns>6</ns>
+    <id>60</id>
+    <revision>
+      <id>82</id>
+      <timestamp>2014-06-17T18:44:49Z</timestamp>
+      <contributor>
+        <username>Nick</username>
+        <id>2</id>
+      </contributor>
+      <comment>[[Category:Moodle_File_Icons]]
+
+Modified from &quot;lesson&quot; activity icon: [[Media:Png-lesson-icon.png]]</comment>
+      <text xml:space="preserve" bytes="99">[[Category:Moodle_File_Icons]]
+
+Modified from &quot;lesson&quot; activity icon: [[Media:Png-lesson-icon.png]]</text>
+      <sha1>f0evsifossi2fvr8ixcn0xbotc6xto9</sha1>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+    </revision>
+  </page>
+  <page>
+    <title>File:Png-html-72.png</title>
+    <ns>6</ns>
+    <id>61</id>
+    <revision>
+      <id>83</id>
+      <timestamp>2014-06-17T18:45:13Z</timestamp>
+      <contributor>
+        <username>Nick</username>
+        <id>2</id>
+      </contributor>
+      <comment>[[Category:Moodle_File_Icons]]
+
+Modified from &quot;lesson&quot; activity icon: [[Media:Png-lesson-icon.png]]</comment>
+      <text xml:space="preserve" bytes="99">[[Category:Moodle_File_Icons]]
+
+Modified from &quot;lesson&quot; activity icon: [[Media:Png-lesson-icon.png]]</text>
+      <sha1>f0evsifossi2fvr8ixcn0xbotc6xto9</sha1>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+    </revision>
+  </page>
+  <page>
+    <title>File:Png-html-80.png</title>
+    <ns>6</ns>
+    <id>62</id>
+    <revision>
+      <id>84</id>
+      <timestamp>2014-06-17T18:45:27Z</timestamp>
+      <contributor>
+        <username>Nick</username>
+        <id>2</id>
+      </contributor>
+      <comment>[[Category:Moodle_File_Icons]]
+
+Modified from &quot;lesson&quot; activity icon: [[Media:Png-lesson-icon.png]]</comment>
+      <text xml:space="preserve" bytes="99">[[Category:Moodle_File_Icons]]
+
+Modified from &quot;lesson&quot; activity icon: [[Media:Png-lesson-icon.png]]</text>
+      <sha1>f0evsifossi2fvr8ixcn0xbotc6xto9</sha1>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+    </revision>
+  </page>
+  <page>
+    <title>File:Png-html-96.png</title>
+    <ns>6</ns>
+    <id>63</id>
+    <revision>
+      <id>85</id>
+      <timestamp>2014-06-17T18:45:43Z</timestamp>
+      <contributor>
+        <username>Nick</username>
+        <id>2</id>
+      </contributor>
+      <comment>[[Category:Moodle_File_Icons]]
+
+Modified from &quot;lesson&quot; activity icon: [[Media:Png-lesson-icon.png]]</comment>
+      <text xml:space="preserve" bytes="99">[[Category:Moodle_File_Icons]]
+
+Modified from &quot;lesson&quot; activity icon: [[Media:Png-lesson-icon.png]]</text>
+      <sha1>f0evsifossi2fvr8ixcn0xbotc6xto9</sha1>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+    </revision>
+  </page>
+  <page>
+    <title>File:Folder-open-128.png</title>
+    <ns>6</ns>
+    <id>98</id>
+    <revision>
+      <id>248</id>
+      <timestamp>2015-01-14T17:06:01Z</timestamp>
+      <contributor>
+        <username>Nick</username>
+        <id>2</id>
+      </contributor>
+      <comment>[[Category:Moodle_File_Icons]]</comment>
+      <text xml:space="preserve" bytes="30">[[Category:Moodle_File_Icons]]</text>
+      <sha1>odzgr3zpq3jnfh4y1l3r051atjv688j</sha1>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+    </revision>
+  </page>
+  <page>
+    <title>File:Folder-open-64.png</title>
+    <ns>6</ns>
+    <id>99</id>
+    <revision>
+      <id>249</id>
+      <timestamp>2015-01-14T17:06:36Z</timestamp>
+      <contributor>
+        <username>Nick</username>
+        <id>2</id>
+      </contributor>
+      <comment>[[Category:Moodle_File_Icons]]</comment>
+      <text xml:space="preserve" bytes="30">[[Category:Moodle_File_Icons]]</text>
+      <sha1>odzgr3zpq3jnfh4y1l3r051atjv688j</sha1>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+    </revision>
+  </page>
+  <page>
+    <title>File:Folder-open-48.png</title>
+    <ns>6</ns>
+    <id>100</id>
+    <revision>
+      <id>250</id>
+      <timestamp>2015-01-14T17:06:48Z</timestamp>
+      <contributor>
+        <username>Nick</username>
+        <id>2</id>
+      </contributor>
+      <comment>[[Category:Moodle_File_Icons]]</comment>
+      <text xml:space="preserve" bytes="30">[[Category:Moodle_File_Icons]]</text>
+      <sha1>odzgr3zpq3jnfh4y1l3r051atjv688j</sha1>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+    </revision>
+  </page>
+  <page>
+    <title>File:Folder-open-32.png</title>
+    <ns>6</ns>
+    <id>101</id>
+    <revision>
+      <id>251</id>
+      <timestamp>2015-01-14T17:07:07Z</timestamp>
+      <contributor>
+        <username>Nick</username>
+        <id>2</id>
+      </contributor>
+      <comment>[[Category:Moodle_File_Icons]]</comment>
+      <text xml:space="preserve" bytes="30">[[Category:Moodle_File_Icons]]</text>
+      <sha1>odzgr3zpq3jnfh4y1l3r051atjv688j</sha1>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+    </revision>
+  </page>
+  <page>
+    <title>File:Folder-open-24.png</title>
+    <ns>6</ns>
+    <id>102</id>
+    <revision>
+      <id>252</id>
+      <timestamp>2015-01-14T17:07:29Z</timestamp>
+      <contributor>
+        <username>Nick</username>
+        <id>2</id>
+      </contributor>
+      <comment>[[Category:Moodle_File_Icons]]</comment>
+      <text xml:space="preserve" bytes="30">[[Category:Moodle_File_Icons]]</text>
+      <sha1>odzgr3zpq3jnfh4y1l3r051atjv688j</sha1>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+    </revision>
+  </page>
+  <page>
+    <title>File:Folder-open.png</title>
+    <ns>6</ns>
+    <id>103</id>
+    <revision>
+      <id>253</id>
+      <timestamp>2015-01-14T17:07:56Z</timestamp>
+      <contributor>
+        <username>Nick</username>
+        <id>2</id>
+      </contributor>
+      <comment>[[Category:Moodle_File_Icons]]</comment>
+      <text xml:space="preserve" bytes="30">[[Category:Moodle_File_Icons]]</text>
+      <sha1>odzgr3zpq3jnfh4y1l3r051atjv688j</sha1>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+    </revision>
+  </page>
+  <page>
+    <title>Category:Essential Theme</title>
+    <ns>14</ns>
+    <id>132</id>
+    <revision>
+      <id>314</id>
+      <timestamp>2015-05-27T17:35:10Z</timestamp>
+      <contributor>
+        <username>Nick</username>
+        <id>2</id>
+      </contributor>
+      <comment>[[Category:Theme_Changes]]</comment>
+      <text xml:space="preserve" bytes="26">[[Category:Theme_Changes]]</text>
+      <sha1>ff4n6le9t18lu1cdkje4dvhpb2gia40</sha1>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+    </revision>
+  </page>
+  <page>
+    <title>Category:Snap Theme</title>
+    <ns>14</ns>
+    <id>133</id>
+    <revision>
+      <id>393</id>
+      <parentid>315</parentid>
+      <timestamp>2016-02-12T17:19:08Z</timestamp>
+      <contributor>
+        <username>Nick</username>
+        <id>2</id>
+      </contributor>
+      <text xml:space="preserve" bytes="63">[[Category:Theme_Changes]]
+[[Category:Outdated_Moodle_Changes]]</text>
+      <sha1>4joop893e1nk4cjno23y1y5rqjbd7in</sha1>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+    </revision>
+  </page>
+  <page>
+    <title>Fix Messages Menu</title>
+    <ns>0</ns>
+    <id>157</id>
+    <revision>
+      <id>389</id>
+      <parentid>378</parentid>
+      <timestamp>2016-02-12T17:18:14Z</timestamp>
+      <contributor>
+        <username>Nick</username>
+        <id>2</id>
+      </contributor>
+      <text xml:space="preserve" bytes="1999">[[Category:Outdated_Moodle_Changes]]
+[[Category:Theme_Changes]]
+[[Category:Essential_Theme]]
+
+If there are more than 5 unread messages, the message menu still only shows 5.  We want to fix this to show the correct number of messages, and add a link to view all unread if there are more than 5.
+
+In &lt;code&gt;/theme/essential/renderers/core_renderer.php&lt;/code&gt;, around line 441, you'll see the line:
+
+&lt;pre&gt;
+$messagelist['newmessages'] = count($messages);
+&lt;/pre&gt;
+
+Delete or comment out that line and replace it with the following, taken from the &lt;code&gt;message_count_unread_messages&lt;/code&gt; function in &lt;code&gt;/message/lib.php&lt;/code&gt;:
+
+&lt;pre&gt;
+$messagelist['newmessages'] = $DB-&gt;count_records_select('message', &quot;useridto = ?&quot;, array($USER-&gt;id), &quot;COUNT('id')&quot;);
+&lt;/pre&gt;
+
+Next, to add a link for more messages, you'll need to add some code in the same file.  From around line 384 to line 420, you'll see a long &lt;code&gt;foreach&lt;/code&gt; loop (shortened here):
+
+&lt;pre&gt;
+            foreach ($messages['messages'] as $message) {
+                $addclass = 'read';
+                $iconadd = '-o';
+
+                if ($message-&gt;unread) {
+                    ...
+                }
+
+                $messagesubmenu-&gt;add($messagecontent, $message-&gt;url, $message-&gt;text);
+            }
+&lt;/pre&gt;
+
+After this &lt;code&gt;foreach&lt;/code&gt; loop, and before the next ending bracket, add some code like this:
+
+&lt;pre&gt;
+	if ($messages['newmessages'] &gt; $totalmessages) {
+		$moretext = get_string('more', 'mod_data').' '.strtolower(get_string('unreadmessages', 'core_message', $messages['newmessages'] - $totalmessages));
+		$morecontent = html_writer::start_div('notification unread');
+		$morecontent .= html_writer::start_span('msg-body');
+		$morecontent .= html_writer::span($moretext, 'msg-more');
+		$morecontent .= html_writer::end_span();
+		$morecontent .= html_writer::end_div();
+		$moreurl = new moodle_url('/message/index.php', array('viewing' =&gt; 'recentnotifications'));
+		$messagesubmenu-&gt;add($morecontent, $moreurl, $moretext);
+	}
+&lt;/pre&gt;</text>
+      <sha1>m7setldw2ehv5hejy5p9uv0stbjsgbs</sha1>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+    </revision>
+  </page>
+  <page>
+    <title>Remove Back to Top</title>
+    <ns>0</ns>
+    <id>87</id>
+    <revision>
+      <id>224</id>
+      <parentid>223</parentid>
+      <timestamp>2014-12-18T15:50:45Z</timestamp>
+      <contributor>
+        <username>Nick</username>
+        <id>2</id>
+      </contributor>
+      <text xml:space="preserve" bytes="900">[[Category:Outdated_Moodle_Changes]]
+
+== '''THIS EDIT IS FOR MOODLE 2.5 ONLY''' ==
+
+To remove the &quot;Back to Top&quot; feature, you'll need to edit the Essential theme layout pages.  Using FTP, navigate to /theme/essential/layout/&quot; and you'll see several .php files.  Check each for the following code, which you can simply comment out with standard HTML:
+
+
+&lt;pre&gt;
+&lt;script type=&quot;text/javascript&quot;&gt;
+ jQuery(document).ready(function() {
+  var offset = 220;
+  var duration = 500;
+  jQuery(window).scroll(function() {
+  if (jQuery(this).scrollTop() &gt; offset) {
+   jQuery('.back-to-top').fadeIn(duration);
+  } else {
+   jQuery('.back-to-top').fadeOut(duration);
+  }
+ });
+
+ jQuery('.back-to-top').click(function(event) {
+ event.preventDefault();
+ jQuery('html, body').animate({scrollTop: 0}, duration);
+ return false;
+ })
+});
+&lt;/script&gt;
+&lt;/pre&gt;
+
+Note that this is only applicable for version 5 of the Essential theme.</text>
+      <sha1>gaua2s97eobf71sfn136fan5wwg8slt</sha1>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+    </revision>
+  </page>
+  <page>
+    <title>Add Front Page Display</title>
+    <ns>0</ns>
+    <id>66</id>
+    <revision>
+      <id>247</id>
+      <parentid>181</parentid>
+      <timestamp>2015-01-14T17:00:38Z</timestamp>
+      <contributor>
+        <username>Nick</username>
+        <id>2</id>
+      </contributor>
+      <comment>Category:Outdated_Moodle_Changes</comment>
+      <text xml:space="preserve" bytes="13723">[[Category:Outdated_Moodle_Changes]]
+
+In order to display the courses how we wanted on the front page of moodle, we created a custom PHP script which is displayed in an iFrame.
+
+As of 8/4/2014, the script has been modified so that it now displays all visible courses the user is currently enrolled in, sorted by category. It allows one level of subcategories, but will need to be modified to allow further levels.  Categories with subcategories are displayed first (ie Culinary Program divided into Culinary Basics, Groundwork, etc).  Categories without subcategories are grouped together at the end.
+
+If the user is an admin, the script will show all available courses.
+
+As of this edit, all you need to do to add items to the front page display is to add categories and courses as you want them to appear.  The script is based on &quot;sortorder&quot;, so you can order categories and courses however you like (with the caveats that ALL categories with subcategories will be displayed before categories without, and if a category contains both subcategories and courses in the top level category, those in the top level category will be displayed last).  The course full name (or short name on mobile), overview file, and truncated summary will be displayed, if available.
+
+There is an additional piece of code that hides certain, preset categories, identified by category id. As of this writing, the categories &quot;Full Programs&quot; (id=1) and &quot;Resources&quot; (id=4) are completely hidden from the course display. To add or remove categories from this list, you will need to edit the array variable &lt;code&gt;$lolCats&lt;/code&gt; around line 36.
+
+== PHP Code ==
+
+=== Requires and Variables ===
+&lt;pre&gt;
+require_once('../config.php');
+require_once('/php/Mobile-Detect-2.7.4/Mobile_Detect.php');
+	$detect = new Mobile_Detect;
+	$deviceType = ($detect-&gt;isMobile() ? ($detect-&gt;isTablet() ? 'tablet' : 'phone') : 'computer');
+	$scriptVersion = $detect-&gt;getScriptVersion();
+global $CFG, $DB, $USER;
+&lt;/pre&gt;
+
+=== Functions ===
+These functions were used in an earlier version of the code, but the first stopped working and the second is now superfluous, so these may be deleted.
+
+&lt;pre&gt;
+/*
+ * Checks if the current user is enrolled in a given section
+ */
+function is_enrolled_in_course($courseid) {
+	$context = get_context_instance(CONTEXT_COURSE, $courseid, MUST_EXIST);
+	return $enrolled = is_enrolled($context, $USER-&gt;id, '', true);
+}
+
+/*
+ * Limit description length
+ */
+function cut_description($description) {
+	if ( strlen($description) &gt; 200 ) {
+		return substr($description,0,200) . '...';
+	} else {
+		return $description;
+	}
+}
+&lt;/pre&gt;
+
+=== Arrays ===
+
+&lt;pre&gt;
+$allCats = $DB-&gt;get_records('course_categories', null, 'sortorder ASC', 'id,name,idnumber,parent,sortorder,coursecount,visible,depth,path');
+//$topCats = $DB-&gt;get_records('course_categories', array('depth'=&gt;'1'), null, 'id,name,idnumber,parent,sortorder,coursecount,visible,depth,path');
+//$subCats = $DB-&gt;get_records('course_categories', array('depth'=&gt;'2'), null, 'id,name,idnumber,parent,sortorder,coursecount,visible,depth,path');
+
+$lolCats = array(1,4); //Categories to Leave Off List
+foreach ($allCats as $key =&gt; $cat) {
+	foreach ($lolCats as $lolCat) {
+		if ($cat-&gt;id == $lolCat) {
+			unset($allCats[$key]);
+		}
+	}
+}
+
+/*foreach ($subCats as $key =&gt; $cat) {
+	if ($cat-&gt;parent == 0) {
+		unset($subCats[$key]);
+	}
+}*/
+$countSubCats = array(); //Count Sub Cat is a cross between Dracula, Aquaman, and a cat
+foreach ($allCats as $cat) {
+	$countSubCats[$cat-&gt;id] = 0;
+	foreach ($allCats as $subCat) {
+		if ($subCat-&gt;parent == $cat-&gt;id) {
+			$countSubCats[$cat-&gt;id]++;
+		}
+	}
+}
+
+$bigCats = array();
+$littleCats = array();
+foreach ($allCats as $cat) {
+	if ($countSubCats[$cat-&gt;id] &gt; 0) {
+		$bigCats[] = $cat;
+	} else {
+		$littleCats[] = $cat;
+	}
+}
+&lt;/pre&gt;
+
+=== Grab Enrolled Programs (Categories with Subcategories) ===
+&lt;pre&gt;
+$enrolledBigCats = 0;
+foreach ($bigCats as $cat) {
+	$catid = $cat-&gt;id;
+	$$catid = false;
+	$subCats = $DB-&gt;get_records('course_categories', array('parent'=&gt;$cat-&gt;id), null, 'id,name,idnumber,parent,sortorder,coursecount,visible,depth,path');
+	//check for courses in each subcategory
+	foreach ($subCats as $subCat) {
+		$courses = $DB-&gt;get_records('course', array('category'=&gt;$subCat-&gt;id), null, 'id,category,visible');
+		foreach ($courses as $course) {
+			$context = get_context_instance(CONTEXT_COURSE, $course-&gt;id, MUST_EXIST);
+			if ( (is_enrolled($context, $USER-&gt;id, '', true) &amp;&amp; $course-&gt;visible) || is_siteadmin()) {
+				$enrolledBigCats++;
+				$$catid = true;
+				break 2;
+			}
+		}
+	}
+	//check for courses in the top category itself
+	$courses = $DB-&gt;get_records('course', array('category'=&gt;$cat-&gt;id), null, 'id,category,visible');
+	foreach ($courses as $course) {
+		$context = get_context_instance(CONTEXT_COURSE, $course-&gt;id, MUST_EXIST);
+		if ( (is_enrolled($context, $USER-&gt;id, '', true) &amp;&amp; $course-&gt;visible) || is_siteadmin()) {
+			$enrolledBigCats++;
+			$$catid = true;
+			break 1;
+		}
+	}
+}
+&lt;/pre&gt;
+
+=== Check for enrollment in Categories without Subcategories (a la Carte Courses) ===
+
+&lt;pre&gt;
+$showLittleCats = false;
+foreach ($littleCats as $cat) {
+	$catid = $cat-&gt;id;
+	$$catid = false;
+	$courses = $DB-&gt;get_records('course', array('category'=&gt;$cat-&gt;id), null, 'id,category,visible');
+	foreach ($courses as $course) {
+		$context = get_context_instance(CONTEXT_COURSE, $course-&gt;id, MUST_EXIST);
+		if ( (is_enrolled($context, $USER-&gt;id, '', true) &amp;&amp; $course-&gt;visible) || is_siteadmin()) {
+			$$catid = true;
+			if ($cat-&gt;parent == 0 &amp;&amp; $showLittleCats == false) {
+				$showLittleCats = true;
+			}
+			break 1;
+		}
+	}
+}
+&lt;/pre&gt;
+
+=== Load CSS and JQuery ===
+See the CSS files [[Media:Customcourse.txt]] and [[Media:Customcourse-phone.txt]] (uploaded as text)
+
+&lt;pre&gt;
+if ($deviceType == 'phone') {
+	echo '&lt;link type=&quot;text/css&quot; rel=&quot;Stylesheet&quot; href=&quot;http://my.escoffieronline.com/escoffierfiles/style/customcourse-phone.css&quot; /&gt;'; // custom css for phone
+	$imgHeight = &quot;45px&quot;; // string for html display
+} else {
+	echo '&lt;link type=&quot;text/css&quot; rel=&quot;Stylesheet&quot; href=&quot;http://my.escoffieronline.com/escoffierfiles/style/customcourse.css&quot; /&gt;'; // custom css
+	$imgHeight = &quot;95px&quot;; // string for html display
+}
+
+//jQuery for accordion
+echo '&lt;meta charset=&quot;utf-8&quot;&gt;
+	&lt;title&gt;jQuery UI Accordion - Default functionality&lt;/title&gt;
+	&lt;link rel=&quot;stylesheet&quot; href=&quot;http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css&quot;&gt;
+	&lt;script src=&quot;http://code.jquery.com/jquery-1.9.1.js&quot;&gt;&lt;/script&gt;
+	&lt;script src=&quot;http://code.jquery.com/ui/1.10.3/jquery-ui.js&quot;&gt;&lt;/script&gt;
+	&lt;script type=&quot;text/javascript&quot;&gt;
+	$(function() {';
+for ($i = 1; $i &lt;= $enrolledBigCats; $i++) { //need to create a new jQuery accordion object for each enrolled big category
+	echo &quot;$( \&quot;#accordion$i\&quot; ).accordion({collapsible:true,heightStyle:\&quot;content\&quot;,active:false});&quot;;
+}
+echo '	$( &quot;#accordionSC&quot; ).accordion({collapsible:true,heightStyle:&quot;content&quot;,active:false})';
+echo '	})
+	&lt;/script&gt;';
+&lt;/pre&gt;
+
+=== Echo Courses ===
+&lt;pre&gt;
+if ($USER-&gt;id == 0) {
+	// content for logged out user
+} elseif ($USER-&gt;id == 1) {
+	// content for guest user
+} else {
+	$i = 1; //counter for number of programs
+	foreach ($bigCats as $cat) {
+		$catid = $cat-&gt;id;
+		if ($$catid) {
+			echo &quot;&lt;h1&gt;$cat-&gt;name&lt;/h1&gt;
+				&lt;div id=\&quot;accordion$i\&quot; class=\&quot;accordion\&quot;&gt;&quot;;
+			$i++;
+			
+			$subCats = $DB-&gt;get_records('course_categories', array('parent'=&gt;$cat-&gt;id), null, 'id,name,idnumber,parent,sortorder,coursecount,visible,depth,path');
+			//show enrolled courses in each subcategory
+			foreach ($subCats as $subCat) {
+				$subCatid = $subCat-&gt;id;
+				if ($$subCatid){
+					echo &quot;&lt;h2&gt;$subCat-&gt;name&lt;/h2&gt;
+						&lt;div&gt;&quot;;
+					$courses = $DB-&gt;get_records('course', array('category'=&gt;$subCat-&gt;id), 'sortorder ASC', 'id,category,shortname,fullname,summary,visible');
+					foreach ($courses as $course) {
+						$context = get_context_instance(CONTEXT_COURSE, $course-&gt;id, MUST_EXIST);
+						if ( (is_enrolled($context, $USER-&gt;id, '', true) &amp;&amp; $course-&gt;visible) || is_siteadmin()) {
+						
+							$context = $DB-&gt;get_record('context', array('contextlevel'=&gt;50, 'instanceid'=&gt;$course-&gt;id));
+							$overviewfile = $DB-&gt;get_record('files', array('contextid'=&gt;$context-&gt;id, 'component'=&gt;'course', 'filearea'=&gt;'overviewfiles'));
+							
+							if ($overviewfile) {
+								$img_url = &quot;$CFG-&gt;wwwroot/pluginfile.php/$overviewfile-&gt;contextid/course/overviewfiles/$overviewfile-&gt;filename&quot;;
+								$img_html = &quot;&lt;div class=\&quot;col-right-courses\&quot;&gt;
+												&lt;img src=\&quot;$img_url\&quot; height=\&quot;$imgHeight\&quot; /&gt;
+											&lt;/div&gt;&quot;;
+							} else {
+								$img_html = '&lt;div class=&quot;col-right-courses&quot;&gt;&lt;/div&gt;';
+							}
+						
+							echo &quot;&lt;div class=\&quot;course-row\&quot;&gt;
+								&lt;div class=\&quot;col-left-courses\&quot;&gt;
+									&lt;h3 class=\&quot;course-header\&quot;&gt;
+										&lt;a title=\&quot;$course-&gt;shortname\&quot; href=\&quot;$CFG-&gt;wwwroot/course/view.php?id=$course-&gt;id\&quot; target=\&quot;_blank\&quot;&gt;&quot;;
+							if ($deviceType == 'phone') { echo $course-&gt;shortname; } else { echo $course-&gt;fullname; }
+							echo		&quot;&lt;/a&gt;
+									&lt;/h3&gt;
+									&lt;div class=\&quot;course-description\&quot;&gt;&quot;;
+							if ($deviceType != 'phone') { echo strip_tags($course-&gt;summary); }
+							echo 	&quot;&lt;/div&gt;
+								&lt;/div&gt;
+								$img_html
+							&lt;/div&gt;&quot;;
+						}
+					}
+					echo '&lt;/div&gt;';
+				}
+			}
+			
+			echo '&lt;/div&gt;';
+			
+			//show enrolled courses in top level category
+			$courses = $DB-&gt;get_records('course', array('category'=&gt;$cat-&gt;id), 'sortorder ASC', 'id,category,shortname,fullname,summary,visible');
+			foreach ($courses as $course) {
+				$context = get_context_instance(CONTEXT_COURSE, $course-&gt;id, MUST_EXIST);
+				if ( (is_enrolled($context, $USER-&gt;id, '', true) &amp;&amp; $course-&gt;visible) || is_siteadmin()) {
+				
+					$context = $DB-&gt;get_record('context', array('contextlevel'=&gt;50, 'instanceid'=&gt;$course-&gt;id));
+					$overviewfile = $DB-&gt;get_record('files', array('contextid'=&gt;$context-&gt;id, 'component'=&gt;'course', 'filearea'=&gt;'overviewfiles'));
+					
+					if ($overviewfile) {
+						$img_url = &quot;$CFG-&gt;wwwroot/pluginfile.php/$overviewfile-&gt;contextid/course/overviewfiles/$overviewfile-&gt;filename&quot;;
+						$img_html = &quot;&lt;div class=\&quot;col-right-courses\&quot;&gt;
+										&lt;img src=\&quot;$img_url\&quot; height=\&quot;$imgHeight\&quot; /&gt;
+									&lt;/div&gt;&quot;;
+					} else {
+						$img_html = '&lt;div class=&quot;col-right-courses&quot;&gt;&lt;/div&gt;';
+					}
+				
+					echo &quot;&lt;div class=\&quot;course-row\&quot;&gt;
+						&lt;div class=\&quot;col-left-courses\&quot;&gt;
+							&lt;h3 class=\&quot;course-header\&quot;&gt;
+								&lt;a title=\&quot;$course-&gt;shortname\&quot; href=\&quot;$CFG-&gt;wwwroot/course/view.php?id=$course-&gt;id\&quot; target=\&quot;_blank\&quot;&gt;&quot;;
+					if ($deviceType == 'phone') { echo $course-&gt;shortname; } else { echo $course-&gt;fullname; }
+					echo		&quot;&lt;/a&gt;
+							&lt;/h3&gt;
+							&lt;div class=\&quot;course-description\&quot;&gt;&quot;;
+					if ($deviceType != 'phone') { echo strip_tags($course-&gt;summary); }
+					echo 	&quot;&lt;/div&gt;
+						&lt;/div&gt;
+						$img_html
+					&lt;/div&gt;&quot;;
+				}
+			}
+			
+			//echo '&lt;/div&gt;';
+		}
+	}
+	if ($showLittleCats) {
+			echo &quot;&lt;h1&gt;Escoffier Courses&lt;/h1&gt;
+				&lt;div id=\&quot;accordionSC\&quot; class=\&quot;accordion\&quot;&gt;&quot;;
+			
+			foreach ($littleCats as $cat) {
+				$catid = $cat-&gt;id;
+				if ($$catid &amp;&amp; $cat-&gt;parent == 0){
+					echo &quot;&lt;h2&gt;$cat-&gt;name&lt;/h2&gt;
+						&lt;div&gt;&quot;;
+					$courses = $DB-&gt;get_records('course', array('category'=&gt;$cat-&gt;id), 'sortorder ASC', 'id,category,shortname,fullname,summary,visible');
+					foreach ($courses as $course) {
+						$context = get_context_instance(CONTEXT_COURSE, $course-&gt;id, MUST_EXIST);
+						if ( (is_enrolled($context, $USER-&gt;id, '', true) &amp;&amp; $course-&gt;visible) || is_siteadmin()) {
+						
+							$context = $DB-&gt;get_record('context', array('contextlevel'=&gt;50, 'instanceid'=&gt;$course-&gt;id));
+							$overviewfile = $DB-&gt;get_record('files', array('contextid'=&gt;$context-&gt;id, 'component'=&gt;'course', 'filearea'=&gt;'overviewfiles'));
+							
+							if ($overviewfile) {
+								$img_url = &quot;$CFG-&gt;wwwroot/pluginfile.php/$overviewfile-&gt;contextid/course/overviewfiles/$overviewfile-&gt;filename&quot;;
+								$img_html = &quot;&lt;div class=\&quot;col-right-courses\&quot;&gt;
+												&lt;img src=\&quot;$img_url\&quot; height=\&quot;$imgHeight\&quot; /&gt;
+											&lt;/div&gt;&quot;;
+							} else {
+								$img_html = '&lt;div class=&quot;col-right-courses&quot;&gt;&lt;/div&gt;';
+							}
+						
+							echo &quot;&lt;div class=\&quot;course-row\&quot;&gt;
+								&lt;div class=\&quot;col-left-courses\&quot;&gt;
+									&lt;h3 class=\&quot;course-header\&quot;&gt;
+										&lt;a title=\&quot;$course-&gt;shortname\&quot; href=\&quot;$CFG-&gt;wwwroot/course/view.php?id=$course-&gt;id\&quot; target=\&quot;_blank\&quot;&gt;&quot;;
+							if ($deviceType == 'phone') { echo $course-&gt;shortname; } else { echo $course-&gt;fullname; }
+							echo		&quot;&lt;/a&gt;
+									&lt;/h3&gt;
+									&lt;div class=\&quot;course-description\&quot;&gt;&quot;;
+							if ($deviceType != 'phone') { echo strip_tags($course-&gt;summary); }
+							echo 	&quot;&lt;/div&gt;
+								&lt;/div&gt;
+								$img_html
+							&lt;/div&gt;&quot;;
+						}
+					}
+					echo '&lt;/div&gt;';
+				}
+			}
+			
+			echo '&lt;/div&gt;';
+	}
+&lt;/pre&gt;
+=== Message for Users without Courses ===
+&lt;pre&gt;
+	//display error message if no cats to display
+	if ( !$enrolledBigCats &amp;&amp; !$showLittleCats ) {
+		echo &quot;&lt;h1&gt;No Courses Found&lt;/h1&gt;
+				&lt;p&gt;This is a known issue, and we have a quick, two minute fix.  If you are seeing this message, please contact technical support using the button below:&lt;/p&gt;
+				&lt;p style=\&quot;text-align: center;\&quot;&gt;&lt;a href=\&quot;http://escoffier.zendesk.com/account/dropboxes/20137030\&quot; onclick=\&quot;window.open(this.href, 'mywin',
+				'left=20,top=20,width=800,height=600,toolbar=1,resizable=0'); return false;\&quot;&gt;&lt;input value=\&quot;Contact Support\&quot; type=\&quot;button\&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+				&lt;script type=\&quot;text/javascript\&quot;&gt;// &lt;![CDATA[
+				if (typeof(Zenbox) !== \&quot;undefined\&quot;) {
+					Zenbox.init({
+					  dropboxID:   \&quot; 20137030\&quot;,
+					  url:         \&quot;https://escoffier.zendesk.com\&quot;,
+					  tabTooltip:  \&quot;Help\&quot;,
+					  tabImageURL: \&quot;https://assets.zendesk.com/external/zenbox/images/tab_help.png\&quot;,
+					  tabColor:    \&quot;#ab2328\&quot;,
+					  tabPosition: \&quot;Left\&quot;
+					  hide_tab:   \&quot;true\&quot;,
+					});
+				  }
+				// ]]&gt;&lt;/script&gt;&quot;;
+	}
+}
+&lt;/pre&gt;</text>
+      <sha1>ipjrw0o90ddifpppyn4cleytdmecz0y</sha1>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+    </revision>
+  </page>
+  <page>
+    <title>File:Customcourse-phone.txt</title>
+    <ns>6</ns>
+    <id>69</id>
+    <revision>
+      <id>262</id>
+      <parentid>261</parentid>
+      <timestamp>2015-01-14T18:21:06Z</timestamp>
+      <contributor>
+        <username>Nick</username>
+        <id>2</id>
+      </contributor>
+      <comment>[[Category:Outdated_Moodle_Changes]]</comment>
+      <text xml:space="preserve" bytes="195">[[Category:Outdated_Moodle_Changes]]
+
+This is the CSS for [[Add_Front_Page_Display|front page display]] for phones.  There is different CSS for [[Media:Customcourse.txt|desktop/tablet displays]].</text>
+      <sha1>cq6wgc298ebgz338cx1f9omg2tqeb7p</sha1>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+    </revision>
+  </page>
+  <page>
+    <title>File:Customcourse.txt</title>
+    <ns>6</ns>
+    <id>68</id>
+    <revision>
+      <id>263</id>
+      <parentid>260</parentid>
+      <timestamp>2015-01-14T18:21:11Z</timestamp>
+      <contributor>
+        <username>Nick</username>
+        <id>2</id>
+      </contributor>
+      <comment>[[Category:Outdated_Moodle_Changes]]</comment>
+      <text xml:space="preserve" bytes="181">[[Category:Outdated_Moodle_Changes]]
+
+This is the CSS for [[Add_Front_Page_Display|front page display]].  There is different CSS for [[Media:Customcourse-phone.txt|phone displays]].</text>
+      <sha1>acg82us8ayif8aeg6qb3gw8ha4s36v9</sha1>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+    </revision>
+  </page>
+  <page>
+    <title>Add Message to Flip Phone</title>
+    <ns>0</ns>
+    <id>131</id>
+    <revision>
+      <id>382</id>
+      <parentid>331</parentid>
+      <timestamp>2015-12-11T18:58:04Z</timestamp>
+      <contributor>
+        <username>Nick</username>
+        <id>2</id>
+      </contributor>
+      <minor/>
+      <comment>removed from main changelog category</comment>
+      <text xml:space="preserve" bytes="1854">[[Category:Outdated_Moodle_Changes]]
+
+'''''This change is made obsolete by [[Show_Contents_by_Default_on_Vertical_Phone]]'''''
+
+In the mobile Snap Theme, when you enter a course with the &quot;collapsible topics&quot; layout holding the phone vertically (portrait mode), the table of contents does not display and it is not immediately apparent what to do as a student.  Therefore, we want to add a message that displays only when the phone is vertical.
+
+First, we'll add our message in the Snap Theme's language file, /theme/snap/lang/en/theme_snap.php  At the end of the file (but without leaving spaces), add:
+
+&lt;pre&gt;
+$string['vertical-phone'] = 'Please turn your device sideways to view course contents.';
+&lt;/pre&gt;
+
+Next, we need to show this string somewhere that will display when the contents are hidden.  Open /course/format/topcoll/renderer.php  From around line 562 to 565, you'll see the following code:
+
+&lt;pre&gt;
+if ($this-&gt;tcsettings['displayinstructions'] == 2) {
+    // Collapsed Topics instructions.
+    echo $this-&gt;display_instructions();
+}
+&lt;/pre&gt;
+
+Immediately after, add another 'if' statement:
+
+&lt;pre&gt;
+if ($this-&gt;mobiletheme === true) {
+	echo html_writer::tag('p', get_string('vertical-phone', 'theme_snap'), array('class' =&gt; 'topcoll-display-instructions vertical', 'style' =&gt; 'font-style: oblique;'));
+}
+&lt;/pre&gt;
+
+Make sure the name of the string and the file in the 'get_string()' function are correct.
+
+If we stopped here, the message would display on any mobile theme, regardless of the phone's orientation.  To fix this, we'll add custom CSS to the Snap Theme using one of the classes we assigned to the paragraph tag above, 'vertical':
+
+&lt;pre&gt;
+@media only screen and (orientation: landscape) {
+      .vertical {
+            display: none;
+      }
+}
+&lt;/pre&gt;
+
+Now, when the phone is held horizontally (in landscape mode), the message will not display.</text>
+      <sha1>hs7txg8e01allytpqi9k7iwl79q5h7a</sha1>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+    </revision>
+  </page>
+  <page>
+    <title>Edit Online Users</title>
+    <ns>0</ns>
+    <id>83</id>
+    <revision>
+      <id>364</id>
+      <parentid>363</parentid>
+      <timestamp>2015-09-16T22:31:06Z</timestamp>
+      <contributor>
+        <username>Nick</username>
+        <id>2</id>
+      </contributor>
+      <minor/>
+      <comment>[[Category:Outdated_Moodle_Changes]]</comment>
+      <text xml:space="preserve" bytes="7042">[[Category:Outdated_Moodle_Changes]]
+
+We edited the online users block to display larger user pictures and to display an employee role, if applicable.
+
+== Moodle 2.7 ==
+
+In this version, the picture size is controlled by the class, &quot;userpicture&quot;, so changing the size in the code here does nothing.  However, the default size is now 35 pixels, so this change is not longer necessary.
+
+Adding the $employee_role variable can be done in the same manner as before, just take note that now you'll insert it somewhere around line 184.
+
+If you want to modify the colored border around the picture, you will need to modify the class &quot;userpicture&quot;.  If you would like to vary the border based on some variable, you will need to make new classes for each variation, along with some changes to the PHP code.  Before the line containing &lt;code&gt;$OUTPUT-&gt;user_picture&lt;/code&gt; (line 184 before edits) you will declare a new variable:
+
+&lt;pre&gt;$user_pic_class = 'userpicture';&lt;/pre&gt;
+
+This way, the picture will inherit the normal class in lieu of other changes.  Next, add if statements to check whatever variables you wish and change the new variable to match one of your custom classes.  Finally, change this section of the code:
+
+&lt;pre&gt;array('size'=&gt;16, 'alttext'=&gt;false, 'link'=&gt;false)&lt;/pre&gt;
+
+To this:
+
+&lt;pre&gt;array('size'=&gt;16, 'alttext'=&gt;false, 'link'=&gt;false, 'class'=&gt;$user_pic_class)&lt;/pre&gt;
+
+== Original Code ==
+
+The code you need to edit is located in the directory &quot;/blocks/online_users/block_onlineusers.php&quot;
+
+Beginning around line 151 (line 173 in 2.7) is a foreach loop that displays the actual content:
+
+&lt;pre&gt;
+151            foreach ($users as $user) {
+152                $this-&gt;content-&gt;text .= '&lt;li class=&quot;listentry&quot;&gt;';
+153                $timeago = format_time($now - $user-&gt;lastaccess); //bruno to calculate correctly on frontpage
+154
+155                if (isguestuser($user)) {
+156                    $this-&gt;content-&gt;text .= '&lt;div class=&quot;user&quot;&gt;'.$OUTPUT-&gt;user_picture($user, array('size'=&gt;16, 'alttext'=&gt;false));
+157                    $this-&gt;content-&gt;text .= get_string('guestuser').'&lt;/div&gt;';
+158
+159                } else {
+160                    $this-&gt;content-&gt;text .= '&lt;div class=&quot;user&quot;&gt;';
+161                    $this-&gt;content-&gt;text .= '&lt;a href=&quot;'.$CFG-&gt;wwwroot.'/user/view.php?id='.$user-&gt;id.'&amp;amp;course='.$this-&gt;page-&gt;course-&gt;id.'&quot; title=&quot;'.$timeago.'&quot;&gt;';
+162                    $this-&gt;content-&gt;text .= $OUTPUT-&gt;user_picture($user, array('size'=&gt;16, 'alttext'=&gt;false, 'link'=&gt;false)) .$user-&gt;fullname.'&lt;/a&gt;&lt;/div&gt;';
+163                }
+164                if ($canshowicon and ($USER-&gt;id != $user-&gt;id) and !isguestuser($user)) {  // Only when logged in and messaging active etc
+165                    $anchortagcontents = '&lt;img class=&quot;iconsmall&quot; src=&quot;'.$OUTPUT-&gt;pix_url('t/message') . '&quot; alt=&quot;'. get_string('messageselectadd') .'&quot; /&gt;';
+166                    $anchortag = '&lt;a href=&quot;'.$CFG-&gt;wwwroot.'/message/index.php?id='.$user-&gt;id.'&quot; title=&quot;'.get_string('messageselectadd').'&quot;&gt;'.$anchortagcontents .'&lt;/a&gt;';
+167
+168                    $this-&gt;content-&gt;text .= '&lt;div class=&quot;message&quot;&gt;'.$anchortag.'&lt;/div&gt;';
+169                }
+170                $this-&gt;content-&gt;text .= &quot;&lt;/li&gt;\n&quot;;
+171            }
+&lt;/pre&gt;
+
+== Change Picture Size (Obsolete 2.7) ==
+
+In the code at lines 156 and 162, the user pictures are displayed with the syntax: &lt;code&gt;$OUTPUT-&gt;user_picture($user, array('size'=&gt;16, 'alttext'=&gt;false))&lt;/code&gt;  The number after &quot;size&quot; is the size of the image in pixels.  You simply change this number to change the size of the displayed image. We changed this to &quot;35&quot;, which is one of the default sizes in which the user pictures seem to be rendered.
+
+== Display Employee Role ==
+
+We also added code to display an employee's role, if applicable, after the user's name. In order to make this easily changeable and customizable, we added a custom field for employee role.  To do this, navigate to &quot;Site Administration -&gt; Users -&gt; Accounts -&gt; User profile fields&quot; and create a new profile field of the type &quot;Dropdown menu&quot;.  Make sure in the field settings this is NOT required and NOT visible. For the Menu options, leave one blank line (for users without an employee role), then list the different roles that you want displayed EXACTLY as you want them displayed in the block, for instance:
+
+&lt;pre&gt;
+
+(Admin)
+(Adviser)
+(Chef)
+&lt;/pre&gt;
+
+For all employees who should have a role, you must manually change this new field to the correct setting or mass update the employee users with a CSV file.
+
+In the code, you'll first add a line before line 162 (the line in which you edited the picture size) with a variable declaration:
+
+&lt;pre&gt;$employee_role = $DB-&gt;get_record('user_info_data', array('userid'=&gt;$user-&gt;id,'fieldid'=&gt;'2'));&lt;/pre&gt;
+
+The database table &quot;user_info_data&quot; contains all custom fields, so edit the &quot;fieldid&quot; to match the custome field you just created. (These ids should be assigned in the order of creation, so in this example, &quot;employee role&quot; was the second custom field created.)
+
+Now, you will edit the line where you changed the image size from this:
+
+&lt;pre&gt;$this-&gt;content-&gt;text .= $OUTPUT-&gt;user_picture($user, array('size'=&gt;35, 'alttext'=&gt;false, 'link'=&gt;false)) .$user-&gt;fullname.'&lt;/a&gt;&lt;/div&gt;';&lt;/pre&gt;
+
+to this:
+
+&lt;pre&gt;$this-&gt;content-&gt;text .= $OUTPUT-&gt;user_picture($user, array('size'=&gt;35, 'alttext'=&gt;false, 'link'=&gt;false)) .$user-&gt;fullname.' '.$employee_role-&gt;data.'&lt;/a&gt;&lt;/div&gt;';&lt;/pre&gt;
+
+The only difference is that after the &quot;fullname&quot; variable, you have appended a space and your employee role variable.
+
+== Display Customizable Border (Obsolete 2.7) ==
+
+If you want to display a border around each picture, you'll need a few extra additions.
+
+First, after defining your &quot;$employee_role&quot; variable, make a new variable &quot;$color&quot; exual to a string of the hex code for a default border color:
+
+&lt;pre&gt;$color = '#ccc';&lt;/pre&gt;
+
+After this, make a series of if and elseif statements to change the color. You can use the employee_role, or add other variables based on user fields (you'll need to define them as you did with employee role; non-custom profile fields will be located in a different database table).
+
+&lt;pre&gt;
+if ($employee_role-&gt;data == '(Admin)') { 
+    $color = '#888'; 
+}
+elseif ($employee_role-&gt;data == '(Adviser)') { 
+    $color = '#bb8c15'; 
+}
+elseif ($employee_role-&gt;data == '(Chef)') { 
+    $color = '#ac151e'; 
+}
+&lt;/pre&gt;
+
+Now, edit the line where the picture is displayed:
+
+&lt;pre&gt;
+$this-&gt;content-&gt;text .= &quot;&lt;div style=\&quot;float:left; width:35px; height:35px; border:2px solid $color\&quot;&gt;&quot;
+    .$OUTPUT-&gt;user_picture($user, array('size'=&gt;32, 'alttext'=&gt;false, 'link'=&gt;false)) .'&lt;/div&gt;&amp;nbsp;'
+    .$user-&gt;fullname.' '.$employee_role-&gt;data.'&lt;/a&gt;&lt;br&gt;&lt;div&gt;&amp;nbsp;&lt;/div&gt;&lt;/div&gt;';
+&lt;/pre&gt;
+
+Notice that a &quot;div&quot; tag is added surrounding the &quot;img&quot; tag but not the student name. in the div style, the height and width should be the same as the image size (in this case, 35px).  After the end anchor tag, but before the final end &quot;div&quot;, add a break and an un-styled div with a single non-breaking space inside (this ensures a gap between photos).</text>
+      <sha1>e4rxzopo4ems70mgsh4u9qzbhlu04zs</sha1>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+    </revision>
+  </page>
+  <page>
+    <title>How To Add Fuze Links in the LMS</title>
+    <ns>0</ns>
+    <id>108</id>
+    <revision>
+      <id>369</id>
+      <parentid>270</parentid>
+      <timestamp>2015-09-21T22:50:20Z</timestamp>
+      <contributor>
+        <username>Nick</username>
+        <id>2</id>
+      </contributor>
+      <minor/>
+      <comment>[[Category:Outdated_Moodle_Changes]]</comment>
+      <text xml:space="preserve" bytes="74">&lt;youtube&gt;OdV6DVwKX98?rel=0&lt;/youtube&gt;
+
+[[Category:Outdated_Moodle_Changes]]</text>
+      <sha1>0mzjemmauhlwl41lhg53r52886lr1qv</sha1>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+    </revision>
+  </page>
+  <page>
+    <title>Add Course Startdate in Headers</title>
+    <ns>0</ns>
+    <id>145</id>
+    <revision>
+      <id>380</id>
+      <parentid>379</parentid>
+      <timestamp>2015-12-11T18:46:05Z</timestamp>
+      <contributor>
+        <username>Nick</username>
+        <id>2</id>
+      </contributor>
+      <comment>[[Category:Outdated_Moodle_Changes]]</comment>
+      <text xml:space="preserve" bytes="1753">[[Category:Outdated_Moodle_Changes]]
+
+This is no longer necessary since we have switched from Fuze to Zoom.
+
+This will create a hidden div in the page's header containing the course's startdate.  This is useful because it allows us to grab the startdate in any custom javascript that runs on the page.  This must be done for every theme used on the site.  NOTE that while Moodle calculates dates in seconds, javascript calculates date in milliseconds, so any Moodle date should be multiplied by 1000 before being altered by JS.
+
+== Essential Theme (Desktop Theme) ==
+Open /theme/essential/layout/includes/header.php
+
+Near the tob of the file, immediately after the 'require_once' lines (around line 29), call the $COURSE global variable:
+
+&lt;pre&gt;
+global $COURSE;
+&lt;/pre&gt;
+
+Anywhere within the &lt;code&gt;&lt;head&gt;&lt;/code&gt; tags, above the &lt;code&gt;&lt;nav&gt;&lt;/code&gt; start tage,  add the following line of HTML:
+
+&lt;pre&gt;
+&lt;div id=&quot;course-startdate&quot; class=&quot;course-startdate&quot; style=&quot;display: none;&quot;&gt;&lt;?php echo $COURSE-&gt;startdate; ?&gt;&lt;/div&gt;
+&lt;/pre&gt;
+
+This will add something similar to the following code on every page:
+
+&lt;pre&gt;
+&lt;div id=&quot;course-startdate&quot; class=&quot;course-startdate&quot; style=&quot;display: none;&quot;&gt;1428469200&lt;/div&gt;
+&lt;/pre&gt;
+
+...where the number between the &lt;code&gt;&lt;&lt;/code&gt;div&lt;code&gt;&gt;&lt;/code&gt; tags is the Moodle startdate.
+
+== Snap Theme (Mobile Theme) ==
+
+Open /theme/snap/layout/nav.php
+
+Near the top of the file, after the opening comments, call the necessary global $COURSE as in the 'essential' theme:
+
+&lt;pre&gt;
+global $COURSE;
+&lt;/pre&gt;
+
+Near the bottom of the page, before the closing &lt;code&gt;&lt;/header&gt;&lt;/code&gt; tag, add the same line as in the essential theme:
+
+&lt;pre&gt;
+&lt;div id=&quot;course-startdate&quot; class=&quot;course-startdate&quot; style=&quot;display: none;&quot;&gt;&lt;?php echo $COURSE-&gt;startdate; ?&gt;&lt;/div&gt;
+&lt;/pre&gt;</text>
+      <sha1>2w4y9gardwh0qiljvvfa6izsha0th9k</sha1>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+    </revision>
+  </page>
+  <page>
+    <title>Change Logo Based on Custom Field</title>
+    <ns>0</ns>
+    <id>130</id>
+    <revision>
+      <id>390</id>
+      <parentid>385</parentid>
+      <timestamp>2016-02-12T17:18:26Z</timestamp>
+      <contributor>
+        <username>Nick</username>
+        <id>2</id>
+      </contributor>
+      <text xml:space="preserve" bytes="3419">[[Category:Outdated_Moodle_Changes]]
+[[Category:Essential_Theme]]
+[[Category:Snap_Theme]]
+
+This must be done for every theme used on the site.  Here we will change the logo based on the &quot;Campus&quot; custom field ('fieldid' =&gt; '6'), but this can be done based on other or additional variables.
+
+== Essential Theme (Desktop Theme) ==
+
+Open /theme/essential/layout/includes/header.php
+
+Near the tob of the file, immediately after the 'require_once' lines (around line 29), add the following:
+
+&lt;pre&gt;
+global $DB, $USER;
+$campus = $DB-&gt;get_record('user_info_data', array('userid'=&gt;$USER-&gt;id,'fieldid'=&gt;'6'))-&gt;data;
+&lt;/pre&gt;
+
+The '$campus' variable will be used to change the logo.
+
+Later down, around line 64, you'll see the following code:
+
+&lt;pre&gt;
+&lt;a class=&quot;logo&quot; href=&quot;&lt;?php echo preg_replace(&quot;(https?:)&quot;, &quot;&quot;, $CFG-&gt;wwwroot); ?&gt;&quot; title=&quot;&lt;?php print_string('home'); ?&gt;&quot;&gt;&lt;/a&gt;
+&lt;/pre&gt;
+
+Replace it with this:
+
+&lt;pre&gt;
+&lt;a class=&quot;logo&quot; href=&quot;&lt;?php echo preg_replace(&quot;(https?:)&quot;, &quot;&quot;, $CFG-&gt;wwwroot); ?&gt;&quot; title=&quot;&lt;?php print_string('home'); ?&gt;&quot; style=&quot;
+&lt;?php if (($campus == 'Austin')||($campus == 'Boulder')||($campus == 'Boulder - Online')) {
+	echo &quot;background-image: url('//dev.escoffieronline.com/theme/essential/pix/aesca.png') !important;&quot;; 
+} ?&gt;&quot;&gt;&lt;/a&gt;
+&lt;/pre&gt;
+
+What we are doing here is adding a blank style property to the anchor tag that displays the site logo.  Within the quotes, we add some PHP to check if the '$campus' variable we set up matches one of several predetermined values, and if so, echo some CSS to change the logo image.  YOU MUST MAKE SURE THAT THE IMAGE AT THIS PATH EXISTS.
+
+== Snap Theme (Mobile Theme) ==
+
+Open /theme/snap/layout/nav.php
+
+Near the top of the file, after the opening comments, call the necessary globals and initialize your '$campus' variable as in the 'essential' theme:
+
+&lt;pre&gt;
+global $DB, $USER;
+$campus = $DB-&gt;get_record('user_info_data', array('userid'=&gt;$USER-&gt;id,'fieldid'=&gt;'6'))-&gt;data;
+&lt;/pre&gt;
+
+Since this theme echoes a long list of variables to create the anchor tag, rather than using lots of in-line PHP, we want to create a new variable we can use next:
+
+&lt;pre&gt;
+$campus_style = '';
+&lt;/pre&gt;
+
+Then set the variable (if applicable) using a slightly modified version of our 'if' statement:
+
+&lt;pre&gt;
+if (($campus == 'Austin')||($campus == 'Boulder')||($campus == 'Boulder - Online')) {
+	$campus_style = &quot;background-image: url('//dev.escoffieronline.com/theme/essential/pix/aesca.png') !important;&quot;; 
+}
+&lt;/pre&gt;
+
+Finally, edit the following line in the code (around line 35):
+
+&lt;pre&gt;
+echo '&lt;a aria-label=&quot;'.get_string('home', 'theme_snap').'&quot; href=&quot;'. s($CFG-&gt;wwwroot).'&quot; id=&quot;logo&quot; title=&quot;'.s(format_string($SITE-&gt;fullname)).'&quot;&gt;'.$sitefullname.'&lt;/a&gt;'; 
+&lt;/pre&gt;
+
+To include our new '$campus_style' variable in the 'style' attribute:
+
+&lt;pre&gt;
+echo '&lt;a aria-label=&quot;'.get_string('home', 'theme_snap').'&quot; href=&quot;'. s($CFG-&gt;wwwroot).'&quot; id=&quot;logo&quot; title=&quot;'.s(format_string($SITE-&gt;fullname)).'&quot; style=&quot;'.$campus_style.'&quot;&gt;'.$sitefullname.'&lt;/a&gt;'; 
+&lt;/pre&gt;
+
+== Other Themes ==
+
+Since all themes are coded differently, you'll have to modify these steps slightly for any other themes used.  The hardest part is simply finding where the anchor tag housing the logo is created.  It *SHOULD* always be somewhere in the directory /theme/THEME-NAME/layout/ and will often be in a file called 'header.php', but not always.  Loook through all of the layout files searching for a tag with the attribute 'class' set to &quot;logo&quot;.</text>
+      <sha1>3ohrbar9vs0opn466b9hey2102an6v4</sha1>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+    </revision>
+  </page>
+  <page>
+    <title>Customize Language Files</title>
+    <ns>0</ns>
+    <id>6</id>
+    <revision>
+      <id>391</id>
+      <parentid>386</parentid>
+      <timestamp>2016-02-12T17:18:33Z</timestamp>
+      <contributor>
+        <username>Nick</username>
+        <id>2</id>
+      </contributor>
+      <text xml:space="preserve" bytes="2147">[[Category:Outdated_Moodle_Changes]]
+[[Category:Essential_Theme]]
+[[Category:Snap_Theme]]
+
+== Essential Theme ==
+
+In order to make custom text automatically translate when a user changes her language, you need to customize the main theme's language files.  These are located in the folder 'theme/''yourtheme''/lang'.  You will see a folder for each language that the theme has been translated into.  For instance, the 'en' folder contains the language file for English (in the UK).  Open the folder, and you will see a file called 'theme_''yourtheme''.php'.  Open this file for editing, and at the end we will add four new strings for our [[Additional_Menu_Items]]:
+
+&lt;pre&gt;
+$string['mygrades'] = 'Grades';
+$string['myaccount'] = 'Account';
+$string['userindex'] = 'User Index';
+$string['courseindx'] = 'Course Index';
+&lt;/pre&gt;
+
+Make the same change in the 'en_us' folder for United States English.  In the 'es' folder (Espanol), add the same code but translate the text in quotes:
+
+&lt;pre&gt;
+$string['mygrades'] = 'Calificaciones';
+$string['myaccount'] = 'Cuenta';
+$string['userindex'] = 'Índice de Usuario';
+$string['courseindex'] = 'Índice de Cursos';
+&lt;/pre&gt;
+
+We also have French set as a language on our home page, but our theme has not been translated into French!  That's ok; most of the items here are only for admins anyway.  You can simply copy the 'en' folder as 'fr' and modify the four strings we're using into French:
+
+&lt;pre&gt;
+$string['mygrades'] = 'Notes';
+$string['myaccount'] = 'Compte';
+$string['userindex'] = 'Indice de l\'utilisateur';
+$string['courseindex'] = 'Indice des cours';
+&lt;/pre&gt;
+
+Notice the slash in the third string.  This lets the PHP code know that this is an apostrophe, not a single quote, and is part of the string.  Normally, in PHP, we could just use double quotes instead of single quotes around the string, but for some reason, this does not seem to work in the language files.
+
+== Snap Theme ==
+
+Add the following string for to the English file in the snap theme (this is covered in [[Add_Message_to_Flip_Phone]]):
+
+&lt;pre&gt;
+$string['vertical-phone'] = 'Please turn your device sideways to view course contents.';
+&lt;/pre&gt;</text>
+      <sha1>516medq0vh9j1u2vtfjeacdh9jln8au</sha1>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+    </revision>
+  </page>
+  <page>
+    <title>Remove Breadcrumb Links</title>
+    <ns>0</ns>
+    <id>89</id>
+    <revision>
+      <id>392</id>
+      <parentid>387</parentid>
+      <timestamp>2016-02-12T17:18:40Z</timestamp>
+      <contributor>
+        <username>Nick</username>
+        <id>2</id>
+      </contributor>
+      <text xml:space="preserve" bytes="2165">[[Category:Outdated_Moodle_Changes]]
+[[Category:Essential_Theme]]
+
+With a quick theme edit, we can alter the breadcrumbs display so the course categories do not contain links.  This keeps the students off of '/course/index.php', which allows them to view courses they are not enrolled in. (Note that students can still directly navigate to this page if they know the link)
+
+In the file 'theme/essential/renderers/core_renderer.php', find the navbar function beginning around line 34:
+
+&lt;pre&gt;
+    public function navbar()
+    {
+        $breadcrumbstyle = theme_essential_get_setting('breadcrumbstyle');
+        if ($breadcrumbstyle) {
+            if ($breadcrumbstyle == '4') {
+                $breadcrumbstyle = '1'; // Fancy style with no collapse.
+            }
+            $breadcrumbs = html_writer::start_tag('ul', array('class' =&gt; &quot;breadcrumb style$breadcrumbstyle&quot;));
+            $index = 1;
+            foreach ($this-&gt;page-&gt;navbar-&gt;get_items() as $item) {
+                $item-&gt;hideicon = true;
+                $breadcrumbs .= html_writer::tag('li', $this-&gt;render($item), array('style' =&gt; 'z-index:' . (100 - $index) . ';'));
+                $index += 1;
+            }
+            $breadcrumbs .= html_writer::end_tag('ul');//$this-&gt;render($item)
+        } else {
+            $breadcrumbs = html_writer::tag('p', '&amp;nbsp;');
+        }
+        return $breadcrumbs;
+    }
+&lt;/pre&gt;
+
+You'll want to edit the code within the foreach loop.  Replace the snippit:
+
+&lt;pre&gt;
+        $breadcrumbs .= html_writer::tag('li', $this-&gt;render($item), array('style' =&gt; 'z-index:' . (100 - $index) . ';'));
+&lt;/pre&gt;
+
+with this:
+
+&lt;pre&gt;
+	if ($item-&gt;type == 10){
+		$breadcrumbs .= html_writer::tag('li', $item-&gt;text, array('style' =&gt; 'z-index:' . (100 - $index) . ';'));
+	} else {
+                $breadcrumbs .= html_writer::tag('li', $this-&gt;render($item), array('style' =&gt; 'z-index:' . (100 - $index) . ';'));
+	}
+&lt;/pre&gt;
+
+$item-type 10 corresponds to categories, which by default link to '/course/index.php'  For all items of this type, we are printing just the category name ($item-&gt;text), not the full link.  The else statement uses the normal function for all other types of items.</text>
+      <sha1>2i726kspbrzs4zcpkaor2gcs4e4z0ix</sha1>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+    </revision>
+  </page>
+  <page>
+    <title>Additional Menu Items</title>
+    <ns>0</ns>
+    <id>7</id>
+    <revision>
+      <id>388</id>
+      <parentid>374</parentid>
+      <timestamp>2016-02-12T17:17:53Z</timestamp>
+      <contributor>
+        <username>Nick</username>
+        <id>2</id>
+      </contributor>
+      <text xml:space="preserve" bytes="4921">[[Category:Outdated_Moodle_Changes]]
+[[Category:Essential_Theme]]
+
+== Moodle 2.7 ==
+
+[[Category:Moodle_2.7]]
+
+This has drastically changed as of Moodle 2.7. In 'theme/essential/renderers/core_renderer.php', around line 597, you'll see the comment::
+
+&lt;pre&gt;// Start dropdown menu items&lt;/pre&gt;
+
+After this, the different menu items are created by a series of if statements.  Most of the individual items are marked by a comment, so you can pretty easily place new menu items as you wish.
+
+We'll add the new &quot;My Account&quot; menu item after &quot;Badges&quot; but before &quot;Logout&quot;.  Around line 688, we'll place this code:
+
+&lt;pre&gt;
+	// Check if user has WooCommerce id
+	$WCid = $DB-&gt;get_record('user_info_data', array('userid'=&gt;$USER-&gt;id, 'fieldid'=&gt;'3'))-&gt;data;
+        if ($WCid) {
+            $branchlabel = '&lt;em&gt;&lt;i class=&quot;fa fa-credit-card&quot;&gt;&lt;/i&gt;' . get_string('myaccount', 'theme_essential') . '&lt;/em&gt;';
+            $branchurl = new moodle_url('/escoffierfiles/myaccountredirect.php');
+            $usermenu .= html_writer::tag('li', html_writer::link($branchurl, $branchlabel));
+				
+	    $usermenu .= html_writer::empty_tag('hr', array('class' =&gt; 'sep'));
+	}
+&lt;/pre&gt;
+
+* The first line is just a comment to let us know what this menu item is.
+* The second line creates a variable of the WCid by checking the custom fields table.  Ensure you are looking for the correct custom field, based on the 'fieldid'.
+* The third line checks if the WCid exists (or, more specifically, is a non-zero value).
+* The fourth line create the text that will display, including a FontAwesome icon.
+* The fifth line establishes the URL that this menu item will link to, in this case the [[Create_Account_Redirect_Page|account redirect page]] we created.
+* The sixth line actually renders the previous two lines.
+* The seventh line is blank.
+* The eighth line create a line separator, so this menu item will appear in its own sub-section.
+
+Afterwards, you can add the following to create menu items for teachers and managers. Teachers get a link to the user index, managers get this plus a link to the course index:
+
+&lt;pre&gt;
+	//Render admin options
+	$adminoptions = FALSE;
+	if (has_capability('moodle/user:viewhiddendetails', $context)){
+		$branchlabel = '&lt;em&gt;&lt;i class=&quot;fa fa-users&quot;&gt;&lt;/i&gt;' . get_string('userindex', 'theme_essential') . '&lt;/em&gt;';
+		$branchurl = new moodle_url('/user/index.php?id='.$course-&gt;id);
+		$usermenu .= html_writer::tag('li', html_writer::link($branchurl, $branchlabel));
+		$adminoptions = TRUE;
+	}	
+	if (has_capability('moodle/course:viewhiddencourses', $context) || has_capability('moodle/site:uploadusers', $context)){
+		$branchlabel = '&lt;em&gt;&lt;i class=&quot;fa fa-sitemap&quot;&gt;&lt;/i&gt;' . get_string('courseindex', 'theme_essential') . '&lt;/em&gt;';
+		$branchurl = new moodle_url('/course/index.php');
+		$usermenu .= html_writer::tag('li', html_writer::link($branchurl, $branchlabel));
+		$adminoptions = TRUE;
+	}
+	if ($adminoptions){
+		$usermenu .= html_writer::empty_tag('hr', array('class' =&gt; 'sep'));
+	}
+&lt;/pre&gt;
+
+==Moodle 2.5 ==
+
+The file 'theme/essential/renderers/core_renderer.php' has been edited quite a bit to customize the menu, so rather than noting the changes individually, I'll be adding in the large piece of code to date that has been added/changed. This will all go around line 147, between the code for the &quot;badges&quot; menu item and &quot;logout&quot;:
+
+&lt;pre&gt;
+//$branch-&gt;add('&lt;em&gt;&lt;i class=&quot;icon-file&quot;&gt;&lt;/i&gt;'.get_string('privatefiles', 'block_private_files').'&lt;/em&gt;',new moodle_url('/user/files.php'),get_string('privatefiles', 'block_private_files'));
+//tk adding 'My Grades' link
+global $COURSE, $USER;
+$branch-&gt;add('&lt;em&gt;&lt;i class=&quot;icon-check&quot;&gt;&lt;/i&gt;My Grades&lt;/em&gt;',new moodle_url('/grade/report/user/index.php?id='.$COURSE-&gt;id),'My Grades');
+//tk adding 'My Account' link
+$branch-&gt;add('&lt;em&gt;&lt;i class=&quot;icon-credit-card&quot;&gt;&lt;/i&gt;My Account&lt;/em&gt;',new moodle_url('/escoffierfiles/myaccountredirect.php'),'My Account');
+//tk adding section for Admin / Teacher links
+//global $COURSE, $USER; &lt;-- this was added above for 'My Grades', no longer needed here
+$context = get_context_instance(CONTEXT_COURSE, $COURSE-&gt;id, true);
+$roles = get_user_roles($context, $USER-&gt;id, true);
+$permitted_roles = array(1,3,4,9,10); //correspond to manager, editingteacher, teacher, supervisor, chefmentor
+$user_view = FALSE;
+if (is_siteadmin()) {
+  $user_view = TRUE;
+} else {
+  foreach ($roles as $role) {
+    if (in_array($role-&gt;roleid, $permitted_roles)) {
+      $user_view = TRUE;
+      break;
+    }
+  }
+}
+if ($user_view) {
+  //tk adding 'User Index' link
+  $branch-&gt;add('&lt;em&gt;&lt;i class=&quot;icon-group&quot;&gt;&lt;/i&gt;User Index&lt;/em&gt;',new moodle_url('/user/index.php?id='.$COURSE-&gt;id),'User Index');
+  //tk adding 'Course Index' link
+  $branch-&gt;add('&lt;em&gt;&lt;i class=&quot;icon-sitemap&quot;&gt;&lt;/i&gt;Course Index&lt;/em&gt;',new moodle_url('/course/index.php'),'Course Index');
+}
+//tk end&lt;/pre&gt;
+
+Note that this adds a link for the account redirect, but you also need to [[Create_Account_Redirect_Page|create that page]].</text>
+      <sha1>4rnmaczo7zoqvj2bt0wgvinozno5z6u</sha1>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+    </revision>
+  </page>
+  <page>
+    <title>Remove Profile Link and Add Button</title>
+    <ns>0</ns>
+    <id>139</id>
+    <revision>
+      <id>404</id>
+      <parentid>336</parentid>
+      <timestamp>2016-02-12T17:26:37Z</timestamp>
+      <contributor>
+        <username>Nick</username>
+        <id>2</id>
+      </contributor>
+      <text xml:space="preserve" bytes="1221">[[Category:Outdated_Moodle_Changes]]
+[[Category:Snap_Theme]]
+
+In the Snap Theme, clicking on the Menu button twice in a row (a common occurrence given the load time of this button) will send the user directly to their profile because a link is hit.  To prevent this, we'll remove the link and add a button for the profile below it, as in other sections of the menu.
+
+In 'theme/snap/renderers/core_renderer.php' around line 677 you'll see:
+
+&lt;pre&gt;
+&lt;a title=&quot;'.s($viewyourprofile).'&quot; href=&quot;'.s($CFG-&gt;wwwroot).'/user/profile.php&quot; &gt;'.
+    $picture.'&lt;span id=&quot;fixy-username&quot;&gt;'.format_string(fullname($USER)).'&lt;/span&gt;
+&lt;/a&gt;
+&lt;/pre&gt;
+
+Change the anchor tag to a div tag, removing the extraneous title and href, and set the color to white:
+
+&lt;pre&gt;
+&lt;div style=&quot;color:white;&quot; &gt;'.
+    $picture.'&lt;span id=&quot;fixy-username&quot;&gt;'.format_string(fullname($USER)).'&lt;/span&gt;
+&lt;/div&gt;
+&lt;/pre&gt;
+
+Immediately after this, add another line with a new anchor tag with the class &quot;btn btn-default&quot; containing the link information:
+
+&lt;pre&gt;
+&lt;div style=&quot;color:white;&quot; &gt;'.
+    $picture.'&lt;span id=&quot;fixy-username&quot;&gt;'.format_string(fullname($USER)).'&lt;/span&gt;
+&lt;/div&gt;
+&lt;a class=&quot;btn btn-default&quot; href=&quot;'.s($CFG-&gt;wwwroot).'/user/profile.php&quot;&gt;'.s($viewyourprofile).'&lt;/a&gt;
+&lt;/pre&gt;</text>
+      <sha1>i7vx7m1ov2y9heffnwif47tv5lcoxqk</sha1>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+    </revision>
+  </page>
+  <page>
+    <title>Show Contents by Default on Vertical Phone</title>
+    <ns>0</ns>
+    <id>138</id>
+    <revision>
+      <id>405</id>
+      <parentid>335</parentid>
+      <timestamp>2016-02-12T17:26:44Z</timestamp>
+      <contributor>
+        <username>Nick</username>
+        <id>2</id>
+      </contributor>
+      <text xml:space="preserve" bytes="1000">[[Category:Outdated_Moodle_Changes]]
+[[Category:Snap_Theme]]
+[[Category:Mobile_Changes]]
+
+When the user first enters a course on a phone held vertically, the screen is blank by default.  The Table of Contents is only shown if a button is pushed, but it is not immediately evident to a first time user, so we want the course to start out with the ToC visible.
+
+First, open &quot;/theme/snap/renderers/toc_renderer.php&quot; and around line 149, you'll see this line:
+
+&lt;pre&gt;
+$o = '&lt;nav id=&quot;course-toc&quot;&gt;
+&lt;/pre&gt;
+
+Change it to:
+
+&lt;pre&gt;
+$o = '&lt;nav id=&quot;course-toc&quot; class=&quot;state-visible&quot;&gt;
+&lt;/pre&gt;
+
+...adding the class that will make it visible by default. (this visibility can still be toggled on and off later.
+
+You'll probably also want to add the following Custom CSS so everything displays properly:
+
+&lt;pre&gt;
+#course-toc.state-visible{
+  background-color: transparent !important;
+  position: relative;
+}
+&lt;/pre&gt;
+
+For more details, see [[Custom_CSS]]
+
+These changes make the [[Add_Message_to_Flip_Phone]] change obsolete</text>
+      <sha1>gw42c668a3tb6emvyt1tsfa4robpps1</sha1>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+    </revision>
+  </page>
+  <page>
+    <title>How To Set Up Google Voice</title>
+    <ns>0</ns>
+    <id>111</id>
+    <revision>
+      <id>274</id>
+      <timestamp>2015-02-20T16:49:36Z</timestamp>
+      <contributor>
+        <username>Nick</username>
+        <id>2</id>
+      </contributor>
+      <comment>Created page with &quot;[[Category:HowTo]]  &lt;youtube&gt;1KSoxdtyc58?rel=0&lt;/youtube&gt;  ----  &lt;youtube&gt;HNAYDPH6LdY?rel=0&lt;/youtube&gt;&quot;</comment>
+      <text xml:space="preserve" bytes="100">[[Category:HowTo]]
+
+&lt;youtube&gt;1KSoxdtyc58?rel=0&lt;/youtube&gt;
+
+----
+
+&lt;youtube&gt;HNAYDPH6LdY?rel=0&lt;/youtube&gt;</text>
+      <sha1>hdmkz7hqffea6vg02us5uzl5ocrz6vf</sha1>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+    </revision>
+  </page>
+  <page>
+    <title>How To Add a YouTube Video Thumbnail</title>
+    <ns>0</ns>
+    <id>112</id>
+    <revision>
+      <id>275</id>
+      <timestamp>2015-02-20T22:57:00Z</timestamp>
+      <contributor>
+        <username>Nick</username>
+        <id>2</id>
+      </contributor>
+      <comment>Created page with &quot;[[Category:HowTo]]  &lt;youtube&gt;rER-Fd540a4?rel=0&lt;/youtube&gt;&quot;</comment>
+      <text xml:space="preserve" bytes="56">[[Category:HowTo]]
+
+&lt;youtube&gt;rER-Fd540a4?rel=0&lt;/youtube&gt;</text>
+      <sha1>rdbs3jaqe0l2szdvylixkkk0tneir8u</sha1>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+    </revision>
+  </page>
+  <page>
+    <title>How To Add a Video Link in the LMS</title>
+    <ns>0</ns>
+    <id>113</id>
+    <revision>
+      <id>277</id>
+      <parentid>276</parentid>
+      <timestamp>2015-02-20T22:59:15Z</timestamp>
+      <contributor>
+        <username>Nick</username>
+        <id>2</id>
+      </contributor>
+      <comment>[[Category:HowTo]]</comment>
+      <text xml:space="preserve" bytes="56">[[Category:HowTo]]
+
+&lt;youtube&gt;H6pN7FM8lZ4?rel=0&lt;/youtube&gt;</text>
+      <sha1>kl8hqxbtlg3ukxxx7khk4cnu2th76wc</sha1>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+    </revision>
+  </page>
+  <page>
+    <title>How To Add a VitalSource Textbook</title>
+    <ns>0</ns>
+    <id>114</id>
+    <revision>
+      <id>280</id>
+      <parentid>278</parentid>
+      <timestamp>2015-02-23T16:58:33Z</timestamp>
+      <contributor>
+        <username>Nick</username>
+        <id>2</id>
+      </contributor>
+      <comment>added error message image</comment>
+      <text xml:space="preserve" bytes="1243">[[Category:HowTo]]
+[[Category:VitalSource]]
+
+Note: Before adding a book make sure you have the right ISBN!  Once students have accessed a book they have access for life.  In general, only admins should add books to courses.
+
+# Add a new &quot;External Tool&quot; activity.  The icon looks like a green puzzle piece.
+# In &quot;Activity name&quot;, type the title and author/editor of the book.  Eg: &quot;Professional Baking (6th ed.) by Wayne Gisslen&quot;
+# In &quot;Launch URL&quot;, type &lt;code&gt;https://bc.vitalsource.com/books/XXXX&lt;/code&gt; where XXXX is the ISBN or VitalSource id number.
+# Set &quot;Launch container&quot; to &quot;New window&quot;
+# Click &quot;Show more...&quot;
+# Add the following Consumer key: '''&lt;code&gt;7b482400-9d99-11e4-bd06-0800200c9a66&lt;/code&gt;'''
+# Add the following Shared secret: '''&lt;code&gt;6949234a5750394b5a3b4d22464c5a5b&lt;/code&gt;'''
+# In &quot;Icon URL&quot;, you can add the following so it displays as a book icon: &lt;code&gt;/mod/scorm/pix/icon.svg&lt;/code&gt;
+
+Steps 6 and 7 need to be done every time the course is copied.  If you or a student receives an error like the one below reading ''&lt;code&gt;NoBcContext&lt;/code&gt;'' or ''&lt;code&gt;Unable to recover BusinessCenter context&lt;/code&gt;'', then you need to edit the activity and add the Consumer key and Shared secret.
+
+[[File:Error_Message_NoBcContext.png]]</text>
+      <sha1>5hca1rlvrw8iq2i9db198f7ggl84tb2</sha1>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+    </revision>
+  </page>
+  <page>
+    <title>File:How To Use Fuze Meeting.pdf</title>
+    <ns>6</ns>
+    <id>117</id>
+    <revision>
+      <id>286</id>
+      <parentid>285</parentid>
+      <timestamp>2015-02-23T17:17:56Z</timestamp>
+      <contributor>
+        <username>Nick</username>
+        <id>2</id>
+      </contributor>
+      <comment>width=&quot;1350&quot; height=&quot;750&quot;, [[Category:Student_Resources]]</comment>
+      <text xml:space="preserve" bytes="120">[[Category:HowTo]]
+[[Category:Student_Resources]]
+
+&lt;pdf width=&quot;1350&quot; height=&quot;750&quot;&gt;File:How To Use Fuze Meeting.pdf&lt;/pdf&gt;</text>
+      <sha1>67mzijbo9i9d9q97mu9mk2w9nvajjol</sha1>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+    </revision>
+  </page>
+  <page>
+    <title>File:How to Manually Override Quiz Question Grades.pdf</title>
+    <ns>6</ns>
+    <id>123</id>
+    <revision>
+      <id>298</id>
+      <parentid>294</parentid>
+      <timestamp>2015-04-16T15:12:27Z</timestamp>
+      <contributor>
+        <username>Nick</username>
+        <id>2</id>
+      </contributor>
+      <text xml:space="preserve" bytes="143">[[Category:HowTo]]
+[[Category:Employee_Resources]]
+
+&lt;pdf width=&quot;1350&quot; height=&quot;750&quot;&gt;File:How_to_Manually_Override_Quiz_Question_Grades.pdf&lt;/pdf&gt;</text>
+      <sha1>m35kq8xf31fy8qhm4xef20vh1eazyzl</sha1>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+    </revision>
+  </page>
+  <page>
+    <title>File:How to Unsubscribe from Forums.pdf</title>
+    <ns>6</ns>
+    <id>124</id>
+    <revision>
+      <id>295</id>
+      <timestamp>2015-04-02T21:58:32Z</timestamp>
+      <contributor>
+        <username>Nick</username>
+        <id>2</id>
+      </contributor>
+      <comment>[[Category:HowTo]]
+[[Category:Student_Resources]]
+
+&lt;pdf width=&quot;1350&quot; height=&quot;750&quot;&gt;File:How_to_Unsubscribe_from_Forums.pdf&lt;/pdf&gt;</comment>
+      <text xml:space="preserve" bytes="127">[[Category:HowTo]]
+[[Category:Student_Resources]]
+
+&lt;pdf width=&quot;1350&quot; height=&quot;750&quot;&gt;File:How_to_Unsubscribe_from_Forums.pdf&lt;/pdf&gt;</text>
+      <sha1>2o5oeigjn3s76vngzmqq2f8ufhvbmzk</sha1>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+    </revision>
+  </page>
+  <page>
+    <title>How To Mark Live Session Attendance</title>
+    <ns>0</ns>
+    <id>143</id>
+    <revision>
+      <id>346</id>
+      <parentid>345</parentid>
+      <timestamp>2015-07-07T14:26:25Z</timestamp>
+      <contributor>
+        <username>Nick</username>
+        <id>2</id>
+      </contributor>
+      <minor/>
+      <text xml:space="preserve" bytes="56">[[Category:HowTo]]
+
+&lt;youtube&gt;kI9k1RbaAV8?rel=0&lt;/youtube&gt;</text>
+      <sha1>8uxk4j5pnzf9wgwb297l9tubjil7nvz</sha1>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+    </revision>
+  </page>
+  <page>
+    <title>How To Quickly Deduct Late Penalties</title>
+    <ns>0</ns>
+    <id>144</id>
+    <revision>
+      <id>347</id>
+      <timestamp>2015-07-07T14:27:14Z</timestamp>
+      <contributor>
+        <username>Nick</username>
+        <id>2</id>
+      </contributor>
+      <comment>Created page with &quot;[[Category:HowTo]]  &lt;youtube&gt;F1HGmCFvU1A?rel=0&lt;/youtube&gt;&quot;</comment>
+      <text xml:space="preserve" bytes="56">[[Category:HowTo]]
+
+&lt;youtube&gt;F1HGmCFvU1A?rel=0&lt;/youtube&gt;</text>
+      <sha1>tvlmh9kkpbypc3rctc66yy87thbqti5</sha1>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+    </revision>
+  </page>
+  <page>
+    <title>How To Edit Instructor Information Block</title>
+    <ns>0</ns>
+    <id>150</id>
+    <revision>
+      <id>367</id>
+      <timestamp>2015-09-21T22:47:59Z</timestamp>
+      <contributor>
+        <username>Nick</username>
+        <id>2</id>
+      </contributor>
+      <comment>Created page with &quot;[[Category:HowTo]]  &lt;youtube&gt;S7nH_ZJKjiI?rel=0&lt;/youtube&gt;&quot;</comment>
+      <text xml:space="preserve" bytes="56">[[Category:HowTo]]
+
+&lt;youtube&gt;S7nH_ZJKjiI?rel=0&lt;/youtube&gt;</text>
+      <sha1>sab41vq91e0cyxgw5rj5ry5rr4ihzsz</sha1>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+    </revision>
+  </page>
+  <page>
+    <title>How To Create A Zoom Meeting Activity in Moodle</title>
+    <ns>0</ns>
+    <id>151</id>
+    <revision>
+      <id>368</id>
+      <timestamp>2015-09-21T22:49:10Z</timestamp>
+      <contributor>
+        <username>Nick</username>
+        <id>2</id>
+      </contributor>
+      <comment>Created page with &quot;[[Category:HowTo]]  &lt;youtube&gt;znmy9NaqW1c?rel=0&lt;/youtube&gt;&quot;</comment>
+      <text xml:space="preserve" bytes="56">[[Category:HowTo]]
+
+&lt;youtube&gt;znmy9NaqW1c?rel=0&lt;/youtube&gt;</text>
+      <sha1>ei8d1xlt61itgqrgi0nersra6n0spi7</sha1>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+    </revision>
+  </page>
+  <page>
+    <title>How To Recycle the Server App Pool</title>
+    <ns>0</ns>
+    <id>160</id>
+    <revision>
+      <id>417</id>
+      <timestamp>2016-02-18T16:58:25Z</timestamp>
+      <contributor>
+        <username>Nick</username>
+        <id>2</id>
+      </contributor>
+      <comment>Created page with &quot;[[Category:HowTo]]  &lt;youtube&gt;NJWC0KUxbXg?rel=0&lt;/youtube&gt;  This should be done after any changes to php code.&quot;</comment>
+      <text xml:space="preserve" bytes="108">[[Category:HowTo]]
+
+&lt;youtube&gt;NJWC0KUxbXg?rel=0&lt;/youtube&gt;
+
+This should be done after any changes to php code.</text>
+      <sha1>7bzktzjvvcbrtacd2gfrn7caj6uj0pm</sha1>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+    </revision>
+  </page>
+  <page>
+    <title>File:Timesheet.xlsx</title>
+    <ns>6</ns>
+    <id>30</id>
+    <revision>
+      <id>37</id>
+      <timestamp>2014-06-16T20:49:38Z</timestamp>
+      <contributor>
+        <username>Nick</username>
+        <id>2</id>
+      </contributor>
+      <comment>[[Category:Employee_Resources]]
+
+All hourly employees who are not on contract through an agency should use this timesheet.  Fill it out daily, and turn it in to your supervisor for approval every Monday.
+
+If you are on contract through an agency like A...</comment>
+      <text xml:space="preserve" bytes="349">[[Category:Employee_Resources]]
+
+All hourly employees who are not on contract through an agency should use this timesheet.  Fill it out daily, and turn it in to your supervisor for approval every Monday.
+
+If you are on contract through an agency like AccountTemps or OfficeTeam, please refer to your agency for directions on how to report your time.</text>
+      <sha1>8ckdzz49krhas1qkpcda3xnh5tv0d70</sha1>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+    </revision>
+  </page>
+  <page>
+    <title>File:Expense Report.xlsx</title>
+    <ns>6</ns>
+    <id>35</id>
+    <revision>
+      <id>45</id>
+      <timestamp>2014-06-16T22:07:19Z</timestamp>
+      <contributor>
+        <username>Nick</username>
+        <id>2</id>
+      </contributor>
+      <comment>[[Category:Employee_Resources]]
+
+If you incur travel or other company expenses, you may fill out this form for reimbursement.</comment>
+      <text xml:space="preserve" bytes="125">[[Category:Employee_Resources]]
+
+If you incur travel or other company expenses, you may fill out this form for reimbursement.</text>
+      <sha1>gno8i30sgw0hya7dy0y7v32fdt9n08f</sha1>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+    </revision>
+  </page>
+  <page>
+    <title>Time Off</title>
+    <ns>0</ns>
+    <id>71</id>
+    <revision>
+      <id>308</id>
+      <parentid>177</parentid>
+      <timestamp>2015-05-19T18:29:12Z</timestamp>
+      <contributor>
+        <username>Nick</username>
+        <id>2</id>
+      </contributor>
+      <comment>/* Holiday Schedule */  removed 2014 holidays</comment>
+      <text xml:space="preserve" bytes="16307">[[Category:Employee_Resources]]
+
+== Vacation Benefits ==
+
+Effective Date: 01/01/2013
+
+Triumph Higher Education, August Escoffier School of Culinary Arts, and Escoffier Online International Culinary Academy (the “Company”) offers vacation time off with pay to eligible employees for rest, relaxation, and personal pursuits. Employees in the following employment classifications are eligible to earn and use vacation:
+
+* Regular full-time employees regularly scheduled to work 40 hours per week throughout the full year
+* Regular part-time employees regularly scheduled to work at least 1040 hours per year (20 hour/week)
+
+'''Employees grandfathered into a prior PTO/FTO plan will not be eligible to participate in this plan.
+
+'''Temporary employees whether full or part-time will not be eligible to participate in this plan.'''
+
+The amount of paid vacation time you receive each calendar year (January thru December) increases with the length of your employment as shown in the following schedule: 
+
+* In the 1st calendar year of employment:
+** Full-time employees who start active employment between January 1 and June 30th, will accrue 1.67 hours of vacation time per semi-monthly pay period to use during that calendar year.  Part-time employees will accrue a pro-rata amount of vacation based upon their normal hours scheduled.
+** Full-time and part-time employees, who start active employment       between July 1 and December 31 will accrue zero (0) hours of     vacation to use during that calendar year.
+* In the 2nd calendar year of employment, the employee will accrue 80 hours (10 days) of vacation to use during that calendar year (earned at the rate of 3.34 hours per semi-monthly pay period). Part-time employees will accrue a pro-rata amount of vacation based upon their normal hours scheduled.
+
+Example:  Regular part-time employees will accrue vacation pay on a pro-rata basis calculated on their normal hours worked.  For example, a part-time employee who regularly works 20 hours per week, accrues 1.67 hours per semi-monthly pay period in their 2nd calendar year of employment.
+
+* In the calendar year following the employee’s 5th anniversary of employment, the employee will accrue 120 hours (15 days) of vacation to use during that calendar year (earned at the rate of 5 hours per semi-monthly pay period).  Part-time employees will accrue a pro-rata amount of vacation based upon their normal hours scheduled.
+
+Each employee is responsible for submitting requests for vacation at least 2 weeks in advance of the first day of desired vacation. All vacation requests must be submitted and approved by the employee’s manager prior to starting the vacation time.
+
+Vacation time off is paid at the employee’s base pay rate at the time of the vacation. It does not include overtime or any special forms of compensation such as bonuses.
+
+We encourage employees to use available paid vacation time for rest, relaxation, and personal pursuits. 
+
+=== Black-Out Dates ===
+
+The Company reserves the right to “black out” dates for which employees in certain positions and/or departments are not eligible to take vacation time for proper and adequate coverage in the department.
+
+=== Use it or Lose it ===
+
+The vacation policy is commonly known as a “use it or lose it” policy. That means that In the event that the employee does not use his/her available vacation by the end of the benefit year, s/he will lose the unused time.
+
+=== Termination of Employment ===
+
+Employees may not use vacation time in lieu of notice of resignation.  In addition, vacation time cannot be used to extend the termination date.  The last day actually worked will be considered the date of termination from the Company.
+
+If employment terminates, the employee will be paid for any unused vacation time that has been accrued and not yet taken, through the last day of work. In addition, if the employee has taken time not yet accrued, the pay for this time will be deducted from his/her final pay.  If the final paycheck is not sufficient to cover the deduction, the employee will reimburse the company for any vacation time used by not yet accrued.
+
+Any questions on this policy should be directed to your supervisor or to the human resources representative.
+
+== Sick-Leave Benefits ==
+
+Effective Date: 01/01/2013					
+
+Triumph Higher Education, August Escoffier School of Culinary Arts, and Escoffier Online International Culinary Academy, (the “Company”) provides paid sick pay benefits to eligible employees for periods of temporary absence due to illnesses or injuries. Employees in the following employment classifications are eligible for sick leave:
+
+* Regular full-time Employees regularly scheduled to work 40 hours per week throughout the year.
+* Regular part-time Employees scheduled to work at least 1,040 hours per year (20 hours/week).
+
+'''Employees grandfathered into a prior PTO/FTO plan will not be eligible to participate in this plan.'''
+
+'''Temporary employees whether full or part-time will not be eligible to participate in this plan.'''
+ 
+Full-time employees will receive sick pay for a maximum of 56 hours (7 days) in a calendar year.  These hours will be credited to the employee’s account on January 1st of each year.
+
+Regular part-time employees will receive sick pay on a pro-rata basis calculated on their normal hours worked.  For example, a part-time employee who regularly works 20 hours per week will receive 28 hours of sick pay per year.  These hours will be credited to the employee’s account on January 1st of each year.
+
+In the first calendar year of employment, employees whose employment begins between January 1st and July 31st will receive 40 hours of sick pay for that year and employees hired between August 1st and December 31st will not receive any sick pay until the next calendar year.
+
+'''Employees must complete 90 days of employment before sick pay may be used.'''
+
+Sick pay can be used in minimum increments of one hour. You may use sick pay for an absence due to your own illness or injury, your own doctor/dentist appointment, or to care for a sick child.  Documentation from a physician of the child’s illness may be required.
+
+If an employee is sick, and needs to use more than his/her sick pay allowance, s/he '''must''' use his/her unused sick pay balance and then any unused vacation time for balance of the absence. If there is no sick pay or unused vacation time, that absence will be unpaid. 
+
+=== Reporting requirements ===
+
+If an employee is unable to report to work due to illness or injury, he/she is required to telephone his/her manager a minimum of 2 hours before the scheduled start time. If the manager does not answer the phone, the employee may leave a detailed voicemail message along with a phone number where s.he can be reached if necessary. Asking another employee, a friend or a relative to provide notification is not acceptable except in emergency situations where the employee is disabled and unable to make the call. 
+
+The manager must also be contacted by telephone on each additional day of absence until the employee has returned to work.
+
+=== Job Abandonment ===
+
+An employee who is absent from work for three (3) or more consecutive work days without officially notifying his/her manager will be considered to have abandoned his/her job.  Job abandonment is considered a voluntary resignation by the employee. 
+
+=== Doctor’s Note Requirement ===
+
+If the employee is absent for three (3) or more consecutive work days due to illness or injury, a physician's statement must be provided verifying the illness and its beginning and expected ending dates. The same verification may be requested for other sick leave absences as well and may be required as a condition of receiving sick leave benefits. '''Before returning to work from a sick leave absence of three (3) calendar days or more, the employee must provide a physician's verification that s/he may safely return to work.'''
+
+Sick pay will be calculated based on the employee’s base pay rate at the time of the absence and will not include any special forms of compensation, such as overtime, or bonuses. 
+
+If the employee is on an extended absence, s/he must apply for any other available compensation and benefits, such as workers' compensation. Sick pay will be used to supplement any payments that the employee is eligible to receive from state disability insurance, workers' compensation, or other disability programs. The combination of any such disability payments and sick leave benefits may not exceed the employee’s normal weekly earnings.
+
+'''Sick pay that is not used will not be considered accrued and will not be paid out upon separation of employment.  In no case shall unused sick pay be carried over from one year to the next, nor will it be paid out if not used during the year.'''
+
+== Bereavement Leave ==
+
+Effective Date:   01/01/2013				
+
+In the event that an employee needs to take time off to attend the funeral in the event of the death of an immediate family member, the Company (Triumph Higher Education, August Escoffier School of Culinary Arts, and Escoffier Online International Culinary Academy) provides bereavement leave. To request bereavement leave, the employee should see his/her supervisor.  
+
+Eligible employees are granted up to two (2) consecutive days of paid bereavement leave to attend the funeral or wake of an immediate family member (as defined below) if the employee is scheduled to work on those days.  Eligible employees include the following classifications:
+
+* Regular full-time employees regularly scheduled to work 40 hours per week throughout the year.
+* Regular part-time employees scheduled to work at least 1,040 hours per year (20 hours/week)
+
+'''Temporary employees whether they are full or part-time are not eligible for benefits under this policy.'''
+
+During paid bereavement leave, the employee’s pay will be calculated based on his/her base pay rate at the time of absence, excluding any special forms of compensation, such as bonuses or overtime.
+
+=== Immediate Family Definition (up to 2 days of paid time) ===
+
+* Current spouse or domestic partner
+* Child or step-child
+* Employee’s  parent or step- parent
+* Mother-in-law or father-in-law
+* Employee’s  brother, sister or step brother/sister
+* Grandchild(ren)
+* Employee’s  Grandparent
+
+To be eligible for paid bereavement leave, the employee must attend the funeral of the deceased relative.
+	
+=== Other Relatives (up to 1 day of paid time) ===
+
+One (1) day of paid bereavement leave may be may be granted to attend the funeral or wake of the employee’s:
+
+* Sister/brother-in-law
+* Spouse’s grandparent
+* Aunt/uncle/cousin
+* Spouse’s aunt/uncle or cousin
+
+To be eligible for paid bereavement leave, the employee must attend the funeral of the deceased relative.
+
+We will normally grant bereavement leave unless there are unusual business needs or staffing requirements that prevent accommodating the request.
+
+The employee may also, with supervisory approval, use unused vacation time (PTO/FTO) for additional time off as necessary.
+
+Employees must notify their manager upon becoming aware of the death of a family member.   Upon the employee’s return to work, proof of the family member’s death must be given (i.e., obituary, church program, etc.) as proof of attendance at the wake or funeral.
+
+Questions on this policy should be directed to human resources.
+
+== Jury Duty ==
+
+Effective Date:  04/18/2013				
+ 
+The Company (Triumph Higher Education, Auguste Escoffier School of Culinary Arts and Escoffier Online International Culinary Academy) encourages you to fulfill your civic responsibilities by serving jury duty when required.
+
+If you are eligible for paid jury duty leave, you will be compensated at your base rate of pay for the number of hours you would normally have worked that day, up to a maximum of three (3) paid days. If you receive pay from the court for the jury duty, you will provide proof of payment and repay the Company for pay for time served (payment for mileage, if any, by the courts is not subject to payment to the Company). Employees in the following classifications are eligible for paid jury duty leave:
+
+* Regular full-time employees regularly scheduled to work 40 hours per week throughout the year.
+
+If you remain on jury duty beyond the period of paid jury duty leave, you may use any available paid time off, such as vacation time, or request an unpaid jury duty leave of absence.
+
+=== The employees’ responsibility when s/he receives a jury duty summons: ===
+
+* Provide a copy of the jury duty summons to both your supervisor and the business manager (campus employees) or the controller (corporate and online employees) no later than 2 weeks prior to the date you are required to report for jury duty.
+* Provide both your supervisor and the business manager/controller an estimate of when you expect to return to work.
+* Provide to both your supervisor and the business manager/controller proof of attendance or receipt of payment for jury duty from the court.  This must be done immediately upon your return to work.
+* Provide to the business manager/ controller payment to the company for the amount received from the court for jury service (mileage allowance, if any, provided by the court is not required to be paid to the Company). This payment must be made within 2 days of your return to work.
+
+You are expected to report for work whenever the court schedule permits.  Thus, if you are in court for only a partial day, you are required to return to work to work the rest of your shift.
+
+Either you or the Company may request you be excused from jury duty if necessary. We may request that you be relieved from serving on jury duty if we believe that your absence would cause serious operational difficulties for the Company.
+ 
+Subject to the terms, conditions, and limitations of the applicable plans, the Company will continue to provide health insurance benefits until the end of the calendar month in which you are taking unpaid jury duty leave. At that time, you will become responsible for the full cost of those benefits in order for coverage to continue. When you return from unpaid jury duty, the Company will resume providing those benefits according to the applicable employee benefit plans. 
+
+Benefit accruals, such as vacation, sick leave, or holiday benefits, will be suspended during unpaid jury duty leave and will resume when you return to active employment.
+
+== Witness Duty ==
+
+Effective Date:   04/18/2013				
+
+The Company (Triumph Higher Education, Auguste Escoffier School of Culinary Arts, and Escoffier Online International Culinary Academy) provides witness duty time off to employees who receive a subpoena to testify in court. If you are summoned or otherwise requested to testify as a witness by the Company, you will receive paid time off for the entire period of witness duty.
+
+You will be granted unpaid time off if you are requested to appear in court as a witness by a party other than the Company. However, you must use any available paid leave benefits, such as vacation/FTO/PTO, to be compensated for that absence.
+
+In order to make arrangements for the time off, you must show the subpoena to your manager as soon as you receive it and provide a copy to the campus business manager – corporate/online employees are to provide a copy to the controller. When serving as a witness, you are expected to report to work whenever you are not needed in court.
+
+== Holiday Schedule ==
+
+Following is the list of company holidays in 2015.  The corporate office and ground campuses will be closed on these days:
+
+{| class=&quot;wikitable&quot;
+!Holiday
+!Date Holiday Observed (2015)
+|-
+|New Year's Day||Thursday, January 1
+|-
+|Memorial Day||Monday, May 25
+|-
+|Independence Day||Friday, July 3
+|-
+|Labor Day||Monday, September 7
+|-
+|Thanksgiving Day||Thursday, November 26
+|-
+|Day After Thanksgiving||Friday, November 27
+|-
+|Christmas Eve||Thursday, December 24
+|-
+|Christmas Day||Friday, December 25
+|-
+|New Year’s Eve||Thursday, December 31
+|}
+
+'''NOTE:'''  Employees in certain departments (i.e., Admissions, Financial Aid, etc.) may be required to work on holidays due to the nature of our business.  Please check with your manager.</text>
+      <sha1>fzdu27f0rhypg5g5m4cqcywv7upb2ek</sha1>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+    </revision>
+  </page>
+  <page>
+    <title>Category:Employee Forms</title>
+    <ns>14</ns>
+    <id>74</id>
+    <revision>
+      <id>136</id>
+      <parentid>135</parentid>
+      <timestamp>2014-06-18T22:26:21Z</timestamp>
+      <contributor>
+        <username>Nick</username>
+        <id>2</id>
+      </contributor>
+      <text xml:space="preserve" bytes="507">[[Category:Employee_Resources]]
+
+== Forms Necessary to Begin Employment ==
+
+* [[Media:Form_I9.pdf|Form I9]]
+* [[Media:Personal_Data_Form.pdf|Personal Data Form]]
+
+== Tax Forms ==
+
+* [[Media:Form_W4.pdf|Form W4]]
+* [[Media:Form_Illinois_W4.pdf|Form Illinois W4]]
+
+== Insurance Forms ==
+
+* [[Media:UHC_Health_Ins_Enrollment_Form.pdf|UHC Health Ins Enrollment Form]]
+* [[Media:UHC_Life_Beneficiary_Form.pdf|UHC Life Beneficiary Form]]
+
+== Other Forms ==
+
+* [[Media:Direct_Deposit_Form.pdf|Direct Deposit Form]]</text>
+      <sha1>hkh9ctih65g1d84f9of2c2v2h3hkn8i</sha1>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+    </revision>
+  </page>
+  <page>
+    <title>Holiday Schedule</title>
+    <ns>0</ns>
+    <id>65</id>
+    <redirect title="Time Off" />
+    <revision>
+      <id>179</id>
+      <parentid>178</parentid>
+      <timestamp>2014-08-04T16:01:57Z</timestamp>
+      <contributor>
+        <username>Nick</username>
+        <id>2</id>
+      </contributor>
+      <minor/>
+      <comment>Redirected page to [[Time Off#Holiday Schedule]]</comment>
+      <text xml:space="preserve" bytes="72">#REDIRECT [[Time_Off#Holiday_Schedule]]
+
+[[Category:Employee_Resources]]</text>
+      <sha1>qe8mhd1hhkguo6bh06x9ot9me0gbovk</sha1>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+    </revision>
+  </page>
+  <page>
+    <title>Academic Calendar</title>
+    <ns>0</ns>
+    <id>110</id>
+    <revision>
+      <id>302</id>
+      <parentid>273</parentid>
+      <timestamp>2015-04-17T21:09:36Z</timestamp>
+      <contributor>
+        <username>Nick</username>
+        <id>2</id>
+      </contributor>
+      <comment>/* Online Certification Program */  Last Day of Add/Drop Period</comment>
+      <text xml:space="preserve" bytes="1872">[[Category:Employee_Resources]]
+
+== Online Certification Program ==
+
+The Academic Calendar for the Online Certification Program runs two days behind that of the ground campuses, in order to allow enough time for instructors to submit final grades.  Every block begins on a Wednesday (except for Block 2 of 2015).
+
+The Following is the Academic Calendar for 2015.
+
+{| class=&quot;wikitable&quot;
+!Year
+!Block
+!Begins
+!Last Day of Add/Drop Period
+!All Assignments Due
+!Grades Due
+!Externship Begins
+!Expected Program Completion
+|-
+|2015||2||Monday, February 23, 2015*||Tuesday, March 10, 2015||Sunday, April 05, 2015||Tuesday, April 07, 2015||Wednesday, September 30, 2015||Tuesday, November 10, 2015
+|-
+|||3||Wednesday, April 08, 2015||Tuesday, April 21, 2015||Sunday, May 17, 2015||Tuesday, May 19, 2015||Wednesday, November 11, 2015||Tuesday, December 22, 2015
+|-
+|||4||Wednesday, May 20, 2015||Tuesday, June 2, 2015||Sunday, June 28, 2015||Tuesday, June 30, 2015||Wednesday, January 13, 2016||Tuesday, February 23, 2016
+|-
+|||5||Wednesday, July 08, 2015||Tuesday, July 21, 2015||Sunday, August 16, 2015||Tuesday, August 18, 2015||Wednesday, February 24, 2016||Tuesday, April 05, 2016
+|-
+|||6||Wednesday, August 19, 2015||Tuesday, September 1, 2015||Sunday, September 27, 2015||Tuesday, September 29, 2015||Wednesday, April 06, 2016||Tuesday, May 17, 2016
+|-
+|||7||Wednesday, September 30, 2015||Tuesday, October 13, 2015||Sunday, November 08, 2015||Tuesday, November 10, 2015||Wednesday, May 18, 2016||Tuesday, June 28, 2016
+|-
+|||8||Wednesday, November 11, 2015||Tuesday, November 24, 2015||Sunday, December 20, 2015||Tuesday, December 22, 2015||Wednesday, July 06, 2016||Tuesday, August 16, 2016
+|-
+|2016||1||Wednesday, January 13, 2016||Tuesday, January 26, 2016||Sunday, February 21, 2016||Tuesday, February 23, 2016||Wednesday, August 17, 2016||Tuesday, September 27, 2016
+|}</text>
+      <sha1>pams45xuhf7qnw7jp6c8rmoca0y7e4l</sha1>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+    </revision>
+  </page>
+  <page>
+    <title>File:VitalSource Helpdesk Training.pdf</title>
+    <ns>6</ns>
+    <id>116</id>
+    <revision>
+      <id>299</id>
+      <parentid>283</parentid>
+      <timestamp>2015-04-16T15:13:52Z</timestamp>
+      <contributor>
+        <username>Nick</username>
+        <id>2</id>
+      </contributor>
+      <text xml:space="preserve" bytes="107">[[Category:VitalSource]]
+[[Category:Employee_Resources]]
+
+&lt;pdf&gt;File:VitalSource_Helpdesk_Training.pdf&lt;/pdf&gt;</text>
+      <sha1>s68tmtwual65ult0vv84ygjcyrbvog7</sha1>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+    </revision>
+  </page>
+  <page>
+    <title>File:Terms-02222014.pdf</title>
+    <ns>6</ns>
+    <id>37</id>
+    <revision>
+      <id>216</id>
+      <parentid>47</parentid>
+      <timestamp>2014-12-02T17:38:32Z</timestamp>
+      <contributor>
+        <username>Nick</username>
+        <id>2</id>
+      </contributor>
+      <minor/>
+      <comment>pdf display</comment>
+      <text xml:space="preserve" bytes="118">[[Category:Student_Resources]]
+
+The combined terms and conditions as of 2/22/2014.
+
+&lt;pdf&gt;File:Terms-02222014.pdf&lt;/pdf&gt;</text>
+      <sha1>mot5ztf2z3obr5241advuatblykuyg9</sha1>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+    </revision>
+  </page>
+  <page>
+    <title>File:VitalSource Bookshelf Quick Start Guide Mac PC.pdf</title>
+    <ns>6</ns>
+    <id>125</id>
+    <revision>
+      <id>297</id>
+      <parentid>296</parentid>
+      <timestamp>2015-04-16T15:11:23Z</timestamp>
+      <contributor>
+        <username>Nick</username>
+        <id>2</id>
+      </contributor>
+      <text xml:space="preserve" bytes="125">[[Category: VitalSource]]
+[[Category: Student_Resources]]
+
+&lt;pdf&gt;File:VitalSource_Bookshelf_Quick_Start_Guide_Mac_PC.pdf&lt;/pdf&gt;</text>
+      <sha1>o2m8kiyig2mj03xbro7yj224fstu4iu</sha1>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+    </revision>
+  </page>
+</mediawiki>
