@@ -1177,10 +1177,10 @@ class mod_assign_renderer extends plugin_renderer_base {
                                              $filename,
                                              'moodle',
                                              array('class'=>'icon'));
-			$auguste = substr($file->fileurl, 9, strpos($file->fileurl, '?')-9);	//grabs just file address, minus tags
+			$fileaddress = substr($file->fileurl, 9, strpos($file->fileurl, '?')-9);	//grabs just file address, minus tags
 			$imgtypes = array('jpg','jpeg','png','svg','tiff','bmp','gif','none');
 			$audiotypes = array('mp3', 'wav', 'ogg');
-			$filetype = strtolower($auguste);		//lowercase so we catch ".JPG" etc.
+			$filetype = strtolower($fileaddress);		//lowercase so we catch ".JPG" etc.
 			$i = 0;									//counter to avoid infinite loop on error
 			while (strlen($filetype)>5 && $i<5) {	//pair down to string after last period, which should be file type
 				$filetype = substr($filetype, strpos($filetype, '.')+1, strlen($filetype)-strpos($filetype, '.')-1);
@@ -1188,16 +1188,16 @@ class mod_assign_renderer extends plugin_renderer_base {
 			}
 			if (strlen($filetype)>5) {	$filetype = 'none'; }	//show files with missing mime type, just in case
 			if (in_array($filetype, $imgtypes)) {	//make sure it's an acceptable image type
-				$auguste = '<br /><img style="margin-left: 16px; max-width: 95%;" src="' . $auguste . '" /><br /> ';
+				$fileaddress = '<br /><img style="margin-left: 16px; max-width: 95%;" src="' . $fileaddress . '" /><br /> ';
 			} elseif (in_array($filetype, $audiotypes)) {
 				if($filetype == 'mp3') { $audiotype = 'mpeg'; } else { $audiotype = $filetype; }
-				$auguste = '<br /><audio controls><source src="' . $auguste . '" type="audio/' . $audiotype . '">Your browser does not support HTML5 audio.</audio><br />';
+				$fileaddress = '<br /><audio controls><source src="' . $fileaddress . '" type="audio/' . $audiotype . '">Your browser does not support HTML5 audio.</audio><br />';
 			} else {
-				$auguste = '';
+				$fileaddress = '';
 			}
 			$result .= '<li yuiConfig=\'' . json_encode($yuiconfig) . '\'>' .
                        '<div>' . $image . ' ' .
-                                 $auguste .
+                                 $fileaddress .
 								 $file->fileurl . ' ' .
                                  $plagiarismlinks .
                                  $file->portfoliobutton . '</div>' .
