@@ -369,7 +369,11 @@ foreach($progress as $user) {
         if (array_key_exists($activity->id,$user->progress)) {
             $thisprogress=$user->progress[$activity->id];
             $state=$thisprogress->completionstate;
-            $date=userdate($thisprogress->timemodified);
+			if (!$csv) {
+				$date=userdate($thisprogress->timemodified); //tk
+			} else {
+				$date = (usertime($thisprogress->timemodified) / 86400) + 25569; //excel compatible date/time: 86400 = secs/day; 25569 = unix epoch in excel
+			}
         } else {
             $state=COMPLETION_INCOMPLETE;
             $date='';
