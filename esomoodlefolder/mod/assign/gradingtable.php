@@ -399,6 +399,7 @@ class assign_grading_table extends table_sql implements renderable {
         }
         // We require at least one unique column for the sort.
         $this->sortable(true, 'userid');
+		$this->sortable(true, 'lastname'); //tk added see https://tracker.moodle.org/browse/MDL-41355
         $this->no_sorting('recordid');
         $this->no_sorting('finalgrade');
         $this->no_sorting('userid');
