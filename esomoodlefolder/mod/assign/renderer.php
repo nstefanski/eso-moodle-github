@@ -1178,7 +1178,7 @@ class mod_assign_renderer extends plugin_renderer_base {
                                              'moodle',
                                              array('class'=>'icon'));
 			$fileaddress = substr($file->fileurl, 9, strpos($file->fileurl, '?')-9);	//grabs just file address, minus tags
-			$imgtypes = array('jpg','jpeg','png','svg','tiff','bmp','gif','none');
+			$imgtypes = array('jpg','jpeg','png','svg','tiff','bmp','gif');
 			$audiotypes = array('mp3', 'wav', 'ogg');
 			$filetype = strtolower($fileaddress);		//lowercase so we catch ".JPG" etc.
 			$i = 0;									//counter to avoid infinite loop on error
@@ -1186,7 +1186,6 @@ class mod_assign_renderer extends plugin_renderer_base {
 				$filetype = substr($filetype, strpos($filetype, '.')+1, strlen($filetype)-strpos($filetype, '.')-1);
 				$i++;
 			}
-			if (strlen($filetype)>5) {	$filetype = 'none'; }	//show files with missing mime type, just in case
 			if (in_array($filetype, $imgtypes)) {	//make sure it's an acceptable image type
 				$fileaddress = '<br /><img style="margin-left: 16px; max-width: 95%;" src="' . $fileaddress . '" /><br /> ';
 			} elseif (in_array($filetype, $audiotypes)) {
