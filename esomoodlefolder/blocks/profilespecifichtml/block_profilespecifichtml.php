@@ -100,7 +100,7 @@ class block_profilespecifichtml extends block_base {
         if ($this->config->op1 == '~=') {
             $expr = "\$res1 = preg_match('/{$this->config->value1}/', '{$uservalue}'}) ;";
         } else {
-            $expr = "\$res1 = {$uservalue} {$this->config->op1} '{$this->config->value1}' ;";
+            $expr = "\$res1 = '{$uservalue}' {$this->config->op1} '{$this->config->value1}' ;"; //tk
         }
         @eval($expr);
 
@@ -118,7 +118,7 @@ class block_profilespecifichtml extends block_base {
             if ($this->config->op2 == '~=') {
                 $expr = "\$res2 = preg_match('/{$this->config->value2}/', '{$uservalue}'}) ;";
             } else {        
-                $expr = "\$res2 = {$uservalue} {$this->config->op1} '{$this->config->value2}' ;";
+                $expr = "\$res2 = '{$uservalue}' {$this->config->op1} '{$this->config->value2}' ;"; //tk
             }
             @eval($expr);
 
