@@ -190,6 +190,7 @@ if ($formdata = $mform2->is_cancelled()) {
     $rolecache      = uu_allowed_roles_cache(); // roles lookup cache
     $manualcache    = array(); // cache of used manual enrol plugins in each course
     $supportedauths = uu_supported_auths(); // officially supported plugins that are enabled
+	$supportedauths["token"] = "Token authentication"; //tk
 
     // we use only manual enrol plugin here, if it is disabled no enrol is done
     if (enrol_is_enabled('manual')) {

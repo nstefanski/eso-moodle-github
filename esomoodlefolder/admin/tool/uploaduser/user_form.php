@@ -214,6 +214,7 @@ class admin_uploaduser_form2 extends moodleform {
 
         // only enabled and known to work plugins
         $choices = uu_supported_auths();
+		$choices["token"] = "Token authentication"; //tk
         $mform->addElement('select', 'auth', get_string('chooseauthmethod','auth'), $choices);
         $mform->setDefault('auth', 'manual'); // manual is a sensible backwards compatible default
         $mform->addHelpButton('auth', 'chooseauthmethod', 'auth');
