@@ -1181,11 +1181,7 @@ class mod_assign_renderer extends plugin_renderer_base {
 			$imgtypes = array('jpg','jpeg','png','svg','tiff','bmp','gif');
 			$audiotypes = array('mp3', 'wav', 'ogg');
 			$filetype = strtolower($fileaddress);		//lowercase so we catch ".JPG" etc.
-			$i = 0;									//counter to avoid infinite loop on error
-			while (strlen($filetype)>5 && $i<5) {	//pair down to string after last period, which should be file type
-				$filetype = substr($filetype, strpos($filetype, '.')+1, strlen($filetype)-strpos($filetype, '.')-1);
-				$i++;
-			}
+			$filetype = substr($filetype, strrpos($filetype, '.')+1);
 			if (in_array($filetype, $imgtypes)) {	//make sure it's an acceptable image type
 				$fileaddress = '<br /><img style="margin-left: 16px; max-width: 95%;" src="' . $fileaddress . '" /><br /> ';
 			} elseif (in_array($filetype, $audiotypes)) {
