@@ -365,7 +365,7 @@ if (!isset($hiddenfields['mycourses'])) {
 }
 
 if (!empty($CFG->enablebadges) && !empty($CFG->badges_allowcoursebadges)) {
-    profile_display_badges($user->id, $courseid);
+    profile_display_badges($user->id);	//tk changed from profile_display_badges($user->id, $courseid);
 }
 
 if (!isset($hiddenfields['suspended'])) {
