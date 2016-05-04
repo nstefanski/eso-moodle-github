@@ -317,7 +317,13 @@ foreach($activities as $activity) {
     }
 
     // Some names (labels) come URL-encoded and can be very long, so shorten them
-    $displayname = shorten_text($activity->name);
+    if ($activity->modname == 'label') {
+		$displayname = 'Label: '.shorten_text($activity->name); 
+	} elseif ($activity->modname == 'assign') {
+		$displayname = 'Assignment: '.format_text($activity->name);
+	} else {
+		$displayname = ucfirst($activity->modname).': '.format_text($activity->name);
+	}
 
     if ($csv) {
         print $sep.csv_quote(strip_tags($displayname)).$sep.csv_quote($datetext);
