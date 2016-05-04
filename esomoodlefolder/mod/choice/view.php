@@ -181,4 +181,12 @@
         echo $OUTPUT->box(get_string('noresultsviewable', 'choice'));
     }
 
+	// Redirect
+	$options = choice_prepare_options($choice, $USER, $cm, $allresponses);
+	$total_options = count($options['options']);
+	if ($current && !$choice->allowupdate && $total_options<2) {
+		$back_url = new moodle_url('/course/view.php', array('id'=>$course->id));
+		redirect($back_url);
+	}
+	
     echo $OUTPUT->footer();
