@@ -47,7 +47,16 @@ $sql = "SELECT CONCAT(u.id,'-',c.id) AS id, CONCAT(u.firstname,' ',u.lastname) A
 	AND disc.course = c.id) AS forumposts, 
 
 (SELECT ( (SUM(CASE WHEN f.component = 'assignfeedback_poodll' THEN f.filesize ELSE 0 END)/960000 + 
-	SUM(CASE WHEN f.component = 'assignfeedback_file' THEN f.filesize ELSE 0 END)/2400000) / COUNT(f.id) )
+	SUM(CASE WHEN f.component = 'assignfeedback_file' THEN f.filesize ELSE 0 END)/570000) / COUNT(f.id) )
+	/* filesize in this table is stored in Bytes
+	to determine the divisor in this formula, take the bitrate, normally Kbps (Kilo bits per second), and convert to Bpm (Bytes per minute) 
+		128 Kilo bits per second
+		/ 8 = 16 Kilo Bytes per second
+			  * 60 = 960 Kilo Bytes per minute 
+					 * 1000 = 960000 Bytes per minute
+		128 / 8 * 60 * 1000 = 960000
+	see http://www.audiomountain.com/tech/audio-file-size.html for details
+	*/
 	FROM {files} f 
 	JOIN {context} cx2 ON f.contextid = cx2.id 
 	JOIN {course_modules} cm ON cx2.instanceid = cm.id
@@ -57,7 +66,7 @@ $sql = "SELECT CONCAT(u.id,'-',c.id) AS id, CONCAT(u.firstname,' ',u.lastname) A
 	AND f.userid = ra.userid AND f.filesize > 0 ) AS feedbackscore, 
 
 (SELECT (SUM(CASE WHEN f.component = 'assignfeedback_poodll' THEN f.filesize ELSE 0 END)/960000 + 
-	SUM(CASE WHEN f.component = 'assignfeedback_file' THEN f.filesize ELSE 0 END)/2400000) 
+	SUM(CASE WHEN f.component = 'assignfeedback_file' THEN f.filesize ELSE 0 END)/570000) 
 	FROM {files} f 
 	JOIN {context} cx2 ON f.contextid = cx2.id 
 	JOIN {course_modules} cm ON cx2.instanceid = cm.id
