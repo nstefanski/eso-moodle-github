@@ -1344,6 +1344,89 @@ function block_progress_bar($modules, $config, $events, $userid, $instance, $att
     $content .= HTML_WRITER::end_tag('tr');
     $content .= HTML_WRITER::end_tag('table');
 
+	//tk Add user stats
+	if (isset($config->showpercentage) && $config->showpercentage == 1) {
+		global $DB;
+		require_once($CFG->dirroot.'/blocks/dedication/dedication_lib.php');
+		
+        $content .= HTML_WRITER::start_tag('table');
+		$content .= HTML_WRITER::start_tag('tr');
+		
+		$celloptions = array(
+            'class' => 'progressUserStatsCell',
+            'id' => 'progress_stat_percentage',
+			'style' => '');
+		
+		$celloptions['id'] = 'progress_stat_percentage';
+		$progress = block_progress_percentage($events, $attempts);
+		$nowpos = 0;	//nowpos cribbed from above, in case the arrow is turned off
+		while ($nowpos < $numevents && $now > $events[$nowpos]['expected']) {
+			$nowpos++;
+		}
+		$expectedprogress = $nowpos / count($events) * 100;
+        $cellcontent = $progress.'%';
+		if ($progress >= $expectedprogress) {
+			$celloptions['style'] = 'color: '.$colours['attempted_colour'].';';
+		} elseif ($progress < $expectedprogress) {
+			$celloptions['style'] = 'color: '.$colours['notattempted_colour'].';';
+		}
+		$content .= HTML_WRITER::tag('td', $cellcontent, $celloptions);
+		
+		$celloptions['id'] = 'progress_stat_grade';
+		//$celloptions['onclick'] = 'document.location=\''.
+        //        $CFG->wwwroot.'/grade/report/user/index.php?id='.$course.'&userid='.$userid.'\';';
+		$gradeitem = $DB->get_record('grade_items', array('itemtype' => 'course', 'courseid' => $course), 'id');
+		$grade = $DB->get_record('grade_grades', array('itemid' => $gradeitem->id, 'userid' => $userid), 'finalgrade');
+		$cellcontent = floor($grade->finalgrade).'%';
+		if ($grade->finalgrade >= 70) {
+			$celloptions['style'] = 'color: '.$colours['attempted_colour'].';';
+		} elseif ($grade->finalgrade >= 60) {
+			$celloptions['style'] = 'color: '.$colours['futurenotattempted_colour'].';';
+		} elseif  ($grade === null || $grade->finalgrade === null) {
+			$celloptions['style'] = 'color: '.$colours['futurenotattempted_colour'].';';
+			$cellcontent = '--%';
+		} else {
+			$celloptions['style'] = 'color: '.$colours['notattempted_colour'].';';
+		}
+		$content .= HTML_WRITER::tag('td', $cellcontent, $celloptions);
+		
+		$celloptions['id'] = 'progress_stat_logins';
+		//$celloptions['onclick'] = '';
+		$courserecord = $DB->get_record('course', array('id' => $course), 'id,shortname');
+		$userrecord = $DB->get_record('user', array('id' => $userid), 'id,firstname,lastname');
+		$dm = new block_dedication_manager($courserecord, $now-604800, $now, 1080);
+		$cellcontent = count($dm->get_user_dedication($userrecord, false));
+		if ($cellcontent >= 5) {
+			$celloptions['style'] = 'color: '.$colours['attempted_colour'].';';
+		} elseif ($cellcontent >= 3) {
+			$celloptions['style'] = 'color: '.$colours['futurenotattempted_colour'].';';
+		} else {
+			$celloptions['style'] = 'color: '.$colours['notattempted_colour'].';';
+		}
+		$content .= HTML_WRITER::tag('td', $cellcontent, $celloptions);
+		
+		/*$celloptions['id'] = 'progress_stat_timeonsite';
+		$dedicationtime = $dm->get_user_dedication($userrecord, true)/3600;
+		$cellcontent = 'In class (week): '.round($dedicationtime, 2).' hrs';
+		$celloptions['style'] = 'color: black;';
+		$content .= HTML_WRITER::tag('td', $cellcontent, $celloptions);//*/
+		
+		$content .= HTML_WRITER::end_tag('tr');
+		$content .= HTML_WRITER::start_tag('tr');
+		
+		$celloptions = array(
+            'class' => 'progressUserStatsCell progressLabelCell',
+            'id' => '',
+			'style' => '');
+		$content .= HTML_WRITER::tag('td', get_string('progress', 'block_progress'), $celloptions);
+		$content .= HTML_WRITER::tag('td', get_string('coursegrade', 'core_completion'), $celloptions);
+		$content .= HTML_WRITER::tag('td', get_string('statslogins', 'core').' <br />('.get_string('positionlast', 'core_grades').' '.
+			get_string('numdays', 'core', 7).')', $celloptions);
+		
+		$content .= HTML_WRITER::end_tag('tr');
+		$content .= HTML_WRITER::end_tag('table');
+    }
+
     // Add the percentage below the progress bar.
     if (isset($config->showpercentage) && $config->showpercentage == 1) {
         $progress = block_progress_percentage($events, $attempts);
@@ -1357,7 +1440,8 @@ function block_progress_bar($modules, $config, $events, $userid, $instance, $att
                         'id' => 'progressBarInfo'.$instance.'-'.$userid.'-info');
     $content .= HTML_WRITER::start_tag('div', $divoptions);
     if (!$simple) {
-        $content .= get_string('mouse_over_prompt', 'block_progress');
+        //$content .= get_string('mouse_over_prompt', 'block_progress');
+		$content .= HTML_WRITER::tag('span', get_string('mouse_over_prompt', 'block_progress'), array('class' => 'desktoponly')); //tk
     }
     $content .= HTML_WRITER::end_tag('div');
 
@@ -1389,6 +1473,7 @@ function block_progress_bar($modules, $config, $events, $userid, $instance, $att
             $content .= $text;
         }
         $content .= HTML_WRITER::empty_tag('br');
+		$content .= ($attempted ? '' : 'not '); //tk change 'attempted' to 'not attempted' etc
         $content .= get_string($action, 'block_progress').'&nbsp;';
         $icon = ($attempted && $attempted !== 'failed' && $attempted !== 'submitted' ? 'tick' : 'cross');
         $content .= $OUTPUT->pix_icon($icon, '', 'block_progress', array('class' => 'iconInInfo'));
