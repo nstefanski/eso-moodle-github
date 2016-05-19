@@ -33,7 +33,59 @@ require_once($CFG->dirroot.'/local/escoforward/lib.php');
 function esco_update_forwarding($users) {
     global $DB;
 	
-	foreach ($users as $u) {
-		//do stuff
+	$table = 'user_preferences';
+	$prefName = 'message_processor_email_email';
+	
+	$success = 0;
+	$error = 0;
+	
+	foreach ($users as $u) {		
+		$dataobject = new stdclass;
+		
+		if($u->prefid) {
+			$dataobject->id = $u->prefid;
+			
+			$action = 'update';
+		} else {
+			$dataobject->userid = $u->userid;
+			$dataobject->name = $prefName;
+			
+			$action = 'insert';
+		}
+		
+		$dataobject->value = $u->data;
+		
+		if ($action === 'update'){
+			try {
+				if($DB->update_record($table, $dataobject)) {
+					$success++;
+				}
+			} catch (moodle_exception $e) {
+				$error++;
+			}
+		} elseif ($action === 'insert') {
+			try {
+				if($DB->insert_record($table, $dataobject)) {
+					$success++;
+				}
+			} catch (moodle_exception $e) {
+				$error++;
+			}
+		}
+		
+		//clear or replace data in custom field
+		//this lets user eliminate forwarding if they want to use default email
+		$cleardata = str_replace('.', ' dot ', str_replace('@', ' at ', $u->data)); //''; //
+		$clearobject = new stdclass;
+		$clearobject->id = $u->id;
+		$clearobject->data = $cleardata;
+		try {
+			$DB->update_record('user_info_data', $clearobject);
+		} catch (moodle_exception $e) {
+			
+		}
 	}
+	
+	mtrace("... $success users updated");
+	mtrace("... $error errors");
 }
