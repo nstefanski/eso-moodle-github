@@ -410,7 +410,7 @@ class format_topcoll_renderer extends format_section_renderer_base {
             $toggleclass .= ' the_toggle ' . $this->tctoggleiconsize;
             $toggleurl = new moodle_url('/course/view.php', array('id' => $course->id));
             $o .= html_writer::start_tag('a',
-                array('class' => $toggleclass, 'href' => $toggleurl, 'role' => 'button', 'aria-pressed' => $ariapressed));
+                array('class' => $toggleclass, /*'href' => $toggleurl,*/ 'role' => 'button', 'aria-pressed' => $ariapressed));
 
             if (empty($this->tcsettings)) {
                 $this->tcsettings = $this->courseformat->get_settings();
