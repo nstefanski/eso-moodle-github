@@ -355,8 +355,8 @@ M.util.init_maximised_embed = function(Y, id) {
         var headerheight = get_htmlelement_size('page-header', 'height');
         var footerheight = get_htmlelement_size('page-footer', 'height');
         var newheight = parseInt(Y.one('body').get('docHeight')) - footerheight - headerheight - 100;
-        if (newheight < 400) {
-            newheight = 400;
+        if (newheight < 800) {
+            newheight = 1280;
         }
         obj.setStyle('height', newheight+'px');
         obj.setStyle('display', '');
