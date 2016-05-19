@@ -148,6 +148,7 @@ if ($currentuser) {
         if (!empty($referer)) {
             echo $OUTPUT->continue_button($referer);
         }
+		redirect(new moodle_url('/user/view.php', array('id'=>$user->id))); //tk added
         echo $OUTPUT->footer();
         exit;
     }
