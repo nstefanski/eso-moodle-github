@@ -56,9 +56,11 @@ class filter_globalvars extends moodle_text_filter {
 						AND e.courseid = $COURSE->id 
 						AND e.status = 0 ";
 				$userenrol = $DB->get_record_sql($sql);
-				$text = str_replace('%%userenrol_id%%', $userenrol->id, $text);
-				$text = str_replace('%%userenrol_timestart%%', date('F j, Y', $userenrol->timestart), $text);
-				$text = str_replace('%%userenrol_unixtimestart%%', $userenrol->timestart, $text);
+				if (!empty($userenrol)) {
+					$text = str_replace('%%userenrol_id%%', $userenrol->id, $text);
+					$text = str_replace('%%userenrol_timestart%%', date('F j, Y', $userenrol->timestart), $text);
+					$text = str_replace('%%userenrol_unixtimestart%%', $userenrol->timestart, $text);
+				}
 			}
 			
 			//$text = str_replace('%%config_wwwroot%%', $CFG->wwwroot, $text);
