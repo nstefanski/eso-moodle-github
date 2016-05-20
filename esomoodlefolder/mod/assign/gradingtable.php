@@ -410,6 +410,7 @@ class assign_grading_table extends table_sql implements renderable {
         foreach ($extrauserfields as $extrafield) {
              $this->column_class($extrafield, $extrafield);
         }
+		$this->sortable(true, 'lastname'); //tk added see https://tracker.moodle.org/browse/MDL-41355
         $this->no_sorting('recordid');
         $this->no_sorting('finalgrade');
         $this->no_sorting('userid');
