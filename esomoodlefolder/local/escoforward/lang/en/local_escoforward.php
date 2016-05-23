@@ -22,3 +22,4 @@ $string['forwardemaildescr'] = '<p>When a new user account is created with this 
 $string['customprofilefieldstring'] = 'Custom Profile Field';
 $string['alreadyexists'] = 'already exists (probably from previous install)!';
 $string['setforwardingemail'] = 'Set forwarding emails for users with custom field set';
+$string['unblockinstructors'] = 'Remove instructors from any user\'s blocked list';
