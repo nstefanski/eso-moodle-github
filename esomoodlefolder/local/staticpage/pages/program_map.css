@@ -1,0 +1,49 @@
+	.programmap .term, .programmap .courseblock {
+		float: left;
+		margin: 5px;
+		padding: 10px;
+		background-color: #f2e18b;
+		color: white;
+	}
+	.programmap .term {
+		width: 300px;
+		height: 300px;
+	}
+	.programmap .courseblock {
+		width: 150px;
+		height: 300px;
+	}
+	.programmap .prac, .programmap .corebiz {
+		background-color: #bb8c15;
+		float: left;
+	}
+	.programmap .corebiz {
+		width: 145px;
+		height: 145px;
+	}
+	.programmap .twelveweek {
+		width: 300px;
+		height: 145px;
+		margin-bottom: 10px;
+	}
+	.programmap .sixweek {
+		width: 150px;
+		height: 300px;
+	}
+	.programmap .spacer {
+		width: 10px;
+		height: 1px;
+		float: left;
+	}
+	.programmap p.coursename {
+		margin: 10px;
+		color: white;
+		font-weight: bold;
+	}
+	.programmap .active {
+		background-color: #7EB31D;
+		color: black;
+	}
+	.programmap .complete {
+		background-color: #547713;
+	}
