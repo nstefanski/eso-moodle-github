@@ -75,9 +75,7 @@ $sql = "SELECT CONCAT(u.id,'-',c.id) AS id, CONCAT(u.firstname,' ',u.lastname) A
 	AND f.timemodified >= $mintime AND f.timemodified <= $maxtime 
 	AND f.userid = ra.userid AND f.filesize > 0 ) AS totalfeedback, 
 
-CASE WHEN c.shortname LIKE 'CA181%' OR c.shortname LIKE 'CA202%' 
-THEN ''
-ELSE (SELECT count(DISTINCT sub.id) FROM {assign_submission} sub 
+(SELECT count(DISTINCT sub.id) FROM {assign_submission} sub 
 	JOIN {assign} a ON a.id = sub.assignment 
 	WHERE sub.timecreated <= a.duedate 
 	AND a.duedate >= $mintime 
@@ -89,8 +87,7 @@ ELSE (SELECT count(DISTINCT sub.id) FROM {assign_submission} sub
 	AND a.duedate <= $maxtime ) * (SELECT count(DISTINCT ra2.id) 
 	FROM {role_assignments} ra2 
 	JOIN {context} cx2 ON cx2.id = ra2.contextid 
-	WHERE ra2.roleid = 5 AND cx2.instanceid = c.id)) 
-END AS ontime, 
+	WHERE ra2.roleid = 5 AND cx2.instanceid = c.id)) AS ontime, 
 
 '' AS livesession, 
 

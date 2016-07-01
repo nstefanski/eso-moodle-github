@@ -157,7 +157,7 @@ if ($USER->id != $userid) {
 				JOIN {context} cx ON ra.contextid = cx.id
 				JOIN {course} c ON cx.instanceid = c.id AND cx.contextlevel = '50' 
 				JOIN {grade_items} gi ON gi.courseid = c.id AND gi.itemtype = 'course' 
-				JOIN {grade_grades} gg ON gg.itemid = gi.id AND gg.userid = ra.userid 
+				LEFT JOIN {grade_grades} gg ON gg.itemid = gi.id AND gg.userid = ra.userid 
 				LEFT JOIN {user_lastaccess} ula ON ula.userid = ra.userid AND ula.courseid = c.id 
 			WHERE ra.userid = $userid 
 				AND c.id > 3 ";
@@ -181,7 +181,7 @@ if ($USER->id != $userid) {
 			<dt>
 				<h3>
 					<div class="course"><?php echo $record->shortname; ?></div>
-					<div class="grade"><?php echo $record->finalgrade; ?>%</div>
+					<div class="grade"><?php echo $record->finalgrade ? $record->finalgrade : '--' ; ?>%</div>
 					<div class="access">Last access on <?php echo $record->timeaccess ? date('l, n/j/y', $record->timeaccess) : 'NEVER'; ?></div>
 					<div class="dedication"><?php echo $dedicationtime; ?> hours in course since start</div>
 				</h3>
