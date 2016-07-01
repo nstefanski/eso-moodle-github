@@ -27,7 +27,16 @@ $tasks = array(
         'classname' => 'local_escoforward\task\set_forwarding_email',
         'blocking' => 0,
         'minute' => '0',
-        'hour' => '0',
+        'hour' => '4',
+        'day' => '*',
+        'month' => '*',
+        'dayofweek' => '*'
+    ), 
+	array(
+        'classname' => 'local_escoforward\task\unblock_instructors',
+        'blocking' => 0,
+        'minute' => '0',
+        'hour' => '4',
         'day' => '*',
         'month' => '*',
         'dayofweek' => '*'

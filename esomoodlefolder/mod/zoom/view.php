@@ -28,28 +28,11 @@
 require_once(dirname(dirname(dirname(__FILE__))).'/config.php');
 require_once(dirname(__FILE__).'/lib.php');
 require_once(dirname(__FILE__).'/locallib.php');
+require_once(dirname(__FILE__).'/../../lib/moodlelib.php');
 
 $config = get_config('mod_zoom');
 
-$id = optional_param('id', 0, PARAM_INT); // Course_module ID, or
-$n  = optional_param('n', 0, PARAM_INT);  // ... zoom instance ID - it should be named as the first character of the module.
-
-if ($id) {
-    $cm         = get_coursemodule_from_id('zoom', $id, 0, false, MUST_EXIST);
-    $course     = $DB->get_record('course', array('id' => $cm->course), '*', MUST_EXIST);
-    $zoom  = $DB->get_record('zoom', array('id' => $cm->instance), '*', MUST_EXIST);
-} else if ($n) {
-    $zoom  = $DB->get_record('zoom', array('id' => $n), '*', MUST_EXIST);
-    $course     = $DB->get_record('course', array('id' => $zoom->course), '*', MUST_EXIST);
-    $cm         = get_coursemodule_from_instance('zoom', $zoom->id, $course->id, false, MUST_EXIST);
-} else {
-    error('You must specify a course_module ID or an instance ID');
-}
-
-require_login($course, true, $cm);
-
-$context = context_module::instance($cm->id);
-require_capability('mod/zoom:view', $context);
+list($course, $cm, $zoom) = zoom_get_instance_setup();
 
 $event = \mod_zoom\event\course_module_viewed::create(array(
     'objectid' => $PAGE->cm->instance,
@@ -84,8 +67,8 @@ if (!($zoomuserid = $cache->get($USER->id))) {
 }
 $userishost = ($zoomuserid == $zoom->host_id);
 
-$stryes = get_string('yes', 'mod_zoom');
-$strno = get_string('no', 'mod_zoom');
+$stryes = get_string('yes');
+$strno = get_string('no');
 $strstart = get_string('start_meeting', 'mod_zoom');
 $strjoin = get_string('join_meeting', 'mod_zoom');
 $strunavailable = get_string('unavailable', 'mod_zoom');
@@ -118,17 +101,18 @@ $numcolumns = 2;
 list($inprogress, $available, $finished) = zoom_get_state($zoom);
 
 if ($available) {
+	$currentpageurl = new moodle_url('/mod/zoom/view.php', array('id' => $cm->id));
     if ($userishost) {
         $buttonhtml = html_writer::tag('button', $strstart,
-                array('type' => 'submit', 'class' => 'btn btn-success'));
+                array('type' => 'submit', 'class' => 'btn btn-success', 'onclick' => "window.open('$currentpageurl')"));
         $aurl = new moodle_url($zoom->start_url);
     } else {
         $buttonhtml = html_writer::tag('button', $strjoin,
-                array('type' => 'submit', 'class' => 'btn btn-primary'));
+                array('type' => 'submit', 'class' => 'btn btn-primary', 'onclick' => "window.open('$currentpageurl')"));
         $aurl = new moodle_url('/mod/zoom/loadmeeting.php', array('id' => $cm->id));
     }
     $buttonhtml .= html_writer::input_hidden_params($aurl);
-    $link = html_writer::tag('a', $buttonhtml, array('href' => $aurl, 'target' => "_blank"));
+    $link = html_writer::tag('form', $buttonhtml, array('action' => $aurl->out_omit_querystring()));
 } else {
     $link = html_writer::tag('span', $strunavailable, array('style' => 'font-size:20px'));
 }
@@ -138,42 +122,50 @@ $title->header = true;
 $title->colspan = $numcolumns;
 $table->data[] = array($title);
 
+$sessionsurl = new moodle_url('/mod/zoom/report.php', array('id' => $cm->id));
+$sessionslink = html_writer::link($sessionsurl, get_string('sessions', 'mod_zoom'));
+$sessions = new html_table_cell($sessionslink);
+$sessions->colspan = $numcolumns;
+$table->data[] = array($sessions);
 
-
-if ($zoom->type == ZOOM_RECURRING_MEETING) {
+if ($zoom->recurring) {
     $recurringmessage = new html_table_cell(get_string('recurringmeetinglong', 'mod_zoom'));
     $recurringmessage->colspan = $numcolumns;
     $table->data[] = array($recurringmessage);
 } else {
     $table->data[] = array($strtime, userdate($zoom->start_time));
-    $table->data[] = array($strduration, get_string('minutes', 'mod_zoom', $zoom->duration / 60));
+    $table->data[] = array($strduration, format_time($zoom->duration));
 }
 
-$haspassword = (isset($zoom->password) && $zoom->password !== '');
-$strhaspass = ($haspassword) ? $stryes : $strno;
-$table->data[] = array($strpassprotect, $strhaspass);
+if (!$zoom->webinar) {
+    $haspassword = (isset($zoom->password) && $zoom->password !== '');
+    $strhaspass = ($haspassword) ? $stryes : $strno;
+    $table->data[] = array($strpassprotect, $strhaspass);
 
-if ($zoomuserid === $zoom->host_id && $haspassword) {
-    $table->data[] = array($strpassword, $zoom->password);
+    if ($zoomuserid === $zoom->host_id && $haspassword) {
+        $table->data[] = array($strpassword, $zoom->password);
+    }
 }
 
 if ($userishost) {
-    $table->data[] = array($strjoinlink, html_writer::link($zoom->join_url, $zoom->join_url,  array('target' => '_blank')));
+    $table->data[] = array($strjoinlink, html_writer::link($zoom->join_url, $zoom->join_url));
 }
 
-$strjbh = ($zoom->option_jbh) ? $stryes : $strno;
-$table->data[] = array($strjoinbeforehost, $strjbh);
+if (!$zoom->webinar) {
+    $strjbh = ($zoom->option_jbh) ? $stryes : $strno;
+    $table->data[] = array($strjoinbeforehost, $strjbh);
 
-$strvideohost = ($zoom->option_host_video) ? $stryes : $strno;
-$table->data[] = array($strstartvideohost, $strvideohost);
+    $strvideohost = ($zoom->option_host_video) ? $stryes : $strno;
+    $table->data[] = array($strstartvideohost, $strvideohost);
 
-$strparticipantsvideo = ($zoom->option_participants_video) ? $stryes : $strno;
-$table->data[] = array($strstartvideopart, $strparticipantsvideo);
+    $strparticipantsvideo = ($zoom->option_participants_video) ? $stryes : $strno;
+    $table->data[] = array($strstartvideopart, $strparticipantsvideo);
+}
 
 $table->data[] = array($straudioopt, $zoom->option_audio);
 
-if ($zoom->type != ZOOM_RECURRING_MEETING) {
-    if ($zoom->type == ZOOM_MEETING_EXPIRED) {
+if (!$zoom->recurring) {
+    if ($zoom->status == ZOOM_MEETING_EXPIRED) {
         $status = get_string('meeting_expired', 'mod_zoom');
     } else if ($finished) {
         $status = get_string('meeting_finished', 'mod_zoom');
