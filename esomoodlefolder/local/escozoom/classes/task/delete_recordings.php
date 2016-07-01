@@ -78,12 +78,9 @@ class delete_recordings extends \core\task\scheduled_task {
 				case "cafe@escoffier.edu":
 					$daysOld = 11;
 					break;
-<<<<<<< HEAD
-=======
 				case "ambassadors@escoffier.edu":
 					$daysOld = 11;
 					break;
->>>>>>> refs/remotes/origin/master
 				case "studio@escoffier.edu":
 					$daysOld = 11;
 					break;
