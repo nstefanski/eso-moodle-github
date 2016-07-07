@@ -1,0 +1,65 @@
+ul.section li.activity .mod-indent-outer, ul.section li.activity .mod-indent-outer .activityinstance {
+	width: 100%; 
+}
+li.activity .mod-indent-outer .activityinstance a[href^="http://my.escoffieronline.com/mod/"] {
+	color: white;
+	display: inline-block;
+	width: 100%;
+	padding: .2em;
+	clear: both;
+	border: 2px solid #6f1200;
+	margin-bottom: 10px;
+	background-color: #ac151e;
+	background-repeat: no-repeat;
+	/*background-size: 150%;*/
+	background-size: 100%;
+	background-position: right center;
+	min-height: 48px;
+}
+li.activity .mod-indent-outer .activityinstance a:visited {
+	color: #f2e18b;
+}
+li.activity .mod-indent-outer .activityinstance a:hover {
+	color: #FF1F2C;
+	/*background-color: #f2e18b;*/
+}
+li.activity .mod-indent-outer .activityinstance a:hover span.instancename {
+	background-color: white;
+	background-color: rgba(255,255,255,0.75);
+}
+li.activity img.activityicon {
+	margin-left: 0;
+	margin-right: 30px;
+	background-color: white;
+	border-radius: 240px;
+	padding: 8px;
+ 	margin: 8px;
+	vertical-align: middle;
+	height: 48px;
+	width: 48px;
+	max-width: 100%;
+}
+li.activity .mod-indent-outer .activityinstance a span.instancename {
+	display: inline-block;
+	font-size: x-large;
+	font-weight: 600;
+	max-width: 80%;
+	line-height: normal;
+	vertical-align: middle;
+	padding: 2px;
+}
+li.activity .mod-indent-outer .actions .autocompletion img {
+	display: none;
+}
+li.activity .mod-indent-outer .actions .autocompletion img[alt^="Completed:"] {
+	padding: 1px;
+	border-radius: 5px;
+	vertical-align: middle;
+	height: 24px;
+	width: 24px;
+	position: relative;
+	top: 50%;
+	transform: translateY(85%);
+	display: initial;
+ 	background-color: white;
+}
