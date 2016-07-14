@@ -5,14 +5,49 @@ $bill = new SoapClient("http://www.xmlme.com/WSShakespeare.asmx?WSDL", array('tr
 
 $request = (empty($_GET['r'])) ? 'polack' : $_GET['r'];
 
-//$cill = new SoapClient("http://coreapi6238:8088/Cmc.CampusLink.WebServices.Security/Authentication.asmx?WSDL");
-//print_R($cill);
+try {
+	//$cill = new SoapClient("http://coreapi6238:8088/Cmc.CampusLink.WebServices.Security/Authentication.asmx?WSDL");
+	$cill = new SoapClient("https://api5079.campusnet.net/cmc.campuslink.webservices.security/Authentication.asmx?WSDL");
+	//print_R($cill);
+	//var_dump($cill->__getFunctions());
+	//var_dump($cill->__getTypes());
+	$params = array('TokenRequest' => array('UserName'=>'***REMOVED***', 
+											'Password'=>'***REMOVED***',
+											'TokenNeverExpires'=>false) );
+	print_R($params);
+	echo '<br><br>';
+	$result = $cill->__soapCall("GetAuthorizationToken", array($params));
+	print_R($result);
+} catch (Exception $e) {
+	echo $e;
+}
+echo '<hr>';
+
+try {
+	$aill = new SoapClient("https://api5079.campusnet.net/cmc.campuslink.webservices/AttendanceWebService.asmx?WSDL");
+	print_R($aill);
+} catch (Exception $e) {
+	echo $e;
+}
+echo '<hr>';
+
+try {
+	$gill = new SoapClient("https://api5079.campusnet.net/cmc.campuslink.webservices/GradesWebService.asmx?WSDL");
+	print_R($gill);
+} catch (Exception $e) {
+	echo $e;
+}
+echo '<hr>';
 
 //var_dump($bill->__getFunctions());
 //var_dump($bill->__getTypes());
 
 $params = array('Request'=>$request);
+print_R($params);
+echo '<br><br>';
 $result = $bill->__soapCall("GetSpeech", array($params));
+print_R($result);
+echo '<hr>';
 
 //$lastReq = $bill->__getLastRequest();
 //var_dump($lastReq);
