@@ -1,13 +1,14 @@
 function escoFillAccountInfo() {
 	if (document.getElementById("page-login-signup")==null) {
 		//do nothing
-	} else if (document.getElementById("id_lastname")==null) {
+	} else if (document.getElementById("id_profile_field_organization")==null) {
 		window.setTimeout(escoFillAccountInfo, 100);
 	} else { 
 		var params = {};
 
 		if (location.search) {
-			var parts = location.search.substring(1).split('&');
+			var wooSearch = decodeURI(location.search + location.hash);
+			var parts = wooSearch.substring(1).replace(/#038;/g,'').split('&');
 
 			for (var i = 0; i < parts.length; i++) {
 				var nv = parts[i].split('=');
@@ -21,6 +22,7 @@ function escoFillAccountInfo() {
 		var lastname = params.lastname ? params.lastname : '';
 		var city = params.city ? params.city : '';
 		var country = params.country ? params.country : 'US';
+		var organization = params.organization ? params.organization : '';
 		
 		document.getElementById("id_username").value = email.toLowerCase();
 		document.getElementById("id_email").value = email;
@@ -29,5 +31,6 @@ function escoFillAccountInfo() {
 		document.getElementById("id_lastname").value = lastname;
 		document.getElementById("id_city").value = city;
 		document.getElementById("id_country").value = country;
+		document.getElementById("id_profile_field_organization").value = organization;
 	}
 }
