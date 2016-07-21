@@ -21,6 +21,7 @@ class filter_globalvars extends moodle_text_filter {
 			$text = str_replace('%%user_auth%%', $USER->auth, $text);
 			$text = str_replace('%%user_campus%%', $USER->profile['campus'], $text);
 			$text = str_replace('%%user_programtype%%', $USER->profile['programtype'], $text);
+			$text = str_replace('%%user_organization%%', $USER->profile['organization'], $text);
 			$text = str_replace('%%user_institution%%', $USER->institution, $text);
 			$text = str_replace('%%user_department%%', $USER->department, $text);
 			
