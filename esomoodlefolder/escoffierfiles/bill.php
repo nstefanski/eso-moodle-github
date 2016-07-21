@@ -1,64 +1,169 @@
 <?php
 
-$bill = new SoapClient("http://www.xmlme.com/WSShakespeare.asmx?WSDL", array('trace'=>TRUE));
-//print_R($bill);
-
-$request = (empty($_GET['r'])) ? 'polack' : $_GET['r'];
-
 try {
 	//$cill = new SoapClient("http://coreapi6238:8088/Cmc.CampusLink.WebServices.Security/Authentication.asmx?WSDL");
-	$cill = new SoapClient("https://api5079.campusnet.net/cmc.campuslink.webservices.security/Authentication.asmx?WSDL");
+	$cill = new SoapClient('https://api5079.campusnet.net/cmc.campuslink.webservices.security/Authentication.asmx?WSDL');
 	//print_R($cill);
 	//var_dump($cill->__getFunctions());
 	//var_dump($cill->__getTypes());
-	$params = array('TokenRequest' => array('UserName'=>'193nstefanski', 
+	$params = array('TokenRequest' => array('UserName'=>'193nstefanski',
 											'Password'=>'M4ust0t!',
 											'TokenNeverExpires'=>false) );
 	print_R($params);
 	echo '<br><br>';
-	$result = $cill->__soapCall("GetAuthorizationToken", array($params));
-	print_R($result);
+	$result = $cill->__soapCall('GetAuthorizationToken', array($params));
+	print_R($result->TokenResponse->TokenId);
+	
+	$json = json_encode($result); //needed??
+	$token = $result->TokenResponse->TokenId;
 } catch (Exception $e) {
 	echo $e;
 }
+
 echo '<hr>';
 
 try {
-	$aill = new SoapClient("https://api5079.campusnet.net/cmc.campuslink.webservices/AttendanceWebService.asmx?WSDL");
-	print_R($aill);
+	//$sill = new SoapClient('https://api5079.campusnet.net/cmc.integration.webservices.wcf/CoursesService.svc?WSDL',
+	$sill = new SoapClient('https://api5079.campusnet.net/cmc.integration.webservices.wcf/CourseSectionService.svc?WSDL',
+                           array('soap_version' => 'SOAP_1_2',
+                                 'location'=>'https://api5079.campusnet.net/cmc.integration.webservices.wcf/CourseSectionService.svc',
+                                 'trace'=>TRUE) );
+	print_R($sill);
 } catch (Exception $e) {
 	echo $e;
 }
 echo '<hr>';
+
+$studentid = 206552;
+$csid = 3653;
+$attdate = '2016-07-13T00:00:00';
 
 try {
-	$gill = new SoapClient("https://api5079.campusnet.net/cmc.campuslink.webservices/GradesWebService.asmx?WSDL");
-	print_R($gill);
+	$client = new SoapClient('https://api5079.campusnet.net/cmc.campuslink.webservices/GetEntityWebService.asmx?WSDL', array('trace'=>TRUE));
+	print_R($client);
+	//var_dump($client->__getFunctions());
+	//var_dump($client->__getTypes());
+	
+	$esp = array('FieldName'=>'LastName',
+				'FieldName'=>'Handy',
+				'Operator'=>'Equal'); //see ParameterOperatorType in WSDL
+	$esps = array($esp);
+	//$qfs = array('QueryFlagType' => 'CountAll');
+	$clause = array('SearchParameters'=> $esps,
+					'Operator'=> 'And'
+					//,'QueryFlags'=> $qfs
+					);
+	$clauses = array($clause);
+	$ent = array('EntitySearchClauses'=> $clauses,
+				'RequestId'=> 0);
+	$inMsg = array('RowCount' => 0,
+					'Entity' => $ent);
+	$inMsgs = array($inMsg);
+	$params = array('GetEntityRequest' => array('TokenId'=>$token,
+												'Entities'=>$inMsgs) );
+	echo '<br>';
+	print_R($params);
+	echo '<br>';
+	
+	$result = $client->__soapCall('GetEntity', array($params));
+  	print_R($result);
 } catch (Exception $e) {
 	echo $e;
 }
 echo '<hr>';
 
-//var_dump($bill->__getFunctions());
-//var_dump($bill->__getTypes());
+if ($token){
+  try {
+  	$aill = new SoapClient('https://api5079.campusnet.net/cmc.campuslink.webservices/AttendanceWebService.asmx?WSDL', array('trace'=>TRUE));
+  	print_R($aill);
+  	echo '<br>';
+  	var_dump($aill->__getFunctions());
+  	echo '<br>';
+  	//var_dump($aill->__getTypes());
+	
+	$inMsg = array('StudentId' => $studentid,
+					'CourseSectionId' => $csid,
+					'AttendanceDate' => $attdate,
+					'IsDependentCourse' => false,
+					'UpdateExistingAttendance' => true,
+					//'MinutesAttended' => 99,
+					'MinutesAbsent' => 99,
+					'IsExcused' => false);
+	$inMsgs = array($inMsg);
+	$params = array('PostAttendanceTransactionRequest' => array('TokenId'=>$token,
+																'Attendances'=>$inMsgs) );
+	/*$root = '<?xml version="1.0" encoding="UTF-8"?><Activities/>';
+	$params = new simpleXMLElement($root); 
+		$patr = $params->addChild('PostAttendanceTransactionRequest');
+			$patr->addChild('TokenId', $token);
+			$aopaim = $patr->addChild('ArrayOfPostAttendanceInMsg');
+				$paim = $aopaim->addChild('PostAttendanceInMsg');
+					$paim->addChild('StudentId', $studentid);
+					$paim->addChild('CourseSectionId', $csid);
+					$paim->addChild('AttendanceDate', $attdate);
+					$paim->addChild('IsDependentCourse', 0);
+					$paim->addChild('UpdateExistingAttendance', true);
+					$paim->addChild('MinutesAttended', 99);
+					$paim->addChild('MinutesAbsent', 33);
+					$paim->addChild('IsExcused', 0);*/
+	/*$inMsg = array('StudentId' => $studentid,
+					'CourseSectionId' => $csid,
+					'AttendanceDate' => $attdate,
+					'IsDependentCourse' => false,
+					'UpdateExistingAttendance' => true,
+					'MinutesAttended' => 99,
+					'MinutesAbsent' => 33,
+					'IsExcused' => false);
+	$inMsg = new stdClass;
+		$inMsg->StudentId = $studentid;
+		$inMsg->CourseSectionId = $csid;
+		$inMsg->AttendanceDate = $attdate;
+		$inMsg->IsDependentCourse = false;
+		$inMsg->UpdateExistingAttendance = true;
+		$inMsg->MinutesAttended = 99;
+		$inMsg->MinutesAbsent = 33;
+		$inMsg->IsExcused = false;
+	$params = array('PostAttendanceTransactionRequest' =>
+  	                array('TokenId' => $token,
+  	                      'ArrayOfPostAttendanceInMsg' =>
+  	                      array($inMsg)
+  	                )
+  	           );*/
+  	/*$params = array('PostAttendanceTransactionRequest' =>
+  	                array('TokenId' => $token,
+  	                      'ArrayOfPostAttendanceInMsg' =>
+  	                      array('PostAttendanceInMsg' =>
+  	                            array('StudentId' => $studentid,
+  	                                  'CourseSectionId' => $csid,
+  	                                  'AttendanceDate' => $attdate,
+  	                                  'IsDependentCourse' => false,
+  	                                  'UpdateExistingAttendance' => true,
+  	                                  'MinutesAttended' => 99,
+  	                                  'MinutesAbsent' => 33,
+  	                                  'IsExcused' => false)
+  	                      )
+  	                )
+  	           );*/
+	print_R($params);
+	echo '<br>';
+  	$result = $aill->__soapCall('PostAttendanceTransaction', array($params));
+  	print_R($result);
+  	
+  } catch (Exception $e) {
+  	echo $e;
+  }
+  echo '<hr>';
+}
+
+
+//bill
+$bill = new SoapClient('http://www.xmlme.com/WSShakespeare.asmx?WSDL', array('trace'=>TRUE));
+//print_R($bill);
+
+$request = (empty($_GET['r'])) ? 'polack' : $_GET['r'];
 
 $params = array('Request'=>$request);
-print_R($params);
-echo '<br><br>';
 $result = $bill->__soapCall("GetSpeech", array($params));
-print_R($result);
-echo '<hr>';
-
-//$lastReq = $bill->__getLastRequest();
-//var_dump($lastReq);
-
-//$lastResp = $bill->__getLastResponse();
-//var_dump($lastResp);
-
-//$xml = simplexml_load_string($result->GetSpeechResult) or die("Error: Cannot create object");
-//$json = json_encode($xml);
-//$array = json_decode($json,TRUE);
-//print_R($array);
 
 function XMLToArray($xml) {
   $parser = xml_parser_create('ISO-8859-1'); // For Latin-1 charset
