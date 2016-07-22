@@ -17,7 +17,8 @@ function updateZenPhone($user = null)
 	$name = $user->firstname.' '. $user->lastname; 
 	$email = $user->email;
 	$mdid = $user->id;
-	$orgid = null; //use if we want to pass an organization_id for user creation
+	$orgid = 1404354223; //use if we want to pass an organization_id for user creation
+	$tags = array($user->firstname.$user->lastname);
 	$country = $user->country;
 	$international = false;
 	$payload = null;
@@ -112,7 +113,7 @@ function updateZenPhone($user = null)
 		if ($zdcallerid) {
 			//UPDATE user with $zdcallerid
 			$apiurl = "/users/$zdcallerid.json";
-			$payload = array("user" => array("name" => $name, "email" => $email, "external_id" => $mdid, "organization_id" => $orgid) );
+			$payload = array("user" => array("name" => $name, "email" => $email, "external_id" => $mdid, "organization_id" => $orgid, "tags" => $tags) );
 			$json = json_encode($payload);
 			$action = "PUT";
 			$data = curlWrap($apiurl, $json, $action);
@@ -127,7 +128,7 @@ function updateZenPhone($user = null)
 				//add phone identity
 				$identities[] = array("type" => "phone_number", "value" => "$phone", "verified" => true);
 			}
-			$payload = array("user" => array("name" => $name, "external_id" => $mdid, "organization_id" => $orgid, "identities" => $identities) );
+			$payload = array("user" => array("name" => $name, "external_id" => $mdid, "organization_id" => $orgid, "identities" => $identities, "tags" => $tags) );
 			$json = json_encode($payload);
 			$action = "POST";
 			$data = curlWrap($apiurl, $json, $action);
@@ -144,7 +145,8 @@ function updateZenPhone($user = null)
 			"zdid" => $zdid,
 			"org" => $orgid,
 			"country" => $country,
-			"phone" => $phone
+			"phone" => $phone,
+			"tags" => $tags
 		),
 		"apicalls" => $apicalls,
 		"apiurl" => $apiurl,
