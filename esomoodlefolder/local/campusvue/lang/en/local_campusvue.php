@@ -18,4 +18,8 @@ defined('MOODLE_INTERNAL') || die();
 
 $string['pluginname'] = 'CampusVue Integration';
 $string['servername_title'] = 'External API: Server Name';
-$string['servername_desc'] = 'This is the server name used to access the External API, such as api#####.campusnet.net';
+$string['servername_desc'] = 'This is the server name used to access the External API, such as https://api#####.campusnet.net';
+$string['username_title'] = 'CampusVue Username';
+$string['username_desc'] = 'Username of a CampusVue user with superuser or admin access';
+$string['password_title'] = 'CampusVue Password';
+$string['password_desc'] = 'Password for the CampusVue user';

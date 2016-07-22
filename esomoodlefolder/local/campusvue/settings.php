@@ -25,7 +25,15 @@ if ( $hassiteconfig ){
 	$ADMIN->add( 'localplugins', $settings );
  
 	$servername = new admin_setting_configtext('local_campusvue/servername', get_string('servername_title', 
-		'local_campusvue'), get_string('servername_desc', 'local_campusvue'), null, PARAM_TEXT);
+		'local_campusvue'), get_string('servername_desc', 'local_campusvue'), null, PARAM_URL);
 	$settings->add($servername);
+	
+	$username = new admin_setting_configtext('local_campusvue/username', get_string('username_title', 
+		'local_campusvue'), get_string('username_desc', 'local_campusvue'), null, PARAM_TEXT);
+	$settings->add($username);
+	
+	$password = new admin_setting_configtext('local_campusvue/password', get_string('password_title', 
+		'local_campusvue'), get_string('password_desc', 'local_campusvue'), null, PARAM_TEXT);
+	$settings->add($password);
  
 }
