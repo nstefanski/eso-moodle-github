@@ -47,9 +47,10 @@ $rows = array();
 //$sitededication = array();
 
 $sql = "SELECT u.id AS md_id, 
-			(SELECT uid.data FROM {user_info_data} uid 
+			/*(SELECT uid.data FROM {user_info_data} uid 
 				JOIN {user_info_field} uif ON uid.fieldid = uif.id AND uif.shortname = 'cvueid' 
-				WHERE uid.userid = u.id ) AS CVue_id, 
+				WHERE uid.userid = u.id ) AS CVue_id,*/ 
+			u.idnumber AS CVue_id, 
 			u.firstname, u.lastname, u.email, FROM_UNIXTIME(startdate.data) AS startdate, 
 			CASE WHEN campus.data = 'Boulder - Online' THEN 'Culinary Arts' 
 				WHEN campus.data = 'Online' THEN 'Baking and Pastry' 
