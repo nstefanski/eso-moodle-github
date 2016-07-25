@@ -16,3 +16,48 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 defined('MOODLE_INTERNAL') || die();
+
+/**
+ * Creates a new Soap client using the server name from settings
+ *
+ * @param string $servicepath of the webservice, ie 'cmc.campuslink.webservices.security' or 'cmc.integration.webservices.wcf'
+ * @param string $servicename of the webservice, ie 'Authentication.asmx' or 'CoursesService.svc'
+ * @param string $type of description file, default 'WSDL'
+ * @return SoapClient object
+ */
+function cvBuildClient($servicepath, $servicename, $type = 'WSDL') {
+	$config = get_config('local_campusvue');
+	if (!isset($config->servername)) {
+		//Throw error
+		throw new moodle_exception('errorservernamenotfound', 'local_campusvue');
+	}
+	
+	$endpoint = $config->servername . '/' . $servicepath . '/' . $servicename . '?' . $type;
+	$client = new SoapClient($endpoint);
+	
+	return $client;
+}
+
+/**
+ * Gets a new Token from CampusVue using username and password from settings
+ *
+ * @param bool $tokenNeverExpiresjust , default false
+ * @return string $token
+ */
+function cvGetToken($tokenNeverExpires = false) {
+	$config = get_config('local_campusvue');
+	if (!isset($config->username) || !isset($config->password)) {
+		//Throw error
+		throw new moodle_exception('errorusernamenotfound', 'local_campusvue');
+	}
+	$client = cvBuildClient('cmc.campuslink.webservices.security', 'Authentication.asmx');
+	$args = array('TokenRequest' => array('UserName' => $config->username,
+										'Password' => $config->password,
+										'TokenNeverExpires' => $tokenNeverExpires) );
+	$result = $client->__soapCall('GetAuthorizationToken', array($args));
+	if (!isset($result->TokenResponse->TokenId)){
+		//add error handling
+	}
+	$token = $result->TokenResponse->TokenId;
+	return $token;
+}
