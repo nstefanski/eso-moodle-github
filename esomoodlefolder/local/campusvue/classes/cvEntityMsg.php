@@ -82,7 +82,16 @@ class cvEntityMsg {
 													'Entities' => $inMsgs) );
 		$result = $client->__soapCall('GetEntity', array($args));
 		if (!isset($result->GetEntityResponse->EntityList->GetEntityOutMsg->SerializedEntities->EntityString)){
-			//add error handling
+			if (!isset($result->GetEntityResponse->EntityList->GetEntityOutMsg->SerializedEntities)){
+				//add error handling
+			}
+			$entArray = $result->GetEntityResponse->EntityList->GetEntityOutMsg->SerializedEntities;
+			$xmlArray = array();
+			foreach ($entArray as $ent) {
+				$xmlStr = new SimpleXMLElement($ent->EntityString);
+				$xmlArray[] = $xmlStr;
+			}
+			return $xmlArray;
 		}
 		$entStr = $result->GetEntityResponse->EntityList->GetEntityOutMsg->SerializedEntities->EntityString;
 		$xmlStr = new SimpleXMLElement($entStr);
@@ -90,7 +99,16 @@ class cvEntityMsg {
 	}
 	
 	public function getEntityField($fieldName) {
-		return $this->getEntity()->$fieldName;
+		$result = $this->getEntity();
+		if (gettype($result) == 'object') {
+			return $result->$fieldName;
+		} elseif (gettype($result) == 'array') {
+			$returnArray = array();
+			foreach ($result as $xmlObj) {
+				$returnArray[] = $xmlObj->$fieldName;
+			}
+			return = $returnArray;
+		}
 	}
 	
 	public function getSearchableAttributes($token = null, $client = null) {
