@@ -17,6 +17,9 @@ $fieldValue = 1607222765;
 $paramOperator = 'Equal';
 $getField = 'Id';
 
+//$fieldName = 'SSN';
+//$fieldValue = '777-55-3333';
+
 if ($token){
 	try {
 		$client = new SoapClient('https://api5079.campusnet.net/cmc.campuslink.webservices/GetEntityWebService.asmx?WSDL', array('trace'=>TRUE));
@@ -36,14 +39,17 @@ if ($token){
 		$param = array('FieldName'=>$fieldName,
 					'FieldValue'=>$fieldValue,
 					'Operator'=>$paramOperator); //see ParameterOperatorType in WSDL
-		$params = array($param);
+		$param2 = array('FieldName'=>'SSN',
+					'FieldValue'=>'777-55-3333',
+					'Operator'=>$paramOperator); //see ParameterOperatorType in WSDL
+		$params = array($param, $param2);
 		//$qfs = array('QueryFlagType' => 'CountAll');
-		$clause = array('SearchParameters'=> $params
-						,'Operator'=> 'Undefined' //see ClauseOperatorType in WSDL
+		$clause = (object) array('SearchParameters'=> $params
+						,'Operator'=> 'And' //see ClauseOperatorType in WSDL
 						//,'QueryFlags'=> $qfs
 						);
 		$clauses = array($clause);
-		$ent = array('EntitySearchClauses'=> $clauses,
+		$ent = (object) array('EntitySearchClauses'=> $clauses,
 					'RequestId'=> 0,
 					'EntityType'=> $entityType);
 		$inMsg = array('RowCount' => 0,
@@ -52,12 +58,13 @@ if ($token){
 		$args = array('GetEntityRequest' => array('TokenId'=>$token,
 													'Entities'=>$inMsgs) );
 		
+		print_R($args);
 		$result = $client->__soapCall('GetEntity', array($args));
 		$entStr = $result->GetEntityResponse->EntityList->GetEntityOutMsg->SerializedEntities->EntityString;
 
 		$xmlStr = new SimpleXMLElement($entStr);
 		
-		echo $xmlStr->$getField;
+		echo '<br><br>' . $xmlStr->$getField;
 	} catch (Exception $e) {
 		echo $e;
 	}

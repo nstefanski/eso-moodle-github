@@ -37,6 +37,7 @@ echo '<hr>';
 $studentid = 206552;
 $csid = 3653;
 $attdate = '2016-07-13T00:00:00';
+$attdate2 = '2016-07-14T00:00:00';
 
 try {
 	$client = new SoapClient('https://api5079.campusnet.net/cmc.campuslink.webservices/GetEntityWebService.asmx?WSDL', array('trace'=>TRUE));
@@ -87,9 +88,17 @@ if ($token){
 					'IsDependentCourse' => false,
 					'UpdateExistingAttendance' => true,
 					//'MinutesAttended' => 99,
-					'MinutesAbsent' => 99,
+					'MinutesAbsent' => 13,
 					'IsExcused' => false);
-	$inMsgs = array($inMsg);
+	$inMsg2 = array('StudentId' => $studentid,
+					'CourseSectionId' => $csid,
+					'AttendanceDate' => $attdate2,
+					'IsDependentCourse' => false,
+					'UpdateExistingAttendance' => true,
+					//'MinutesAttended' => 99,
+					'MinutesAbsent' => 14,
+					'IsExcused' => false);
+	$inMsgs = array($inMsg,$inMsg2);
 	$params = array('PostAttendanceTransactionRequest' => array('TokenId'=>$token,
 																'Attendances'=>$inMsgs) );
 	/*$root = '<?xml version="1.0" encoding="UTF-8"?><Activities/>';
@@ -146,7 +155,7 @@ if ($token){
   	           );*/
 	print_R($params);
 	echo '<br>';
-  	$result = $aill->__soapCall('PostAttendanceTransaction', array($params));
+  	$result = $aill->__soapCall('PostAttendanceTransactionBatch', array($params));
   	print_R($result);
   	
   } catch (Exception $e) {
