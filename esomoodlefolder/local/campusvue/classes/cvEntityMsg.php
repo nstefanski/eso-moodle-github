@@ -92,4 +92,27 @@ class cvEntityMsg {
 	public function getEntityField($fieldName) {
 		return $this->getEntity()->$fieldName;
 	}
+	
+	public function getSearchableAttributes($token = null, $client = null) {
+		if ($token == null) {
+			$token = cvGetToken();
+		}
+		if ($client == null) {
+			$client = cvBuildClient('cmc.campuslink.webservices','GetEntityWebService.asmx');
+		}
+		$inMsg = array('BusinessEntityType' => $this->EntityType);
+		$inMsgs = array($inMsg);
+		$args = array('GetSearchableAttributeRequest' => array('TokenId'=>$token,
+																'GetSearchableAttributes'=>$inMsgs) );
+		$result = $client->__soapCall('GetSearchableAttributes', array($args));
+		if (!isset($result->GetSearchableAttributeResponse->GetSearchableAttributes->GetSearchableAttributeOutMsg->SearchableAttributes)){
+			//add error handling
+		}
+		$attributes = $result->GetSearchableAttributeResponse->GetSearchableAttributes->GetSearchableAttributeOutMsg->SearchableAttributes;
+		$return = array();
+		foreach ($attributes AS $att){
+			$return[$att->Name] = $att->Value;
+		}
+		return $return;
+	}
 }
