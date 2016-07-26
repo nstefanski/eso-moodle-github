@@ -142,7 +142,14 @@ if ($USER->id != $userid) {
 	
 	$all_message = array_merge($message,$message_read);
 	
-	foreach ($all_message as $record) {
+	//added 7/26/16 -- use php sort so all messages appear in chronological order
+	$sort_all_message = array();
+	foreach ($all_message as $key => $record) {
+		$sort_all_message[$record->id] = $record;
+	}
+	ksort($sort_all_message);
+	
+	foreach ($sort_all_message as $record) {
 		echo "<tr>";
 		foreach ($record as $cell) {
 			echo "<td>".strip_tags($cell)."</td>";
