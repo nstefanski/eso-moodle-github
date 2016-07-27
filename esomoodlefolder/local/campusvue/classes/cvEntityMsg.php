@@ -100,14 +100,15 @@ class cvEntityMsg {
 	
 	public function getEntityField($fieldName) {
 		$result = $this->getEntity();
-		if (gettype($result) == 'object') {
-			return $result->$fieldName;
+		if (gettype($result) == 'object' && get_class($result) == 'SimpleXMLElement') {
+			return $result->$fieldName->__toString();
 		} elseif (gettype($result) == 'array') {
+			//array of Simple XML Elements
 			$returnArray = array();
 			foreach ($result as $xmlObj) {
-				$returnArray[] = $xmlObj->$fieldName;
+				$returnArray[] = $xmlObj->$fieldName->__toString();
 			}
-			return = $returnArray;
+			return $returnArray;
 		}
 	}
 	
