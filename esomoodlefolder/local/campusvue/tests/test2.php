@@ -24,35 +24,29 @@ require_once('../../../config.php');
 global $CFG;
 require_once($CFG->dirroot.'/local/campusvue/lib.php');
 require_once($CFG->dirroot.'/local/campusvue/classes/cvEntityMsg.php');
-//require_once($CFG->dirroot.'/local/campusvue/classes/cvAttendanceMsg.php');
 require_once($CFG->dirroot.'/local/campusvue/classes/cvAttendancesMsg.php');
 
+//get token
 echo 'cvGetToken: ' . substr(cvGetToken(), 0, 20) . ' ...<hr>';
 
+//get searchable attributes
 $entityType = 'ClassAttendance';
 echo "GetSearchableAttributes for $entityType : ";
 $cem = new cvEntityMsg($entityType);
 print_R($cem->getSearchableAttributes() );
 echo '<hr>';
 
+//get LengthMinutes based on ClassSchedId and Date
 $cem = new cvEntityMsg($entityType);
 $fieldName = 'ClassSchedId';
 $fieldValue = 3653;
 $paramOperator = 'Equal';
 $cem->addParam($fieldName, $fieldValue, $paramOperator);
-print_R($cem->getEntity() );
-//echo 'cvEntityMsg: ' . $cem->getEntityField('LengthMinutes') . '<hr>';
-
-$cam = new cvAttendancesMsg();
-$sid = 206552;
-$csid = 3653;
-$attdates = array('2016-07-12T00:00:00',1468386000,'2016-07-14T00:00:00',new DateTime('2016-07-15 00:00:00'));
-$minsAbsent = array(12,13,14,15);
-foreach ($attdates as $key => $attdate) {
-	$cam->addAttendanceZeroTime($sid, $csid, $attdate, $minsAbsent[$key], 0, true);
-}
-echo 'cvAttendancesMsg: ';
-print_R($cam);
-echo '<br><br>';
-//print_R($cam->postAttendanceTransaction(null,null,true));
-echo '<hr>';//*/
+$fieldName = 'Date';
+$fieldValue = '2016-07-13T00:00:00';
+$paramOperator = 'Equal';
+$cem->addParam($fieldName, $fieldValue, $paramOperator);
+$result = $cem->getEntity();
+	//print_R($result);
+	//echo '<hr>';
+print_R($cem->getEntityField('LengthMinutes'));
