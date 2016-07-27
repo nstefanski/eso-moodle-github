@@ -32,5 +32,8 @@ function escoFillAccountInfo() {
 		document.getElementById("id_city").value = city;
 		document.getElementById("id_country").value = country;
 		document.getElementById("id_profile_field_organization").value = organization;
+		
+		var orgcat = document.getElementById("id_category_3");
+		orgcat.className = orgcat.className.replace(/\bcollapsed\b/,'');
 	}
 }
