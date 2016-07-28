@@ -134,4 +134,18 @@ class cvEntityMsg {
 		}
 		return $return;
 	}
+	
+	/* helper function, see 
+	 * http://www.mycampusinsight.com/support/CampusNexus%20Service%20Catalog/Default.htm#Utilities/SimpleLists.htm%3FTocPath%3DUtilities%7CGet%2520List%7CList%2520Types%7C_____1 
+	 */
+	public function listEntityTypes() {
+		return array('AcademicAdvisor','AcademicYear','Activity','ActivityEventStatus','ActivityEventType','ActivityResult','ActivityTemplate','AddressType','AdmissionsOfficer','Advisor','Agency','AgencyBranch','Application','AreaOfInterest','AreaOfStudy','AreaOfStudyType','Bank','BankAccount','BillingMethod','Campus','CampusGroup','CampusModule','CashPayment','CIPCode','Citizenship','ClassAttendance','College','County','Country','Course','CourseSection','CreditCard','DegreeCourse','Document','Employer','EmployerContact','EmployerJob','EmploymentStatus','EnrolledProgram','EnrollmentAdvisor','Ethnicity','ExtraCurricular','FinancialAidAward','FundSource','Gender','GradeLetter','GradeLevel','GradeScale','HighSchool','LeadCategory','LeadEntranceTest','LeadInquiry','LeadSource','LeadType','LmsVendor','MaritalStatus','Nationality','PasswordProfile','PostalCode','PreviousEducation','Program','ProgramVersion','ProspectPreviousEducation','QuickLeadTemplate','SchoolStatus','Shift','Staff','StaffGroup','StartDate','State','Student','StudentAcademicYear','StudentAddress','StudentBankAccount','StudentLeaseHistory','StudentSubsidiaryLedger','SubsidiaryLedgerType','Suffix','Term','Test','Title','TransactionCode');
+	}
+	
+	/* helper function, see 
+	 * http://www.mycampusinsight.com/support/CampusNexus%20Service%20Catalog/Default.htm#Utilities/WSDL_GetEntity.htm%3FTocPath%3DUtilities%7CGet%2520Entity%7C_____4 
+	 */
+	public function listParamOperators() {
+		return array('Equal','NotEqual','GreaterThan','GreaterThanOrEqual','LessThan','LessThanOrEqual','Like','IsNull','IsNullOrZero','IsNullOrEmptyString','IsNotNull','Between','In','NotIn','NotLike','BitWiseOR','BitWiseAND','NotBitWiseOR','NotBitWiseAND');
+	}
 }
