@@ -21,7 +21,7 @@
 //defined('MOODLE_INTERNAL') || die();
 require_once('../../../config.php');
 
-global $CFG;
+global $CFG, $DB;
 require_once($CFG->dirroot.'/local/campusvue/lib.php');
 require_once($CFG->dirroot.'/local/campusvue/classes/cvEntityMsg.php');
 require_once($CFG->dirroot.'/local/campusvue/classes/cvAttendancesMsg.php');
@@ -30,13 +30,24 @@ require_once($CFG->dirroot.'/local/campusvue/classes/cvAttendancesMsg.php');
 echo 'cvGetToken: ' . substr(cvGetToken(), 0, 20) . ' ...<hr>';
 
 //get searchable attributes
-$entityType = 'ClassAttendance';
+$entityType = 'CampusGroup';
 echo "GetSearchableAttributes for $entityType : ";
 $cem = new cvEntityMsg($entityType);
 print_R($cem->getSearchableAttributes() );
 echo '<hr>';
 
+/*/
+$entityType = 'CourseSection';
+$cem = new cvEntityMsg($entityType);
+$fieldName = 'StartDate';
+$fieldValue = '2016-07-06T00:00:00';
+$paramOperator = 'Equal';
+$cem->addParam($fieldName, $fieldValue, $paramOperator);
+print_R($cem->getEntity());
+echo '<hr>';//*/
+
 //get LengthMinutes based on ClassSchedId and Date
+$entityType = 'ClassAttendance';
 $cem = new cvEntityMsg($entityType);
 $fieldName = 'ClassSchedId';
 $fieldValue = 3653;
@@ -46,7 +57,26 @@ $fieldName = 'Date';
 $fieldValue = '2016-07-13T00:00:00';
 $paramOperator = 'Equal';
 $cem->addParam($fieldName, $fieldValue, $paramOperator);
-$result = $cem->getEntity();
+	//$result = $cem->getEntity();
 	//print_R($result);
 	//echo '<hr>';
-print_R($cem->getEntityField('LengthMinutes'));
+$getField = 'LengthMinutes';
+print_R($cem->getEntityField($getField));
+echo '<hr>';
+
+//get SyStudentId based on StudentNumber
+$entityType = 'Student';
+$fieldName = 'StudentNumber';
+$fieldValue = 1607222765;
+$paramOperator = 'Equal';
+$getField = 'Id';
+$cem = new cvEntityMsg($entityType);
+$cem->addParam($fieldName, $fieldValue, $paramOperator);
+print_R($cem->getEntityField($getField));
+echo '<hr>';
+
+$sql = "SELECT * 
+		FROM {attendance_log} al 
+		WHERE al.remarks REGEXP '^[0-9]+$' ";
+$records = $DB->get_records_sql($sql);
+print_R($records);
