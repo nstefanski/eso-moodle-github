@@ -75,8 +75,25 @@ $cem->addParam($fieldName, $fieldValue, $paramOperator);
 print_R($cem->getEntityField($getField));
 echo '<hr>';
 
-$sql = "SELECT * 
+/*$sql = "SELECT * 
 		FROM {attendance_log} al 
 		WHERE al.remarks REGEXP '^[0-9]+$' ";
 $records = $DB->get_records_sql($sql);
-print_R($records);
+print_R($records);*/
+
+//get course ids based on sess id and vice versa
+$mdSessionId = 3;
+$mdCourseId = 0;
+$cvCourseId = 7;
+$courseIds = $DB->get_record_sql("SELECT c.id, c.idnumber FROM {attendance_sessions} sess 
+													JOIN {attendance} a ON sess.attendanceid = a.id JOIN {course} c ON a.course = c.id 
+													WHERE sess.id = :sessid ", array('sessid' => $mdSessionId) );
+print_R($courseIds);
+$mdCourseId = $mdCourseId ? $mdCourseId : $courseIds->id;
+$cvCourseId = $cvCourseId ? $cvCourseId : $courseIds->idnumber;
+echo "<br>md: $mdCourseId <br>cv: $cvCourseId <hr>";
+$mdSessionId = 0;
+$mdSessionId = $DB->get_record_sql("SELECT sess.id FROM {attendance_sessions} sess 
+													JOIN {attendance} a ON sess.attendanceid = a.id 
+													WHERE a.course = :cid ", array('cid' => $mdCourseId) )->id;
+print_R($mdSessionId);
