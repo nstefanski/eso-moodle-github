@@ -98,8 +98,8 @@ class cvEntityMsg {
 		return $xmlStr;
 	}
 	
-	public function getEntityField($fieldName) {
-		$result = $this->getEntity();
+	public function getEntityField($fieldName, $token = null, $client = null) {
+		$result = $this->getEntity($token, $client);
 		if (gettype($result) == 'object' && get_class($result) == 'SimpleXMLElement') {
 			return $result->$fieldName->__toString();
 		} elseif (gettype($result) == 'array') {
