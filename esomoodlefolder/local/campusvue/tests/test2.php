@@ -25,6 +25,7 @@ global $CFG, $DB;
 require_once($CFG->dirroot.'/local/campusvue/lib.php');
 require_once($CFG->dirroot.'/local/campusvue/classes/cvEntityMsg.php');
 require_once($CFG->dirroot.'/local/campusvue/classes/cvAttendancesMsg.php');
+require_once($CFG->dirroot.'/local/campusvue/classes/mdAttendanceSession.php');
 
 //get token
 echo 'cvGetToken: ' . substr(cvGetToken(), 0, 20) . ' ...<hr>';
@@ -97,3 +98,17 @@ $mdSessionId = $DB->get_record_sql("SELECT sess.id FROM {attendance_sessions} se
 													JOIN {attendance} a ON sess.attendanceid = a.id 
 													WHERE a.course = :cid ", array('cid' => $mdCourseId) )->id;
 print_R($mdSessionId);
+echo '<hr>';
+
+$mdSessionId = 3412; //6358;
+$CourseSectionId = 3653;
+$AttendanceDate = '2016-07-13T00:00:00';
+$mas = new mdAttendanceSession($mdSessionId, $CourseSectionId, $AttendanceDate);
+print_R($mas);
+echo '<hr>';
+
+$sql = "SELECT al.id 
+				FROM {attendance_log} al 
+				WHERE al.sessionid = 3412 ";
+		$logs = $DB->get_records_sql($sql);
+		print_R($logs);
