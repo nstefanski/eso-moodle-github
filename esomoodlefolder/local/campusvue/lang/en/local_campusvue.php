@@ -17,11 +17,17 @@
 defined('MOODLE_INTERNAL') || die();
 
 $string['pluginname'] = 'CampusVue Integration';
-$string['servername_title'] = 'External API: Server Name';
-$string['servername_desc'] = 'This is the server name used to access the External API, such as https://api#####.campusnet.net';
+$string['serverheading'] = 'External API: Server Settings';
+$string['servername_title'] = 'Server Name';
+$string['servername_desc'] = 'This is the server name used to access the External API, such as https://api#####.campusnet.net <br />Note: Do NOT use a trailing slash (/)';
 $string['errorservernamenotfound'] = 'The Server Name has not been configured';
 $string['username_title'] = 'CampusVue Username';
 $string['username_desc'] = 'Username of a CampusVue user with superuser or admin access';
 $string['password_title'] = 'CampusVue Password';
 $string['password_desc'] = 'Password for the CampusVue user';
+$string['attendanceheading'] = 'Attendance Settings';
+$string['manualcatlimit_title'] = 'Manual Attendance: Limit to Category Paths';
+$string['manualcatlimit_desc'] = 'Select categories to be scanned for manual attendance.  Child categories are automatically included';
+$string['allcategories'] = 'All Categories';
+
 $string['errorusernamenotfound'] = 'The username and password have not been configured';

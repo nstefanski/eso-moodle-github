@@ -107,8 +107,8 @@ $mas = new mdAttendanceSession($mdSessionId, $CourseSectionId, $AttendanceDate);
 print_R($mas);
 echo '<hr>';
 
-$sql = "SELECT al.id 
-				FROM {attendance_log} al 
-				WHERE al.sessionid = 3412 ";
-		$logs = $DB->get_records_sql($sql);
-		print_R($logs);
+$config = get_config('local_campusvue');
+print_R($config);
+if (!isset($config->manualcatlimit)) {
+	print_R($config->manualcatlimit);
+}
