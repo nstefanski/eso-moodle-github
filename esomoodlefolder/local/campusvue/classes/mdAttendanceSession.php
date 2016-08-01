@@ -37,7 +37,7 @@ class mdAttendanceSession {
 	public $AttendanceDate = '';
 	public $SessionLength = 0;
 	//public $cvFlag = false;
-	//public $token = null;
+	public $token = null;
 	public $Attendances = array();
 	
 	public function __construct ($mdSessionId = 0, $CourseSectionId = 0, $AttendanceDate = '', $SessionLength = 0, $cvFlag = false, $token = null) {
@@ -45,19 +45,42 @@ class mdAttendanceSession {
 		$this->CourseSectionId = $CourseSectionId;
 		$this->AttendanceDate = $AttendanceDate;
 		if (!$cvFlag && !$token) {
-			$token = cvGetToken();
+			$this->token = cvGetToken();
 		}
 		$this->SessionLength = $cvFlag ? $SessionLength : $this->cvGetSessionLength();
 		$this->Attendances = array();
 		$mdLogs = $this->mdGetAttendanceLogs();
 		foreach ($mdLogs as $log) {
 			if (empty($log->cvid)) {
-				//add another token check?
+				if (!$token) { $this->token = cvGetToken(); } //another token check just in case
 				$log->cvid = $this->cvGetSyStudentId($log->idnumber);
 			}
 			$absent = 0;
+			$excused = false;
+			//only numeric remarks
+			if ($log->remarks) {
+				$log->remarks = preg_replace('/[^0-9]/','',$log->remarks);
+			}
 			//switch to set absent time based on status and remarks
-			$this->Attendances[] = (object) array('StudentId' => $log->cvid, 'MinutesAbsent' => $absent);
+			switch ($log->status) {
+				case 'Present':
+					break;
+				case 'Excused':
+					$excused = true;
+					//no break -- treat excused as absent but add flag
+				case 'Absent':
+					$absent = $this->SessionLength;
+					break;
+				case 'Late':
+					$absent = $log->remarks;
+					break;
+				default:
+					$log = null; //make no record in attendances for unknown statuses
+			}
+			if ($log->cvid) {
+				$this->Attendances[] = (object) array('StudentId' => $log->cvid, 'MinutesAbsent' => $absent, 'Excused' => $excused
+														/**, 'Fullname' => $log->fullname /* debugging */ );
+			}
 		}
 	}
 	
@@ -65,6 +88,7 @@ class mdAttendanceSession {
 		global $DB;
 		$sql = "SELECT al.id, u.idnumber, cvid.data AS cvid, 
 					stat.description AS status, al.remarks 
+					/*, CONCAT(u.firstname,' ',u.lastname) AS fullname /* debugging */
 				FROM {attendance_log} al 
 				JOIN {user} u ON al.studentid = u.id 
 				LEFT JOIN {user_info_data} cvid ON u.id = cvid.userid 
@@ -87,6 +111,7 @@ class mdAttendanceSession {
 	
 	//get SyStudentId based on StudentNumber
 	public function cvGetSyStudentId($StudentNumber) {
+		if (empty($StudentNumber)) { return null; }
 		include $CFG->dirroot.'/local/campusvue/classes/cvEntityMsg.php';
 		$cem = new cvEntityMsg('Student');
 		$cem->addParam('StudentNumber', $StudentNumber, 'Equal');
