@@ -43,16 +43,16 @@ class mdAttendanceSession {
 	public function __construct ($mdSessionId = 0, $CourseSectionId = 0, $AttendanceDate = '', $SessionLength = 0, $cvFlag = false, $token = null) {
 		$this->mdSessionId = $mdSessionId;
 		$this->CourseSectionId = $CourseSectionId;
-		$this->AttendanceDate = $AttendanceDate;
+		$this->AttendanceDate = $AttendanceDate; //find a way to kill class if these three aren't set?
 		if (!$cvFlag && !$token) {
 			$token = cvGetToken();
 		}
 		$this->token = $token;
 		/* cvFlag means attendance session was created by CampusVue, so we can use the session length in Moodle
 		 * otherwise, we need to get the session length stored in CampusVue with the API
-		 * not sure how exactly sessions will be flagged... maybe by usercreated?  to be added later
 		 */
 		$this->SessionLength = $cvFlag ? $SessionLength : $this->cvGetSessionLength();
+		
 		$this->Attendances = array();
 		$mdLogs = $this->mdGetAttendanceLogs();
 		foreach ($mdLogs as $log) {
@@ -111,7 +111,7 @@ class mdAttendanceSession {
 		$cem = new cvEntityMsg('ClassAttendance');
 		$cem->addParam('ClassSchedId', $this->CourseSectionId, 'Equal');
 		$cem->addParam('Date', $this->AttendanceDate, 'Equal');
-		return $cem->getEntityField('LengthMinutes', $this->token);
+		return $cem->getEntityField('LengthMinutes', $this->token); //this is returning an empty array if no results are found
 	}
 	
 	//get SyStudentId based on StudentNumber
