@@ -24,6 +24,7 @@
 defined('MOODLE_INTERNAL') || die();
 
 require_once($CFG->dirroot.'/local/campusvue/lib.php');
+require_once($CFG->dirroot.'/local/campusvue/classes/mdAttendanceSession.php');
 
 //scheduled task will get all attendance sessions within range, with course.id and course.idnumber (cvid)
 //for each SESSION in period, make a new mdAttendance
@@ -37,40 +38,107 @@ require_once($CFG->dirroot.'/local/campusvue/lib.php');
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class mdAttendance {
-	public $mdSessionId = 0;
-	public $mdCourseId = 0;
-	public $cvCourseId = 0;
+	public $maxTime;
+	public $minTime = 0;
 	public $token = null;
-	public $Attednances = array();
+	public $Attendance = array();
 	
-	public function __construct ($mdSessionId = 0, $mdCourseId = 0, $cvCourseId = 0, $token = null) {
-		global $DB;
-		if ($mdSessionId == 0) {
-			//must have a course id, assume one session per course
-			if ($mdCourseId > 0) {
-				$mdSessionId = $DB->get_record_sql("SELECT sess.id FROM {attendance_sessions} sess 
-													JOIN {attendance} a ON sess.attendanceid = a.id 
-													WHERE a.course = :cid ", array('cid' => $mdCourseId) )->id;
-			} elseif ($cvCourseId > 0) {
-				$mdSessionId = $DB->get_record_sql("SELECT sess.id FROM {attendance_sessions} sess 
-													JOIN {attendance} a ON sess.attendanceid = a.id JOIN {course} c ON a.course = c.id 
-													WHERE c.idnumber = :cvid ", array('cvid' => $cvCourseId) )->id;
-			} else {
-				//throw exception
+	public function __construct ($maxTime, $minTime = 0, $token = null) {
+		$this->maxTime = $maxTime ? $maxTime : time();
+		$this->minTime = $minTime;
+		if (!$token) {
+			$token = cvGetToken();
+		}
+		$this->token = $token;
+		$this->Attendance = array();
+		$sessionList = $this->getSessionList($this->maxTime, $this->minTime);
+		foreach ($sessionList as $session) {
+			if (!empty($session->id) && !empty($session->cvid) && !empty($session->sessdate)) { //can't do attendance without these
+				$cvFlag = $this->checkCVFlag($session->description);
+				$date = $this->zeroTime($this->cvFormatDate($session->sessdate));
+				
+				$session->description = $cvFlag;
+				$session->sessdate = $date;
+				$this->Attendance[] = new mdAttendanceSession($session->id, $session->cvid, $date, $session->duration, $cvFlag, $this->token);
 			}
-			
 		}
-		if ($mdCourseId == 0 || $cvCourseId == 0) {
-			$courseIds = $DB->get_record_sql("SELECT c.id, c.idnumber FROM {attendance_sessions} sess 
-												JOIN {attendance} a ON sess.attendanceid = a.id JOIN {course} c ON a.course = c.id 
-												WHERE sess.id = :sessid ", array('sessid' => $mdSessionId) );
-			$mdCourseId = $mdCourseId ? $mdCourseId : $DB->get_record_sql();
-			$cvCourseId = $cvCourseId ? $cvCourseId : $DB->get_record_sql();
-		}
-
 	}
 	
-	public function mdGetAttendanceLogs () {
+	public function getSessionList($maxTime, $minTime) {
+		global $DB;
+		$catStr = $this->getCategoryClause();
+		$sql = "SELECT sess.id, 
+					CASE WHEN sess.groupid > 0 
+						THEN (SELECT g.idnumber FROM {groups} g 
+								WHERE g.id = sess.groupid ) 
+						ELSE c.idnumber END AS cvid, 
+					sess.sessdate, sess.duration, sess.description 
+				FROM {attendance_sessions} sess 
+					JOIN {attendance} a ON sess.attendanceid = a.id 
+					JOIN {course} c ON a.course = c.id 
+					JOIN {course_categories} cc ON c.category = cc.id 
+				WHERE sess.sessdate >= $minTime AND sess.sessdate < $maxTime 
+					$catStr ";
+		$list = $DB->get_records_sql($sql);
+		return $list;
+	}
 	
+	//get category limit as WHERE clause
+	public function getCategoryClause() {
+		$catStr = "";
+		$config = get_config('local_campusvue');
+		if (!empty($config->manualcatlimit)) {
+			$catlimit = explode(',',$config->manualcatlimit);
+			$paths = count($catlimit);
+			$catStr = "AND (cc.path LIKE '" . $catlimit[0] . "%'";
+			for ($i = 1; $i < $paths; $i++) {
+				$catStr = $catStr . " OR cc.path LIKE '" . $catlimit[$i] . "%'";
+			}
+			$catStr = $catStr . ")";
+		}
+		return $catStr;
+	}
+	
+	/**
+	 * helper function to authenticate date format '2016-07-13T00:00:00'
+	 *
+	 * @param mixed $dateString can be int or DateTime object
+	 * @return string $dateString
+	 */
+	public function cvFormatDate($dateString) {
+		//timestamp
+		if (is_numeric($dateString)){
+			if ($dateString < 15000000000 ) { //corresponds to 6/23/1970 in milliseconds, or 5/1/2445 in seconds
+				//timestamp is in seconds
+				return date('Y-m-d\TH:i:s', $dateString);
+			} else {
+				//timestamp is in milliseconds
+				return date('Y-m-d\TH:i:s', $dateString/1000);
+			}
+		}
+		//object
+		if (gettype($dateString) == 'object') {
+			if (get_class($dateString) == 'DateTime'){
+				return $dateString->format('Y-m-d\TH:i:s');
+			}
+		}
+		//string
+		return $dateString;
+	}
+
+	/**
+	 * zero out time in AttendanceDate
+	 *
+	 * @param string $dateString in format '2016-07-13T00:00:00'
+	 * @return string $dateString
+	 */
+	public function zeroTime($dateString) {
+		$dt = explode('T', $dateString);
+		return $dt[0] . 'T00:00:00';
+	}
+	
+	public function checkCVFlag($string) {
+		//to add, after we figure out how we are going to flag things from CVue
+		return false;
 	}
 }
