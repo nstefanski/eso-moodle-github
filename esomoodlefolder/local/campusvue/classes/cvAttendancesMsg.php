@@ -41,7 +41,7 @@ class cvAttendancesMsg {
 		$Attendance = new stdClass();
 			$Attendance->StudentId = $StudentId;
 			$Attendance->CourseSectionId = $CourseSectionId;
-			$Attendance->AttendanceDate = $this->cvFormatDate($AttendanceDate);
+			$Attendance->AttendanceDate = cvFormatDate($AttendanceDate);
 			$Attendance->MinutesAbsent = $MinutesAbsent;
 			$Attendance->MinutesAttended = $MinutesAttended;
 			$Attendance->UpdateExistingAttendance = $UpdateExistingAttendance;
@@ -55,7 +55,7 @@ class cvAttendancesMsg {
 		$Attendance = new stdClass();
 			$Attendance->StudentId = $StudentId;
 			$Attendance->CourseSectionId = $CourseSectionId;
-			$Attendance->AttendanceDate = $this->zeroTime($this->cvFormatDate($AttendanceDate));
+			$Attendance->AttendanceDate = zeroTime(cvFormatDate($AttendanceDate));
 			$Attendance->MinutesAbsent = $MinutesAbsent;
 			$Attendance->MinutesAttended = $MinutesAttended;
 			$Attendance->UpdateExistingAttendance = $UpdateExistingAttendance;
@@ -64,7 +64,7 @@ class cvAttendancesMsg {
 		$this->Attendances[] = $Attendance;
 	}
 	
-	//helper function to authenticate date format '2016-07-13T00:00:00'
+	/*/helper function to authenticate date format '2016-07-13T00:00:00'
 	public function cvFormatDate($dateString) {
 		//timestamp
 		if (is_numeric($dateString)){
@@ -90,7 +90,7 @@ class cvAttendancesMsg {
 	public function zeroTime($dateString) {
 		$dt = explode('T', $dateString);
 		return $dt[0] . 'T00:00:00';
-	}
+	}/**/
 	
 	public function incrementDay($dateString, $days = 1) {
 		$i = $days >= 0 ? '+'.$days : $days;
