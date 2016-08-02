@@ -47,6 +47,10 @@ class mdAttendanceSession {
 		if (!$cvFlag && !$token) {
 			$this->token = cvGetToken();
 		}
+		/* cvFlag means attendance session was created by CampusVue, so we can use the session length in Moodle
+		 * otherwise, we need to get the session length stored in CampusVue with the API
+		 * not sure how exactly sessions will be flagged... maybe by usercreated?  to be added later
+		 */
 		$this->SessionLength = $cvFlag ? $SessionLength : $this->cvGetSessionLength();
 		$this->Attendances = array();
 		$mdLogs = $this->mdGetAttendanceLogs();
