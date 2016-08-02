@@ -99,7 +99,7 @@ class cvAttendancesMsg {
 		return $dt->format('Y-m-d\TH:i:s');
 	}
 	
-	public function postAttendanceTransaction($token = null, $client = null, $batch = true) {
+	public function postAttendanceTransaction($token = null, $client = null, $batch = false) {
 		if ($token == null) {
 			$token = cvGetToken();
 		}
