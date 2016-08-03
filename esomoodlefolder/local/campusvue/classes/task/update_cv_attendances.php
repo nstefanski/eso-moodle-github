@@ -41,7 +41,16 @@ class update_cv_attendances extends \core\task\scheduled_task {
     }
 	
 	public function execute() {
+		$i = 1;
+		/*$dt = new DateTime();
+		$dt->setTime(0, 0);
+		$maxTime = $dt->getTimestamp();
+		$minTime = $dt->modify("-$i day")->getTimestamp();
+		$att = new mdAttendance($maxTime, $minTime);
+		$msg = new cvAttendancesMsg();/**/
+		
 		mtrace("test");
+		
 
         return true;
 	}

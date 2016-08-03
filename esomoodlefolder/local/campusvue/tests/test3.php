@@ -65,5 +65,8 @@ $records = $DB->get_records_sql($sql);
 print_R($records);
 echo '<hr/>';
 
-$att = new mdAttendance($maxTime, $minTime);
-print_R($att);
+//$att = new mdAttendance($maxTime, $minTime);
+//print_R($att);
+$i = 1;
+$limits = cvGetTimeLimits($i);
+print_R($limits);
