@@ -28,6 +28,6 @@ $string['password_desc'] = 'Password for the CampusVue user';
 $string['attendanceheading'] = 'Attendance Settings';
 $string['manualcatlimit_title'] = 'Manual Attendance: Limit to Category Paths';
 $string['manualcatlimit_desc'] = 'Select categories to be scanned for manual attendance.  Child categories are automatically included';
-$string['allcategories'] = 'All Categories';
+//$string['allcategories'] = 'All Categories';
 
 $string['errorusernamenotfound'] = 'The username and password have not been configured';

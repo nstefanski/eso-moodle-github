@@ -48,7 +48,7 @@ if ( $hassiteconfig ){
 	$catrecords = $DB->get_records('course_categories',array(),'sortorder');
     if ($catrecords) {
         $cats = [];
-		$cats['/'] = '(' . get_string('allcategories', 'local_campusvue') . ')';
+		//$cats['/'] = '(' . get_string('allcategories', 'local_campusvue') . ')';
         foreach ($catrecords as $catrecord) {
 			$indent = '';
 			for ($i = 1; $i < $catrecord->depth; $i++) {
@@ -56,9 +56,8 @@ if ( $hassiteconfig ){
 			}
             $cats[$catrecord->path] = $indent . $catrecord->name;
         }
-        //asort($cats);
         $manualcatlimit = new admin_setting_configmultiselect('local_campusvue/manualcatlimit', get_string('manualcatlimit_title', 
 			'local_campusvue'), get_string('manualcatlimit_desc', 'local_campusvue'), [], $cats);
 		$settings->add($manualcatlimit);
-    }/**/
+    }
 }
