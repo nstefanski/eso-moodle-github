@@ -41,7 +41,7 @@ class cvAttendancesMsg {
 		$Attendance = new stdClass();
 			$Attendance->StudentId = $StudentId;
 			$Attendance->CourseSectionId = $CourseSectionId;
-			$Attendance->AttendanceDate = cvFormatDate($AttendanceDate);
+			$Attendance->AttendanceDate = $AttendanceDate;
 			$Attendance->MinutesAbsent = $MinutesAbsent;
 			$Attendance->MinutesAttended = $MinutesAttended;
 			$Attendance->UpdateExistingAttendance = $UpdateExistingAttendance;
@@ -50,54 +50,12 @@ class cvAttendancesMsg {
 		$this->Attendances[] = $Attendance;
 	}
 	
-	public function addAttendanceZeroTime($StudentId, $CourseSectionId, $AttendanceDate, $MinutesAbsent = 0, $MinutesAttended = 0, 
-										$UpdateExistingAttendance = false, $IsExcused = false, $IsDependentCourse = false) {
-		$Attendance = new stdClass();
-			$Attendance->StudentId = $StudentId;
-			$Attendance->CourseSectionId = $CourseSectionId;
-			$Attendance->AttendanceDate = zeroTime(cvFormatDate($AttendanceDate));
-			$Attendance->MinutesAbsent = $MinutesAbsent;
-			$Attendance->MinutesAttended = $MinutesAttended;
-			$Attendance->UpdateExistingAttendance = $UpdateExistingAttendance;
-			$Attendance->IsExcused = $IsExcused;
-			$Attendance->IsDependentCourse = $IsDependentCourse;
-		$this->Attendances[] = $Attendance;
-	}
-	
-	/*/helper function to authenticate date format '2016-07-13T00:00:00'
-	public function cvFormatDate($dateString) {
-		//timestamp
-		if (is_numeric($dateString)){
-			if ($dateString < 15000000000 ) { //corresponds to 6/23/1970 in milliseconds, or 5/1/2445 in seconds
-				//timestamp is in seconds
-				return date('Y-m-d\TH:i:s', $dateString);
-			} else {
-				//timestamp is in milliseconds
-				return date('Y-m-d\TH:i:s', $dateString/1000);
-			}
-		}
-		//object
-		if (gettype($dateString) == 'object') {
-			if (get_class($dateString) == 'DateTime'){
-				return $dateString->format('Y-m-d\TH:i:s');
-			}
-		}
-		//string
-		return $dateString;
-	}
-	
-	//zero out time in AttendanceDate
-	public function zeroTime($dateString) {
-		$dt = explode('T', $dateString);
-		return $dt[0] . 'T00:00:00';
-	}/**/
-	
-	public function incrementDay($dateString, $days = 1) {
+	/*public function incrementDay($dateString, $days = 1) {
 		$i = $days >= 0 ? '+'.$days : $days;
 		$dt = new DateTime($dateString);
 		$dt->modify("$i day");
 		return $dt->format('Y-m-d\TH:i:s');
-	}
+	}*/
 	
 	public function postAttendanceTransaction($token = null, $client = null, $batch = false) {
 		if ($token == null) {
