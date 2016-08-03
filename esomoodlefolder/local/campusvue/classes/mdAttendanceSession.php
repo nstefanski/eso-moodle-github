@@ -77,7 +77,7 @@ class mdAttendanceSession {
 					$absent = $this->SessionLength;
 					break;
 				case 'Late':
-					$absent = $log->remarks;
+					$absent = $log->remarks <= $this->SessionLength ? $log->remarks : $this->SessionLength;
 					break;
 				default:
 					$log = null; //make no record in attendances for unknown statuses
