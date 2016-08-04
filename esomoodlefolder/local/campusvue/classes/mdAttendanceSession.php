@@ -48,9 +48,9 @@ class mdAttendanceSession {
 			$token = cvGetToken();
 		}
 		$this->token = $token;
-		/* cvFlag means attendance session was created by CampusVue, so we can use the session length in Moodle
-		 * otherwise, we need to get the session length stored in CampusVue with the API
-		 */
+		
+		// cvFlag means attendance session was created by CampusVue, so we can use the session length in Moodle
+		// otherwise, we need to get the session length stored in CampusVue with the API
 		$this->SessionLength = $cvFlag ? $SessionLength : $this->cvGetSessionLength();
 		
 		$this->Attendances = array();
@@ -84,7 +84,8 @@ class mdAttendanceSession {
 			}
 			if ($log->cvid) {
 				$this->Attendances[] = (object) array('StudentId' => $log->cvid, 'MinutesAbsent' => $absent, 'Excused' => $excused
-														/**, 'Fullname' => $log->fullname /* debugging */ );
+														//, 'Fullname' => $log->fullname // debugging // 
+														);
 			}
 		}
 	}
@@ -107,17 +108,19 @@ class mdAttendanceSession {
 	
 	//get LengthMinutes based on ClassSchedId (CourseSectionId) and Date
 	public function cvGetSessionLength() {
-		include $CFG->dirroot.'/local/campusvue/classes/cvEntityMsg.php';
+		global $CFG;
+		require_once($CFG->dirroot.'/local/campusvue/classes/cvEntityMsg.php');
 		$cem = new cvEntityMsg('ClassAttendance');
 		$cem->addParam('ClassSchedId', $this->CourseSectionId, 'Equal');
 		$cem->addParam('Date', $this->AttendanceDate, 'Equal');
-		return $cem->getEntityField('LengthMinutes', $this->token); //this is returning an empty array if no results are found
+		return $cem->getEntityField('LengthMinutes', $this->token); //this is returning an empty array if no results are found 
 	}
 	
 	//get SyStudentId based on StudentNumber
 	public function cvGetSyStudentId($StudentNumber) {
 		if (empty($StudentNumber)) { return null; }
-		include $CFG->dirroot.'/local/campusvue/classes/cvEntityMsg.php';
+		global $CFG;
+		require_once($CFG->dirroot.'/local/campusvue/classes/cvEntityMsg.php');
 		$cem = new cvEntityMsg('Student');
 		$cem->addParam('StudentNumber', $StudentNumber, 'Equal');
 		return $cem->getEntityField('Id', $this->token);
