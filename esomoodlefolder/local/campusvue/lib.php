@@ -61,3 +61,31 @@ function cvGetToken($tokenNeverExpires = false) {
 	$token = $result->TokenResponse->TokenId;
 	return $token;
 }
+
+/**
+ * Executes the scheduled task
+ *
+ * @param 
+ * @return 
+ */
+function updateAttendance($maxTime, $minTime, $token = null) {
+	global $CFG;
+	require_once($CFG->dirroot.'/local/campusvue/classes/mdAttendance.php');
+	require_once($CFG->dirroot.'/local/campusvue/classes/cvAttendancesMsg.php');
+	
+	$att = new mdAttendance($maxTime, $minTime, $token);
+	$msg = new cvAttendancesMsg();
+	
+	foreach($att->Attendance as $sess) {
+		foreach($sess->Attendances as $attendance)
+			$msg->addAttendance($attendance->StudentId, $sess->CourseSectionId, $sess->AttendanceDate, $attendance->MinutesAbsent, 0, false, $attendance->Excused);
+	}
+	
+	try {
+		$result = $msg->postAttendanceTransaction($token);
+	} catch (moodle_exception $e) {
+		return false;
+	}
+	
+	return $result;
+}

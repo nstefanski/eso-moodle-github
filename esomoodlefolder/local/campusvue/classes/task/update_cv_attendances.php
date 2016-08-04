@@ -26,8 +26,6 @@ namespace local_campusvue\task;
 defined('MOODLE_INTERNAL') || die();
 
 require_once($CFG->dirroot.'/local/campusvue/lib.php');
-require_once($CFG->dirroot.'/local/campusvue/classes/mdAttendance.php');
-require_once($CFG->dirroot.'/local/campusvue/classes/cvAttendancesMsg.php');
 
 class update_cv_attendances extends \core\task\scheduled_task {
 
@@ -42,16 +40,28 @@ class update_cv_attendances extends \core\task\scheduled_task {
 	
 	public function execute() {
 		$i = 1;
-		mtrace("test");
-		
+		$j = 0;
 		$minTime = mktime(0, 0, 0, date("m"), date("d")-$i, date("Y"));
-		$maxTime = mktime(0, 0, 0, date("m"), date("d"), date("Y"));
-		mtrace($minTime . " to " . $maxTime);
+		$maxTime = mktime(0, 0, 0, date("m"), date("d")-$j, date("Y"));
+		mtrace("... running attendance for period $minTime to $maxTime");
 		
-		//$att = new mdAttendance($maxTime, $minTime);
-		//$msg = new cvAttendancesMsg();
+		$token = cvGetToken();
+		//mtrace($token);
 		
-		mtrace("test");
+		$ua = updateAttendance($maxTime, $minTime, $token);
+		if ($ua) {
+			$msgArray = $ua->Attendances->PostAttendanceOutMsg;
+			$msgs = count($msgArray);
+			$errs = 0;
+			foreach ($msgArray as $outMsg) {
+				if ($outMsg->MessageStatus == 'FailedExecution') {
+					$errs++;
+				}
+			}
+			mtrace("... sent $msgs Attendance Messages with $errs errors ");
+		} else {
+			mtrace("... could not send Attendance Messages ");
+		}
 
         return true;
 	}
