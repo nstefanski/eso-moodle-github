@@ -61,11 +61,3 @@ function cvGetToken($tokenNeverExpires = false) {
 	$token = $result->TokenResponse->TokenId;
 	return $token;
 }
-
-function cvGetTimeLimits($days = 1) {
-	$dt = new DateTime();
-	$maxTime = $dt->setTime(0, 0)->getTimestamp();
-	$minTime = $dt->modify("-$days day")->getTimestamp();
-	$limits = array('maxTime' => $maxTime, 'minTime' => $minTime);
-	return $limits;
-}

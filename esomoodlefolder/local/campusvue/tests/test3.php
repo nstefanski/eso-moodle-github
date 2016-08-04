@@ -70,3 +70,8 @@ echo '<hr/>';
 $i = 1;
 $limits = cvGetTimeLimits($i);
 print_R($limits);
+echo '<br/><br/>';
+
+echo 'day: ' . date("j") . ' month: ' . date("n") . ' year: ' . date("Y");
+echo '<br/>minTime: ' . mktime(0, 0, 0, date("m")  , date("d")-1, date("Y"));
+echo '<br/>maxTime: ' . mktime(0, 0, 0, date("m")  , date("d"), date("Y"));
