@@ -26,11 +26,6 @@ defined('MOODLE_INTERNAL') || die();
 require_once($CFG->dirroot.'/local/campusvue/lib.php');
 require_once($CFG->dirroot.'/local/campusvue/classes/mdAttendanceSession.php');
 
-//scheduled task will get all attendance sessions within range, with course.id and course.idnumber (cvid)
-//for each SESSION in period, make a new mdAttendance
-//mdAttendance grabs all the user attendance logs for the period and constructs array of relevant info:
-//	studentid (md and cv), minutes late, excused or other flags
-
 /**
  * 
  *
@@ -59,7 +54,7 @@ class mdAttendance {
 				
 				$session->description = $cvFlag;
 				$session->sessdate = $date;
-				$this->Attendance[] = new mdAttendanceSession($session->id, $session->cvid, $date, $session->duration, $cvFlag, $this->token);
+				$this->Attendance[] = new mdAttendanceSession($session->id, $session->cvid, $date, $session->mins, $cvFlag, $this->token);
 			}
 		}
 	}
@@ -72,7 +67,7 @@ class mdAttendance {
 						THEN (SELECT g.idnumber FROM {groups} g 
 								WHERE g.id = sess.groupid ) 
 						ELSE c.idnumber END AS cvid, 
-					sess.sessdate, sess.duration, sess.description 
+					sess.sessdate, ROUND(sess.duration / 60, 0) AS mins, sess.description 
 				FROM {attendance_sessions} sess 
 					JOIN {attendance} a ON sess.attendanceid = a.id 
 					JOIN {course} c ON a.course = c.id 
@@ -117,11 +112,11 @@ class mdAttendance {
 			}
 		}
 		//object
-		if (gettype($dateString) == 'object') {
+		/*if (gettype($dateString) == 'object') {
 			if (get_class($dateString) == 'DateTime'){
 				return $dateString->format('Y-m-d\TH:i:s');
 			}
-		}
+		}*/
 		//string
 		return $dateString;
 	}
