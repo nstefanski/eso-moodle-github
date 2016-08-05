@@ -81,10 +81,14 @@ function updateAttendance($maxTime, $minTime, $token = null) {
 			$msg->addAttendance($attendance->StudentId, $sess->CourseSectionId, $sess->AttendanceDate, $attendance->MinutesAbsent, 0, false, $attendance->Excused);
 	}
 	
-	try {
-		$result = $msg->postAttendanceTransaction($token);
-	} catch (moodle_exception $e) {
-		return false;
+	if ($msg->Attendances) {
+		try {
+			$result = $msg->postAttendanceTransaction($token);
+		} catch (moodle_exception $e) {
+			return false;
+		}
+	} else {
+		$result = $msg;
 	}
 	
 	return $result;
