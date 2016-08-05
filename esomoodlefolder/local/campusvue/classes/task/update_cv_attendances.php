@@ -50,15 +50,19 @@ class update_cv_attendances extends \core\task\scheduled_task {
 		
 		$ua = updateAttendance($maxTime, $minTime, $token);
 		if ($ua) {
-			$msgArray = $ua->Attendances->PostAttendanceOutMsg;
-			$msgs = count($msgArray);
-			$errs = 0;
-			foreach ($msgArray as $outMsg) {
-				if ($outMsg->MessageStatus == 'FailedExecution') {
-					$errs++;
+			if ($ua->Attendances) {
+				$msgArray = $ua->Attendances->PostAttendanceOutMsg;
+				$msgs = count($msgArray);
+				$errs = 0;
+				foreach ($msgArray as $outMsg) {
+					if ($outMsg->MessageStatus == 'FailedExecution') {
+						$errs++;
+					}
 				}
+				mtrace("... sent $msgs Attendance Messages with $errs errors ");
+			} else {
+				mtrace("... no Attendance Messages to send ");
 			}
-			mtrace("... sent $msgs Attendance Messages with $errs errors ");
 		} else {
 			mtrace("... could not send Attendance Messages ");
 		}
