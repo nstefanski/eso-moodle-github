@@ -39,8 +39,8 @@ class update_cv_attendances extends \core\task\scheduled_task {
     }
 	
 	public function execute() {
-		$i = 1;
-		$j = 0;
+		$i = 1;//1
+		$j = 0;//0
 		$minTime = mktime(0, 0, 0, date("m"), date("d")-$i, date("Y"));
 		$maxTime = mktime(0, 0, 0, date("m"), date("d")-$j, date("Y"));
 		mtrace("... running attendance for period $minTime to $maxTime");
@@ -54,19 +54,33 @@ class update_cv_attendances extends \core\task\scheduled_task {
 				$msgArray = $ua->Attendances->PostAttendanceOutMsg;
 				$msgs = count($msgArray);
 				$errs = 0;
+				$exErr = 0;
+				$vaErr = 0;
 				foreach ($msgArray as $outMsg) {
 					if ($outMsg->MessageStatus == 'FailedExecution') {
+						$errs++;
+						$exErr++;
+					} elseif ($outMsg->MessageStatus == 'FailedValidation') {
+						$errs++;
+						$vaErr++;
+					} elseif (!empty($outMsg->MessageErrorCode)) {
 						$errs++;
 					}
 				}
 				mtrace("... sent $msgs Attendance Messages with $errs errors ");
+				if ($errs) {
+					mtrace("... $exErr Failed Execution ");
+					mtrace("... $vaErr Failed Validation ");
+					$otErr = $errs - $exErr - $vaErr;
+					mtrace("... $otErr Unknown Errors ");
+				}
 			} else {
 				mtrace("... no Attendance Messages to send ");
 			}
 		} else {
 			mtrace("... could not send Attendance Messages ");
 		}
-
+		
         return true;
 	}
 
