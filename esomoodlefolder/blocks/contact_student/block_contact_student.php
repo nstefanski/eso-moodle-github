@@ -68,9 +68,10 @@ class block_contact_student extends block_base {
         if (isset($user) && isset($USER)) {
             require_once($CFG->dirroot . '/user/profile/lib.php');
             profile_load_custom_fields($user);
-            if (array_key_exists('cvueid', $user->profile)) {
+            /*if (array_key_exists('cvueid', $user->profile)) {
                 $cvueid = $user->profile['cvueid'];
-            }
+            }*/
+			$cvueid = $user->idnumber; //tk added 8/8/16
             $firstname = $user->firstname;
             $lastname = $user->lastname;
             $email = $user->email;
