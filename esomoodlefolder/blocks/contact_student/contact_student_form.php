@@ -64,6 +64,8 @@ class contact_student_form extends moodleform {
         $mform->addElement('checkbox', 'redflagsoption5', '', get_string('redflagsoption5', 'block_contact_student', array('class' => 'redflag')));
         $mform->addElement('checkbox', 'redflagsoption6', '', get_string('redflagsoption6', 'block_contact_student', array('class' => 'redflag')));
         $mform->addElement('checkbox', 'redflagsoption7', '', get_string('redflagsoption7', 'block_contact_student', array('class' => 'redflag')));
+		$mform->addElement('checkbox', 'redflagsoption8', '', get_string('redflagsoption8', 'block_contact_student', array('class' => 'redflag')));
+		$mform->addElement('checkbox', 'redflagsoption9', '', get_string('redflagsoption9', 'block_contact_student', array('class' => 'redflag')));
 
         $mform->addElement('textarea', 'notes', get_string('notes', 'block_contact_student'), 'wrap="virtual" rows="10" cols="25"');
 
