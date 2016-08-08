@@ -30,6 +30,10 @@ $string['manualcatlimit_title'] = 'Manual Attendance: Limit to Category Paths';
 $string['manualcatlimit_desc'] = 'Select categories to be scanned for manual attendance.  Child categories are automatically included';
 //$string['allcategories'] = 'All Categories';
 
+$string['profilefield_name'] = 'CampusVue ID';
+$string['profilefield_desc'] = 'The SyStudentId from CampusVue';
+
 $string['update_cv_attendances'] = 'Update attendances in CampusVue';
 
 $string['errorusernamenotfound'] = 'The username and password have not been configured';
+$string['erroralreadyexists'] = '<p>The custom Profile Field "{$a->shortname}" already exists (probably from previous install)!</p>';
