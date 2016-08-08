@@ -1,0 +1,21 @@
+.block_contact_student .form-item,.block_contact_student .mform .fitem 
+{
+    margin-bottom: 5px;
+}
+.block_contact_student .mform .fitem div.fitemtitle 
+{
+    float:none;
+    text-align: left;
+}
+.block_contact_student .mform .fitem .felement{
+    margin-left: 0px;
+}
+.block_contact_student .mform label{
+    font-weight: bold;
+}
+.block_contact_student .felement.fcheckbox label{
+    font-weight: normal;
+}
+.block_contact_student .fitem_fcheckbox.femptylabel .fitemtitle{
+    display:none;   
+}
