@@ -43,7 +43,8 @@ class contact_student_form extends moodleform {
         $contactoptions = array('moodlemessage' => '',
             'phone' => get_string('phone', 'block_contact_student'),
             'text' => get_string('text', 'block_contact_student'),
-            'email' => get_string('email', 'block_contact_student'));
+            'email' => get_string('email', 'block_contact_student'),
+            'inperson' => get_string('inperson', 'block_contact_student'));
 
         $mform->addElement('select', 'contacttype', get_string('contacttype', 'block_contact_student'), $contactoptions);
         $mform->addHelpButton('contacttype', 'contacttype', 'block_contact_student');
