@@ -34,6 +34,7 @@ $string['displaystudentname'] = 'Display Student Name';
 $string['phone'] = 'Phone';
 $string['text'] = 'Text';
 $string['email'] = 'Email';
+$string['inperson'] = 'In Person';
 $string['contacttype'] = 'Type of Contact';
 $string['24hourcall'] = '24 Hour Call';
 $string['studenttostudentcall'] = 'Student to Staff Call';
