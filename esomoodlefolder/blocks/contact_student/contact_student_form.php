@@ -19,23 +19,23 @@ class contact_student_form extends moodleform {
         $mform->addElement('text', 'studentcvueid', get_string('studentcvueid', 'block_contact_student'));
         $mform->hardFreeze('studentcvueid');
 
-        $mform->addElement('text', 'studentfirstname', get_string('studentfirstname', 'block_contact_student'));
+        /*$mform->addElement('text', 'studentfirstname', get_string('studentfirstname', 'block_contact_student'));
         $mform->hardFreeze('studentfirstname');
 
         $mform->addElement('text', 'studentlastname', get_string('studentlastname', 'block_contact_student'));
         $mform->hardFreeze('studentlastname');
 
         $mform->addElement('text', 'studentemail', get_string('studentemail', 'block_contact_student'));
-        $mform->hardFreeze('studentemail');
+        $mform->hardFreeze('studentemail');*/
 
         $mform->addElement('text', 'studentstartdate', get_string('studentstartdate', 'block_contact_student'));
         $mform->hardFreeze('studentstartdate');
 
-        $mform->addElement('text', 'instructorname', get_string('instructorname', 'block_contact_student'));
+        /*$mform->addElement('text', 'instructorname', get_string('instructorname', 'block_contact_student'));
         $mform->hardFreeze('instructorname');
 
         $mform->addElement('text', 'instructoremail', get_string('instructoremail', 'block_contact_student'));
-        $mform->hardFreeze('instructoremail');
+        $mform->hardFreeze('instructoremail');*/
 
         $mform->addElement('text', 'displaystudentname', get_string('displaystudentname', 'block_contact_student'));
         $mform->hardFreeze('displaystudentname');
