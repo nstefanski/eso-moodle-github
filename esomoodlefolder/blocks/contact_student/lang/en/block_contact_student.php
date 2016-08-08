@@ -23,7 +23,7 @@
 $string['contact_student:addinstance'] = 'Add a new contact student block';
 $string['contact_student:viewinstance'] = 'View contact student block';
 $string['pluginname'] = 'Contact Student';
-$string['studentid'] = 'ID';
+$string['studentid'] = 'Moodle ID';
 $string['studentfirstname'] = 'Student First Name';
 $string['studentlastname'] = 'Student Last Name';
 $string['studentemail'] = 'Student Email';
@@ -53,4 +53,4 @@ $string['redflagsoption8'] = 'Missing externship hours';
 $string['redflagsoption9'] = 'Other (detail in notes)';
 $string['notes'] = 'Notes';
 $string['contacttype_help'] = 'Leave blank for Moodle Message. Only for Phone, Text and Email.';
-$string['studentcvueid'] = 'CVueID';
+$string['studentcvueid'] = 'Student Number (CVue)';
