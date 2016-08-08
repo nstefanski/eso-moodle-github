@@ -72,14 +72,14 @@ class block_contact_student extends block_base {
                 $cvueid = $user->profile['cvueid'];
             }*/
 			$cvueid = $user->idnumber; //tk added 8/8/16
-            $firstname = $user->firstname;
+            /*$firstname = $user->firstname;
             $lastname = $user->lastname;
-            $email = $user->email;
+            $email = $user->email;*/
             if (array_key_exists('startdate', $user->profile)) {
                 $timecreated = date('Y-m-d', $user->profile['startdate']);
             }
-            $instructorname = fullname($USER);
-            $instructoremail = $USER->email;
+            /*$instructorname = fullname($USER);
+            $instructoremail = $USER->email;*/
             $studentfullname = fullname($user);
         }
         $contact_student_form = new contact_student_form();
@@ -115,12 +115,12 @@ class block_contact_student extends block_base {
                     array(
                         'id' => $userid,
                         'studentcvueid' => $cvueid,
-                        'studentfirstname' => $firstname,
+                        /*'studentfirstname' => $firstname,
                         'studentlastname' => $lastname,
-                        'studentemail' => $email,
+                        'studentemail' => $email,*/
                         'studentstartdate' => $timecreated,
-                        'instructorname' => $instructorname,
-                        'instructoremail' => $instructoremail,
+                        /*'instructorname' => $instructorname,
+                        'instructoremail' => $instructoremail,*/
                         'displaystudentname' => $studentfullname
             ));
             $form_html = $contact_student_form->render();
