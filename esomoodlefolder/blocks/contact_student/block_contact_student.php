@@ -97,7 +97,7 @@ class block_contact_student extends block_base {
             $recordid = $DB->insert_record('block_contact_student', $record);
 
             $flag_records = array();
-            for ($i = 1; $i < 8; $i++) {
+            for ($i = 1; $i < 10; $i++) { //tk increase limit when adding more red flags!!
                 $option = 'redflagsoption' . $i;
                 if (isset($data->$option)) {
                     $flag_record = new stdClass();
