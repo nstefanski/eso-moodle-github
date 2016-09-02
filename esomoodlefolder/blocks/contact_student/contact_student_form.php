@@ -57,7 +57,17 @@ class contact_student_form extends moodleform {
 
         $mform->addElement('select', 'callreason', get_string('callreason', 'block_contact_student'), $callreasonoptions);
 
-        $mform->addElement('checkbox', 'redflagsoption1', get_string('redflags', 'block_contact_student'), get_string('redflagsoption1', 'block_contact_student', array('class' => 'redflag')));
+		$mform->addElement('static', 'redflags', get_string('redflags', 'block_contact_student'), '');
+		$stringman = get_string_manager();
+		for ($i = 1; $i < 99; $i++) { 
+			$option = 'redflagsoption' . $i;
+			if ($stringman->string_exists($option, 'block_contact_student')) {
+				$mform->addElement('checkbox', $option, '', get_string($option, 'block_contact_student', array('class' => 'redflag')));
+			} else {
+				break;
+			}
+		}
+        /*$mform->addElement('checkbox', 'redflagsoption1', '', get_string('redflagsoption1', 'block_contact_student', array('class' => 'redflag')));
         $mform->addElement('checkbox', 'redflagsoption2', '', get_string('redflagsoption2', 'block_contact_student', array('class' => 'redflag')));
         $mform->addElement('checkbox', 'redflagsoption3', '', get_string('redflagsoption3', 'block_contact_student', array('class' => 'redflag')));
         $mform->addElement('checkbox', 'redflagsoption4', '', get_string('redflagsoption4', 'block_contact_student', array('class' => 'redflag')));
@@ -65,7 +75,7 @@ class contact_student_form extends moodleform {
         $mform->addElement('checkbox', 'redflagsoption6', '', get_string('redflagsoption6', 'block_contact_student', array('class' => 'redflag')));
         $mform->addElement('checkbox', 'redflagsoption7', '', get_string('redflagsoption7', 'block_contact_student', array('class' => 'redflag')));
 		$mform->addElement('checkbox', 'redflagsoption8', '', get_string('redflagsoption8', 'block_contact_student', array('class' => 'redflag')));
-		$mform->addElement('checkbox', 'redflagsoption9', '', get_string('redflagsoption9', 'block_contact_student', array('class' => 'redflag')));
+		$mform->addElement('checkbox', 'redflagsoption9', '', get_string('redflagsoption9', 'block_contact_student', array('class' => 'redflag')));*/
 
         $mform->addElement('textarea', 'notes', get_string('notes', 'block_contact_student'), 'wrap="virtual" rows="10" cols="25"');
 
