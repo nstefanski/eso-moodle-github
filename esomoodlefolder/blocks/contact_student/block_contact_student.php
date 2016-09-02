@@ -97,14 +97,19 @@ class block_contact_student extends block_base {
             $recordid = $DB->insert_record('block_contact_student', $record);
 
             $flag_records = array();
-            for ($i = 1; $i < 10; $i++) { //tk increase limit when adding more red flags!!
+			$stringman = get_string_manager();
+            for ($i = 1; $i < 99; $i++) { 
                 $option = 'redflagsoption' . $i;
-                if (isset($data->$option)) {
-                    $flag_record = new stdClass();
-                    $flag_record->contact_id = $recordid;
-                    $flag_record->red_flag = get_string($option, 'block_contact_student');
-                    $flag_records[] = $flag_record;
-                }
+				if ($stringman->string_exists($option, 'block_contact_student')) {
+					if (isset($data->$option)) {
+						$flag_record = new stdClass();
+						$flag_record->contact_id = $recordid;
+						$flag_record->red_flag = get_string($option, 'block_contact_student');
+						$flag_records[] = $flag_record;
+					}
+				} else {
+					break;
+				}
             }
             $DB->insert_records('block_contact_student_flags', $flag_records);
 
