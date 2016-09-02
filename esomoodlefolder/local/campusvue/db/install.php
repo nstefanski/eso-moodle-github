@@ -59,31 +59,7 @@ function xmldb_local_campusvue_install() {
 	$field->sortorder = 1;
 	addField($field);
 	
-	//change language customization of Attendance Remarks
-	/*$sql = "SELECT * 
-			FROM prefix_tool_customlang tcl 
-			WHERE tcl.componentid = (SELECT id 
-							FROM prefix_tool_customlang_components tclc 
-							WHERE tclc.name LIKE 'mod_attendance') 
-				AND tcl.stringid LIKE 'remarks' 
-				AND tcl.lang = 'en' ";
-	$record = $DB->get_record_sql($sql);
-	
-	$now = time();
-	$customization = 'Minutes Missed <br />
-						<span style="font-size: 11px; line-height: 12px;">(enter in numeric format, ie "15", not "fifteen")</span>
-						<script src="/local/campusvue/js/cvConvertInputs.min.js" type="text/javascript"></script>
-						<script name="Remarks" type="text/javascript">
-							cvConvertInputs();
-						</script>';
-	
-	$dataobject = new stdClass();
-	$dataobject->id = $record->id;
-	$dataobject->local = $customization;
-	$dataobject->timecustomized = $now;
-	
-	//$DB->update_record('tool_customlang', $dataobject);*/
-
+	//updateAttendanceLang();
 	
 	return true;
 }
@@ -102,4 +78,46 @@ function addField($field) {
 		$id = $DB->insert_record('user_info_field', $field);
 	else
 		echo get_string('erroralreadyexists','local_campusvue',$field);
+}
+
+function updateAttendanceLang() {
+	global $DB;
+	
+	//change language customization of Attendance Remarks
+	$dbman = $DB->get_manager();
+	$tcl = 'tool_customlang';
+	$tclc = 'tool_customlang_components';
+	
+	if ($dbman->table_exists($tcl) && $dbman->table_exists($tclc)) {
+		$sql = "SELECT * 
+				FROM {$tcl} tcl 
+				WHERE tcl.stringid LIKE 'remarks' 
+					AND tcl.lang = 'en'
+					AND tcl.componentid = (SELECT tclc.id 
+						FROM {$tclc} tclc 
+						WHERE tclc.name LIKE 'mod_attendance') ";
+		try 
+			$record = $DB->get_record_sql($sql);
+		} catch (moodle_exception $e) {
+			echo $e->getMessage();
+		}
+		
+		if($record){
+			$dataobject = new stdClass();
+			$dataobject->id = $record->id;
+
+			$customization = '<span>Minutes Missed </span><br />
+								<span style="font-size: 11px; line-height: 12px;">(enter in numeric format, ie "15", not "fifteen")</span>
+								<script src="/local/campusvue/js/cvConvertInputs.min.js" type="text/javascript"></script>
+								<script name="Remarks" type="text/javascript">
+									cvConvertInputs();
+								</script>';
+			$dataobject->local = $customization;
+
+			$now = time();
+			$dataobject->timecustomized = $now;
+			
+			$DB->update_record($tcl, $dataobject);
+		}
+	}
 }
