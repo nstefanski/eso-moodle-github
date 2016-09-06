@@ -18,13 +18,22 @@
  * Definition of Zoom scheduled tasks.
  *
  * @package    local_escozoom
- * @copyright  2015 UC Regents
+ * @copyright  
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
 $tasks = array(
     array(
         'classname' => 'local_escozoom\task\delete_recordings',
+        'blocking' => 0,
+        'minute' => '0',
+        'hour' => '0',
+        'day' => '*',
+        'month' => '*',
+        'dayofweek' => '*'
+    ), 
+	array(
+        'classname' => 'local_escozoom\task\isdr_report',
         'blocking' => 0,
         'minute' => '0',
         'hour' => '0',
