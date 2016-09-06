@@ -25,7 +25,7 @@
 defined('MOODLE_INTERNAL') || die();
 
 $plugin->component = 'local_escoforward';
-$plugin->version = 2016052300;
+$plugin->version = 2016090600;
 $plugin->release = 'v0.91';
 $plugin->requires = 2014051200;
 $plugin->maturity = MATURITY_BETA;
