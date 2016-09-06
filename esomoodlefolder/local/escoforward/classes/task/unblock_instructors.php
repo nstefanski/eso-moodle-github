@@ -69,11 +69,9 @@ class unblock_instructors extends \core\task\scheduled_task {
 					JOIN {user} u ON mc.userid = u.id 
 				WHERE mc.blocked = 1 
 					AND c.firstname LIKE 'Chef %' ";
-		//mtrace($sql);
 		$blocked_list = $DB->get_records_sql($sql);
 
-        if (!isset($blocked_list)) {
-			mtrace("... ... До свидания мир!");
+        if (!isset($blocked_list)) { 
             return true;
         }
 
@@ -82,8 +80,7 @@ class unblock_instructors extends \core\task\scheduled_task {
 			$DB->delete_records('message_contacts', array('id'=>$blocked->id));
 		}
 		
-		mtrace("... ... Привет мир!");
-		mtrace(count($blocked_list) . " blocked users found");
+		mtrace("... " . count($blocked_list) . " blocked users found");
 
         return true;
     }
