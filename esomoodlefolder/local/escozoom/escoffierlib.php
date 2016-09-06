@@ -249,3 +249,129 @@ function make_call_multipage ($url, $data = array()) {
 	
 	return $response;
 }
+
+function get_users_isdr ($mintime, $maxtime, $limit = 1080) {
+	global $DB;
+	$sql = "SELECT u.id AS md_id, 
+				/*(SELECT uid.data FROM {user_info_data} uid 
+					JOIN {user_info_field} uif ON uid.fieldid = uif.id AND uif.shortname = 'cvueid' 
+					WHERE uid.userid = u.id ) AS CVue_id,*/ 
+				u.idnumber AS CVue_id, 
+				u.firstname, u.lastname, u.email, FROM_UNIXTIME(startdate.data) AS startdate, 
+				CASE WHEN campus.data = 'Boulder - Online' THEN 'Culinary Arts' 
+					WHEN campus.data = 'Online' THEN 'Baking and Pastry' 
+					ELSE 'N/a' END AS program,
+				status.data AS status, 
+					
+				ori_c.id AS oriid, core_c.id AS coreid, prac_c.id AS pracid, 
+				'' AS ori_ded, '' AS core_ded, '' AS prac_ded, 
+				0 AS ori_avses, 0 AS core_avses, 0 AS prac_avses 
+
+			FROM {user} u 
+				JOIN {user_info_data} startdate ON startdate.userid = u.id AND 
+					(SELECT uif.shortname FROM {user_info_field} uif WHERE startdate.fieldid = uif.id) LIKE 'startdate' 
+				JOIN {user_info_data} campus ON campus.userid = u.id AND 
+					(SELECT uif.shortname FROM {user_info_field} uif WHERE campus.fieldid = uif.id) LIKE 'campus' 
+				JOIN {user_info_data} programtype ON programtype.userid = u.id AND 
+					(SELECT uif.shortname FROM {user_info_field} uif WHERE programtype.fieldid = uif.id) LIKE 'programtype' 
+				JOIN {user_info_data} status ON status.userid = u.id AND 
+					(SELECT uif.shortname FROM {user_info_field} uif WHERE status.fieldid = uif.id) LIKE 'Status' 
+				LEFT JOIN {course} ori_c ON ori_c.id = (SELECT c.id
+					FROM {user_enrolments} ue 
+					JOIN {enrol} e ON ue.enrolid = e.id 
+					JOIN {course} c ON e.courseid = c.id AND c.shortname LIKE '%orientation%' 
+					WHERE ue.userid = u.id AND ue.status = 0 LIMIT 1)
+				LEFT JOIN {course} core_c ON core_c.id = (SELECT c.id
+					FROM {user_enrolments} ue 
+					JOIN {enrol} e ON ue.enrolid = e.id 
+					JOIN {course} c ON e.courseid = c.id AND c.shortname LIKE 'CE115%' 
+					WHERE ue.userid = u.id AND ue.status = 0 LIMIT 1)
+				LEFT JOIN {course} prac_c ON prac_c.id = (SELECT c.id
+					FROM {user_enrolments} ue 
+					JOIN {enrol} e ON ue.enrolid = e.id 
+					JOIN {course} c ON e.courseid = c.id 
+						AND (c.shortname LIKE 'CA102%' OR c.shortname LIKE 'BK101%') 
+					WHERE ue.userid = u.id AND ue.status = 0 LIMIT 1)
+
+			WHERE startdate.data IS NOT NULL 
+				AND startdate.data > (UNIX_TIMESTAMP() - (2.5*7*24*60*60) ) 
+				AND startdate.data < (UNIX_TIMESTAMP() + (6.5*7*24*60*60) ) 
+				AND programtype.data = 'Certificate Program' 
+				AND campus.data <> 'Boulder' 
+				AND campus.data <> 'Austin' 
+				/* AND u.suspended = 0 */ 
+				AND u.deleted = 0 
+				/* AND (SELECT uid.data FROM {user_info_data} uid 
+					JOIN {user_info_field} uif ON uid.fieldid = uif.id AND uif.shortname = 'Status' 
+					WHERE uid.userid = u.id ) = 'Active' */ 
+
+			ORDER BY status.data, ori_c.id, core_c.id, prac_c.id ";
+	$stus = $DB->get_records_sql($sql);
+	
+	foreach ($stus AS $stu) {
+		$student = $DB->get_record('user', array('id' => $stu->md_id), 'id,firstname,lastname,email');
+		
+		if($stu->oriid) {
+			if ($lastOri != $stu->oriid) {
+				$lastOri = $stu->oriid;
+				$oriCourse = $DB->get_record('course', array('id' => $stu->oriid), 'id,shortname');
+				$oriDm = new block_dedication_manager($oriCourse, $mintime, $maxtime, $limit);
+			}
+			$ori_dedDetail = $oriDm->get_user_dedication($student, false);
+			foreach ($ori_dedDetail AS $sesDetail) {
+				$stu->ori_ded += $sesDetail->dedicationtime;
+			}
+			$stu->ori_ded /= 3600; //hours
+			$stu->ori_avses = ($stu->ori_ded / count($ori_dedDetail) * 60); //mins
+			//$stu->ori_ded = ($oriDm->get_user_dedication($student, true))/3600;//hours
+		}
+		if($stu->coreid) {
+			if ($lastCore != $stu->coreid) {
+				$lastCore = $stu->coreid;
+				$coreCourse = $DB->get_record('course', array('id' => $stu->coreid), 'id,shortname');
+				$coreDm = new block_dedication_manager($coreCourse, $mintime, $maxtime, $limit);
+			}
+			$core_dedDetail = $coreDm->get_user_dedication($student, false);
+			foreach ($core_dedDetail AS $sesDetail) {
+				$stu->core_ded += $sesDetail->dedicationtime;
+			}
+			$stu->core_ded /= 3600; //hours
+			$stu->core_avses = ($stu->core_ded / count($core_dedDetail) * 60); //mins
+		}
+		if ($stu->pracid) {
+			if ($lastPrac != $stu->pracid) {
+				$lastPrac = $stu->pracid;
+				$pracCourse = $DB->get_record('course', array('id' => $stu->pracid), 'id,shortname');
+				$pracDm = new block_dedication_manager($pracCourse, $mintime, $maxtime, $limit);
+			}
+			$prac_dedDetail = $pracDm->get_user_dedication($student, false);
+			foreach ($prac_dedDetail AS $sesDetail) {
+				$stu->prac_ded += $sesDetail->dedicationtime;
+			}
+			$stu->prac_ded /= 3600; //hours
+			$stu->prac_avses = ($stu->prac_ded / count($prac_dedDetail) * 60); //mins
+		}
+	}
+	return $stus;
+}
+
+function write_csv_isdr ($rows, $headers = null) {
+	global $CFG;
+	
+	$data = "";
+	foreach ($rows AS $row) { 
+		foreach ($row AS $column) {
+			$data.= $column.",";
+		}
+		$data.= "\n";
+	}
+
+	$path = 'sheetreport';
+	$csvfilename = $CFG->dirroot.'/'.$path.'/'.'isdr.csv';
+		
+	$csv_handler = fopen ($csvfilename,'w');
+	fwrite ($csv_handler,$data);
+	fclose ($csv_handler);
+	
+	return $csvfilename;
+}

@@ -27,6 +27,7 @@ defined('MOODLE_INTERNAL') || die();
 
 //require_once($CFG->dirroot.'/mod/zoom/locallib.php');
 //require_once($CFG->dirroot.'/mod/zoom/classes/webservice.php');
+require_once($CFG->dirroot.'/blocks/dedication/dedication_lib.php');
 require_once($CFG->dirroot.'/local/escozoom/escoffierlib.php');
 
 /**
@@ -54,8 +55,21 @@ class isdr_report extends \core\task\scheduled_task {
      * @return boolean
      */
     public function execute() {
+		$mindate = date_format_string(time()-(8*7*24*60*60), '%Y-%m-%d');
+		list($y, $m, $d) = explode("-", $mindate);
+		$mintime = make_timestamp($y, $m, $d, 0, 5, 0);
+		$maxdate = date_format_string(time()+(24*60*60), '%Y-%m-%d');
+		list($y, $m, $d) = explode("-", $maxdate);
+		$maxtime = make_timestamp($y, $m, $d, 0, 5, 0);
 		
-		mtrace("... ");
+		mtrace("... running ISDR from period $mindate to $maxdate ");
+		
+		$stus = get_users_isdr($mintime, $maxtime);
+		$headers = array((object) array_keys((array)reset($stus)));
+		$rows = array_merge(array(array("$mindate to $maxdate")),$headers,$stus);
+		$csvfilename = write_csv_isdr($rows);
+		
+		mtrace("... saved " . count($rows) . " rows to $csvfilename ");
 		
         return true;
     }
