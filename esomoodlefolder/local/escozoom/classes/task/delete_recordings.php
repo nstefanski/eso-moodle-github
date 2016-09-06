@@ -1,5 +1,5 @@
 <?php
-// This file is part of the Zoom plugin for Moodle - http://moodle.org/
+// This file is part of Moodle - http://moodle.org/
 //
 // Moodle is free software: you can redistribute it and/or modify
 // it under the terms of the GNU General Public License as published by
@@ -15,17 +15,9 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
- * Library of interface functions and constants for module zoom
- *
- * All the core Moodle functions, neeeded to allow the module to work
- * integrated in Moodle should be placed here.
- *
- * All the zoom specific functions, needed to implement all the module
- * logic, should go to locallib.php. This will help to save some memory when
- * Moodle is performing actions across all modules.
  *
  * @package    local_escozoom
- * @copyright  2015 UC Regents
+ * @copyright  
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
@@ -38,10 +30,10 @@ require_once($CFG->dirroot.'/mod/zoom/classes/webservice.php');
 require_once($CFG->dirroot.'/local/escozoom/escoffierlib.php');
 
 /**
- * Scheduled task to sychronize meeting data.
+ * Scheduled task to delete old recordings on cloud
  *
- * @package   mod_zoom
- * @copyright 2015 UC Regents
+ * @package   local_escozoom
+ * @copyright 
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class delete_recordings extends \core\task\scheduled_task {
@@ -52,7 +44,7 @@ class delete_recordings extends \core\task\scheduled_task {
      * @return string
      */
     public function get_name() {
-        //return get_string('deleterecordings', 'mod_zoom');
+        //return get_string('deleterecordings', 'local_escozoom');
 		return 'Delete Escoffier zoom meeting recordings';
     }
 

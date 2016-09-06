@@ -32,8 +32,8 @@ require_once($CFG->dirroot.'/local/escozoom/escoffierlib.php');
 /**
  * Scheduled task to sychronize meeting data.
  *
- * @package   mod_zoom
- * @copyright 2015 UC Regents
+ * @package   local_escozoom
+ * @copyright 
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class isdr_report extends \core\task\scheduled_task {
