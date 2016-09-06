@@ -18,9 +18,14 @@ function cvConvertInputs() {
 				inputs[i].min = '0';
 				inputs[i].removeAttribute('maxlength');
 			}
-			if (past) {
+			/*if (past) {
 				inputs[i].setAttribute("disabled",1);
-			}
+			}*/
 		}
+		var table = document.getElementById('region-main').getElementsByTagName('form')[2].getElementsByTagName('table')[0];
+		var copy = table.getElementsByTagName('thead')[0].getElementsByTagName('tr')[0];
+		var target = table.getElementsByTagName('tbody')[0];
+		var cln = copy.cloneNode(true);
+		target.appendChild(cln);
 	}
 }
