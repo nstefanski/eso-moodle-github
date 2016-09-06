@@ -15,18 +15,48 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
- * Defines the version and other meta-info about the plugin.
  *
  * @package    local_escozoom
- * @copyright  2016 Triumph Higher Education Group
+ * @copyright  
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
+namespace local_escozoom\task;
+
 defined('MOODLE_INTERNAL') || die();
 
-$plugin->component = 'local_escozoom';
-$plugin->version = 2016090601;
-$plugin->release = 'v0.9';
-$plugin->requires = 2014051200;
-$plugin->maturity = MATURITY_BETA;
-//$plugin->cron = 0;
+//require_once($CFG->dirroot.'/mod/zoom/locallib.php');
+//require_once($CFG->dirroot.'/mod/zoom/classes/webservice.php');
+require_once($CFG->dirroot.'/local/escozoom/escoffierlib.php');
+
+/**
+ * Scheduled task to sychronize meeting data.
+ *
+ * @package   mod_zoom
+ * @copyright 2015 UC Regents
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ */
+class isdr_report extends \core\task\scheduled_task {
+
+    /**
+     * Returns name of task.
+     *
+     * @return string
+     */
+    public function get_name() {
+        //return get_string('deleterecordings', 'mod_zoom');
+		return 'ISDR Report';
+    }
+
+    /**
+     * Runs ISDR and saves to directory
+     *
+     * @return boolean
+     */
+    public function execute() {
+		
+		mtrace("... ");
+		
+        return true;
+    }
+}
