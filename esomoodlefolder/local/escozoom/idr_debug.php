@@ -6,7 +6,7 @@ global $DB, $CFG;
 
 require_once($CFG->libdir. '/excellib.class.php');
 require_once($CFG->dirroot.'/mod/zoom/classes/webservice.php'); //tk 11-20-15
-require_once($CFG->dirroot.'/local/escozoom/escoffierlib.php');
+require_once($CFG->dirroot.'/local/escozoom/locallib.php');
 
 $mindate = (empty($_GET['mindate'])) ? date_format_string(time()-7*24*60*60, '%Y-%m-%d') : $_GET['mindate'];
 $minclock = (empty($_GET['minclock'])) ? '00:05' : $_GET['minclock'];

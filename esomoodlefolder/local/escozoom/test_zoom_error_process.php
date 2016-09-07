@@ -6,7 +6,7 @@ global $DB, $CFG;
 
 //require_once($CFG->libdir. '/excellib.class.php');
 require_once($CFG->dirroot.'/mod/zoom/classes/webservice.php');
-require_once($CFG->dirroot.'/local/escozoom/escoffierlib.php');
+require_once($CFG->dirroot.'/local/escozoom/locallib.php');
 
 echo "Hello world!";
 
