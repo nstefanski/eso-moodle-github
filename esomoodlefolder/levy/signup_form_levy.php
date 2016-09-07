@@ -30,7 +30,7 @@ require_once($CFG->libdir.'/formslib.php');
 require_once($CFG->dirroot.'/user/profile/lib.php');
 require_once($CFG->dirroot . '/user/editlib.php');
 
-class login_signup_form extends moodleform {
+class login_signup_form_levy extends moodleform {
     function definition() {
         global $USER, $CFG;
 
