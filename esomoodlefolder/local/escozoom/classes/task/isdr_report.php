@@ -25,10 +25,8 @@ namespace local_escozoom\task;
 
 defined('MOODLE_INTERNAL') || die();
 
-//require_once($CFG->dirroot.'/mod/zoom/locallib.php');
-//require_once($CFG->dirroot.'/mod/zoom/classes/webservice.php');
 require_once($CFG->dirroot.'/blocks/dedication/dedication_lib.php');
-require_once($CFG->dirroot.'/local/escozoom/escoffierlib.php');
+require_once($CFG->dirroot.'/local/escozoom/locallib.php');
 
 /**
  * Scheduled task to sychronize meeting data.

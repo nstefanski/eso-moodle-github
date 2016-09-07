@@ -5,7 +5,7 @@ require_once('../../config.php');
 global $CFG;
 
 require_once($CFG->dirroot.'/mod/zoom/classes/webservice.php');
-require_once($CFG->dirroot.'/local/escozoom/escoffierlib.php');
+require_once($CFG->dirroot.'/local/escozoom/locallib.php');
 
 $service = new mod_zoom_webservice();
 $cafesess = FALSE;
