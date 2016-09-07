@@ -355,7 +355,7 @@ function get_users_isdr ($mintime, $maxtime, $limit = 1080) {
 	return $stus;
 }
 
-function write_csv_isdr ($rows, $headers = null) {
+function write_csv ($rows, $filename = "csv_report", $headers = null) {
 	global $CFG;
 	
 	$data = "";
@@ -367,7 +367,7 @@ function write_csv_isdr ($rows, $headers = null) {
 	}
 
 	$path = 'sheetreport';
-	$csvfilename = $CFG->dirroot.'/'.$path.'/'.'isdr.csv';
+	$csvfilename = $CFG->dirroot.'/'.$path.'/'.$filename.'.csv';
 		
 	$csv_handler = fopen ($csvfilename,'w');
 	fwrite ($csv_handler,$data);
