@@ -88,7 +88,12 @@ class login_signup_form_levy extends moodleform {
             $mform->setDefault('country', '');
         }
 		
-		profile_signup_fields($mform);
+		$mform->addElement('hidden', 'profile_field_organization', 'Levy');
+		
+		$mform->addElement('text', 'phone1', get_string('phone'), 'maxlength="120" size="20"');
+        $mform->setType('phone', PARAM_TEXT);
+
+        //profile_signup_fields($mform);
 
         if ($this->signup_captcha_enabled()) {
             $mform->addElement('recaptcha', 'recaptcha_element', get_string('security_question', 'auth'), array('https' => $CFG->loginhttps));
