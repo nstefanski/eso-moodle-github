@@ -75,11 +75,29 @@ $sql = "SELECT CONCAT(u.id,'-',c.id) AS id, CONCAT(u.firstname,' ',u.lastname) A
 	AND f.timemodified >= $mintime AND f.timemodified <= $maxtime 
 	AND f.userid = ra.userid AND f.filesize > 0 ) AS totalfeedback, 
 
+/*(SELECT count(DISTINCT sub.id) FROM {assign_submission} sub 
+	JOIN {assign} a ON a.id = sub.assignment 
+	WHERE sub.timecreated <= a.duedate 
+	AND a.duedate >= $mintime 
+	AND sub.timecreated <= $maxtime 
+	AND sub.status = 'submitted' 
+	AND a.course = c.id ) AS debug_subcount, 
+	
+(SELECT count(DISTINCT a.id) FROM {assign} a 
+	WHERE a.course = c.id 
+	AND a.duedate >= $mintime 
+	AND a.duedate <= $maxtime ) AS debug_assigncount, 
+	
+(SELECT count(DISTINCT ra2.id) 
+	FROM {role_assignments} ra2 
+	JOIN {context} cx2 ON cx2.id = ra2.contextid 
+	WHERE ra2.roleid = 5 AND cx2.instanceid = c.id) AS debug_stucount, */
+
 (SELECT count(DISTINCT sub.id) FROM {assign_submission} sub 
 	JOIN {assign} a ON a.id = sub.assignment 
 	WHERE sub.timecreated <= a.duedate 
 	AND a.duedate >= $mintime 
-	AND sub.timecreated >= $mintime AND sub.timecreated <= $maxtime 
+	/*AND sub.timecreated >= $mintime*/ AND sub.timecreated <= $maxtime 
 	AND sub.status = 'submitted' 
 	AND a.course = c.id ) / ((SELECT count(DISTINCT a.id) FROM {assign} a 
 	WHERE a.course = c.id 
