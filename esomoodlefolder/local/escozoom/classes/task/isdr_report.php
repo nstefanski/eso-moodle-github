@@ -67,9 +67,9 @@ class isdr_report extends \core\task\scheduled_task {
 		$stus = get_users_isdr($mintime, $maxtime);
 		$headers = array((object) array_keys((array)reset($stus)));
 		$rows = array_merge(array(array("$mindate to $maxdate")),$headers,$stus);
-		$csvfilename = write_csv_isdr($rows);
+		$csvpath = write_csv($rows, 'isdr');
 		
-		mtrace("... saved " . count($rows) . " rows to $csvfilename ");
+		mtrace("... saved " . count($rows) . " rows to $csvpath ");
 		
         return true;
     }
