@@ -64,7 +64,11 @@ if (isloggedin() and !isguestuser()) {
     exit;
 }
 
-$mform_signup = $authplugin->signup_form();
+//$mform_signup = $authplugin->signup_form(); //tk replace with new form
+
+//cribbed from /lib/authlib.php  function signup_form()
+require_once('/signup_form_levy.php');
+$mform_signup = new login_signup_form_levy(null, null, 'post', '', array('autocomplete'=>'on'));
 
 if ($mform_signup->is_cancelled()) {
     redirect(get_login_url());
