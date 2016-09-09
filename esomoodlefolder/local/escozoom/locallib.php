@@ -306,10 +306,18 @@ function get_users_isdr ($mintime, $maxtime, $limit = 1080) {
 					WHERE uid.userid = u.id ) = 'Active' */ 
 
 			ORDER BY status.data, ori_c.id, core_c.id, prac_c.id ";
-	$stus = $DB->get_records_sql($sql);
+	try {
+		$stus = $DB->get_records_sql($sql);
+	} catch (moodle_exception $e) {
+		return false;
+	}
 	
 	foreach ($stus AS $stu) {
-		$student = $DB->get_record('user', array('id' => $stu->md_id), 'id,firstname,lastname,email');
+		try {
+			$student = $DB->get_record('user', array('id' => $stu->md_id), 'id,firstname,lastname,email');
+		} catch (moodle_exception $e) {
+			return false;
+		}
 		
 		if($stu->oriid) {
 			if ($lastOri != $stu->oriid) {
