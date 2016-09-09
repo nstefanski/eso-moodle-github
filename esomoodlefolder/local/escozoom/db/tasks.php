@@ -40,5 +40,14 @@ $tasks = array(
         'day' => '*',
         'month' => '*',
         'dayofweek' => '*'
+    ), 
+	array(
+        'classname' => 'local_escozoom\task\unblock_instructors',
+        'blocking' => 0,
+        'minute' => '0',
+        'hour' => '4',
+        'day' => '*',
+        'month' => '*',
+        'dayofweek' => '*'
     )
 );

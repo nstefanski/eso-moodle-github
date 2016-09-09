@@ -17,3 +17,4 @@
 defined('MOODLE_INTERNAL') || die();
 
 $string['pluginname'] = 'Escoffier Zoom';
+$string['unblockinstructors'] = 'Remove instructors from any user\'s blocked list';

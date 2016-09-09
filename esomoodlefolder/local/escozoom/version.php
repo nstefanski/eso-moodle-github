@@ -1,5 +1,5 @@
 <?php
-// This file is part of the Zoom plugin for Moodle - http://moodle.org/
+// This file is part of Moodle - http://moodle.org/
 //
 // Moodle is free software: you can redistribute it and/or modify
 // it under the terms of the GNU General Public License as published by
@@ -25,8 +25,10 @@
 defined('MOODLE_INTERNAL') || die();
 
 $plugin->component = 'local_escozoom';
-$plugin->version = 2016090601;
+$plugin->version = 2016090900;
 $plugin->release = 'v0.9';
 $plugin->requires = 2014051200;
 $plugin->maturity = MATURITY_BETA;
+$plugin->dependencies = array('mod_zoom' => 2016042200,
+							'block_dedication' => 2014030401);
 //$plugin->cron = 0;
