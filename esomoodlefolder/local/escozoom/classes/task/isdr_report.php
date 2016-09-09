@@ -62,12 +62,20 @@ class isdr_report extends \core\task\scheduled_task {
 		
 		mtrace("... running ISDR from period $mindate to $maxdate ");
 		
-		$stus = get_users_isdr($mintime, $maxtime);
-		$headers = array((object) array_keys((array)reset($stus)));
-		$rows = array_merge(array(array("$mindate to $maxdate")),$headers,$stus);
-		$csvpath = write_csv($rows, 'isdr');
-		
-		mtrace("... saved " . count($rows) . " rows to $csvpath ");
+		try {
+			$stus = get_users_isdr($mintime, $maxtime);
+		} catch (moodle_exception $e) {
+			return false;
+		}
+		if ($stus) {
+			$headers = array((object) array_keys((array)reset($stus)));
+			$rows = array_merge(array(array("$mindate to $maxdate")),$headers,$stus);
+			$csvpath = write_csv($rows, 'isdr');
+			
+			mtrace("... saved " . count($rows) . " rows to $csvpath ");
+		} else {
+			mtrace("... no students found ");
+		}
 		
         return true;
     }
