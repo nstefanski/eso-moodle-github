@@ -88,7 +88,7 @@ class login_signup_form_levy extends moodleform {
             $mform->setDefault('country', '');
         }
 		
-		$mform->addElement('hidden', 'profile_field_organization', 'Levy');
+		$mform->addElement('hidden', 'profile_field_Reseller', 'Levy');
 		
 		$mform->addElement('text', 'phone1', get_string('phone'), 'maxlength="120" size="20"');
         $mform->setType('phone', PARAM_TEXT);
