@@ -52,9 +52,13 @@ class mdAttendance {
 				$cvFlag = $this->checkCVFlag($session->description);
 				$date = $this->zeroTime($this->cvFormatDate($session->sessdate));
 				
-				$session->description = $cvFlag;
-				$session->sessdate = $date;
-				$this->Attendance[] = new mdAttendanceSession($session->id, $session->cvid, $date, $session->mins, $cvFlag, $this->token);
+				// cvFlag means attendance session was created by CampusVue, so we can use the session length in Moodle
+				// otherwise, we need to get the session length stored in CampusVue with the API
+				$sessionLength = $cvFlag ? $session->mins : $this->cvGetSessionLength($session->cvid, $date);
+				
+				//$session->description = $cvFlag;
+				//$session->sessdate = $date;
+				$this->Attendance[] = new mdAttendanceSession($session->id, $session->cvid, $date, $sessionLength, $this->token);
 			}
 		}
 	}
@@ -135,5 +139,15 @@ class mdAttendance {
 	public function checkCVFlag($string) {
 		//to add, after we figure out how we are going to flag things from CVue
 		return false;
+	}
+	
+	//get LengthMinutes based on ClassSchedId (CourseSectionId) and Date
+	public function cvGetSessionLength($courseSectionId, $date) {
+		global $CFG;
+		require_once($CFG->dirroot.'/local/campusvue/classes/cvEntityMsg.php');
+		$cem = new cvEntityMsg('ClassAttendance');
+		$cem->addParam('ClassSchedId', $courseSectionId, 'Equal');
+		$cem->addParam('Date', $date, 'Equal');
+		return $cem->getEntityField('LengthMinutes', $this->token); //this is returning an empty array if no results are found 
 	}
 }
