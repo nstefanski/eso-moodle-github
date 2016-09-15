@@ -51,7 +51,7 @@ class mdAttendanceSession {
 		foreach ($mdLogs as $log) {
 			if (empty($log->cvid)) {
 				if (!$this->token) { $this->token = cvGetToken(); } //only case where token is needed
-				$log->cvid = $this->cvGetSyStudentId($log->idnumber);
+				$log->cvid = cvGetSyStudentId($log->idnumber, $this->token);
 			}
 			$absent = 0;
 			$excused = false;
@@ -97,15 +97,5 @@ class mdAttendanceSession {
 				WHERE al.sessionid = :sessid ";
 		$logs = $DB->get_records_sql($sql, array('sessid' => $this->mdSessionId));
 		return $logs;
-	}
-	
-	//get SyStudentId based on StudentNumber
-	public function cvGetSyStudentId($StudentNumber) {
-		if (empty($StudentNumber)) { return null; }
-		global $CFG;
-		require_once($CFG->dirroot.'/local/campusvue/classes/cvEntityMsg.php');
-		$cem = new cvEntityMsg('Student');
-		$cem->addParam('StudentNumber', $StudentNumber, 'Equal');
-		return $cem->getEntityField('Id', $this->token);
 	}
 }
