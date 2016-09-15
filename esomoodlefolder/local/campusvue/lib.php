@@ -68,7 +68,7 @@ function cvGetToken($tokenNeverExpires = false) {
  * @param int $StudentNumber
  * @return int $SyStudentId or null
  */
-public function cvGetSyStudentId($StudentNumber, $token = null) {
+function cvGetSyStudentId($StudentNumber, $token = null) {
 	if (empty($StudentNumber)) { return null; }
 	global $CFG;
 	require_once($CFG->dirroot.'/local/campusvue/classes/cvEntityMsg.php');
