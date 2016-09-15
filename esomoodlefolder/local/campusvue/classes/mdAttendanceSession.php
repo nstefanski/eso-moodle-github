@@ -36,28 +36,21 @@ class mdAttendanceSession {
 	public $CourseSectionId = 0;
 	public $AttendanceDate = '';
 	public $SessionLength = 0;
-	//public $cvFlag = false;
 	public $token = null;
 	public $Attendances = array();
 	
-	public function __construct ($mdSessionId = 0, $CourseSectionId = 0, $AttendanceDate = '', $SessionLength = 0, $cvFlag = false, $token = null) {
+	public function __construct ($mdSessionId = 0, $CourseSectionId = 0, $AttendanceDate = '', $SessionLength = 0, $token = null) {
 		$this->mdSessionId = $mdSessionId;
 		$this->CourseSectionId = $CourseSectionId;
 		$this->AttendanceDate = $AttendanceDate; //find a way to kill class if these three aren't set?
-		if (!$cvFlag && !$token) {
-			$token = cvGetToken();
-		}
+		$this->SessionLength = $SessionLength;
 		$this->token = $token;
-		
-		// cvFlag means attendance session was created by CampusVue, so we can use the session length in Moodle
-		// otherwise, we need to get the session length stored in CampusVue with the API
-		$this->SessionLength = $cvFlag ? $SessionLength : $this->cvGetSessionLength();
 		
 		$this->Attendances = array();
 		$mdLogs = $this->mdGetAttendanceLogs();
 		foreach ($mdLogs as $log) {
 			if (empty($log->cvid)) {
-				if (!$token) { $this->token = cvGetToken(); } //another token check just in case
+				if (!$this->token) { $this->token = cvGetToken(); } //only case where token is needed
 				$log->cvid = $this->cvGetSyStudentId($log->idnumber);
 			}
 			$absent = 0;
@@ -104,16 +97,6 @@ class mdAttendanceSession {
 				WHERE al.sessionid = :sessid ";
 		$logs = $DB->get_records_sql($sql, array('sessid' => $this->mdSessionId));
 		return $logs;
-	}
-	
-	//get LengthMinutes based on ClassSchedId (CourseSectionId) and Date
-	public function cvGetSessionLength() {
-		global $CFG;
-		require_once($CFG->dirroot.'/local/campusvue/classes/cvEntityMsg.php');
-		$cem = new cvEntityMsg('ClassAttendance');
-		$cem->addParam('ClassSchedId', $this->CourseSectionId, 'Equal');
-		$cem->addParam('Date', $this->AttendanceDate, 'Equal');
-		return $cem->getEntityField('LengthMinutes', $this->token); //this is returning an empty array if no results are found 
 	}
 	
 	//get SyStudentId based on StudentNumber
