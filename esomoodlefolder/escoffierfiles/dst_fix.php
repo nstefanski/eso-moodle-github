@@ -1,7 +1,7 @@
 <?php
 /*
  *	After this is run once, check all dates are correct with Dates reports:
- *	http://my.escoffieronline.com/blocks/configurable_reports/viewreport.php?id=81
+ *	http://my.escoffieronline.com/blocks/configurable_reports/viewreport.php?id=81&courseid=X
  *	http://my.escoffieronline.com/blocks/configurable_reports/viewreport.php?id=82
  */
 
@@ -26,15 +26,15 @@ if( is_siteadmin() ) {
 		foreach ($record as $key => $value) {
 			if ($key == 'allowsubmissionsfromdate' || $key == 'duedate' || $key == 'cutoffdate') {
 				$offset = date('I', $record->startdate)*1 - date('I', $value)*1;
-				if ($offset != 0 && date('G', $value)*1 != 0) {
+				if ($offset != 0 && date('G', $value)*1 != 0 && $value > 0) {
 					//update time
 					$dataobject = new stdclass;
 					$dataobject->id = $record->id;
 					$dataobject->{$key} = $value + ($offset * 3600); //seconds
 					
-					//echo "$record->shortname / $record->name <br /> $key <br />";
-					//print_r(date('M j Y G:i:s', $record->{$key}));			echo '<br />';
-					//print_r(date('M j Y G:i:s', $dataobject->{$key}));		echo '<hr />';
+					/*echo "$record->shortname / $record->name <br /> $key <br /> $value <br />";
+					print_r(date('M j Y G:i:s', $record->{$key}));			echo '<br />';
+					print_r(date('M j Y G:i:s', $dataobject->{$key}));		echo '<hr />'; /* */
 					
 					if ($DB->update_record('assign', $dataobject, TRUE)) {
 						$success++;
@@ -43,8 +43,7 @@ if( is_siteadmin() ) {
 						$fail++;
 						//$fails[] = $record;
 						$fails[] = (object) array('type' => $key, 'record' => $record);
-					}
-				//}
+					} /* */
 				} else {
 					$noupdate++;
 					//$noupdates[] = $record;
@@ -63,15 +62,15 @@ if( is_siteadmin() ) {
 		foreach ($record as $key => $value) {
 			if ($key == 'timeopen' || $key == 'timeclose') {
 				$offset = date('I', $record->startdate)*1 - date('I', $value)*1;
-				if ($offset != 0 && date('G', $value)*1 != 0) {
+				if ($offset != 0 && date('G', $value)*1 != 0 && $value > 0) {
 					//update time
 					$dataobject = new stdclass;
 					$dataobject->id = $record->id;
 					$dataobject->{$key} = $value + ($offset * 3600); //seconds
 					
-					//echo "$record->shortname / $record->name <br /> $key <br />";
-					//print_r(date('M j Y G:i:s', $record->{$key}));			echo '<br />';
-					//print_r(date('M j Y G:i:s', $dataobject->{$key}));		echo '<hr />';
+					/*echo "$record->shortname / $record->name <br /> $key <br /> $value <br />";
+					print_r(date('M j Y G:i:s', $record->{$key}));			echo '<br />';
+					print_r(date('M j Y G:i:s', $dataobject->{$key}));		echo '<hr />'; /* */
 					
 					if ($DB->update_record('quiz', $dataobject, TRUE)) {
 						$success++;
@@ -80,8 +79,7 @@ if( is_siteadmin() ) {
 						$fail++;
 						//$fails[] = $record;
 						$fails[] = (object) array('type' => $key, 'record' => $record);
-					}
-				//}
+					} /* */
 				} else {
 					$noupdate++;
 					//$noupdates[] = $record;
@@ -91,10 +89,10 @@ if( is_siteadmin() ) {
 		}
 	}
 	
-	echo "Successful updates: $success <br />";
-	print_r($successes);
-	echo "<hr />Failed updates: $fail <br />";
+	echo "<span style=\"color:red;\">Failed updates: $fail </span><br />";
 	print_r($fails);
+	echo "<hr /><span style=\"color:darkgreen;\">Successful updates: $success </span><br />";
+	print_r($successes);
 	echo "<hr />No update attempted: $noupdate <br />";
 	print_r($noupdates);
 } else {
