@@ -61,6 +61,25 @@ function cvGetToken($tokenNeverExpires = false) {
 	$token = $result->TokenResponse->TokenId;
 	return $token;
 }
+	
+/**
+ * get SyStudentId based on StudentNumber
+ *
+ * @param int $StudentNumber
+ * @return int $SyStudentId or null
+ */
+public function cvGetSyStudentId($StudentNumber, $token = null) {
+	if (empty($StudentNumber)) { return null; }
+	global $CFG;
+	require_once($CFG->dirroot.'/local/campusvue/classes/cvEntityMsg.php');
+	$cem = new cvEntityMsg('Student');
+	$cem->addParam('StudentNumber', $StudentNumber, 'Equal');
+	if (!$token) {
+		$token = cvGetToken();
+	}
+	$SyStudentId = $cem->getEntityField('Id', $token);
+	return $SyStudentId;
+}
 
 /**
  * Executes the scheduled task
