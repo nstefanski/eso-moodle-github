@@ -88,10 +88,15 @@ class login_signup_form_levy extends moodleform {
             $mform->setDefault('country', '');
         }
 		
-		$mform->addElement('hidden', 'profile_field_Reseller', 'Levy');
+		//$mform->addElement('hidden', 'profile_field_Reseller', 'Levy');
 		
 		$mform->addElement('text', 'phone1', get_string('phone'), 'maxlength="120" size="20"');
         $mform->setType('phone', PARAM_TEXT);
+		
+		$mform->addElement('header', 'hide', '', ''); // body#page-login-signup fieldset#id_hide { display: none; }
+		
+		$mform->addElement('select', 'profile_field_Reseller', 'Organization', array('Levy' => 'Levy'));
+		$mform->setDefault('profile_field_Reseller', 'Levy');
 
         //profile_signup_fields($mform);
 
