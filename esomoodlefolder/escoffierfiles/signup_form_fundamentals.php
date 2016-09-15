@@ -92,9 +92,6 @@ class login_signup_form_fundamentals extends moodleform {
 		$mform->addElement('text', 'phone1', get_string('phone'), 'maxlength="120" size="20"');
         $mform->setType('phone', PARAM_TEXT);
 		$mform->addRule('phone1', 'Missing Phone', 'required', null, 'server');
-		
-		//tk added
-		//$mform->addElement('hidden', 'profile_field_organization', 'Escoffier Online');
 
         profile_signup_fields($mform);
 
