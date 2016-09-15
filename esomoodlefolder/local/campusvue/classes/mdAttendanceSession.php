@@ -71,7 +71,7 @@ class mdAttendanceSession {
 				case 'Present':
 					break;
 				case 'Excused':
-					$excused = true;
+					//$excused = true;
 					//no break -- treat excused as absent but add flag
 				case 'Absent':
 					$absent = $this->SessionLength;
