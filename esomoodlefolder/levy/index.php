@@ -53,6 +53,7 @@ $SESSION->wantsurl = $CFG->wwwroot . '/';
 
 if (isloggedin() and !isguestuser()) {
     // Prevent signing up when already logged in.
+	redirect(new moodle_url('/course/view.php', array('id' => '855'))); //tk redirect, but keep below outputs in case of failure
     echo $OUTPUT->header();
     echo $OUTPUT->box_start();
     $logout = new single_button(new moodle_url($CFG->httpswwwroot . '/login/logout.php',
