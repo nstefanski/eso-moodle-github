@@ -36,6 +36,9 @@ class login_signup_form_fundamentals extends moodleform {
 
         $mform = $this->_form;
 
+        $mform->addElement('static', 'returntologin', 'Already have an account?', 
+			'<a href="/" style="font-size:large;"><span class="fa fa-sign-in"></span> <em>Return to login</em></a>');
+
         $mform->addElement('header', 'createuserandpass', get_string('createuserandpass'), '');
 
 
