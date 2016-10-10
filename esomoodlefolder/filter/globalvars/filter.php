@@ -16,6 +16,7 @@ class filter_globalvars extends moodle_text_filter {
 			$text = str_replace('%%user_lastname%%', $USER->lastname, $text);
 			$text = str_replace('%%user_fullname%%', $USER->firstname.' '.$USER->lastname, $text);
 			$text = str_replace('%%user_email%%', $USER->email, $text);
+			$text = str_replace('%%user_idnumber%%', $USER->idnumber, $text);
 			$text = str_replace('%%user_cvueid%%', $USER->profile['cvueid'], $text);
 			$text = str_replace('%%user_cvuestartdate%%', date('F j, Y', $USER->profile['startdate']), $text);
 			$text = str_replace('%%user_auth%%', $USER->auth, $text);
