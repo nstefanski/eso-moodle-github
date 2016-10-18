@@ -294,7 +294,7 @@ function get_users_isdr ($mintime, $maxtime, $limit = 1080) {
 					WHERE ue.userid = u.id AND ue.status = 0 LIMIT 1)
 
 			WHERE startdate.data IS NOT NULL 
-				AND startdate.data > (UNIX_TIMESTAMP() - (2.5*7*24*60*60) ) 
+				AND startdate.data > (UNIX_TIMESTAMP() - (3.5*7*24*60*60) ) 
 				AND startdate.data < (UNIX_TIMESTAMP() + (6.5*7*24*60*60) ) 
 				AND programtype.data = 'Certificate Program' 
 				AND campus.data <> 'Boulder' 

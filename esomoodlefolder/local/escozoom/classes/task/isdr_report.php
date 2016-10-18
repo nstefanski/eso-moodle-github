@@ -53,7 +53,7 @@ class isdr_report extends \core\task\scheduled_task {
      * @return boolean
      */
     public function execute() {
-		$mindate = date_format_string(time()-(8*7*24*60*60), '%Y-%m-%d');
+		$mindate = date_format_string(time()-(9*7*24*60*60), '%Y-%m-%d');
 		list($y, $m, $d) = explode("-", $mindate);
 		$mintime = make_timestamp($y, $m, $d, 0, 5, 0);
 		$maxdate = date_format_string(time()+(24*60*60), '%Y-%m-%d');
