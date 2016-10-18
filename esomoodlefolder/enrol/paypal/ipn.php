@@ -126,7 +126,11 @@ if (strlen($result) > 0) {
         // and notify admin
 
         if ($data->payment_status != "Completed" and $data->payment_status != "Pending") {
-            $plugin->unenrol_user($plugin_instance, $data->userid);
+            //$plugin->unenrol_user($plugin_instance, $data->userid);
+			$context = get_context_instance(CONTEXT_COURSE, $data->courseid, MUST_EXIST);
+			if(is_enrolled($context, $data->userid, '', true)){
+				$plugin->update_user_enrol($plugin_instance, $data->userid, ENROL_USER_SUSPENDED); //tk suspend user instead of deleting outright
+			}
             message_paypal_error_to_admin("Status not completed or pending. User unenrolled from course", $data);
             die;
         }
