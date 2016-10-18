@@ -75,7 +75,7 @@ $sql = "SELECT CONCAT(u.id,'-',c.id) AS id, CONCAT(u.firstname,' ',u.lastname) A
 	AND f.timemodified >= $mintime AND f.timemodified <= $maxtime 
 	AND f.userid = ra.userid AND f.filesize > 0 ) AS totalfeedback, 
 
-/*(SELECT count(DISTINCT sub.id) FROM {assign_submission} sub 
+(SELECT count(DISTINCT sub.id) FROM {assign_submission} sub 
 	JOIN {assign} a ON a.id = sub.assignment 
 	WHERE sub.timecreated <= a.duedate 
 	AND a.duedate >= $mintime 
@@ -91,7 +91,7 @@ $sql = "SELECT CONCAT(u.id,'-',c.id) AS id, CONCAT(u.firstname,' ',u.lastname) A
 (SELECT count(DISTINCT ra2.id) 
 	FROM {role_assignments} ra2 
 	JOIN {context} cx2 ON cx2.id = ra2.contextid 
-	WHERE ra2.roleid = 5 AND cx2.instanceid = c.id) AS debug_stucount, */
+	WHERE ra2.roleid = 5 AND cx2.instanceid = c.id) AS debug_stucount,
 
 (SELECT count(DISTINCT sub.id) FROM {assign_submission} sub 
 	JOIN {assign} a ON a.id = sub.assignment 
@@ -298,6 +298,8 @@ if ($action == 'Download') {
 		'To: &nbsp; &nbsp; <input type="date" name="maxdate" value="'.$maxdate.'">'.' <input type="time" name="maxclock" value="'.$maxclock.'"></br>'.
 		'<div id="buttons"></br><input type="submit" name="action" value="Calculate" style="float: left; margin-right: 20px;">'.
 		'<input type="submit"  name="action" value="Download"></div></form>';
+	
+	echo "<div class=\"debug\" style=\"display: none;\">Mintime: $mintime Maxtime: $maxtime </div>";
 	
 	echo "<table border=\"1\">";
 	foreach ($rows AS $row) {
