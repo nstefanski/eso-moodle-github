@@ -72,6 +72,22 @@ class enrol_paypal_edit_form extends moodleform {
         $mform->addElement('date_time_selector', 'enrolenddate', get_string('enrolenddate', 'enrol_paypal'), array('optional' => true));
         $mform->setDefault('enrolenddate', 0);
         $mform->addHelpButton('enrolenddate', 'enrolenddate', 'enrol_paypal');
+		
+		//tk
+		$mform->addElement('checkbox', 'customint1', 'Is this a subscription payment?');
+		$mform->setDefault('customint1', 0);
+		
+		$recurringtimes = array();
+		for($i = 2; $i <= 52; $i++){ $recurringtimes[$i] = $i; }
+        $mform->addElement('select', 'customint2', 'Subscription Recurring Times', $recurringtimes);
+        $mform->setDefault('customint2', 2);
+		$mform->disabledIf('customint2', 'customint1');
+		
+		$mform->addElement('text', 'customchar1', 'Monthly Recurring Price', array('size'=>4));
+        $mform->setType('customchar1', PARAM_RAW); // Use unformat_float to get real value.
+        $mform->setDefault('customchar1', format_float($plugin->get_config('cost'), 2, true));
+		$mform->disabledIf('customchar1', 'customint1');
+		//end tk
 
         $mform->addElement('hidden', 'id');
         $mform->setType('id', PARAM_INT);
