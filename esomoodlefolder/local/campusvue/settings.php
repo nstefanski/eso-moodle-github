@@ -35,7 +35,7 @@ if ( $hassiteconfig ){
 		'local_campusvue'), get_string('username_desc', 'local_campusvue'), null, PARAM_TEXT);
 	$settings->add($username);
 	
-	$password = new admin_setting_configtext('local_campusvue/password', get_string('password_title', 
+	$password = new admin_setting_configpasswordunmask('local_campusvue/password', get_string('password_title', 
 		'local_campusvue'), get_string('password_desc', 'local_campusvue'), null, PARAM_TEXT);
 	$settings->add($password);
 	
@@ -59,5 +59,9 @@ if ( $hassiteconfig ){
         $manualcatlimit = new admin_setting_configmultiselect('local_campusvue/manualcatlimit', get_string('manualcatlimit_title', 
 			'local_campusvue'), get_string('manualcatlimit_desc', 'local_campusvue'), [], $cats);
 		$settings->add($manualcatlimit);
+		
+		$weekcompcatlimit = new admin_setting_configmultiselect('local_campusvue/weekcompcatlimit', get_string('weekcompcatlimit_title', 
+			'local_campusvue'), get_string('weekcompcatlimit_desc', 'local_campusvue'), [], $cats);
+		$settings->add($weekcompcatlimit);
     }
 }
