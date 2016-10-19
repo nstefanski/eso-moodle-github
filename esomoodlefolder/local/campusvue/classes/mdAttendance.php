@@ -38,7 +38,7 @@ class mdAttendance {
 	public $token = null;
 	public $Attendance = array();
 	
-	public function __construct ($maxTime, $minTime = 0, $token = null) {
+	public function __construct ($maxTime, $minTime = 0, $token = null) {	//tk add string $type = 'manually-marked' or 'weekly-completion'
 		$this->maxTime = $maxTime ? $maxTime : time();
 		$this->minTime = $minTime;
 		if (!$token) {
@@ -58,7 +58,7 @@ class mdAttendance {
 				
 				//$session->description = $cvFlag;
 				//$session->sessdate = $date;
-				$this->Attendance[] = new mdAttendanceSession($session->id, $session->cvid, $date, $sessionLength, $this->token);
+				$this->Attendance[] = new mdAttendanceSession($session->id, $session->cvid, $date, $sessionLength, $this->token);	//tk manual only
 			}
 		}
 	}
@@ -77,7 +77,7 @@ class mdAttendance {
 					JOIN {course} c ON a.course = c.id 
 					JOIN {course_categories} cc ON c.category = cc.id 
 				WHERE sess.sessdate >= $minTime AND sess.sessdate < $maxTime 
-					$catStr ";
+					$catStr ";	//tk manual only
 		$list = $DB->get_records_sql($sql);
 		return $list;
 	}
@@ -86,7 +86,7 @@ class mdAttendance {
 	public function getCategoryClause() {
 		$catStr = "";
 		$config = get_config('local_campusvue');
-		if (!empty($config->manualcatlimit)) {
+		if (!empty($config->manualcatlimit)) {	//tk manual only
 			$catlimit = explode(',',$config->manualcatlimit);
 			$paths = count($catlimit);
 			$catStr = "AND (cc.path LIKE '" . $catlimit[0] . "%'";
