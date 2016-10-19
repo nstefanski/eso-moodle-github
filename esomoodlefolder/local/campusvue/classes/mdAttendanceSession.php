@@ -62,12 +62,19 @@ class mdAttendanceSession {
 			//switch to set absent time based on status and remarks
 			switch ($log->status) {
 				case 'Present':
+					if($log->remarks > 0){
+						$log->cvid = null; //don't mark attendance if Present with Remarks
+					}
 					break;
 				case 'Excused':
 					//$excused = true;
 					//no break -- treat excused as absent but add flag
 				case 'Absent':
-					$absent = $this->SessionLength;
+					if($log->remarks > 0 && $log->remarks < $this->SessionLength ){
+						$$log->cvid = null; //don't mark attendance if Absent with Remarks between 0 and session length
+					} else {
+						$absent = $this->SessionLength;
+					}
 					break;
 				case 'Late':
 					$absent = $log->remarks <= $this->SessionLength ? $log->remarks : $this->SessionLength;
