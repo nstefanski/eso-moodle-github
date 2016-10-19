@@ -26,8 +26,10 @@ $string['username_desc'] = 'Username of a CampusVue user with superuser or admin
 $string['password_title'] = 'CampusVue Password';
 $string['password_desc'] = 'Password for the CampusVue user';
 $string['attendanceheading'] = 'Attendance Settings';
-$string['manualcatlimit_title'] = 'Manual Attendance: Limit to Category Paths';
-$string['manualcatlimit_desc'] = 'Select categories to be scanned for manual attendance.  Child categories are automatically included';
+$string['manualcatlimit_title'] = 'Manually Marked Attendance: Limit to Category Paths';
+$string['manualcatlimit_desc'] = 'Select categories to be scanned for manually marked attendance.  Child categories are automatically included';
+$string['weekcompcatlimit_title'] = 'Weekly Completion Attendance: Limit to Category Paths';
+$string['weekcompcatlimit_desc'] = 'Select categories to be scanned for weekly completion attendance.  Child categories are automatically included';
 //$string['allcategories'] = 'All Categories';
 
 $string['profilefield_name'] = 'CampusVue ID';
