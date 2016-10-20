@@ -36,29 +36,39 @@ class mdAttendance {
 	public $maxTime;
 	public $minTime = 0;
 	public $token = null;
+	public $method = 'manual';
 	public $Attendance = array();
 	
-	public function __construct ($maxTime, $minTime = 0, $token = null) {	//tk add string $type = 'manually-marked' or 'weekly-completion'
+	public function __construct ($maxTime, $minTime = 0, $token = null, $method = 'manual') {	//tk add string $type = 'manual' or 'weekcomp'
 		$this->maxTime = $maxTime ? $maxTime : time();
 		$this->minTime = $minTime;
 		if (!$token) {
 			$token = cvGetToken();
 		}
 		$this->token = $token;
+		$this->method = $method;
 		$this->Attendance = array();
 		$sessionList = $this->getSessionList($this->maxTime, $this->minTime);
-		foreach ($sessionList as $session) {
-			if (!empty($session->id) && !empty($session->cvid) && !empty($session->sessdate)) { //can't do attendance without these
-				$cvFlag = $this->checkCVFlag($session->description);
-				$date = $this->zeroTime($this->cvFormatDate($session->sessdate));
-				
-				// cvFlag means attendance session was created by CampusVue, so we can use the session length in Moodle
-				// otherwise, we need to get the session length stored in CampusVue with the API
-				$sessionLength = $cvFlag ? $session->mins : $this->cvGetSessionLength($session->cvid, $date);
-				
-				//$session->description = $cvFlag;
-				//$session->sessdate = $date;
-				$this->Attendance[] = new mdAttendanceSession($session->id, $session->cvid, $date, $sessionLength, $this->token);	//tk manual only
+		if ($this->method == 'manual') {
+			foreach ($sessionList as $session) {
+				if (!empty($session->id) && !empty($session->cvid) && !empty($session->sessdate)) { //can't do attendance without these
+					$date = $this->zeroTime($this->cvFormatDate($session->sessdate));
+					
+					// cvFlag means attendance session was created by CampusVue, so we can use the session length in Moodle
+					// otherwise, we need to get the session length stored in CampusVue with the API
+					$cvFlag = $this->checkCVFlag($session->description);
+					$sessionLength = $cvFlag ? $session->mins : $this->cvGetSessionLength($session->cvid, $date);
+					
+					$this->Attendance[] = new mdAttendanceSession($session->id, $session->cvid, $date, $sessionLength, $this->token);	//tk manual only
+				}
+			}
+		} elseif ($this->method == 'weekcomp') {
+			foreach ($sessionList as $session) {
+				if (!empty($session->id) && !empty($session->cvid) && !empty($session->sessdate)) { //can't do attendance without these
+					$date = $this->zeroTime($this->cvFormatDate($session->sessdate));
+					$sessionLength = $this->cvGetSessionLength($session->cvid, $date);
+					//$this->Attendance[] = new mdAttendanceSession($session->id, $session->cvid, $date, $sessionLength, $this->token);	//tk manual only
+				}
 			}
 		}
 	}
@@ -66,18 +76,22 @@ class mdAttendance {
 	public function getSessionList($maxTime, $minTime) {
 		global $DB;
 		$catStr = $this->getCategoryClause();
-		$sql = "SELECT sess.id, 
-					CASE WHEN sess.groupid > 0 
-						THEN (SELECT g.idnumber FROM {groups} g 
-								WHERE g.id = sess.groupid ) 
-						ELSE c.idnumber END AS cvid, 
-					sess.sessdate, ROUND(sess.duration / 60, 0) AS mins, sess.description 
-				FROM {attendance_sessions} sess 
-					JOIN {attendance} a ON sess.attendanceid = a.id 
-					JOIN {course} c ON a.course = c.id 
-					JOIN {course_categories} cc ON c.category = cc.id 
-				WHERE sess.sessdate >= $minTime AND sess.sessdate < $maxTime 
-					$catStr ";	//tk manual only
+		if ($this->method == 'manual') {
+			$sql = "SELECT sess.id, 
+						CASE WHEN sess.groupid > 0 
+							THEN (SELECT g.idnumber FROM {groups} g 
+									WHERE g.id = sess.groupid ) 
+							ELSE c.idnumber END AS cvid, 
+						sess.sessdate, ROUND(sess.duration / 60, 0) AS mins, sess.description 
+					FROM {attendance_sessions} sess 
+						JOIN {attendance} a ON sess.attendanceid = a.id 
+						JOIN {course} c ON a.course = c.id 
+						JOIN {course_categories} cc ON c.category = cc.id 
+					WHERE sess.sessdate >= $minTime AND sess.sessdate < $maxTime 
+						$catStr ";
+		} elseif ($this->method == 'weekcomp') {
+			$sql = "";
+		}
 		$list = $DB->get_records_sql($sql);
 		return $list;
 	}
@@ -86,8 +100,9 @@ class mdAttendance {
 	public function getCategoryClause() {
 		$catStr = "";
 		$config = get_config('local_campusvue');
-		if (!empty($config->manualcatlimit)) {	//tk manual only
-			$catlimit = explode(',',$config->manualcatlimit);
+		$setting = $this->method . 'catlimit';
+		if (!empty($config->$setting)) {
+			$catlimit = explode(',',$config->$setting);
 			$paths = count($catlimit);
 			$catStr = "AND (cc.path LIKE '" . $catlimit[0] . "%'";
 			for ($i = 1; $i < $paths; $i++) {
