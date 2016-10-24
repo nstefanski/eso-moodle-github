@@ -71,7 +71,7 @@ class mdAttendanceSession {
 					//no break -- treat excused as absent but add flag
 				case 'Absent':
 					if($log->remarks > 0 && $log->remarks < $this->SessionLength ){
-						$$log->cvid = null; //don't mark attendance if Absent with Remarks between 0 and session length
+						$log->cvid = null; //don't mark attendance if Absent with Remarks between 0 and session length
 					} else {
 						$absent = $this->SessionLength;
 					}
