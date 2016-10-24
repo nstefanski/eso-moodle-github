@@ -7,12 +7,15 @@ require_once($CFG->dirroot.'/local/campusvue/lib.php');
 $mindate = (empty($_GET['mindate'])) ? date_format_string(time()-24*60*60, '%Y-%m-%d') : $_GET['mindate'];
 $maxdate = (empty($_GET['maxdate'])) ? date_format_string(time(), '%Y-%m-%d') : $_GET['maxdate'];
 $action = (empty($_GET['action'])) ? '' : $_GET['action'];
+$minTime = (empty($_GET['minTime'])) ? NULL : $_GET['minTime'];
+$maxTime = (empty($_GET['maxTime'])) ? NULL : $_GET['maxTime'];
+$course = (empty($_GET['course'])) ? NULL : $_GET['course'];
 
-if ($mindate) {
+if ($mindate && !$minTime) {
 	list($y, $m, $d) = explode("-", $mindate);
 	$minTime = make_timestamp($y, $m, $d);
 }
-if ($maxdate) {
+if ($maxdate && !$maxTime) {
 	list($y, $m, $d) = explode("-", $maxdate);
 	$maxTime = make_timestamp($y, $m, $d);
 }
@@ -62,6 +65,7 @@ if ($action == 'Run') {
 		}
 		echo "<p>... run again?</p>";
 	} else {
+		echo "<p>Could not run attendance for period $minTime to $maxTime ...</p>";
 		?>
 		<p>Invalid range: "To" date must be after "From" date, and range must be no greater than seven days.</p>
 		<p>Fix range and try again.</p>
