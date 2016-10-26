@@ -63,11 +63,21 @@ class mdAttendance {
 				}
 			}
 		} elseif ($this->method == 'weekcomp') {
+			$zoommod = 33;
+			$select = "WHERE section = ? AND completion > 0 AND visible > 0 AND module <> $zoommod";
+			$lastsectionid = 0;
+			$activities = 0;
 			foreach ($sessionList as $session) {
-				if (!empty($session->id) && !empty($session->cvid) && !empty($session->sessdate)) { //can't do attendance without these
-					$date = $this->zeroTime($this->cvFormatDate($session->sessdate));
-					$sessionLength = $this->cvGetSessionLength($session->cvid, $date);
-					//$this->Attendance[] = new mdAttendanceSession($session->id, $session->cvid, $date, $sessionLength, $this->token);	//tk manual only
+				if (!empty($session->mdid) && !empty($session->cvid) && !empty($session->sessdate)) { //can't do attendance without these
+					if($session->sectionid !== $lastsectionid){
+					//	$activities = $DB->count_records_select('course_modules', $select, array($session->sectionid));
+						$lastsectionid = $session->sectionid;
+					}
+					$session->activities = $activities;
+					
+					/*$date = $this->zeroTime($this->cvFormatDate($session->sessdate));
+					$sessionLength = $this->cvGetSessionLength($session->cvid, $date);*/
+					$this->Attendance[] = $session;
 				}
 			}
 		}
@@ -90,7 +100,24 @@ class mdAttendance {
 					WHERE sess.sessdate >= $minTime AND sess.sessdate < $maxTime 
 						$catStr ";
 		} elseif ($this->method == 'weekcomp') {
-			$sql = "";
+			//$zoommod = 33;
+			$sql = "SELECT CONCAT(c.id,'-',COALESCE(g.id,0)) AS mdid, 
+						cs.id AS sectionid, 
+						CASE WHEN g.id IS NOT NULL
+							THEN g.idnumber ELSE c.idnumber END AS cvid, 
+						(c.startdate + (cs.section*7*24*60*60) - (24*60*60)) AS sessdate 
+						/*, (SELECT COUNT(*) FROM {course_modules} cm 
+							WHERE cm.section = cs.id AND cm.completion > 0 
+								AND cm.visible > 0 AND cm.module <> $zoommod) AS acts -do this per section- */
+					FROM {course_sections} cs 
+						JOIN {course} c ON cs.course = c.id 
+						JOIN {course_categories} cc ON c.category = cc.id 
+						LEFT JOIN {groups} g ON c.id = g.courseid AND g.idnumber <> '' 
+					WHERE cs.section > 0 
+						AND (c.startdate + (cs.section*7*24*60*60) - (24*60*60)) < $maxTime 
+						AND (c.startdate + (cs.section*7*24*60*60) - (24*60*60)) >= $minTime 
+						$catStr 
+					ORDER BY sectionid ";
 		}
 		$list = $DB->get_records_sql($sql);
 		return $list;
