@@ -25,6 +25,7 @@ defined('MOODLE_INTERNAL') || die();
 
 require_once($CFG->dirroot.'/local/campusvue/lib.php');
 require_once($CFG->dirroot.'/local/campusvue/classes/mdAttendanceSession.php');
+//require_once($CFG->dirroot.'/local/campusvue/classes/mdWeekComp.php');
 
 /**
  * 
@@ -63,21 +64,26 @@ class mdAttendance {
 				}
 			}
 		} elseif ($this->method == 'weekcomp') {
-			$zoommod = 33;
+			global $DB;
+			$zoommod = 33; //tk get this from db
 			$select = "WHERE section = ? AND completion > 0 AND visible > 0 AND module <> $zoommod";
 			$lastsectionid = 0;
 			$activities = 0;
 			foreach ($sessionList as $session) {
-				if (!empty($session->mdid) && !empty($session->cvid) && !empty($session->sessdate)) { //can't do attendance without these
+				//tk add check that cvid is numeric 
+				if (!empty($session->cg) && !empty($session->sectionid) && !empty($session->cvid) && !empty($session->sessdate)) { //can't do attendance without these
 					if($session->sectionid !== $lastsectionid){
-					//	$activities = $DB->count_records_select('course_modules', $select, array($session->sectionid));
+					//	$activities = $DB->count_records_select('course_modules', $select, array($session->sectionid)); tk this should work?
+						$activities = $DB->get_records_sql("SELECT id FROM {course_modules} $select", array($session->sectionid));
+						$activities = count($activities);
 						$lastsectionid = $session->sectionid;
 					}
-					$session->activities = $activities;
 					
-					/*$date = $this->zeroTime($this->cvFormatDate($session->sessdate));
-					$sessionLength = $this->cvGetSessionLength($session->cvid, $date);*/
-					$this->Attendance[] = $session;
+					$date = $this->zeroTime($this->cvFormatDate($session->sessdate));
+					//$sessionLength = $this->cvGetSessionLength($session->cvid, $date);
+					$sessionLength = 500;
+					//$this->Attendance[] = $session;
+					$this->Attendance[] = new mdWeekComp($session->cg, $session->sectionid, $session->cvid, $date, $sessionLength, $activities, $this->token);
 				}
 			}
 		}
@@ -100,15 +106,11 @@ class mdAttendance {
 					WHERE sess.sessdate >= $minTime AND sess.sessdate < $maxTime 
 						$catStr ";
 		} elseif ($this->method == 'weekcomp') {
-			//$zoommod = 33;
-			$sql = "SELECT CONCAT(c.id,'-',COALESCE(g.id,0)) AS mdid, 
+			$sql = "SELECT CONCAT(c.id,'-',COALESCE(g.id,0)) AS cg, 
 						cs.id AS sectionid, 
 						CASE WHEN g.id IS NOT NULL
 							THEN g.idnumber ELSE c.idnumber END AS cvid, 
 						(c.startdate + (cs.section*7*24*60*60) - (24*60*60)) AS sessdate 
-						/*, (SELECT COUNT(*) FROM {course_modules} cm 
-							WHERE cm.section = cs.id AND cm.completion > 0 
-								AND cm.visible > 0 AND cm.module <> $zoommod) AS acts -do this per section- */
 					FROM {course_sections} cs 
 						JOIN {course} c ON cs.course = c.id 
 						JOIN {course_categories} cc ON c.category = cc.id 
