@@ -70,17 +70,18 @@ class mdWeekComp {
 	
 	public function mdGetWeekComp($c, $g) {
 		global $DB;
+		$zoommod = $DB->get_record('modules', array('name'=>'zoom'))->id;
 		$secid = $this->mdSectionId;
 		$sql = "SELECT u.idnumber, cvid.data AS cvid, 
 					(SELECT COUNT(*) FROM {course_modules_completion} cmc 
 						JOIN {course_modules} cm ON cmc.coursemoduleid = cm.id 
 						WHERE cmc.userid = u.id AND cmc.completionstate > 0 
-							AND cm.module <> 33 AND cm.idnumber NOT LIKE 'archive%' 
+							AND cm.module <> $zoommod AND cm.idnumber NOT LIKE 'archive%' 
 							AND cm.section = $secid ) AS weekcomp, 
 					CASE WHEN (SELECT COUNT(*) FROM {course_modules_completion} cmc 
 						JOIN {course_modules} cm ON cmc.coursemoduleid = cm.id 
 						WHERE cmc.userid = u.id AND cmc.completionstate > 0 
-							AND (cm.module = 33 OR cm.idnumber LIKE 'archive%' )
+							AND (cm.module = $zoommod OR cm.idnumber LIKE 'archive%' )
 							AND cm.section = $secid ) THEN 1 ELSE 0 END AS livesess 
 					/*, CONCAT(u.firstname,' ',u.lastname) AS fullname /* debugging */
 				FROM {role_assignments} ra 
