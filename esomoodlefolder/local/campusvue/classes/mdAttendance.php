@@ -65,7 +65,7 @@ class mdAttendance {
 			}
 		} elseif ($this->method == 'weekcomp') {
 			global $DB;
-			$zoommod = 33; //tk get this from db
+			$zoommod = $DB->get_record('modules', array('name'=>'zoom'))->id;
 			$select = "WHERE section = ? AND completion > 0 AND visible > 0 AND module <> $zoommod";
 			$lastsectionid = 0;
 			$activities = 0;
