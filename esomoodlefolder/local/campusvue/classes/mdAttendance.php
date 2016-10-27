@@ -70,8 +70,7 @@ class mdAttendance {
 			$lastsectionid = 0;
 			$activities = 0;
 			foreach ($sessionList as $session) {
-				//tk add check that cvid is numeric 
-				if (!empty($session->cg) && !empty($session->sectionid) && !empty($session->cvid) && !empty($session->sessdate)) { //can't do attendance without these
+				if (!empty($session->cg) && !empty($session->sectionid) && is_numeric($session->cvid) && !empty($session->sessdate)) { //can't do attendance without these
 					if($session->sectionid !== $lastsectionid){
 					//	$activities = $DB->count_records_select('course_modules', $select, array($session->sectionid)); tk this should work?
 						$activities = $DB->get_records_sql("SELECT id FROM {course_modules} $select", array($session->sectionid));
