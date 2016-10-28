@@ -40,7 +40,7 @@ class mdAttendance {
 	public $method = 'manual';
 	public $Attendance = array();
 	
-	public function __construct ($maxTime, $minTime = 0, $token = null, $method = 'manual') {	//tk add string $type = 'manual' or 'weekcomp'
+	public function __construct ($maxTime, $minTime = 0, $token = null, $method = 'manual') {	//tk added string $type = 'manual' or 'weekcomp'
 		$this->maxTime = $maxTime ? $maxTime : time();
 		$this->minTime = $minTime;
 		if (!$token) {
@@ -60,7 +60,9 @@ class mdAttendance {
 					$cvFlag = $this->checkCVFlag($session->description);
 					$sessionLength = $cvFlag ? $session->mins : $this->cvGetSessionLength($session->cvid, $date);
 					
-					$this->Attendance[] = new mdAttendanceSession($session->id, $session->cvid, $date, $sessionLength, $this->token);	//tk manual only
+					if($sessionLength){
+						$this->Attendance[] = new mdAttendanceSession($session->id, $session->cvid, $date, $sessionLength, $this->token);
+					}
 				}
 			}
 		} elseif ($this->method == 'weekcomp') {
@@ -79,10 +81,11 @@ class mdAttendance {
 					}
 					
 					$date = $this->zeroTime($this->cvFormatDate($session->sessdate));
-					//$sessionLength = $this->cvGetSessionLength($session->cvid, $date);
-					$sessionLength = 500;
-					//$this->Attendance[] = $session;
-					$this->Attendance[] = new mdWeekComp($session->cg, $session->sectionid, $session->cvid, $date, $sessionLength, $activities, $this->token);
+					$sessionLength = $this->cvGetSessionLength($session->cvid, $date);
+					
+					if($sessionLength){
+						$this->Attendance[] = new mdWeekComp($session->cg, $session->sectionid, $session->cvid, $date, $sessionLength, $activities, $this->token);
+					}
 				}
 			}
 		}
