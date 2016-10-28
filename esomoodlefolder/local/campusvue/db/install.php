@@ -96,7 +96,7 @@ function updateAttendanceLang() {
 					AND tcl.componentid = (SELECT tclc.id 
 						FROM {$tclc} tclc 
 						WHERE tclc.name LIKE 'mod_attendance') ";
-		try 
+		try {
 			$record = $DB->get_record_sql($sql);
 		} catch (moodle_exception $e) {
 			echo $e->getMessage();

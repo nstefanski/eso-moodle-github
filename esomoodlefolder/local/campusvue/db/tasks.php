@@ -32,7 +32,7 @@ $tasks = array(
         'dayofweek' => '*'
     ),
 	array(
-        'classname' => 'local_campusvue\task\update_cv_attendances',
+        'classname' => 'local_campusvue\task\update_cv_weekcomp',
         'blocking' => 0,
         'minute' => '0',
         'hour' => '2',
