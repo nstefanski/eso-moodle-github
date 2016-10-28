@@ -87,12 +87,12 @@ function cvGetSyStudentId($StudentNumber, $token = null) {
  * @param 
  * @return 
  */
-function updateAttendance($maxTime, $minTime, $token = null) {
+function updateAttendance($maxTime, $minTime, $token = null, $method = 'manual') {
 	global $CFG;
 	require_once($CFG->dirroot.'/local/campusvue/classes/mdAttendance.php');
 	require_once($CFG->dirroot.'/local/campusvue/classes/cvAttendancesMsg.php');
 	
-	$att = new mdAttendance($maxTime, $minTime, $token);
+	$att = new mdAttendance($maxTime, $minTime, $token, $method);
 	$msg = new cvAttendancesMsg();
 	
 	foreach($att->Attendance as $sess) {

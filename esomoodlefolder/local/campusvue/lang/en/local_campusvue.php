@@ -35,7 +35,8 @@ $string['weekcompcatlimit_desc'] = 'Select categories to be scanned for weekly c
 $string['profilefield_name'] = 'CampusVue ID';
 $string['profilefield_desc'] = 'The SyStudentId from CampusVue';
 
-$string['update_cv_attendances'] = 'Update attendances in CampusVue';
+$string['update_cv_attendances'] = 'Update manually marked attendances in CampusVue';
+$string['update_cv_weekcomp'] = 'Update weekly completion attendances in CampusVue';
 
 $string['errorusernamenotfound'] = 'The username and password have not been configured';
 $string['erroralreadyexists'] = '<p>The custom Profile Field "{$a->shortname}" already exists (probably from previous install)!</p>';
