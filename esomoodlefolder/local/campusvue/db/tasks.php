@@ -30,5 +30,14 @@ $tasks = array(
         'day' => '*',
         'month' => '*',
         'dayofweek' => '*'
+    ),
+	array(
+        'classname' => 'local_campusvue\task\update_cv_attendances',
+        'blocking' => 0,
+        'minute' => '0',
+        'hour' => '2',
+        'day' => '*',
+        'month' => '*',
+        'dayofweek' => '3' //Wednesday
     )
 );
