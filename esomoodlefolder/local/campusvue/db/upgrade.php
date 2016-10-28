@@ -18,7 +18,7 @@
 /**
  * Escoffier forward local plugin upgrade functions
  *
- * @package   local_local_campusvue
+ * @package   local_campusvue
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
@@ -26,7 +26,7 @@
  *
  * @param int $oldversion
  */
-function xmldb_local_local_campusvue_upgrade($oldversion) {
+function xmldb_local_campusvue_upgrade($oldversion) {
     global $DB;
 
     return true;
