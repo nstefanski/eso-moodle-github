@@ -17,7 +17,7 @@
 defined('MOODLE_INTERNAL') || die();
 
 $plugin->component = 'local_campusvue';
-$plugin->version = 2016102800;
+$plugin->version = 2016102802;
 $plugin->release = 'v0.2';
 $plugin->requires = 2014051200;
 $plugin->maturity = MATURITY_BETA;

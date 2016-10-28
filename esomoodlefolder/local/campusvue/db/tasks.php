@@ -30,7 +30,7 @@ $tasks = array(
         'day' => '*',
         'month' => '*',
         'dayofweek' => '*'
-    ),
+    ), 
 	array(
         'classname' => 'local_campusvue\task\update_cv_weekcomp',
         'blocking' => 0,
