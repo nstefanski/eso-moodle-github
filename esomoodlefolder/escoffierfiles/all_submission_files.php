@@ -9,6 +9,7 @@ if( is_siteadmin() ) {
 
 	$c = $_GET["c"] ? $_GET["c"] : 0;
 	$cm = $_GET["cm"] ? $_GET["cm"] : 0;
+	$show = $_GET["show_images"] ? $_GET["show_images"] : 0;
 
 	if ($c || $cm) {
 		if($cm){
@@ -28,7 +29,7 @@ if( is_siteadmin() ) {
 			$title = $course->fullname;
 		}
 
-		$sql = "SELECT f.id, f.author, 
+		$sql = "SELECT f.id, CONCAT(u.firstname,' ',u.lastname) AS author, 
 					CASE WHEN cm.module = 1 THEN 'assign' 
 						 WHEN cm.module = 9 THEN 'forum' 
 						 ELSE 'err' END AS activity_type, 
@@ -40,11 +41,12 @@ if( is_siteadmin() ) {
 								WHERE a.id = cm.instance ) 
 						 ELSE 'err' END AS activity_name, 
 					CONCAT('/pluginfile.php/', f.contextid, '/', f.component, '/', 
-							f.filearea, '/', f.itemid, f.filepath, f.filename) AS filepath, 
-					f.mimetype, f.filesize 
+							f.filearea, '/', f.itemid, f.filepath) AS filepath, 
+					f.filename, f.mimetype, f.filesize 
 				FROM {files} f
 					JOIN {context} cx ON f.contextid = cx.id 
 						JOIN {course_modules} cm ON cx.instanceid = cm.id 
+					JOIN {user} u ON f.userid = u.id 
 				WHERE cx.contextlevel = 70 
 					AND (cm.module = 1 OR cm.module = 9)
 					AND (f.component LIKE 'assignsubmission_%' OR f.component = 'mod_forum')
@@ -75,7 +77,8 @@ if( is_siteadmin() ) {
 		
 		foreach($records as $record) {
 			$alt = urlencode($record->author) . ' ' . $record->activity_type . '_' . urlencode($record->activity_name);
-			if(substr($record->mimetype, 0, 5) == 'image') {
+			$record->filepath = $record->filepath . rawurlencode($record->filename);
+			if(substr($record->mimetype, 0, 5) == 'image' && $show > 0) {
 				$imgs .= '<img src="'.$record->filepath.'" alt="'.$alt.'"/>';
 				$imgCount++;
 			} else {
@@ -84,7 +87,10 @@ if( is_siteadmin() ) {
 			}
 		}
 		
-		echo "<p>$linkCount links:</p>$links<hr /><p>$imgCount images:</p>$imgs";
+		echo "<p>$linkCount links:</p>$links<hr />";
+		if($imgCount > 0){
+			echo "<p>$imgCount images:</p>$imgs";
+		}
 		//print_R($records);
 		?>
 		</body>
