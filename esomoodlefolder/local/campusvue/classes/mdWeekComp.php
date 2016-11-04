@@ -32,6 +32,7 @@ require_once($CFG->dirroot.'/local/campusvue/lib.php');
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class mdWeekComp {
+	public $cg = 0;
 	public $mdSectionId = 0;
 	public $CourseSectionId = 0;
 	public $AttendanceDate = '';
@@ -41,23 +42,25 @@ class mdWeekComp {
 	public $Attendances = array();
 	
 	public function __construct ($cg = 0, $mdSectionId = 0, $CourseSectionId = 0, $AttendanceDate = '', $SessionLength = 0, $activities = 0, $token = null) {
+		$this->cg = $cg;
 		$this->mdSectionId = $mdSectionId;
 		$this->CourseSectionId = $CourseSectionId;
 		$this->AttendanceDate = $AttendanceDate; //find a way to kill class if these three aren't set?
 		$this->SessionLength = $SessionLength;
 		$this->activities = $activities;
 		$this->token = $token;
+		$this->Attendances = array();
 		
 		list($c, $g) = explode("-", $cg);
 		
-		$this->Attendances = array();
+		//$this->Attendances = array();
 		$mdLogs = $this->mdGetWeekComp($c, $g);
 		foreach ($mdLogs as $log) {
 			if (empty($log->cvid)) {
 				if (!$this->token) { $this->token = cvGetToken(); } //only case where token is needed
 				$log->cvid = cvGetSyStudentId($log->idnumber, $this->token);
 			}
-			$absent = max((1 - ($log->weekcomp + $log->livesess)/$activities) * $SessionLength, 0);
+			$absent = max((1 - ($log->weekcomp + $log->livesess)/$activities) * $this->SessionLength, 0);
 			$excused = false;
 			
 			if ($log->cvid) {
@@ -65,7 +68,7 @@ class mdWeekComp {
 														//, 'Fullname' => $log->fullname // debugging // 
 														);
 			}
-		}
+		}/* */
 	}
 	
 	public function mdGetWeekComp($c, $g) {
