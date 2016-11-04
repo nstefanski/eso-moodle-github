@@ -1,6 +1,11 @@
 <?php
 
 require_once('../../config.php');
+
+require_login();
+
+if( is_siteadmin() ) {
+
 global $DB, $CFG;
 require_once($CFG->dirroot.'/local/campusvue/lib.php');
 
@@ -31,7 +36,7 @@ if ($action == 'Run') {
 	if ($validRange) {
 		echo "<p>Ran attendance for period $minTime to $maxTime ...</p>";
 		$token = cvGetToken();
-		//$ua = updateAttendance($maxTime, $minTime, $token); //tk un-comment this to run
+		$ua = updateAttendance($maxTime, $minTime, $token); //tk un-comment this to run
 		if ($ua) {
 			if ($ua->Attendances) {
 				$msgArray = $ua->Attendances->PostAttendanceOutMsg;
@@ -80,3 +85,5 @@ if ($action == 'Run') {
 	<input type="date" id="maxdate" name="maxdate" value="<?php echo $maxdate; ?>">
 	<input type="submit" name="action" value="Run">
 </form>
+<?php
+}
