@@ -25,7 +25,7 @@ defined('MOODLE_INTERNAL') || die();
 
 require_once($CFG->dirroot.'/local/campusvue/lib.php');
 require_once($CFG->dirroot.'/local/campusvue/classes/mdAttendanceSession.php');
-//require_once($CFG->dirroot.'/local/campusvue/classes/mdWeekComp.php');
+require_once($CFG->dirroot.'/local/campusvue/classes/mdWeekComp.php');
 
 /**
  * 
@@ -82,6 +82,9 @@ class mdAttendance {
 					
 					$date = $this->zeroTime($this->cvFormatDate($session->sessdate));
 					$sessionLength = $this->cvGetSessionLength($session->cvid, $date);
+					$session->sdate = $date;
+					$session->sessionLength = $sessionLength;
+					$session->activities = $activities;
 					
 					if($sessionLength){
 						$this->Attendance[] = new mdWeekComp($session->cg, $session->sectionid, $session->cvid, $date, $sessionLength, $activities, $this->token);
