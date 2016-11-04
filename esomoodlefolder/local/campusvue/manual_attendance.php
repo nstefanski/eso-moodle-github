@@ -15,6 +15,8 @@ $action = (empty($_GET['action'])) ? '' : $_GET['action'];
 $minTime = (empty($_GET['minTime'])) ? NULL : $_GET['minTime'];
 $maxTime = (empty($_GET['maxTime'])) ? NULL : $_GET['maxTime'];
 $course = (empty($_GET['course'])) ? NULL : $_GET['course'];
+$method = (empty($_GET['method'])) ? 'manual' : $_GET['method'];
+$debug = (empty($_GET['debug'])) ? 1 : $_GET['debug']; //debug mode default
 
 if ($mindate && !$minTime) {
 	list($y, $m, $d) = explode("-", $mindate);
@@ -36,8 +38,10 @@ if ($action == 'Run') {
 	if ($validRange) {
 		echo "<p>Ran attendance for period $minTime to $maxTime ...</p>";
 		$token = cvGetToken();
-		$ua = updateAttendance($maxTime, $minTime, $token); //tk un-comment this to run
-		if ($ua) {
+		$ua = updateAttendance($maxTime, $minTime, $token, $method, $debug); //tk un-comment this to run
+		if ($debug) {
+			print_R($ua);
+		} elseif ($ua) {
 			if ($ua->Attendances) {
 				$msgArray = $ua->Attendances->PostAttendanceOutMsg;
 				$msgs = count($msgArray);
@@ -79,6 +83,8 @@ if ($action == 'Run') {
 }
 ?>
 <form action="manual_attendance.php" method="get" id="instructorreport">
+	<input type="radio" name="debug" value="1"><label for="1" checked> Debug mode</label><br>
+	<input type="radio" name="debug" value="0"><label for="0"> Run attendance</label><br><br>
 	<label for="mindate">From:</label>
 	<input type="date" id="mindate" name="mindate" value="<?php echo $mindate; ?>">
 	<label for="maxdate">To:</label>
