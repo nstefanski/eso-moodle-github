@@ -87,7 +87,7 @@ function cvGetSyStudentId($StudentNumber, $token = null) {
  * @param 
  * @return 
  */
-function updateAttendance($maxTime, $minTime, $token = null, $method = 'manual') {
+function updateAttendance($maxTime, $minTime, $token = null, $method = 'manual', $debug = false) {
 	global $CFG;
 	require_once($CFG->dirroot.'/local/campusvue/classes/mdAttendance.php');
 	require_once($CFG->dirroot.'/local/campusvue/classes/cvAttendancesMsg.php');
@@ -100,7 +100,7 @@ function updateAttendance($maxTime, $minTime, $token = null, $method = 'manual')
 			$msg->addAttendance($attendance->StudentId, $sess->CourseSectionId, $sess->AttendanceDate, $attendance->MinutesAbsent, 0, false, $attendance->Excused);
 	}
 	
-	if ($msg->Attendances) {
+	if ($msg->Attendances && !$debug) {
 		try {
 			$result = $msg->postAttendanceTransaction($token);
 		} catch (moodle_exception $e) {
