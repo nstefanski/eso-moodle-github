@@ -93,6 +93,8 @@ function updateAttendance($maxTime, $minTime, $token = null, $method = 'manual',
 	require_once($CFG->dirroot.'/local/campusvue/classes/cvAttendancesMsg.php');
 	
 	$att = new mdAttendance($maxTime, $minTime, $token, $method);
+	$file = mdLogJSON($att, $method.'_MDdata');
+	
 	$msg = new cvAttendancesMsg();
 	
 	foreach($att->Attendance as $sess) {
@@ -100,9 +102,12 @@ function updateAttendance($maxTime, $minTime, $token = null, $method = 'manual',
 			$msg->addAttendance($attendance->StudentId, $sess->CourseSectionId, $sess->AttendanceDate, $attendance->MinutesAbsent, 0, false, $attendance->Excused);
 	}
 	
+	$file = mdLogJSON($msg, $method.'_request');
+	
 	if ($msg->Attendances && !$debug) {
 		try {
 			$result = $msg->postAttendanceTransaction($token);
+			$file = mdLogJSON($result, $method.'_response');
 		} catch (moodle_exception $e) {
 			return false;
 		}
@@ -111,4 +116,24 @@ function updateAttendance($maxTime, $minTime, $token = null, $method = 'manual',
 	}
 	
 	return $result;
+}
+
+/**
+ * 
+ *
+ * @param 
+ * @return 
+ */
+function mdLogJSON($data, $filename, $headers = null) {
+	global $CFG;
+	
+	$timestamp = time();
+	$path = 'local/campusvue/logs';
+	$filename = $CFG->dirroot.'/'.$path.'/'.$filename.'_'.$timestamp.'.json';
+		
+	$handler = fopen ($filename,'w');
+	fwrite ($handler,json_encode($data));
+	fclose ($handler);
+	
+	return $filename;
 }
