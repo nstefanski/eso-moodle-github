@@ -83,7 +83,7 @@ if ($action == 'Run') {
 }
 ?>
 <form action="manual_attendance.php" method="get" id="instructorreport">
-	<input type="radio" name="debug" value="1"><label for="1" checked> Debug mode</label><br>
+	<input type="radio" name="debug" value="1" checked="checked"><label for="1" checked> Debug mode</label><br>
 	<input type="radio" name="debug" value="0"><label for="0"> Run attendance</label><br><br>
 	<label for="mindate">From:</label>
 	<input type="date" id="mindate" name="mindate" value="<?php echo $mindate; ?>">
