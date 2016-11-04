@@ -37,7 +37,7 @@ class cvAttendancesMsg {
 	public function __construct () {}
 	
 	public function addAttendance($StudentId, $CourseSectionId, $AttendanceDate, $MinutesAbsent = 0, $MinutesAttended = 0, 
-										$UpdateExistingAttendance = false, $IsExcused = false, $IsDependentCourse = false) {
+										$UpdateExistingAttendance = false, $IsExcused = false, $IsDependentCourse = false, $PostAttForScheduledPeriods = true) {
 		$Attendance = new stdClass();
 			$Attendance->StudentId = $StudentId;
 			$Attendance->CourseSectionId = $CourseSectionId;
@@ -47,6 +47,7 @@ class cvAttendancesMsg {
 			$Attendance->UpdateExistingAttendance = $UpdateExistingAttendance;
 			$Attendance->IsExcused = $IsExcused;
 			$Attendance->IsDependentCourse = $IsDependentCourse;
+			$Attendance->PostAttForScheduledPeriods = $PostAttForScheduledPeriods;
 		$this->Attendances[] = $Attendance;
 	}
 	
