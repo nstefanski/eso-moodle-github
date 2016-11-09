@@ -109,10 +109,12 @@ function updateAttendance($maxTime, $minTime, $token = null, $method = 'manual',
 			$result = $msg->postAttendanceTransaction($token);
 			$file = mdLogJSON($result, $method.'_response');
 		} catch (moodle_exception $e) {
+			$file = mdLogJSON('error posting transaction', $method.'_response');
 			return false;
 		}
 	} else {
 		$result = $msg;
+		$file = mdLogJSON('no message sent', $method.'_response');
 	}
 	
 	return $result;
