@@ -85,6 +85,7 @@ class mdAttendance {
 					$session->sdate = $date;
 					$session->sessionLength = $sessionLength;
 					$session->activities = $activities;
+					//$this->Attendance[] = $session; //tk
 					
 					if($sessionLength){
 						$this->Attendance[] = new mdWeekComp($session->cg, $session->sectionid, $session->cvid, $date, $sessionLength, $activities, $this->token);
@@ -113,16 +114,16 @@ class mdAttendance {
 		} elseif ($this->method == 'weekcomp') {
 			$sql = "SELECT CONCAT(c.id,'-',COALESCE(g.id,0)) AS cg, 
 						cs.id AS sectionid, 
-						CASE WHEN g.id IS NOT NULL
+						CASE WHEN g.id IS NOT NULL 
 							THEN g.idnumber ELSE c.idnumber END AS cvid, 
-						(c.startdate + (cs.section*7*24*60*60) - (24*60*60)) AS sessdate 
+						(c.startdate + (cs.section*7*24*60*60)/* - (24*60*60)*/) AS sessdate 
 					FROM {course_sections} cs 
 						JOIN {course} c ON cs.course = c.id 
 						JOIN {course_categories} cc ON c.category = cc.id 
 						LEFT JOIN {groups} g ON c.id = g.courseid AND g.idnumber <> '' 
 					WHERE cs.section > 0 
-						AND (c.startdate + (cs.section*7*24*60*60) - (24*60*60)) < $maxTime 
-						AND (c.startdate + (cs.section*7*24*60*60) - (24*60*60)) >= $minTime 
+						AND (c.startdate + (cs.section*7*24*60*60)/* - (24*60*60)*/) < $maxTime 
+						AND (c.startdate + (cs.section*7*24*60*60)/* - (24*60*60)*/) >= $minTime 
 						$catStr 
 					ORDER BY sectionid ";
 		}
