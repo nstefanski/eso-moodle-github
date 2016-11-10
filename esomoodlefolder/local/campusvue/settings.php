@@ -39,6 +39,10 @@ if ( $hassiteconfig ){
 		'local_campusvue'), get_string('password_desc', 'local_campusvue'), null, PARAM_TEXT);
 	$settings->add($password);
 	
+	$keeplogs = new admin_setting_configtext('local_campusvue/keeplogs', get_string('keeplogs_title', 
+		'local_campusvue'), get_string('keeplogs_desc', 'local_campusvue'), null, PARAM_INT);
+	$settings->add($keeplogs);
+	
 	//attendance settings
 	$settings->add(new admin_setting_heading('local_campusvue/attendanceheading', get_string('attendanceheading', 'local_campusvue'), ''));
 	
