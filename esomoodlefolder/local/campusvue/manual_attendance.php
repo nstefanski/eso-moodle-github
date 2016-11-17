@@ -15,8 +15,8 @@ $action = (empty($_GET['action'])) ? '' : $_GET['action'];
 $minTime = (empty($_GET['minTime'])) ? NULL : $_GET['minTime'];
 $maxTime = (empty($_GET['maxTime'])) ? NULL : $_GET['maxTime'];
 $course = (empty($_GET['course'])) ? NULL : $_GET['course'];
-$method = (empty($_GET['method'])) ? 'manual' : $_GET['method'];
-$debug = (empty($_GET['debug'])) ? 1 : $_GET['debug']; //debug mode default
+$method = (empty($_GET['method'])) ? 'weekcomp' : $_GET['method'];
+$debug = (empty($_GET['debug'])) ? NULL : $_GET['debug']; //debug mode default
 
 if ($mindate && !$minTime) {
 	list($y, $m, $d) = explode("-", $mindate);
@@ -39,7 +39,10 @@ if ($action == 'Run') {
 		echo "<p>Ran attendance for period $minTime to $maxTime ...</p>";
 		$token = cvGetToken();
 		$ua = updateAttendance($maxTime, $minTime, $token, $method, $debug); //tk un-comment this to run
+		//$debug = NULL; //tk can't seem to turn this mode off...
+		echo "Debug = $debug <br>";
 		if ($debug) {
+			echo '<p>*** DEBUG MODE ***</p>';
 			print_R($ua);
 		} elseif ($ua) {
 			if ($ua->Attendances) {

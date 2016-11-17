@@ -113,7 +113,8 @@ function updateAttendance($maxTime, $minTime, $token = null, $method = 'manual',
 			return false;
 		}
 	} else {
-		$result = $msg;
+		$result = array('att' => $att,
+						'msg' => $msg); //tk
 		$file = mdLogJSON('no message sent', $method.'_response');
 	}
 	
