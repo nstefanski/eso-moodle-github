@@ -1,0 +1,123 @@
+/* Lesson */
+#page-mod-lesson-view .container-fluid { margin-left: 15px; margin-right: 15px; } /* tk 8-26-16 */
+#page-mod-lesson-view .container-fluid img { max-height: 50vh; } /* tk 8-26-16 */
+@media only screen and (max-device-width: 700px){ 
+    #page-mod-lesson-view .container-fluid img { max-width: 42vw; } 
+} /* tk 8-26-16 */
+#page-mod-lesson-view .container-fluid table, #page-mod-lesson-view .container-fluid th, #page-mod-lesson-view .container-fluid td {
+    border: 1px solid black; padding: 4px;
+} /* tk 8-26-16 */
+
+#page-mod-lesson-view #block-region-side-pre { width: inherit; }
+#page-mod-lesson-view .block_fake { background-color: black; /*#ac151e;*/ }
+#page-mod-lesson-view .block_fake .header { display: none; }
+#page-mod-lesson-view .block_fake li { float: left; margin: 10px; background-color: black; padding: 5px; 
+  -webkit-border-radius: 3px; 
+  -moz-border-radius: 3px;
+  border-radius: 3px; }
+#page-mod-lesson-view .block_fake li.selected { background-color: white; }
+#page-mod-lesson-view .block_fake a { color: white; }
+
+#page-mod-lesson-continue #block-region-side-pre { width: inherit; }
+#page-mod-lesson-continue .block_fake { background-color: black; /*#ac151e;*/ }
+#page-mod-lesson-continue .block_fake .header { display: none; }
+#page-mod-lesson-continue .block_fake li { float: left; margin: 10px; background-color: black; padding: 5px; 
+  -webkit-border-radius: 3px; 
+  -moz-border-radius: 3px;
+  border-radius: 3px; }
+#page-mod-lesson-continue .block_fake li.selected { background-color: white; }
+#page-mod-lesson-continue .block_fake a { color: white; }
+
+#page-mod-lesson-view #page #page-content #region-main { /* background-color: #ac151e; */ width: inherit; }
+#page-mod-lesson-view h1.coursetitle { color: black; /*white; background-color: #ac151e;*/ }
+#page-mod-lesson-view h3 { color: white; background-color: rgba(0,0,0,0.5); 10px; padding-left: 10px; }
+	.answeroption {
+	margin-top: 2px;
+	color: white;
+	padding: 5px;
+	background-color: rgba(0,0,0,0.75); /*rgba(172,21,30,0.75);*/ }
+#page-mod-lesson-view legend.ftoggler { display: none; }
+#page-mod-lesson-view div.ongoing { margin-bottom: 10px; text-align: right; font-style: italic; }
+#page-mod-lesson-view #region-main .fitem_fradio .fradio { margin-left: 0px; }
+#page-mod-lesson-view #region-main .fitem_fradio .fitemtitle { width: auto; }
+#page-mod-lesson-view a.lessonbutton, #page-mod-lesson-view .lessonbutton a { padding: 5px; color: white; background-color: black; margin: 5px; }
+#page-mod-lesson-view div.progress_bar_completed { margin-top: 5px; margin-bottom: 10px; padding: 3px;     padding-right: 20px; padding-left: 15px; background-color: black; /*#ac151e;*/ 
+  background: -webkit-linear-gradient(left, rgba(172,21,30,0),rgba(172,21,30,1),rgba(172,21,30,1) ); /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient(right, rgba(172,21,30,0),rgba(172,21,30,1),rgba(172,21,30,1) ); /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(right, rgba(172,21,30,0),rgba(172,21,30,1),rgba(172,21,30,1) ); /* For Firefox 3.6 to 15 */
+  background: linear-gradient(to right, rgba(172,21,30,0),rgba(172,21,30,1),rgba(172,21,30,1) ); /* Standard syntax */ }
+
+#page-mod-lesson-continue #page #page-content #region-main { /* background-color: #ac151e; */ width: inherit; }
+#page-mod-lesson-continue h1.coursetitle { color: black; /*white;*/ /* background-color: #ac151e; */ }
+#page-mod-lesson-continue div.ongoing { margin-bottom: 10px; text-align: right; font-style: italic; }
+#page-mod-lesson-continue div.response { margin-top: 10px; }
+
+.video-container {
+ position: relative;
+ padding-bottom: 56.25%;
+ padding-top: 30px; height: 0; overflow: hidden;
+}
+ 
+.video-container iframe,
+.video-container object,
+.video-container embed,
+.video-container video {
+ position: absolute;
+ top: 0;
+ left: 0;
+ width: 100%;
+ height: 100%;
+}
+
+#page-mod-lesson-view .branchbuttoncontainer, #page-mod-lesson-continue .branchbuttoncontainer {
+  /*max-width: 50%;*/
+  /*margin: 0 auto;*/
+  text-align: center;
+}
+
+#page-mod-lesson-view form.mform .contents {
+    font-size: 1.5em;
+    border-top: 2px solid black;
+    padding-top: 10px;
+}
+
+div.lesson-pdf, div.chrome-lesson-pdf {
+  width: 1200px;
+  max-width: 99%;
+  height: 1500px;
+  margin: 0 auto;
+}
+
+iframe.lesson-pdf, iframe.chrome-lesson-pdf {
+  width: 100%;
+  height: 99%;
+  border: 0;
+  pointer-events: none;
+}
+
+.lesson-pdf-outer {
+  width: 100%;
+}
+
+/* colored gradient at bottom of lessons */
+body#page-mod-lesson-view .text-center.footer-rts { 
+    padding-bottom: 10vh;
+    padding-top: 2vh;
+    background: #f4f4f4;
+    background: -webkit-linear-gradient(#fff, #f4f4f4, #ddd); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(#fff, #f4f4f4, #ddd); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(#fff, #f4f4f4, #ddd); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(#fff, #f4f4f4, #ddd); /* Standard syntax */
+    border-bottom-right-radius: 7px;
+    border-bottom-left-radius: 7px;
+    margin-bottom: 7px;
+}
+
+/*.customlesson {
+    padding: 10px;
+    border-radius: 5px;
+    color: #000;
+    background-color: #39466b;
+    background-image: url("http://my.escoffieronline.com/program_resources/graphics/pattern.svg");
+}*/
+/* end of lesson css */
