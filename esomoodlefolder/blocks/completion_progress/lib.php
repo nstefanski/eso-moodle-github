@@ -507,11 +507,78 @@ function block_completion_progress_bar($activities, $completions, $config, $user
     $content .= HTML_WRITER::end_div();
 
     // Add the percentage below the progress bar.
+	//tk add some stats and styling here
     if ($showpercentage == 1 && !$simple) {
+		global $DB;
+		require_once($CFG->dirroot.'/blocks/dedication/dedication_lib.php'); //dedication block
+		
+        $content .= HTML_WRITER::start_tag('table');
+		$content .= HTML_WRITER::start_tag('tr');
+		
+		$celloptions = array('class' => 'progressPercentage', 
+							'style' => 'font-size: 28px; line-height: 32px; width: 33%; font-weight: bold;');//used for all of our stats
+		
+		//tk show progress percentage
         $progress = block_completion_progress_percentage($activities, $completions);
-        $percentagecontent = get_string('progress', 'block_completion_progress').': '.$progress.'%';
-        $percentageoptions = array('class' => 'progressPercentage');
-        $content .= HTML_WRITER::tag('div', $percentagecontent, $percentageoptions);
+		$expectedprogress = $nowpos / count($activities) * 100;
+        $percentagecontent = $progress.'%';
+		$percentageoptions = $celloptions;
+		if ($progress >= $expectedprogress) {
+			$percentageoptions['style'] .= 'color: '.$colours['completed_colour'].';';
+		} elseif ($progress < $expectedprogress) {
+			$percentageoptions['style'] .= 'color: '.$colours['notCompleted_colour'].';';
+		}
+        $content .= HTML_WRITER::tag('td', $percentagecontent, $percentageoptions);
+		
+		//tk show course grade
+		$gradeitem = $DB->get_record('grade_items', array('itemtype' => 'course', 'courseid' => $courseid), 'id');
+		$grade = $DB->get_record('grade_grades', array('itemid' => $gradeitem->id, 'userid' => $userid), 'finalgrade');
+		$gradecontent = floor($grade->finalgrade).'%';
+		$gradeoptions = $celloptions;
+		if ($grade->finalgrade >= 70) {
+			$gradeoptions['style'] .= ' color: '.$colours['completed_colour'].';';
+		} elseif ($grade->finalgrade >= 60) {
+			$gradeoptions['style'] .= 'font-size: 28px; color: '.$colours['futureNotCompleted_colour'].';';
+		} elseif  ($grade === null || $grade->finalgrade === null) {
+			$gradeoptions['style'] .= ' color: '.$colours['futureNotCompleted_colour'].';';
+			$gradecontent = '--%';
+		} else {
+			$gradeoptions['style'] .= 'color: '.$colours['notCompleted_colour'].';';
+		}
+		$content .= HTML_WRITER::tag('td', $gradecontent, $gradeoptions);
+		
+		//tk show logins in past 7 days (requires dedication block)
+		$courserecord = $DB->get_record('course', array('id' => $courseid), 'id,shortname');
+		$userrecord = $DB->get_record('user', array('id' => $userid), 'id,firstname,lastname');
+		$dm = new block_dedication_manager($courserecord, $now-604800, $now, 1080);
+		$logincontent = count($dm->get_user_dedication($userrecord, false));
+		$loginoptions = $celloptions;
+		if ($logincontent >= 5) {
+			$loginoptions['style'] .= 'color: '.$colours['completed_colour'].';';
+		} elseif ($logincontent >= 3) {
+			$loginoptions['style'] .= 'color: '.$colours['futureNotCompleted_colour'].';';
+		} else {
+			$loginoptions['style'] .= 'color: '.$colours['notCompleted_colour'].';';
+		}
+		$content .= HTML_WRITER::tag('td', $logincontent, $loginoptions);
+		
+		$content .= HTML_WRITER::end_tag('tr');
+		$content .= HTML_WRITER::start_tag('tr');
+		
+		//tk labels for stats
+		$celloptions = array(
+            'class' => 'progressUserStatsCell progressLabelCell',
+            'id' => '',
+			'style' => 'font-size: 11px; line-height: 12px; font-style: italic;
+						vertical-align: top; padding-top: 4px; font-weight: normal;');
+		$content .= HTML_WRITER::tag('td', get_string('progress', 'block_progress'), $celloptions);
+		$content .= HTML_WRITER::tag('td', get_string('coursegrade', 'core_completion'), $celloptions);
+		$content .= HTML_WRITER::tag('td', get_string('statslogins', 'core').' <br />('.get_string('positionlast', 'core_grades').' '.
+			get_string('numdays', 'core', 7).')', $celloptions);
+		
+		$content .= HTML_WRITER::end_tag('tr');
+		$content .= HTML_WRITER::end_tag('table');
+		//tk end of additions
     }
 
     // Add the info box below the table.
