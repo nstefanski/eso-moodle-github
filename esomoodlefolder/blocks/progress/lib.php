@@ -490,6 +490,7 @@ function block_progress_monitorable_modules() {
             'defaultAction' => 'viewed'
         ),
         'forum' => array(
+            'defaultTime' => 'assesstimefinish', //tk copied from hsuforum
             'actions' => array(
                 'posted_to'    => "SELECT id
                                      FROM {forum_posts}
