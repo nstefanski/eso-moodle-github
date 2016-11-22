@@ -39,10 +39,10 @@ document.getElementById('id_option_jbh').checked = true;
 //get course code
 var cc = document.getElementById('region-main').getElementsByTagName('h1')[0].innerHTML.split(" ")[0];
 //get time values
-var j,opts,selects = document.getElementById('fitem_id_start_time').getElementsByTagName('select');
+var j,opts,s = document.getElementById('fitem_id_start_time').getElementsByTagName('select');
 var dp = new Array(5); //day,mo,yr,hr,min
-for(i=0;i<selects.length;i++){
-	opts = selects[i].children;
+for(i=0;i<s.length;i++){
+	opts = s[i].children;
 	for(j=0;j<opts.length;j++){
 		if(opts[j].selected){
 			dp[i] = opts[j].value;
@@ -50,13 +50,30 @@ for(i=0;i<selects.length;i++){
 		}
 	}
 }
+//set "Expect completed on"
+var s2 = document.getElementById("fitem_id_completionexpected").getElementsByTagName("select"), ec = new Array(3);
+for(i=0;i<s2.length;i++){
+	s2[i].removeAttribute("disabled");
+	for(opts=s2[i].children,j=0;j<opts.length;j++){
+		if(opts[j].value==dp[i]){
+			opts[j].setAttribute("selected","selected")
+		} else if(opts[j].selected){
+			opts[j].removeAttribute("selected")
+		}
+	}
+}
 //date using moment.js
 var sessDate = moment({ y:dp[2], M:dp[1]-1, d:dp[0], h:dp[3], m:dp[4]}); //yr,mo,day,hr,min
-var m=cc+" Live Session: "+sessDate.format("dddd, MMMM Do [@] h:mm A");
-var n=document.getElementById("id_name");
+var m = cc+" Live Session: "+sessDate.format("dddd, MMMM Do [@] h:mm A");
+var n = document.getElementById("id_name");
+//enable and check "Enabled"
+var o = document.getElementById("id_completionexpected_enabled");
+o.removeAttribute("disabled");
+o.setAttribute("checked","checked");
 //remove event listeners, they mess with this bookmarklet
 n.removeAttribute("onchange");
 n.removeAttribute("onblur");
+//set activity name
 n.setAttribute("value", m);
 //add event listeners back
 n.setAttribute("onblur","validate_mod_zoom_mod_form_name(this,'name')");
