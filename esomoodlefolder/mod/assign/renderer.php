@@ -1410,8 +1410,25 @@ class mod_assign_renderer extends plugin_renderer_base {
                                              $filename,
                                              'moodle',
                                              array('class'=>'icon'));
+			
+			/* get the actual file to display if image or audio */
+			$fileaddress = substr($file->fileurl, 9, strpos($file->fileurl, '?')-9);	//grabs just file address, minus tags
+			$imgtypes = array('jpg','jpeg','png','svg','tiff','bmp','gif');
+			$audiotypes = array('mp3', 'wav', 'ogg');
+			$filetype = strtolower($fileaddress);		//lowercase so we catch ".JPG" etc.
+			$filetype = substr($filetype, strrpos($filetype, '.')+1);
+			if (in_array($filetype, $imgtypes)) {	//make sure it's an acceptable image type
+				$fileaddress = '<br /><img style="margin-left: 16px; max-width: 95%;" src="' . $fileaddress . '" /><br /> ';
+			} elseif (in_array($filetype, $audiotypes)) {
+				if($filetype == 'mp3') { $audiotype = 'mpeg'; } else { $audiotype = $filetype; }
+				$fileaddress = '<br /><audio controls><source src="' . $fileaddress . '" type="audio/' . $audiotype . '">Your browser does not support HTML5 audio.</audio><br />';
+			} else {
+				$fileaddress = '';
+			}
+			
             $result .= '<li yuiConfig=\'' . json_encode($yuiconfig) . '\'>' .
                        '<div>' . $image . ' ' .
+								 $fileaddress . //tk added 
                                  $file->fileurl . ' ' .
                                  $plagiarismlinks .
                                  $file->portfoliobutton . '</div>' .
