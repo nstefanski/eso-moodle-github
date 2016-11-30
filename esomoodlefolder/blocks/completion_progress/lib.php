@@ -570,7 +570,7 @@ function block_completion_progress_bar($activities, $completions, $config, $user
             'class' => 'progressUserStatsCell progressLabelCell',
             'id' => '',
 			'style' => 'font-size: 11px; line-height: 12px; font-style: italic;
-						vertical-align: top; padding-top: 4px; font-weight: normal;');
+						vertical-align: top; padding: 4px; font-weight: normal;');
 		$content .= HTML_WRITER::tag('td', get_string('progress', 'block_progress'), $celloptions);
 		$content .= HTML_WRITER::tag('td', get_string('coursegrade', 'core_completion'), $celloptions);
 		$content .= HTML_WRITER::tag('td', get_string('statslogins', 'core').' <br />('.get_string('positionlast', 'core_grades').' '.
