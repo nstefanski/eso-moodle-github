@@ -143,7 +143,8 @@ if ($currentuser) {
         }
         $referer = get_local_referer(false);
         if (!empty($referer)) {
-            redirect($referer, $notice);
+            //redirect($referer, $notice);
+			redirect(new moodle_url('/user/view.php', array('id'=>$user->id))); //tk added
         }
         echo $OUTPUT->header();
         echo $OUTPUT->heading($notice);
