@@ -305,6 +305,7 @@ M.mod_scorm.init = function(Y, nav_display, navposition_left, navposition_top, h
                 newheight = 680;
             }
             Y.one('#scorm_layout').setStyle('height', newheight);
+			Y.one('#scorm_object').setStyle('height', "99.9%"); //tk added
 
         };
 
