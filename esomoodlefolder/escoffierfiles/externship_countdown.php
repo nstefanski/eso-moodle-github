@@ -10,7 +10,7 @@ $c = $_GET["c"] ? $_GET["c"] : 0;
 
 if($c){
 	$startdate = $DB->get_record('course', array('id'=>$c))->startdate;
-	$enddate = $startdate + (6 * 7 * 24 * 60 * 60);
+	$enddate = $startdate + (5 * 7 * 24 * 60 * 60);//tk edited to week five end
 	
 	$now = time();
 	
@@ -38,11 +38,11 @@ if($c){
 			}
 		}
 		
-		$bottomstring .= "until externship begins.";
-		
+		$bottomstring .= "until externship paperwork is due.";//tk edited to paperwork due
 	} else {
-		$bottomstring = "Externship has begun!";
+		$bottomstring = "Externship paperwork is due!";
 	}
+	$bottomstring .= "<br/><br/>You cannot begin earning externship hours until your externship course begins.";//tk added
 		
 	
 	
