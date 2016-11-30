@@ -508,7 +508,8 @@ class mod_attendance_structure {
         // Create url for link in log screen.
         $params = array(
             'sessionid' => $this->pageparams->sessionid,
-            'grouptype' => $this->pageparams->grouptype);
+            'grouptype' => $this->pageparams->grouptype,
+			'sesslog' => $sesslog ); //tk
         $event = \mod_attendance\event\attendance_taken::create(array(
             'objectid' => $this->id,
             'context' => $this->context,
