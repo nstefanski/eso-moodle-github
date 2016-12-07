@@ -58,17 +58,19 @@ if (!empty($pageparams->grouptype) && !array_key_exists($pageparams->grouptype, 
 
 if (($formdata = data_submitted()) && confirm_sesskey()) {
     $att->take_from_form_data($formdata);
-} else { //tk
-	// Trigger a report viewed event.
-	$params = array(
-            'sessionid' => $pageparams->sessionid,
-            'grouptype' => $pageparams->grouptype );
-	$event = \mod_attendance\event\report_viewed::create(array(
-		'objectid' => $att->id,
-		'context' => $PAGE->context,
-		'other' => $params ));
-	$event->trigger();
-} //end tk
+}
+//tk
+// Trigger a report viewed event.
+$params = array(
+        'sessionid' => $pageparams->sessionid,
+        'grouptype' => $pageparams->grouptype,
+		'formdata' => $formdata ); //tk added 3.1
+$event = \mod_attendance\event\report_viewed::create(array(
+	'objectid' => $att->id,
+	'context' => $PAGE->context,
+	'other' => $params ));
+$event->trigger();
+//end tk
 
 $PAGE->set_url($att->url_take());
 $PAGE->set_title($course->shortname. ": ".$att->name);
