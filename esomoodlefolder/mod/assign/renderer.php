@@ -1412,7 +1412,9 @@ class mod_assign_renderer extends plugin_renderer_base {
                                              array('class'=>'icon'));
 			
 			/* get the actual file to display if image or audio */
-			$fileaddress = substr($file->fileurl, 9, strpos($file->fileurl, '?')-9);	//grabs just file address, minus tags
+			$start = strpos($file->fileurl, 'href="')+6;
+			$len = strpos($file->fileurl, '?') - $start;
+			$fileaddress = substr($file->fileurl, $start, $len);	//grabs just file address, minus tags
 			$imgtypes = array('jpg','jpeg','png','svg','tiff','bmp','gif');
 			$audiotypes = array('mp3', 'wav', 'ogg');
 			$filetype = strtolower($fileaddress);		//lowercase so we catch ".JPG" etc.
