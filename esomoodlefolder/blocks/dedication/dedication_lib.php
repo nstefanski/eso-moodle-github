@@ -39,7 +39,7 @@ class block_dedication_manager {
 
         $rows = array();
 
-        $where = 'course = :courseid AND userid = :userid AND time >= :mintime AND time <= :maxtime';
+        $where = 'courseid = :courseid AND userid = :userid AND timecreated >= :mintime AND timecreated <= :maxtime';
         $params = array(
             'courseid' => $this->course->id,
             'userid' => 0,
@@ -52,21 +52,21 @@ class block_dedication_manager {
         foreach ($students as $user) {
             $daysconnected = array();
             $params['userid'] = $user->id;
-            $logs = $DB->get_records_select('log', $where, $params, 'time ASC', 'id,time');
+            $logs = $DB->get_records_select('logstore_standard_log', $where, $params, 'timecreated ASC', 'id,timecreated');
             if ($logs) {
                 $previouslog = array_shift($logs);
-                $previouslogtime = $previouslog->time;
-                $sessionstart = $previouslog->time;
+                $previouslogtime = $previouslog->timecreated;
+                $sessionstart = $previouslog->timecreated;
                 $dedication = 0;
-                $daysconnected[date('Y-m-d', $previouslog->time)] = 1;
+                $daysconnected[date('Y-m-d', $previouslog->timecreated)] = 1;
 
                 foreach ($logs as $log) {
-                    if (($log->time - $previouslogtime) > $this->limit) {
+                    if (($log->timecreated - $previouslogtime) > $this->limit) {
                         $dedication += $previouslogtime - $sessionstart;
-                        $sessionstart = $log->time;
+                        $sessionstart = $log->timecreated;
                     }
-                    $previouslogtime = $log->time;
-                    $daysconnected[date('Y-m-d', $log->time)] = 1;
+                    $previouslogtime = $log->timecreated;
+                    $daysconnected[date('Y-m-d', $log->timecreated)] = 1;
                 }
                 $dedication += $previouslogtime - $sessionstart;
             } else {
@@ -128,14 +128,14 @@ class block_dedication_manager {
     function get_user_dedication($user, $simple = false) {
         global $DB;
 
-        $where = 'course = :courseid AND userid = :userid AND time >= :mintime AND time <= :maxtime';
+        $where = 'courseid = :courseid AND userid = :userid AND timecreated >= :mintime AND timecreated <= :maxtime';
         $params = array(
             'courseid' => $this->course->id,
             'userid' => $user->id,
             'mintime' => $this->mintime,
             'maxtime' => $this->maxtime
         );
-        $logs = $DB->get_records_select('log', $where, $params, 'time ASC', 'id,time,ip');
+        $logs = $DB->get_records_select('logstore_standard_log', $where, $params, 'timecreated ASC', 'id,timecreated,ip');
 
         if ($simple) {
             // Return total dedication time in seconds
@@ -143,16 +143,16 @@ class block_dedication_manager {
 
             if ($logs) {
                 $previouslog = array_shift($logs);
-                $previouslogtime = $previouslog->time;
+                $previouslogtime = $previouslog->timecreated;
                 $sessionstart = $previouslogtime;
 
                 foreach ($logs as $log) {
-                    if (($log->time - $previouslogtime) > $this->limit) {
+                    if (($log->timecreated - $previouslogtime) > $this->limit) {
                         $dedication = $previouslogtime - $sessionstart;
                         $total += $dedication;
-                        $sessionstart = $log->time;
+                        $sessionstart = $log->timecreated;
                     }
-                    $previouslogtime = $log->time;
+                    $previouslogtime = $log->timecreated;
                 }
                 $dedication = $previouslogtime - $sessionstart;
                 $total += $dedication;
@@ -166,12 +166,12 @@ class block_dedication_manager {
 
             if ($logs) {
                 $previouslog = array_shift($logs);
-                $previouslogtime = $previouslog->time;
+                $previouslogtime = $previouslog->timecreated;
                 $sessionstart = $previouslogtime;
                 $ips = array($previouslog->ip => true);
 
                 foreach ($logs as $log) {
-                    if (($log->time - $previouslogtime) > $this->limit) {
+                    if (($log->timecreated - $previouslogtime) > $this->limit) {
                         $dedication = $previouslogtime - $sessionstart;
 
                         // Ignore sessions with a really short duration
@@ -179,9 +179,9 @@ class block_dedication_manager {
                             $rows[] = (object) array('start_date' => $sessionstart, 'dedicationtime' => $dedication, 'ips' => array_keys($ips));
                             $ips = array();
                         }
-                        $sessionstart = $log->time;
+                        $sessionstart = $log->timecreated;
                     }
-                    $previouslogtime = $log->time;
+                    $previouslogtime = $log->timecreated;
                     $ips[$log->ip] = true;
                 }
 
