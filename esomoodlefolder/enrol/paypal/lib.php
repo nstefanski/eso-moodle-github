@@ -131,6 +131,9 @@ class enrol_paypal_plugin extends enrol_plugin {
         if ($fields && !empty($fields['cost'])) {
             $fields['cost'] = unformat_float($fields['cost']);
         }
+		if ($fields && !empty($fields['customchar1'])) {
+            $fields['customchar1'] = unformat_float($fields['customchar1']); //tk
+        }
         return parent::add_instance($course, $fields);
     }
 
@@ -143,6 +146,9 @@ class enrol_paypal_plugin extends enrol_plugin {
     public function update_instance($instance, $data) {
         if ($data) {
             $data->cost = unformat_float($data->cost);
+        }
+		if ($data) {
+            $data->customchar1 = unformat_float($data->customchar1); //tk
         }
         return parent::update_instance($instance, $data);
     }
@@ -376,6 +382,22 @@ class enrol_paypal_plugin extends enrol_plugin {
         $mform->addElement('date_time_selector', 'enrolenddate', get_string('enrolenddate', 'enrol_paypal'), $options);
         $mform->setDefault('enrolenddate', 0);
         $mform->addHelpButton('enrolenddate', 'enrolenddate', 'enrol_paypal');
+		
+		//tk
+		$mform->addElement('checkbox', 'customint1', 'Is this a subscription payment?');
+		$mform->setDefault('customint1', 0);
+		
+		$recurringtimes = array();
+		for($i = 2; $i <= 52; $i++){ $recurringtimes[$i] = $i; }
+        $mform->addElement('select', 'customint2', 'Subscription Recurring Times', $recurringtimes);
+        $mform->setDefault('customint2', 2);
+		$mform->disabledIf('customint2', 'customint1');
+		
+		$mform->addElement('text', 'customchar1', 'Monthly Recurring Price', array('size'=>4));
+        $mform->setType('customchar1', PARAM_RAW);
+        $mform->setDefault('customchar1', format_float($this->get_config('cost'), 2, true));
+		$mform->disabledIf('customchar1', 'customint1');
+		//end tk
 
         if (enrol_accessing_via_instance($instance)) {
             $warningtext = get_string('instanceeditselfwarningtext', 'core_enrol');
@@ -404,6 +426,10 @@ class enrol_paypal_plugin extends enrol_plugin {
         $cost = str_replace(get_string('decsep', 'langconfig'), '.', $data['cost']);
         if (!is_numeric($cost)) {
             $errors['cost'] = get_string('costerror', 'enrol_paypal');
+        }
+		$customchar1 = str_replace(get_string('decsep', 'langconfig'), '.', $data['customchar1']); //tk
+        if (!is_numeric($customchar1)) {
+            $errors['customchar1'] = get_string('costerror', 'enrol_paypal'); //tk
         }
 
         $validstatus = array_keys($this->get_status_options());
