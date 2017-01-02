@@ -167,26 +167,26 @@ foreach ($instructors AS $instructor) {
 
 	//get site time
 	//code ripped from dedication_lib.php with param:courseid removed
-	$where = 'userid = :userid AND time >= :mintime AND time <= :maxtime';
+	$where = 'userid = :userid AND timecreated >= :mintime AND timecreated <= :maxtime';
 	$selectparams = array(
 		'userid' => $instructor->id,
 		'mintime' => $mintime,
 		'maxtime' => $maxtime
 	);
-	$logs = $DB->get_records_select('log', $where, $selectparams, 'time ASC', 'id,time,ip');
+	$logs = $DB->get_records_select('logstore_standard_log', $where, $selectparams, 'timecreated ASC', 'id,timecreated,ip');
 	$sitededication[$instructor->id] = 0;
 	if ($logs) {
 		$previouslog = array_shift($logs);
-		$previouslogtime = $previouslog->time;
+		$previouslogtime = $previouslog->timecreated;
 		$sessionstart = $previouslogtime;
 
 		foreach ($logs as $log) {
-			if (($log->time - $previouslogtime) > $limit) {
+			if (($log->timecreated - $previouslogtime) > $limit) {
 				$dedication = $previouslogtime - $sessionstart;
 				$sitededication[$instructor->id] += $dedication;
-				$sessionstart = $log->time;
+				$sessionstart = $log->timecreated;
 			}
-			$previouslogtime = $log->time;
+			$previouslogtime = $log->timecreated;
 		}
 		$dedication = $previouslogtime - $sessionstart;
 		$sitededication[$instructor->id] += $dedication; //seconds
