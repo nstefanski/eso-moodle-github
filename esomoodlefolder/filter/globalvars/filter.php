@@ -41,7 +41,7 @@ class filter_globalvars extends moodle_text_filter {
 				$text = str_replace('%%module_week%%', $PAGE->cm->sectionnum, $text);
 			}
 			
-			if ( ($PAGE->docspath == 'user/profile' || $PAGE->pagetype == 'user-profile') && $_GET["id"]) {
+			/*if ( ($PAGE->docspath == 'user/profile' || $PAGE->pagetype == 'user-profile') && $_GET["id"]) {
 				$userview = $DB->get_record('user', array('id'=>$_GET["id"]), 'id,firstname,lastname,email');
 				$text = str_replace('%%userview_id%%', $userview->id, $text);
 				$text = str_replace('%%userview_firstname%%', $userview->firstname, $text);
@@ -52,7 +52,7 @@ class filter_globalvars extends moodle_text_filter {
 				$text = str_replace('%%userview_cvueid%%', $userview_cvueid->data, $text);
 				$userview_cvuestartdate = $DB->get_record('user_info_data', array('userid'=>$_GET["id"],'fieldid'=>16), 'data');
 				$text = str_replace('%%userview_cvuestartdate%%', date('F j, Y', $userview_cvuestartdate->data), $text);
-			}
+			}*/
 			
 			if ($COURSE && $USER) {
 				$sql = "SELECT ue.id, ue.status, ue.enrolid, ue.timestart, ue.timeend, e.expirythreshold 
