@@ -6,12 +6,12 @@ require_login();
 
 global $DB;
 
-$u = $_GET["u"] ? $_GET["u"] : '';
-$c = $_GET["c"] ? $_GET["c"] : '';
+$u = $_GET["u"] ? $_GET["u"] : 0;
+$c = $_GET["c"] ? $_GET["c"] : 0;
 $total = 6;
 $fill = 'black';
 
-if(is_numeric($u) && is_numeric($c)){
+if($u && $c){
 	$sql="SELECT COUNT(*) AS ct 
 		FROM {course_modules_completion} cmc 
 			JOIN {course_modules} cm ON cmc.coursemoduleid = cm.id 
