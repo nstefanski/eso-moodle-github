@@ -548,7 +548,9 @@ class badge {
 
         if ($records = (array)$DB->get_records('badge_criteria', array('badgeid' => $this->id))) {
             foreach ($records as $record) {
+				if($record->criteriatype != 4 /* award_criteria_course */ || $this->courseid ){ //tk prevent error with empty course
                 $criteria[$record->criteriatype] = award_criteria::build((array)$record);
+				}
             }
         }
 
