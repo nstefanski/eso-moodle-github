@@ -125,15 +125,31 @@ if (strlen($result) > 0) {
         // If status is not completed or pending then unenrol the student if already enrolled
         // and notify admin
 
-        if ($data->payment_status != "Completed" and $data->payment_status != "Pending") {
-            //$plugin->unenrol_user($plugin_instance, $data->userid);
+        if ($data->payment_status and ($data->payment_status != "Completed" and $data->payment_status != "Pending") ) { //tk add check that this message has a payment status
+            if ($data->payment_status == "Refunded") { //tk custom behavior for refunds
+				$context = get_context_instance(CONTEXT_COURSE, $data->courseid, MUST_EXIST);
+				if(is_enrolled($context, $data->userid, '', true)){
+					$plugin->update_user_enrol($plugin_instance, $data->userid, ENROL_USER_SUSPENDED); //tk suspend user instead of deleting outright
+				}
+				message_paypal_error_to_admin("Status refunded. User suspended from course", $data);
+				die;
+			} else {
+			$plugin->unenrol_user($plugin_instance, $data->userid);
+            message_paypal_error_to_admin("Status not completed or pending. User unenrolled from course", $data);
+            die;
+			}
+        } elseif ($data->txn_type == "recurring_payment_suspended_due_to_max_failed_payment" or $data->txn_type == "subscr_cancel") { //tk for other subscription messages
+			$plugin->unenrol_user($plugin_instance, $data->userid);
+            message_paypal_error_to_admin("Message type indicates cancellation or payment failure. User unenrolled from course", $data); //tk custom message
+            die;
+		} elseif ($data->txn_type == "recurring_payment_suspended") {
 			$context = get_context_instance(CONTEXT_COURSE, $data->courseid, MUST_EXIST);
 			if(is_enrolled($context, $data->userid, '', true)){
 				$plugin->update_user_enrol($plugin_instance, $data->userid, ENROL_USER_SUSPENDED); //tk suspend user instead of deleting outright
 			}
-            message_paypal_error_to_admin("Status not completed or pending. User unenrolled from course", $data);
-            die;
-        }
+			message_paypal_error_to_admin("Message type indicates subscription suspended. User suspended from course", $data);
+			die;
+		}
 
         // If currency is incorrectly set then someone maybe trying to cheat the system
 
@@ -174,7 +190,7 @@ if (strlen($result) > 0) {
         // At this point we only proceed with a status of completed or pending with a reason of echeck
 
 
-
+		//tk this prevents us from resending IPN messages that were already processed
         if ($existing = $DB->get_record("enrol_paypal", array("txn_id"=>$data->txn_id))) {   // Make sure this transaction doesn't exist already
             message_paypal_error_to_admin("Transaction $data->txn_id is being repeated!", $data);
             die;
@@ -231,8 +247,13 @@ if (strlen($result) > 0) {
         }
 
         // Enrol user
-        $plugin->enrol_user($plugin_instance, $user->id, $plugin_instance->roleid, $timestart, $timeend);
-
+		$context = get_context_instance(CONTEXT_COURSE, $data->courseid, MUST_EXIST);
+		if(is_enrolled($context, $data->userid, '', true)){
+			$plugin->update_user_enrol($plugin_instance, $data->userid, ENROL_USER_ACTIVE); //tk reinstate suspended user
+		} else {
+			$plugin->enrol_user($plugin_instance, $user->id, $plugin_instance->roleid, $timestart, $timeend);
+		}
+		
         // Pass $view=true to filter hidden caps if the user cannot see them
         if ($users = get_users_by_capability($context, 'moodle/course:update', 'u.*', 'u.id ASC',
                                              '', '', '', '', false, true)) {
