@@ -389,6 +389,7 @@ class enrol_paypal_plugin extends enrol_plugin {
 		
 		$recurringtimes = array();
 		for($i = 2; $i <= 52; $i++){ $recurringtimes[$i] = $i; }
+			$recurringtimes[0] = "&infin;"; //tk subscription with no limit
         $mform->addElement('select', 'customint2', 'Subscription Recurring Times', $recurringtimes);
         $mform->setDefault('customint2', 2);
 		$mform->disabledIf('customint2', 'customint1');

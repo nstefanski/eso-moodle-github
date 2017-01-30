@@ -5,20 +5,30 @@
 <?php if($instance->customint1){ 
 			$customchar1 = (float) $instance->customchar1;
 			$recurringprice = format_float($customchar1, 2, false);
-			$totalcost = $localisedcost + ($recurringprice * $instance->customint2);
+			if($instance->customint2 > 0){
+				$totalcost = $localisedcost + ($recurringprice * $instance->customint2);
+			} else { //recurs infinitely
+				$totalcost = null;
+			}
 			$cursymbols = array('USD' => '$', 'EUR' => '€', 'GBP' => '£', 'JPY' => '¥');
 			$currency = $instance->currency;
 			foreach($cursymbols AS $code => $symbol){
 				if($currency == $code){ $currency = $symbol; break; }
 			}
 			?>
-<p><b><?php echo "Total Cost: {$currency} {$totalcost}"; ?></b></p>
 <p><b><?php echo "Due Now: {$currency} {$localisedcost}"; ?></b></p>
+<p><b><?php 
+	if($totalcost){
+		echo "Total Cost: {$currency} {$totalcost}";
+	} else {
+		echo "{$currency} {$recurringprice} monthly until cancelled";
+	}
+?></b></p>
 <?php } else { ?>
 <p><b><?php echo get_string("cost").": {$instance->currency} {$localisedcost}"; ?></b></p>
 <?php } ?>
-<p><img alt="<?php print_string('paypalaccepted', 'enrol_paypal') ?>" src="https://www.paypal.com/en_US/i/logo/PayPal_mark_60x38.gif" /></p>
-<p><?php print_string("paymentinstant") ?></p>
+<!--<p><img alt="<?php //print_string('paypalaccepted', 'enrol_paypal') ?>" src="https://www.paypal.com/en_US/i/logo/PayPal_mark_60x38.gif" /></p>
+<p><?php //print_string("paymentinstant") ?></p>-->
 <?php
     $paypalurl = empty($CFG->usepaypalsandbox) ? 'https://www.paypal.com/cgi-bin/webscr' : 'https://www.sandbox.paypal.com/cgi-bin/webscr';
 ?>
@@ -33,7 +43,10 @@
 <input type="hidden" name="p3" value="1">
 <input type="hidden" name="t3" value="M">
 <input type="hidden" name="src" value="1">
+<?php
+		if($instance->customint2 > 0){ ?>
 <input type="hidden" name="srt" value="<?php p($instance->customint2) ?>">
+<?php	} ?>
 <?php } else { ?>
 <input type="hidden" name="cmd" value="_xclick" />
 <?php } ?>
