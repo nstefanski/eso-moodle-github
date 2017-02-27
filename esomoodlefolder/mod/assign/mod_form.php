@@ -88,7 +88,7 @@ class mod_assign_mod_form extends moodleform_mod {
         $mform->addHelpButton('allowsubmissionsfromdate', 'allowsubmissionsfromdate', 'assign');
 
         $name = get_string('duedate', 'assign');
-        $mform->addElement('date_time_selector', 'duedate', $name, array('optional'=>true));
+        $mform->addElement('date_time_selector', 'duedate', $name, array('optional'=>true, 'step' => 1)); //tk for due dates at 11:59 pm
         $mform->addHelpButton('duedate', 'duedate', 'assign');
 
         $name = get_string('cutoffdate', 'assign');
