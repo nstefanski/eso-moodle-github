@@ -17,22 +17,16 @@
 defined('MOODLE_INTERNAL') OR die('not allowed');
 require_once($CFG->dirroot.'/mod/feedback/item/feedback_item_class.php');
 
-class feedback_item_info extends feedback_item_base {
-    protected $type = "info";
+class feedback_item_teachers extends feedback_item_base {
+    protected $type = "teachers";
 
-    /** Mode recording response time (for non-anonymous feedbacks only) */
-    const MODE_RESPONSETIME = 1;
-    /** Mode recording current course */
-    const MODE_COURSE = 2;
-    /** Mode recording current course category */
-    const MODE_CATEGORY = 3;
-
-    /** Special constant to keep the current timestamp as value for the form element */
-    const CURRENTTIMESTAMP = '__CURRENT__TIMESTAMP__';
+    /** Mode recording editing teachers */
+    const MODE_EDITING = 1;
+    /** add further modes as needed */
 
     public function build_editform($item, $feedback, $cm) {
         global $DB, $CFG;
-        require_once('info_form.php');
+        require_once('teachers_form.php');
 
         //get the lastposition number of the feedback_items
         $position = $item->position;
@@ -48,7 +42,7 @@ class feedback_item_info extends feedback_item_base {
         //the elements for position dropdownlist
         $positionlist = array_slice(range(0, $i_formselect_last), 1, $i_formselect_last, true);
 
-        $item->presentation = empty($item->presentation) ? self::MODE_COURSE : $item->presentation;
+        $item->presentation = empty($item->presentation) ? self::MODE_EDITING : $item->presentation;
         $item->required = 0;
 
         //all items for dependitem
@@ -61,16 +55,11 @@ class feedback_item_info extends feedback_item_base {
 
         // Options for the 'presentation' select element.
         $presentationoptions = array();
-        if ($feedback->anonymous == FEEDBACK_ANONYMOUS_NO || $item->presentation == self::MODE_RESPONSETIME) {
-            // "Response time" is hidden anyway in case of anonymous feedback, no reason to offer this option.
-            // However if it was already selected leave it in the dropdown.
-            $presentationoptions[self::MODE_RESPONSETIME] = get_string('responsetime', 'feedback');
-        }
-        $presentationoptions[self::MODE_COURSE]  = get_string('course');
-        $presentationoptions[self::MODE_CATEGORY]  = get_string('coursecategory');
+        $presentationoptions[self::MODE_EDITING]  = get_string('teachers');
+		// add further modes as needed
 
         //build the form
-        $this->item_form = new feedback_info_form('edit_item.php',
+        $this->item_form = new feedback_teachers_form('edit_item.php',
                                                   array('item'=>$item,
                                                   'common'=>$commonparams,
                                                   'positionlist'=>$positionlist,
@@ -121,18 +110,11 @@ class feedback_item_info extends feedback_item_base {
                 $datavalue = new stdClass();
 
                 switch($presentation) {
-                    case self::MODE_RESPONSETIME:
-                        $datavalue->value = $value->value;
-                        $datavalue->show = $value->value ? userdate($datavalue->value) : '';
-                        break;
-                    case self::MODE_COURSE:
+                    case self::MODE_EDITING:
                         $datavalue->value = $value->value;
                         $datavalue->show = $datavalue->value;
                         break;
-                    case self::MODE_CATEGORY:
-                        $datavalue->value = $value->value;
-                        $datavalue->show = $datavalue->value;
-                        break;
+					// add further modes as needed
                 }
 
                 $data[] = $datavalue;
@@ -147,8 +129,7 @@ class feedback_item_info extends feedback_item_base {
         if (strval($value->value) === '') {
             return '';
         }
-        return $item->presentation == self::MODE_RESPONSETIME ?
-                userdate($value->value) : $value->value;
+		return $value->value;
     }
 
     public function print_analysed($item, $itemnr = '', $groupid = false, $courseid = false) {
@@ -244,16 +225,10 @@ class feedback_item_info extends feedback_item_base {
 
         $class = '';
         switch ($item->presentation) {
-            case self::MODE_RESPONSETIME:
-                $class = 'info-responsetime';
-                $value = $value ? self::CURRENTTIMESTAMP : '';
+            case self::MODE_EDITING:
+                $class = 'teachers-editing';
                 break;
-            case self::MODE_COURSE:
-                $class = 'info-course';
-                break;
-            case self::MODE_CATEGORY:
-                $class = 'info-category';
-                break;
+			// add further modes as needed
         }
 
         $name = $this->get_display_name($item);
@@ -278,9 +253,6 @@ class feedback_item_info extends feedback_item_base {
      * @return string
      */
     public function create_value($value) {
-        if ($value === self::CURRENTTIMESTAMP) {
-            return strval(time());
-        }
         return parent::create_value($value);
     }
 
