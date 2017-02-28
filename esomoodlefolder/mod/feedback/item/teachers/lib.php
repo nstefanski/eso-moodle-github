@@ -187,7 +187,7 @@ class feedback_item_teachers extends feedback_item_base {
         global $DB;
         switch ($item->presentation) {
             case self::MODE_EDITING:
-				$instructors = $DB->get_record_sql('GROUP_CONCAT(u.id) AS userids, GROUP_CONCAT( u.firstname," ",u.lastname SEPARATOR ", " ) AS names '
+				$instructors = $DB->get_record_sql('GROUP_CONCAT(u.id) AS userids, GROUP_CONCAT(u.firstname," ",u.lastname) AS names '
 						. 'FROM {role_assignments} ra, {context} cx, {user} u WHERE ra.contextid = cx.id AND ra.userid = u.id AND cx.contextlevel = 50 '
 								. 'AND cx.instanceid = ? AND ra.roleid = 3', array($courseid));
                 return format_string($instructors->names, true,
