@@ -16,8 +16,8 @@
 
 require_once($CFG->dirroot.'/mod/feedback/item/feedback_item_form_class.php');
 
-class feedback_info_form extends feedback_item_form {
-    protected $type = "info";
+class feedback_teachers_form extends feedback_item_form {
+    protected $type = "teachers";
 
     public function definition() {
 
