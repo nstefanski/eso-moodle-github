@@ -175,7 +175,8 @@ class feedback_item_teachers extends feedback_item_base {
     }
 
     /**
-     * Calculates the value of the item (time, course, course category)
+     * Calculates the value of the item, grabbing list of teachers in given roles from DB queries
+	 * TODO: add support for group modes?
      *
      * @param stdClass $item
      * @param stdClass $feedback
@@ -185,24 +186,12 @@ class feedback_item_teachers extends feedback_item_base {
     protected function get_current_value($item, $feedback, $courseid) {
         global $DB;
         switch ($item->presentation) {
-            case self::MODE_RESPONSETIME:
-                if ($feedback->anonymous != FEEDBACK_ANONYMOUS_YES) {
-                    // Response time is not allowed in anonymous feedbacks.
-                    return time();
-                }
-                break;
-            case self::MODE_COURSE:
-                $course = get_course($courseid);
-                return format_string($course->shortname, true,
-                        array('context' => context_course::instance($course->id)));
-                break;
-            case self::MODE_CATEGORY:
-                if ($courseid !== SITEID) {
-                    $coursecategory = $DB->get_record_sql('SELECT cc.id, cc.name FROM {course_categories} cc, {course} c '
-                            . 'WHERE c.category = cc.id AND c.id = ?', array($courseid));
-                    return format_string($coursecategory->name, true,
-                            array('context' => context_coursecat::instance($coursecategory->id)));
-                }
+            case self::MODE_EDITING:
+				$instructors = $DB->get_record_sql('GROUP_CONCAT(u.id) AS userids, GROUP_CONCAT( u.firstname," ",u.lastname SEPARATOR ", " ) AS names '
+						. 'FROM {role_assignments} ra, {context} cx, {user} u WHERE ra.contextid = cx.id AND ra.userid = u.id AND cx.contextlevel = 50 '
+								. 'AND cx.instanceid = ? AND ra.roleid = 3', array($courseid));
+                return format_string($instructors->names, true,
+                        array('context' => context_course::instance($courseid)));
                 break;
         }
         return '';
