@@ -15,7 +15,7 @@ $action = (empty($_GET['action'])) ? '' : $_GET['action'];
 $minTime = (empty($_GET['minTime'])) ? NULL : $_GET['minTime'];
 $maxTime = (empty($_GET['maxTime'])) ? NULL : $_GET['maxTime'];
 $course = (empty($_GET['course'])) ? NULL : $_GET['course'];
-$method = (empty($_GET['method'])) ? 'weekcomp' : $_GET['method'];
+$method = (empty($_GET['method'])) ? '' : $_GET['method'];
 $debug = (empty($_GET['debug'])) ? NULL : $_GET['debug']; //debug mode default
 
 if ($mindate && !$minTime) {
@@ -35,59 +35,71 @@ if (($minTime >= $maxTime) || ( ($maxTime - $minTime) > (60*60*24*7) )) {
 <h1>Manual Attendance</h1>
 <?php
 if ($action == 'Run') {
-	if ($validRange) {
-		echo "<p>Ran attendance for period $minTime to $maxTime ...</p>";
-		$token = cvGetToken();
-		$ua = updateAttendance($maxTime, $minTime, $token, $method, $debug); //tk un-comment this to run
-		//$debug = NULL; //tk can't seem to turn this mode off...
-		echo "Debug = $debug <br>";
-		if ($debug) {
-			echo '<p>*** DEBUG MODE ***</p>';
-			print_R($ua);
-		} elseif ($ua) {
-			if ($ua->Attendances) {
-				$msgArray = $ua->Attendances->PostAttendanceOutMsg;
-				$msgs = count($msgArray);
-				$errs = 0;
-				$exErr = 0;
-				$vaErr = 0;
-				foreach ($msgArray as $outMsg) {
-					if ($outMsg->MessageStatus == 'FailedExecution') {
-						$errs++;
-						$exErr++;
-					} elseif ($outMsg->MessageStatus == 'FailedValidation') {
-						$errs++;
-						$vaErr++;
-					} elseif (!empty($outMsg->MessageErrorCode)) {
-						$errs++;
+	if($method) {
+		if ($validRange) {
+			echo "<p>Ran attendance for period $minTime to $maxTime ...</p>";
+			$token = cvGetToken();
+			$ua = updateAttendance($maxTime, $minTime, $token, $method, $debug); //tk un-comment this to run
+			//$debug = NULL; //tk can't seem to turn this mode off...
+			//echo "Debug = $debug <br>";
+			//echo "method = $method <br>";
+			if ($debug) {
+				echo '<p>*** DEBUG MODE ***</p>';
+				print_R($ua);
+			} elseif ($ua) {
+				if ($ua->Attendances) {
+					$msgArray = $ua->Attendances->PostAttendanceOutMsg;
+					$msgs = count($msgArray);
+					$errs = 0;
+					$exErr = 0;
+					$vaErr = 0;
+					foreach ($msgArray as $outMsg) {
+						if ($outMsg->MessageStatus == 'FailedExecution') {
+							$errs++;
+							$exErr++;
+						} elseif ($outMsg->MessageStatus == 'FailedValidation') {
+							$errs++;
+							$vaErr++;
+						} elseif (!empty($outMsg->MessageErrorCode)) {
+							$errs++;
+						}
 					}
-				}
-				echo "<p>... sent $msgs Attendance Messages with $errs errors ...</p>";
-				if ($errs) {
-					echo "<p>... $exErr Failed Execution ...</p>";
-					echo "<p>... $vaErr Failed Validation ...</p>";
-					$otErr = $errs - $exErr - $vaErr;
-					echo "<p>... $otErr Unknown Errors ...</p>";
+					echo "<p>... sent $msgs Attendance Messages with $errs errors ...</p>";
+					if ($errs) {
+						echo "<p>... $exErr Failed Execution ...</p>";
+						echo "<p>... $vaErr Failed Validation ...</p>";
+						$otErr = $errs - $exErr - $vaErr;
+						echo "<p>... $otErr Unknown Errors ...</p>";
+					}
+				} else {
+					echo "<p>... no Attendance Messages to send ...</p>";
 				}
 			} else {
-				echo "<p>... no Attendance Messages to send ...</p>";
+				echo "<p>... could not send Attendance Messages ...</p>";
 			}
+			echo "<p>... run again?</p>";
 		} else {
-			echo "<p>... could not send Attendance Messages ...</p>";
+			echo "<p>Could not run attendance for period $minTime to $maxTime ...</p>";
+			?>
+			<p>Invalid range: "To" date must be after "From" date, and range must be no greater than seven days.</p>
+			<p>Fix range and try again.</p>
+			<?php
 		}
-		echo "<p>... run again?</p>";
 	} else {
-		echo "<p>Could not run attendance for period $minTime to $maxTime ...</p>";
 		?>
-		<p>Invalid range: "To" date must be after "From" date, and range must be no greater than seven days.</p>
-		<p>Fix range and try again.</p>
+		<p>Error: no method selected.</p>
 		<?php
 	}
 }
 ?>
 <form action="manual_attendance.php" method="get" id="instructorreport">
-	<input type="radio" name="debug" value="1" checked="checked"><label for="1" checked> Debug mode</label><br>
-	<input type="radio" name="debug" value="0"><label for="0"> Run attendance</label><br><br>
+	<div>Debug On/Off:</div>
+	<input type="radio" name="debug" value="1" checked="checked"><label for="1"> Debug mode on</label><br>
+	<input type="radio" name="debug" value="0"><label for="0"> Debug mode off (Run attendance)</label><br><br>
+	<div>Attendance type:</div>
+	<input type="radio" name="method" value="weekcomp"><label for="weekcomp">Weekly Completion (Online)</label><br>
+	<input type="radio" name="method" value="manual"><label for="manual">Manually Entered (Ground)</label><br><br>
+	<div>Time period:</div>
 	<label for="mindate">From:</label>
 	<input type="date" id="mindate" name="mindate" value="<?php echo $mindate; ?>">
 	<label for="maxdate">To:</label>
