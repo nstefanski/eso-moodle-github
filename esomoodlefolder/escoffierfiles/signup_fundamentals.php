@@ -25,6 +25,7 @@
  */
 
 require('../config.php');
+global $CFG;//tk 3.1
 require_once($CFG->dirroot . '/user/editlib.php');
 
 // Try to prevent searching for sites that allow sign-up.
@@ -68,7 +69,7 @@ if (isloggedin() and !isguestuser()) {
 //$mform_signup = $authplugin->signup_form(); //tk replace with new form
 
 //cribbed from /lib/authlib.php  function signup_form()
-require_once('/signup_form_fundamentals.php');
+require_once($CFG->dirroot . '/escoffierfiles/signup_form_fundamentals.php');//tk 3.1
 $mform_signup = new login_signup_form_fundamentals(null, null, 'post', '', array('autocomplete'=>'on'));
 
 if ($mform_signup->is_cancelled()) {
