@@ -62,6 +62,8 @@ class mdAttendance {
 					
 					if($sessionLength){
 						$this->Attendance[] = new mdAttendanceSession($session->id, $session->cvid, $date, $sessionLength, $this->token);
+					} else {
+						$this->Attendance[] = (object) array('error' => 'invalid sessionLength', 'data' => $session, 'Attendances' => array()); //tk for logging
 					}
 				}
 			}
@@ -89,6 +91,8 @@ class mdAttendance {
 					
 					if($sessionLength){
 						$this->Attendance[] = new mdWeekComp($session->cg, $session->sectionid, $session->cvid, $date, $sessionLength, $activities, $this->token);
+					} else {
+						$this->Attendance[] = (object) array('error' => 'invalid sessionLength', 'data' => $session, 'Attendances' => array()); //tk for logging
 					}
 				}
 			}
@@ -112,11 +116,12 @@ class mdAttendance {
 					WHERE sess.sessdate >= $minTime AND sess.sessdate < $maxTime 
 						$catStr ";
 		} elseif ($this->method == 'weekcomp') {
+			$dstOffset = $this->dstOffset();
 			$sql = "SELECT CONCAT(c.id,'-',COALESCE(g.id,0)) AS cg, 
 						cs.id AS sectionid, 
 						CASE WHEN g.id IS NOT NULL 
 							THEN g.idnumber ELSE c.idnumber END AS cvid, 
-						(c.startdate + (cs.section*7*24*60*60) - (3600)) AS sessdate /* Fix for DST */
+						(c.startdate + (cs.section*7*24*60*60) - (3600) + $dstOffset ) AS sessdate /* Fix for DST */
 					FROM {course_sections} cs 
 						JOIN {course} c ON cs.course = c.id 
 						JOIN {course_categories} cc ON c.category = cc.id 
@@ -187,6 +192,11 @@ class mdAttendance {
 		return $dt[0] . 'T00:00:00';
 	}
 	
+	public function dstOffset() {
+		//tk this is a hack, add a real calculation
+		return -3600;
+	}
+	
 	public function checkCVFlag($string) {
 		//to add, after we figure out how we are going to flag things from CVue
 		return false;
@@ -199,6 +209,10 @@ class mdAttendance {
 		$cem = new cvEntityMsg('ClassAttendance');
 		$cem->addParam('ClassSchedId', $courseSectionId, 'Equal');
 		$cem->addParam('Date', $date, 'Equal');
-		return $cem->getEntityField('LengthMinutes', $this->token); //this is returning an empty array if no results are found 
+		$len = $cem->getEntityField('LengthMinutes', $this->token); //this is returning an empty array if no results are found 
+		if (is_array($len)) { //too many sessions!
+			return null;	//return null to log an error, allow other attendances to run
+		}
+		return $len;
 	}
 }
