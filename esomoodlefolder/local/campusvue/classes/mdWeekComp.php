@@ -75,16 +75,19 @@ class mdWeekComp {
 		global $DB;
 		$zoommod = $DB->get_record('modules', array('name'=>'zoom'))->id;
 		$secid = $this->mdSectionId;
+		$modStr = $this->getModuleClause();
 		$sql = "SELECT u.idnumber, cvid.data AS cvid, 
 					(SELECT COUNT(*) FROM {course_modules_completion} cmc 
 						JOIN {course_modules} cm ON cmc.coursemoduleid = cm.id 
 						WHERE cmc.userid = u.id AND cmc.completionstate > 0 
 							AND cm.module <> $zoommod AND cm.idnumber NOT LIKE 'archive%' 
+							$modStr 
 							AND cm.section = $secid ) AS weekcomp, 
 					CASE WHEN (SELECT COUNT(*) FROM {course_modules_completion} cmc 
 						JOIN {course_modules} cm ON cmc.coursemoduleid = cm.id 
 						WHERE cmc.userid = u.id AND cmc.completionstate > 0 
-							AND (cm.module = $zoommod OR cm.idnumber LIKE 'archive%' )
+							AND (cm.module = $zoommod OR cm.idnumber LIKE 'archive%' ) 
+							$modStr 
 							AND cm.section = $secid ) THEN 1 ELSE 0 END AS livesess 
 					/*, CONCAT(u.firstname,' ',u.lastname) AS fullname /* debugging */
 				FROM {role_assignments} ra 
@@ -94,12 +97,29 @@ class mdWeekComp {
 						LEFT JOIN {user_info_data} cvid ON u.id = cvid.userid 
 							AND (SELECT field.shortname FROM {user_info_field} field 
 								WHERE field.id = cvid.fieldid ) LIKE 'cvueid' 
-				WHERE ra. roleid = 5 AND c.id = $c ";
+				WHERE ra.roleid = 5 AND c.id = $c ";
 		if($g > 0){
 			$sql .= "AND (SELECT gm.id FROM {groups_members} gm 
 						WHERE gm.userid = u.id AND gm.groupid = $g ) IS NOT NULL  ";
 		}
 		$logs = $DB->get_records_sql($sql);
 		return $logs;
+	}
+	
+	//get excluded modules as WHERE clause
+	public function getModuleClause() {
+		$modStr = "";
+		$config = get_config('local_campusvue');
+		$setting = 'excludemodtype';
+		if (!empty($config->$setting)) {
+			$excludemod = explode(',',$config->$setting);
+			$mods = count($excludemod);
+			$modStr = "AND cm.module NOT IN(" . $excludemod[0];
+			for ($i = 1; $i < $mods; $i++) {
+				$modStr = $modStr . "," . $excludemod[$i];
+			}
+			$modStr = $modStr . ")";
+		}
+		return $modStr;
 	}
 }
