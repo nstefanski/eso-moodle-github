@@ -121,15 +121,16 @@ class mdAttendance {
 						cs.id AS sectionid, 
 						CASE WHEN g.id IS NOT NULL 
 							THEN g.idnumber ELSE c.idnumber END AS cvid, 
-						(c.startdate + (cs.section*7*24*60*60) - (3600) + $dstOffset ) AS sessdate /* Fix for DST */
+						FROM_UNIXTIME(c.startdate)
+						FROM_UNIXTIME(c.startdate) + INTERVAL cs.section WEEK - INTERVAL 1 DAY AS sessdate 
 					FROM {course_sections} cs 
 						JOIN {course} c ON cs.course = c.id 
 						JOIN {course_categories} cc ON c.category = cc.id 
 						LEFT JOIN {groups} g ON c.id = g.courseid AND g.idnumber <> '' 
 					WHERE cs.section > 0 
-						AND (c.startdate + (cs.section*7*24*60*60) - (24*60*60)) < $maxTime 
-						AND (c.startdate + (cs.section*7*24*60*60) - (24*60*60)) >= $minTime 
 						$catStr 
+					HAVING DATEDIFF(FROM_UNIXTIME($maxTime), sessdate) > 0
+						AND DATEDIFF(sessdate, FROM_UNIXTIME($minTime) ) >= 0 
 					ORDER BY sectionid ";
 			//$this->Attendance[] = $sql; //tk debug
 		}
@@ -170,14 +171,14 @@ class mdAttendance {
 				//timestamp is in milliseconds
 				return date('Y-m-d\TH:i:s', $dateString/1000);
 			}
-		}
-		//object
-		/*if (gettype($dateString) == 'object') {
-			if (get_class($dateString) == 'DateTime'){
-				return $dateString->format('Y-m-d\TH:i:s');
+		} else {
+			try {
+				$dt = new DateTime($dateString); //string in standard DateTime format
+				return $dt->format('Y-m-d\TH:i:s');
+			} catch(Exception $e){
+				//weird string - do nothing
 			}
-		}*/
-		//string
+		}
 		return $dateString;
 	}
 
