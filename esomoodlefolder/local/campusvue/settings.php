@@ -68,4 +68,15 @@ if ( $hassiteconfig ){
 			'local_campusvue'), get_string('weekcompcatlimit_desc', 'local_campusvue'), [], $cats);
 		$settings->add($weekcompcatlimit);
     }
+	
+	$modrecords = $DB->get_records('modules',array('visible'=>1),'name');
+	if ($modrecords) {
+		$mods = [];
+		foreach ($modrecords as $modrecord) {
+			$mods[$modrecord->id] = $modrecord->name;
+		}
+		$excludemodtype = new admin_setting_configmultiselect('local_campusvue/excludemodtype', get_string('excludemodtype_title', 
+			'local_campusvue'), get_string('excludemodtype_desc', 'local_campusvue'), [], $mods);
+		$settings->add($excludemodtype);
+	}
 }

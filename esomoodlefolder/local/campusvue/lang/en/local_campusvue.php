@@ -25,13 +25,15 @@ $string['username_title'] = 'CampusVue Username';
 $string['username_desc'] = 'Username of a CampusVue user with superuser or admin access';
 $string['password_title'] = 'CampusVue Password';
 $string['password_desc'] = 'Password for the CampusVue user';
-$string['password_title'] = 'Keep logs (days)';
-$string['password_desc'] = 'Leave blank to keep logs indefinitely';
+$string['keeplogs_title'] = 'Keep logs (days)';
+$string['keeplogs_desc'] = 'Leave blank to keep logs indefinitely';
 $string['attendanceheading'] = 'Attendance Settings';
 $string['manualcatlimit_title'] = 'Manually Marked Attendance: Limit to Category Paths';
 $string['manualcatlimit_desc'] = 'Select categories to be scanned for manually marked attendance.  Child categories are automatically included';
 $string['weekcompcatlimit_title'] = 'Weekly Completion Attendance: Limit to Category Paths';
 $string['weekcompcatlimit_desc'] = 'Select categories to be scanned for weekly completion attendance.  Child categories are automatically included';
+$string['excludemodtype_title'] = 'Weekly Completion Attendance: Exclude Activity Type';
+$string['excludemodtype_desc'] = 'Select activity modules to be excluded when counting available attendance per week and individual student attendance.';
 //$string['allcategories'] = 'All Categories';
 
 $string['profilefield_name'] = 'CampusVue ID';
