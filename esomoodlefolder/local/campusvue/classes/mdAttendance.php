@@ -121,7 +121,6 @@ class mdAttendance {
 						cs.id AS sectionid, 
 						CASE WHEN g.id IS NOT NULL 
 							THEN g.idnumber ELSE c.idnumber END AS cvid, 
-						FROM_UNIXTIME(c.startdate)
 						FROM_UNIXTIME(c.startdate) + INTERVAL cs.section WEEK - INTERVAL 1 DAY AS sessdate 
 					FROM {course_sections} cs 
 						JOIN {course} c ON cs.course = c.id 
