@@ -390,6 +390,21 @@ function reengagement_email_user($reengagement, $inprogress) {
 
     } else {
         $user = $DB->get_record('user', array('id' => $inprogress->userid));
+		//get first teacher in course, else get site admin
+		$fromsql = "SELECT u.* 
+					  FROM {user} u 
+					  JOIN {role_assignments} ra ON ra.userid = u.id 
+					  JOIN {context} cx ON ra.contextid = cx.id 
+					 WHERE ra.roleid = 3 
+					   AND cx.contextlevel = 50 
+					   AND cx.instanceid = :courseid 
+					   AND u.deleted = 0
+				  ORDER BY ra.id";
+		$params = array('courseid' => $reengagement->courseid);
+		$from = $DB->get_record_sql($fromsql, $params);
+		if(!$from->id){
+			$from = get_admin();
+		}
     }
     if (!empty($user->deleted)) {
         // User has been deleted - don't send an e-mail.
@@ -456,11 +471,8 @@ function reengagement_email_user($reengagement, $inprogress) {
     if (($reengagement->emailrecipient == REENGAGEMENT_RECIPIENT_USER) ||
         ($reengagement->emailrecipient == REENGAGEMENT_RECIPIENT_BOTH)) {
         // We are supposed to send email to the user.
-        $usersendresult = email_to_user($user,
-                $SITE->shortname,
-                $templateddetails['emailsubject'],
-                $plaintext,
-                $templateddetails['emailcontent']);
+		$usersendresult = message_post_message($from, $user, 
+				$templateddetails['emailcontent'], FORMAT_HTML);
         if (!$usersendresult) {
             mtrace("failed to send user $user->id email for reengagement $reengagement->id");
         }
