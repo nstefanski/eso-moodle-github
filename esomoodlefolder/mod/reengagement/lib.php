@@ -390,21 +390,7 @@ function reengagement_email_user($reengagement, $inprogress) {
 
     } else {
         $user = $DB->get_record('user', array('id' => $inprogress->userid));
-		//get first teacher in course, else get site admin
-		$fromsql = "SELECT u.* 
-					  FROM {user} u 
-					  JOIN {role_assignments} ra ON ra.userid = u.id 
-					  JOIN {context} cx ON ra.contextid = cx.id 
-					 WHERE ra.roleid = 3 
-					   AND cx.contextlevel = 50 
-					   AND cx.instanceid = :courseid 
-					   AND u.deleted = 0
-				  ORDER BY ra.id";
-		$params = array('courseid' => $reengagement->courseid);
-		$from = $DB->get_record_sql($fromsql, $params);
-		if(!$from->id){
-			$from = get_admin();
-		}
+		$fromuser = reengagement_get_fromuser($reengagement); //tk
     }
     if (!empty($user->deleted)) {
         // User has been deleted - don't send an e-mail.
@@ -471,8 +457,13 @@ function reengagement_email_user($reengagement, $inprogress) {
     if (($reengagement->emailrecipient == REENGAGEMENT_RECIPIENT_USER) ||
         ($reengagement->emailrecipient == REENGAGEMENT_RECIPIENT_BOTH)) {
         // We are supposed to send email to the user.
-		$usersendresult = message_post_message($from, $user, 
-				$templateddetails['emailcontent'], FORMAT_HTML);
+		mtrace('... ... calling message_post_message');
+		try {
+			$usersendresult = message_post_message($fromuser, $user, 
+					$templateddetails['emailcontent'], FORMAT_HTML); //tk
+		} catch (Exception $e) {
+			mtrace('... ... exception with message_post_message: '. $e->message);
+		}
         if (!$usersendresult) {
             mtrace("failed to send user $user->id email for reengagement $reengagement->id");
         }
@@ -490,7 +481,8 @@ function reengagement_email_user($reengagement, $inprogress) {
  * @return array - the content of the fields after templating.
  */
 function reengagement_template_variables($reengagement, $inprogress, $user) {
-    $templatevars = array(
+    $fromuser = reengagement_get_fromuser($reengagement); //tk
+	$templatevars = array(
         '/%courseshortname%/' => $reengagement->courseshortname,
         '/%coursefullname%/' => $reengagement->coursefullname,
         '/%courseid%/' => $reengagement->courseid,
@@ -500,6 +492,9 @@ function reengagement_template_variables($reengagement, $inprogress, $user) {
         '/%usercity%/' => $user->city,
         '/%userinstitution%/' => $user->institution,
         '/%userdepartment%/' => $user->department,
+        '/%fromuserfirstname%/' => $fromuser->firstname,
+        '/%fromuserlastname%/' => $fromuser->lastname,
+        '/%fromuserid%/' => $fromuser->id,
     );
     $patterns = array_keys($templatevars); // The placeholders which are to be replaced.
     $replacements = array_values($templatevars); // The values which are to be templated in for the placeholders.
@@ -742,4 +737,33 @@ function reengagement_check_target_completion($userid, $targetcmid) {
         }
     }
     return false;
+}
+
+/**
+ * Get user to send instant message from
+ * This will be the first teacher in course, else site admin
+ *
+ * @param object $reengagement - reengagement record.
+ * @return object $fromuser - user record.
+ */
+function reengagement_get_fromuser($reengagement) {
+	global $DB;
+	$fromsql = "SELECT u.* 
+				  FROM {user} u 
+				  JOIN {role_assignments} ra ON ra.userid = u.id 
+				  JOIN {context} cx ON ra.contextid = cx.id 
+				 WHERE ra.roleid = 3 
+				   AND cx.contextlevel = 50 
+				   AND cx.instanceid = :courseid 
+				   AND u.deleted = 0
+			  ORDER BY ra.id";
+	$params = array('courseid' => $reengagement->courseid);
+	$fromuser = $DB->get_record_sql($fromsql, $params);
+	if(!$fromuser->id){
+		$fromuser = get_admin();
+		mtrace("... could not find course teacher, sending from admin $fromuser->id for reengagement $reengagement->id");
+	} else {
+		mtrace("... found teacher $fromuser->id for reengagement $reengagement->id");
+	}
+	return $fromuser; //tk
 }
